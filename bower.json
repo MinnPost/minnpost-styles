@@ -1,0 +1,18 @@
+{
+  "name": "MinnPost Styles",
+  "version": "0.0.1",
+  "homepage": "http://code.minnpost.com/minnpost-styles/",
+  "authors": [
+    "Alan Palazzolo <apalazzolo@minnpost.com>"
+  ],
+  "description": "Style framework for MinnPost interactive projects.",
+  "main": "dist/minnpost-styles.scss",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
