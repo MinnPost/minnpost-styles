@@ -1,0 +1,32 @@
+/**
+ * Variables for minnpost-styles
+ */
+
+// Containers
+$full-page-container-width: 960px;
+$sidebar-page-container-width: 640px;
+
+// Spacing
+$space: 1em;
+$space-line-height: 1.25em;
+$space-heading-bottom: .85em;
+
+// Fonts
+$font-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font-serif: Georgia, "Times New Roman", Times, serif;
+$font-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Font sizes
+$font-size-base: 14px;
+
+// Colors
+$color-gray: #787878;
+$color-dark-gray: darken($color-gray, 20%);
+$color-darker-gray: darken($color-dark-gray, 20%);
+$color-darkest-gray: darken($color-darker-gray, 20%);
+$color-light-gray: lighten($color-gray, 20%);
+$color-lighter-gray: lighten($color-light-gray, 20%);
+$color-lightest-gray: lighten($color-lighter-gray, 20%);
+
+// Primary colors
+$color-blue: #1D70A4;

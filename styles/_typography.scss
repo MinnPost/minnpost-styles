@@ -1,0 +1,78 @@
+/**
+ * Typography styles.
+ */
+
+.minnpost-styles {
+
+  font-size: $font-size-base;
+  line-height: 1.5;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: $space-heading-bottom;
+    line-height: $space-line-height;
+  }
+
+  h1 {
+    font-size: floor($font-size-base * 2.6);
+  }
+
+  h2 {
+    font-size: floor($font-size-base * 2.15);
+  }
+
+  h3 {
+    font-size: floor($font-size-base * 1.7);
+  }
+
+  h4 {
+    font-size: floor($font-size-base * 1.25);
+  }
+
+  h5 {
+    font-size: $font-size-base;
+  }
+
+  h6 {
+    font-size: floor($font-size-base * 0.85);
+  }
+
+
+  // Paragraph
+  p {
+    margin-bottom: $space;
+    line-height: $space-line-height;
+  }
+
+  // Various text modifiers
+  small,
+  .small {
+    font-size: 85%;
+  }
+  strong,
+  .strong {
+    font-weight: bold;
+  }
+  em,
+  .em {
+    font-style: italic;
+  }
+
+  // Alignment
+  .text-left { text-align: left; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .text-justify { text-align: justify; }
+
+  // Abbreviations
+  abbr,
+  .abbr {
+    cursor: help;
+    border-bottom: 1px dotted $color-dark-gray;
+  }
+
+  // Code styles
+  code {
+    font-family: $font-monospace;
+    line-height: $space-line-height;
+  }
+}

@@ -55,7 +55,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           environment: 'production',
-          outputStyle: 'compressed',
+          outputStyle: 'expanded',
           relativeAssets: false
         }
       }
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
       // CSS
       css: {
         src: [
-          '<%= compass.dist.options.cssDir %>/main.css'
+          '<%= compass.options.cssDir %>/main.css'
         ],
         dest: 'dist/<%= pkg.name %>.css'
       }

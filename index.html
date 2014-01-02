@@ -8,17 +8,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="dist/minnpost-styles.min.css">
+    <link rel="stylesheet" href="styles/demo.css">
   </head>
-  <body>
+  <body class="minnpost-styles">
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <p>Hello world! This is HTML5 Boilerplate.</p>
+    <div class="full-page-container">
+      <div class="spacer"></div>
+
+      <h1>MinnPost Styles</h1>
+
+      <p>The MinnPost super-fly style guide, specifically focused on interactive and news applications made by the MinnData team.</p>
+
+
+      <h2>Basic usage</h2>
+
+      <p>Since these styles were made for projects that will get embedded in existing sites, all styles are prefixed with <code>.minnpost-styles</code>.  This means you should wrap your markup like so:</p>
+
+      <div class="example-code">
+<pre><code>  &lt;div class="minnpost-styles"&gt;
+    ...
+  &lt;/div&gt; </code></pre>
+      </div>
+
+      <p>Or, if you are not embedding, simply add the class to the body:</p>
+
+      <div class="example-code">
+<pre><code>  &lt;body class="minnpost-styles"&gt;
+    ...
+  &lt;/body&gt; </code></pre>
+      </div>
+
+
+
+      <h2>Typography</h2>
+
+      <h3>Headings</h3>
+
+      <p>The following are the styling of the headings, h1, h2, etc.</p>
+
+      <div class="example">
+        <h1>h1 Example heading</h1>
+        <h2>h2 Example heading</h2>
+        <h3>h3 Example heading</h3>
+        <h4>h4 Example heading</h4>
+        <h5>h5 Example heading</h5>
+        <h6>h6 Example heading</h6>
+      </div>
+      <div class="example-code">
+<pre><code>  &lt;h1&gt;h1 Example heading&lt;/h1&gt;
+  ... </code></pre>
+      </div>
+
+      <h3>Paragraph</h3>
+
+      <div class="example">
+        <p>This is some example text.  And this is some more.  Really great stuff here.</p>
+      </div>
+      <div class="example-code">
+<pre><code>  &lt;p&gt;Some text&lt;/p&gt; </code></pre>
+      </div>
+
+      <h3>Text modifiers</h3>
+
+      <div class="example">
+        <p>
+          <small>This is small text.</small>
+          <strong>This is bold text.</strong>
+          <em>This is emphasizes text.</em>
+        </p>
+      </div>
+      <div class="example-code">
+<pre><code>  &lt;small&gt;This is small text.&lt;/small&gt;
+  &lt;strong&gt;This is bold text.&lt;/strong&gt;
+  &lt;em&gt;This is emphasizes text.&lt;/em&gt; </code></pre>
+      </div>
+
+      <h3>Abbreviations</h3>
+
+      <div class="example">
+        <p>
+          <abbr title="HyperText Markup Language">HTML</abbr> is an abbreviation of HyperText Markup Language.
+        </p>
+      </div>
+      <div class="example-code">
+<pre><code>  &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; </code></pre>
+      </div>
+
+    </div>
 
     <script src="dist/minnpost-styles.min.js"></script>
-    <script src="js/site.js"></script>
+    <script src="js/demo.js"></script>
 
   </body>
 </html>
