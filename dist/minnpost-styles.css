@@ -1,0 +1,533 @@
+/**
+ * Main SASS file for minnpost-styles.  Combines other files
+ * in specific order.
+ */
+/**
+ * Variables for minnpost-styles
+ */
+/**
+ * Adapted version of Normalize and Eric Meyer's Reset
+ * to be within prefix.
+ *
+ * git.io/normalize
+ * http://meyerweb.com/eric/tools/css/reset/
+ */
+/**
+ * Reset styles for container.
+ */
+.minnpost-styles {
+  font-size: 100%;
+}
+
+/**
+ * Specific styles for when the body has the prefix.
+ */
+body.minnpost-styles {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/**
+ * //1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+.minnpost-styles {
+  /**
+   * Eric Meyer Reset
+   */
+  /**
+   * Normalize
+   */
+  /* ==========================================================================
+     HTML5 display definitions
+     ========================================================================== */
+  /**
+   * Correct `block` display not defined in IE 8/9.
+   */
+  /**
+   * Correct `inline-block` display not defined in IE 8/9.
+   */
+  /**
+   * Prevent modern browsers from displaying `audio` without controls.
+   * Remove excess height in iOS 5 devices.
+   */
+  /**
+   * Address `[hidden]` styling not present in IE 8/9.
+   * Hide the `template` element in IE, Safari, and Firefox < 22.
+   */
+  /* ==========================================================================
+     Links
+     ========================================================================== */
+  /**
+   * Remove the gray background color from active links in IE 10.
+   */
+  /**
+   * Address `outline` inconsistency between Chrome and other browsers.
+   */
+  /**
+   * Improve readability when focused and also mouse hovered in all browsers.
+   */
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  /**
+   * Address variable `h1` font-size and margin within `section` and `article`
+   * contexts in Firefox 4+, Safari 5, and Chrome.
+   */
+  /**
+   * Address styling not present in IE 8/9, Safari 5, and Chrome.
+   */
+  /**
+   * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+   */
+  /**
+   * Address styling not present in Safari 5 and Chrome.
+   */
+  /**
+   * Address differences between Firefox and other browsers.
+   */
+  /**
+   * Address styling not present in IE 8/9.
+   */
+  /**
+   * Correct font family set oddly in Safari 5 and Chrome.
+   */
+  /**
+   * Improve readability of pre-formatted text in all browsers.
+   */
+  /**
+   * Set consistent quote types.
+   */
+  /**
+   * Address inconsistent and variable font size in all browsers.
+   */
+  /**
+   * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+   */
+  /* ==========================================================================
+     Embedded content
+     ========================================================================== */
+  /**
+   * Remove border when inside `a` element in IE 8/9.
+   */
+  /**
+   * Correct overflow displayed oddly in IE 9.
+   */
+  /* ==========================================================================
+     Figures
+     ========================================================================== */
+  /**
+   * Address margin not present in IE 8/9 and Safari 5.
+   */
+  /* ==========================================================================
+     Forms
+     ========================================================================== */
+  /**
+   * Define consistent border, margin, and padding.
+   */
+  /**
+   * 1. Correct `color` not being inherited in IE 8/9.
+   * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+   */
+  /**
+   * 1. Correct font family not being inherited in all browsers.
+   * 2. Correct font size not being inherited in all browsers.
+   * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+   */
+  /**
+   * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+   * the UA stylesheet.
+   */
+  /**
+   * Address inconsistent `text-transform` inheritance for `button` and `select`.
+   * All other form control elements do not inherit `text-transform` values.
+   * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+   * Correct `select` style inheritance in Firefox 4+ and Opera.
+   */
+  /**
+   * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+   *    and `video` controls.
+   * 2. Correct inability to style clickable `input` types in iOS.
+   * 3. Improve usability and consistency of cursor style between image-type
+   *    `input` and others.
+   */
+  /**
+   * Re-set default cursor for disabled elements.
+   */
+  /**
+   * 1. Address box sizing set to `content-box` in IE 8/9/10.
+   * 2. Remove excess padding in IE 8/9/10.
+   */
+  /**
+   * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+   * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+   *    (include `-moz` to future-proof).
+   */
+  /**
+   * Remove inner padding and search cancel button in Safari 5 and Chrome
+   * on OS X.
+   */
+  /**
+   * Remove inner padding and border in Firefox 4+.
+   */
+  /**
+   * 1. Remove default vertical scrollbar in IE 8/9.
+   * 2. Improve readability and alignment in all browsers.
+   */
+  /* ==========================================================================
+     Tables
+     ========================================================================== */
+  /**
+   * Remove most spacing between table cells.
+   */
+}
+.minnpost-styles div, .minnpost-styles span, .minnpost-styles applet, .minnpost-styles object, .minnpost-styles iframe,
+.minnpost-styles h1, .minnpost-styles h2, .minnpost-styles h3, .minnpost-styles h4, .minnpost-styles h5, .minnpost-styles h6, .minnpost-styles p, .minnpost-styles blockquote, .minnpost-styles pre,
+.minnpost-styles a, .minnpost-styles abbr, .minnpost-styles acronym, .minnpost-styles address, .minnpost-styles big, .minnpost-styles cite, .minnpost-styles code,
+.minnpost-styles del, .minnpost-styles dfn, .minnpost-styles em, .minnpost-styles img, .minnpost-styles ins, .minnpost-styles kbd, .minnpost-styles q, .minnpost-styles s, .minnpost-styles samp,
+.minnpost-styles small, .minnpost-styles strike, .minnpost-styles strong, .minnpost-styles sub, .minnpost-styles sup, .minnpost-styles tt, .minnpost-styles var,
+.minnpost-styles b, .minnpost-styles u, .minnpost-styles i, .minnpost-styles center,
+.minnpost-styles dl, .minnpost-styles dt, .minnpost-styles dd, .minnpost-styles ol, .minnpost-styles ul, .minnpost-styles li,
+.minnpost-styles fieldset, .minnpost-styles form, .minnpost-styles label, .minnpost-styles legend,
+.minnpost-styles table, .minnpost-styles caption, .minnpost-styles tbody, .minnpost-styles tfoot, .minnpost-styles thead, .minnpost-styles tr, .minnpost-styles th, .minnpost-styles td,
+.minnpost-styles article, .minnpost-styles aside, .minnpost-styles canvas, .minnpost-styles details, .minnpost-styles embed,
+.minnpost-styles figure, .minnpost-styles figcaption, .minnpost-styles footer, .minnpost-styles header, .minnpost-styles hgroup,
+.minnpost-styles menu, .minnpost-styles nav, .minnpost-styles output, .minnpost-styles ruby, .minnpost-styles section, .minnpost-styles summary,
+.minnpost-styles time, .minnpost-styles mark, .minnpost-styles audio, .minnpost-styles video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+.minnpost-styles ol, .minnpost-styles ul {
+  list-style: none;
+}
+.minnpost-styles blockquote, .minnpost-styles q {
+  quotes: none;
+}
+.minnpost-styles blockquote:before, .minnpost-styles blockquote:after,
+.minnpost-styles q:before, .minnpost-styles q:after {
+  content: '';
+  content: none;
+}
+.minnpost-styles table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.minnpost-styles article,
+.minnpost-styles aside,
+.minnpost-styles details,
+.minnpost-styles figcaption,
+.minnpost-styles figure,
+.minnpost-styles footer,
+.minnpost-styles header,
+.minnpost-styles hgroup,
+.minnpost-styles main,
+.minnpost-styles nav,
+.minnpost-styles section,
+.minnpost-styles summary {
+  display: block;
+}
+.minnpost-styles audio,
+.minnpost-styles canvas,
+.minnpost-styles video {
+  display: inline-block;
+}
+.minnpost-styles audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+.minnpost-styles [hidden],
+.minnpost-styles template {
+  display: none;
+}
+.minnpost-styles a {
+  background: transparent;
+}
+.minnpost-styles a:focus {
+  outline: thin dotted;
+}
+.minnpost-styles a:active,
+.minnpost-styles a:hover {
+  outline: 0;
+}
+.minnpost-styles h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.minnpost-styles abbr[title] {
+  border-bottom: 1px dotted;
+}
+.minnpost-styles b,
+.minnpost-styles strong {
+  font-weight: bold;
+}
+.minnpost-styles dfn {
+  font-style: italic;
+}
+.minnpost-styles hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+.minnpost-styles mark {
+  background: #ff0;
+  color: #000;
+}
+.minnpost-styles code,
+.minnpost-styles kbd,
+.minnpost-styles pre,
+.minnpost-styles samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+.minnpost-styles pre {
+  white-space: pre-wrap;
+}
+.minnpost-styles q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+.minnpost-styles small {
+  font-size: 80%;
+}
+.minnpost-styles sub,
+.minnpost-styles sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.minnpost-styles sup {
+  top: -0.5em;
+}
+.minnpost-styles sub {
+  bottom: -0.25em;
+}
+.minnpost-styles img {
+  border: 0;
+}
+.minnpost-styles svg:not(:root) {
+  overflow: hidden;
+}
+.minnpost-styles figure {
+  margin: 0;
+}
+.minnpost-styles fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+.minnpost-styles legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+.minnpost-styles button,
+.minnpost-styles input,
+.minnpost-styles select,
+.minnpost-styles textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+.minnpost-styles button,
+.minnpost-styles input {
+  line-height: normal;
+}
+.minnpost-styles button,
+.minnpost-styles select {
+  text-transform: none;
+}
+.minnpost-styles button,
+.minnpost-styles html input[type="button"],
+.minnpost-styles input[type="reset"],
+.minnpost-styles input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+.minnpost-styles button[disabled],
+.minnpost-styles html input[disabled] {
+  cursor: default;
+}
+.minnpost-styles input[type="checkbox"],
+.minnpost-styles input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+.minnpost-styles input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+.minnpost-styles input[type="search"]::-webkit-search-cancel-button,
+.minnpost-styles input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.minnpost-styles button::-moz-focus-inner,
+.minnpost-styles input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.minnpost-styles textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+.minnpost-styles table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * Layout and spacing styles.
+ */
+.minnpost-styles .full-page-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.minnpost-styles .sidebar-page-container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.minnpost-styles .interactive-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.minnpost-styles .spacer {
+  height: 1em;
+}
+.minnpost-styles .top-spacer {
+  margin-top: 1em;
+}
+.minnpost-styles .bottom-spacer {
+  margin-bottom: 1em;
+}
+
+/**
+ * Clearfix for minnpost-styles.
+ */
+.minnpost-styles {
+  /**
+   * Clearfix from
+   * http://nicolasgallagher.com/micro-clearfix-hack/
+   */
+}
+.minnpost-styles .cf:before,
+.minnpost-styles .cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.minnpost-styles .cf:after {
+  clear: both;
+}
+.minnpost-styles .cf {
+  *zoom: 1;
+}
+
+/**
+ * Typography styles.
+ */
+.minnpost-styles {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.minnpost-styles h1, .minnpost-styles h2, .minnpost-styles h3, .minnpost-styles h4, .minnpost-styles h5, .minnpost-styles h6 {
+  margin-bottom: 0.85em;
+  line-height: 1.25em;
+}
+.minnpost-styles h1 {
+  font-size: 36px;
+}
+.minnpost-styles h2 {
+  font-size: 30px;
+}
+.minnpost-styles h3 {
+  font-size: 23px;
+}
+.minnpost-styles h4 {
+  font-size: 17px;
+}
+.minnpost-styles h5 {
+  font-size: 14px;
+}
+.minnpost-styles h6 {
+  font-size: 11px;
+}
+.minnpost-styles p {
+  margin-bottom: 1em;
+  line-height: 1.25em;
+}
+.minnpost-styles small,
+.minnpost-styles .small {
+  font-size: 85%;
+}
+.minnpost-styles strong,
+.minnpost-styles .strong {
+  font-weight: bold;
+}
+.minnpost-styles em,
+.minnpost-styles .em {
+  font-style: italic;
+}
+.minnpost-styles .text-left {
+  text-align: left;
+}
+.minnpost-styles .text-right {
+  text-align: right;
+}
+.minnpost-styles .text-center {
+  text-align: center;
+}
+.minnpost-styles .text-justify {
+  text-align: justify;
+}
+.minnpost-styles abbr,
+.minnpost-styles .abbr {
+  cursor: help;
+  border-bottom: 1px dotted #454545;
+}
+.minnpost-styles code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  line-height: 1.25em;
+}
+
+/**
+ * Responsive styles for minnpost-styles.
+ */
+.minnpost-styles {
+  /**
+   * Images
+   */
+}
+.minnpost-styles .img-responsive {
+  max-width: 100%;
+  height: auto;
+}
