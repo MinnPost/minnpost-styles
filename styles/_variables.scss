@@ -9,7 +9,7 @@ $sidebar-page-container-width: 640px;
 // Spacing
 $space: 1em;
 $space-line-height: 1.25em;
-$space-heading-bottom: .85em;
+$space-heading-bottom: 0.85em;
 
 // Fonts
 $font-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -19,14 +19,15 @@ $font-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 // Font sizes
 $font-size-base: 14px;
 
-// Colors
+// Gray colors
 $color-gray: #787878;
-$color-dark-gray: darken($color-gray, 20%);
-$color-darker-gray: darken($color-dark-gray, 20%);
+$color-dark-gray: darken($color-gray, 15%);
+$color-darker-gray: darken($color-dark-gray, 15%);
 $color-darkest-gray: darken($color-darker-gray, 20%);
-$color-light-gray: lighten($color-gray, 20%);
-$color-lighter-gray: lighten($color-light-gray, 20%);
+$color-light-gray: lighten($color-gray, 15%);
+$color-lighter-gray: lighten($color-light-gray, 15%);
 $color-lightest-gray: lighten($color-lighter-gray, 20%);
 
 // Primary colors
+$color-minnpost-red: #801019;
 $color-blue: #1D70A4;

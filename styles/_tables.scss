@@ -1,0 +1,38 @@
+/**
+ * Styles for tables.
+ */
+
+.minnpost-styles {
+
+  table {
+    width: 100%;
+    margin-bottom: $space;
+    text-align: left;
+    line-height: $space-line-height;
+
+    thead {
+
+      th {
+        vertical-align: bottom;
+        border-bottom: 2px solid $color-lighter-gray;
+        line-height: $space-line-height;
+        padding: (0.5 * $space);
+      }
+    }
+
+    tbody {
+
+      td {
+        vertical-align: top;
+        border-bottom: 1px solid $color-lighter-gray;
+        padding: (0.5 * $space);
+      }
+
+      // Stripes
+      tr:nth-child(odd) td {
+        background-color: $color-lightest-gray;
+      }
+    }
+  }
+
+}

@@ -28,17 +28,17 @@
       <p>Since these styles were made for projects that will get embedded in existing sites, all styles are prefixed with <code>.minnpost-styles</code>.  This means you should wrap your markup like so:</p>
 
       <div class="example-code">
-<pre><code>  &lt;div class="minnpost-styles"&gt;
-    ...
-  &lt;/div&gt; </code></pre>
+<pre><code>&lt;div class="minnpost-styles"&gt;
+  ...
+&lt;/div&gt; </code></pre>
       </div>
 
       <p>Or, if you are not embedding, simply add the class to the body:</p>
 
       <div class="example-code">
-<pre><code>  &lt;body class="minnpost-styles"&gt;
-    ...
-  &lt;/body&gt; </code></pre>
+<pre><code>&lt;body class="minnpost-styles"&gt;
+...
+&lt;/body&gt; </code></pre>
       </div>
 
 
@@ -58,7 +58,7 @@
         <h6>h6 Example heading</h6>
       </div>
       <div class="example-code">
-<pre><code>  &lt;h1&gt;h1 Example heading&lt;/h1&gt;
+<pre><code>&lt;h1&gt;h1 Example heading&lt;/h1&gt;
   ... </code></pre>
       </div>
 
@@ -68,7 +68,18 @@
         <p>This is some example text.  And this is some more.  Really great stuff here.</p>
       </div>
       <div class="example-code">
-<pre><code>  &lt;p&gt;Some text&lt;/p&gt; </code></pre>
+<pre><code>&lt;p&gt;Some text&lt;/p&gt; </code></pre>
+      </div>
+
+      <h3>Links</h3>
+
+      <p>Links are used for inline navigation.  For external links, it is often a good idea to use the <code>target="_blank"</code> attribute as it will open the link in a new tab.</p>
+
+      <div class="example">
+        <p>This is a <a href="#">link</a>.</p>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;a href="#"&gt;link&lt;/a&gt; </code></pre>
       </div>
 
       <h3>Text modifiers</h3>
@@ -81,9 +92,9 @@
         </p>
       </div>
       <div class="example-code">
-<pre><code>  &lt;small&gt;This is small text.&lt;/small&gt;
-  &lt;strong&gt;This is bold text.&lt;/strong&gt;
-  &lt;em&gt;This is emphasizes text.&lt;/em&gt; </code></pre>
+<pre><code>&lt;small&gt;This is small text.&lt;/small&gt;
+&lt;strong&gt;This is bold text.&lt;/strong&gt;
+&lt;em&gt;This is emphasizes text.&lt;/em&gt; </code></pre>
       </div>
 
       <h3>Abbreviations</h3>
@@ -94,8 +105,134 @@
         </p>
       </div>
       <div class="example-code">
-<pre><code>  &lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; </code></pre>
+<pre><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; </code></pre>
       </div>
+
+      <h3>Blockquotes</h3>
+
+      <p>Use a <code>&lt;small&gt;</code> element for the attribution of the quote.</p>
+
+      <div class="example">
+        <blockquote>
+          <p>Someone said something really awesome and important once.</p>
+          <small>Someone famous</small>
+        </blockquote>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;blockquote&gt;
+  &lt;p&gt;Someone said something really awesome and important once.&lt;/p&gt;
+  &lt;small&gt;Someone famous&lt;/small&gt;
+&lt;/blockquote&gt; </code></pre>
+      </div>
+
+      <h3>Lists</h3>
+
+      <div class="example">
+        <ul>
+          <li>unordered list example</li>
+          <li>another thing</li>
+          <li>nested items
+            <ul>
+              <li>nested item 1</li>
+              <li>nested item 2</li>
+            </ul>
+          </li>
+          <li>Another item</li>
+        </ul>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;Unordered list example&lt;/li&gt;
+&lt;/ul&gt; </code></pre>
+      </div>
+
+      <div class="example">
+        <ol>
+          <li>ordered list example</li>
+          <li>another thing</li>
+          <li>nested items
+            <ol>
+              <li>nested item 1</li>
+              <li>nested item 2</li>
+            </ol>
+          </li>
+          <li>Another item</li>
+        </ol>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;ol&gt;
+  &lt;li&gt;Ordered list example&lt;/li&gt;
+&lt;/ol&gt; </code></pre>
+      </div>
+
+      <h3>Code</h3>
+
+      <div class="example">
+        <p>
+          Inline <code>code</code> example.
+        </p>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;code&gt;code&lt;/code&gt; </code></pre>
+      </div>
+
+      <div class="example">
+        <pre><code>Code block
+example here. </code></pre>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;code&gt;code&lt;/code&gt; </code></pre>
+      </div>
+
+
+
+
+      <h2>Tables</h2>
+
+      <p>Wrap tables in a <code>.table-responsive</code> class so that it will become scrollable on smaller devices.</p>
+
+      <div class="example">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>First column</th><th>second</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>data</td><td>2</td>
+              </tr>
+              <tr>
+                <td>somre more data here</td><td>42</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;div class="table-responsive"&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;First column&lt;/th&gt;&lt;th&gt;second&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;data&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;somre more data here&lt;/td&gt;&lt;td&gt;42&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt; </code></pre>
+      </div>
+
+
 
     </div>
 

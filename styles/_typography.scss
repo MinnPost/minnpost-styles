@@ -36,6 +36,17 @@
     font-size: floor($font-size-base * 0.85);
   }
 
+  // Links
+  a,
+  a:visited {
+    color: $color-minnpost-red;
+    text-decoration: none;
+  }
+  a:hover,
+  a:visited:hover {
+    color: $color-minnpost-red;
+    text-decoration: none;
+  }
 
   // Paragraph
   p {
@@ -70,9 +81,68 @@
     border-bottom: 1px dotted $color-dark-gray;
   }
 
+  // Blockquotes
+  blockquote,
+  .blockquote {
+    display: block;
+    padding: ($space * 0.5) $space;
+    margin-bottom: $space;
+    border-left: 5px solid $color-lighter-gray;
+
+    small,
+    .small {
+      color: $color-light-gray;
+
+      &:before {
+        content: '\2014 \00A0';
+      }
+    }
+  }
+
+  // Lists
+  ul,
+  ol {
+    margin: 0 0 $space ($space * 2);
+
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+
+    ol {
+      list-style-type: lower-roman;
+    }
+  }
+
   // Code styles
   code {
     font-family: $font-monospace;
     line-height: $space-line-height;
+    font-size: 0.9em;
+    background-color: $color-lightest-gray;
+    padding: 2px 4px;
+  }
+
+  pre {
+    margin-bottom: $space;
+    background-color: $color-lightest-gray;
+    padding: $space;
+
+    code {
+      background-color: inherit;
+      padding: 0;
+    }
   }
 }
