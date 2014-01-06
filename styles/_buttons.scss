@@ -6,6 +6,7 @@
 .minnpost-styles {
 
   .button {
+    display: inline;
     @include inline-block();
 
     margin-bottom: 0; // For input.button
@@ -94,10 +95,10 @@
 
 
   // Button Sizes
-  .button-lg {
+  .button-large {
     font-size: $text-size * 2;
   }
-  .button-sm {
+  .button-small {
     font-size: $text-size * 0.85;
   }
 

@@ -8,10 +8,11 @@
 
 // Cross-browser inline block
 @mixin inline-block() {
-  display:-moz-inline-stack;
-  display:inline-block;
-  zoom:1;
-  *display:inline;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: $space-horizontal-margin * 0.25;
 }
 
 // Clearfix
