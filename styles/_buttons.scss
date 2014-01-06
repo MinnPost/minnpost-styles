@@ -53,7 +53,8 @@
   }
 
   // Button colors
-  .button {
+  .button,
+  a.button {
     @include button-variant($color-gray, $color-white, $color-gray);
   }
 
