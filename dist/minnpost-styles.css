@@ -678,147 +678,6 @@ html {
 }
 
 /**
- * Buttons
- */
-.minnpost-styles .button {
-  display: inline;
-  display: -moz-inline-stack;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  margin-right: 0.25em;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 0.25em 0.5em;
-  font-size: 1em;
-  line-height: 1.5625em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.minnpost-styles .button:focus {
-  border-color: #787878;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.minnpost-styles .button:hover, .minnpost-styles .button:focus {
-  color: #1a1818;
-  text-decoration: none;
-}
-.minnpost-styles .button:active, .minnpost-styles .button.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-.minnpost-styles .button.disabled, .minnpost-styles .button[disabled], fieldset[disabled] .minnpost-styles .button {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: "alpha(opacity=$opacity-ie)";
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.minnpost-styles .button {
-  color: #787878;
-  background-color: white;
-  border-color: #787878;
-}
-.minnpost-styles .button:hover, .minnpost-styles .button:focus, .minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle {
-  color: #787878;
-  background-color: #e6e6e6;
-  border-color: #525252;
-}
-.minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle {
-  background-image: none;
-}
-.minnpost-styles .button.disabled, .minnpost-styles .button.disabled:hover, .minnpost-styles .button.disabled:focus, .minnpost-styles .button.disabled:active, .minnpost-styles .button.disabled.active, .minnpost-styles .button[disabled], .minnpost-styles .button[disabled]:hover, .minnpost-styles .button[disabled]:focus, .minnpost-styles .button[disabled]:active, .minnpost-styles .button[disabled].active, fieldset[disabled] .minnpost-styles .button, fieldset[disabled] .minnpost-styles .button:hover, fieldset[disabled] .minnpost-styles .button:focus, fieldset[disabled] .minnpost-styles .button:active, fieldset[disabled] .minnpost-styles .button.active {
-  background-color: white;
-  border-color: #787878;
-}
-.minnpost-styles .button-link {
-  color: #801019;
-  font-weight: normal;
-  cursor: pointer;
-  border-radius: 0;
-}
-.minnpost-styles .button-link, .minnpost-styles .button-link:active, .minnpost-styles .button-link[disabled], fieldset[disabled] .minnpost-styles .button-link {
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-.minnpost-styles .button-link, .minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus, .minnpost-styles .button-link:active {
-  border-color: transparent;
-}
-.minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus {
-  color: #801019;
-  text-decoration: underline;
-  background-color: transparent;
-}
-.minnpost-styles .button-link[disabled]:hover, .minnpost-styles .button-link[disabled]:focus, fieldset[disabled] .minnpost-styles .button-link:hover, fieldset[disabled] .minnpost-styles .button-link:focus {
-  color: #787878;
-  text-decoration: none;
-}
-.minnpost-styles .button-large {
-  font-size: 2em;
-}
-.minnpost-styles .button-small {
-  font-size: 0.85em;
-}
-.minnpost-styles .button-block {
-  display: block;
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
-.minnpost-styles .button-block + .button-block {
-  margin-top: 5px;
-}
-.minnpost-styles input[type="submit"].button-block,
-.minnpost-styles input[type="reset"].button-block,
-.minnpost-styles input[type="button"].button-block {
-  width: 100%;
-}
-
-/**
- * Styles for tables.
- */
-.minnpost-styles table {
-  width: 100%;
-  margin-bottom: 1em;
-  text-align: left;
-  line-height: 1.25em;
-}
-.minnpost-styles table thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #c5c5c5;
-  line-height: 1.25em;
-  padding: 0.5em;
-}
-.minnpost-styles table tbody td {
-  vertical-align: top;
-  border-bottom: 1px solid #c5c5c5;
-  padding: 0.5em;
-}
-.minnpost-styles table tbody tr:nth-child(odd) td {
-  background-color: #f8f8f8;
-}
-
-/**
  * Forms.
  * Much borrowed from Bootstrap.
  */
@@ -1168,6 +1027,221 @@ html {
 .minnpost-styles .form-inline .checkbox input[type="checkbox"] {
   float: none;
   margin-left: 0;
+}
+
+/**
+ * Styles for tables.
+ */
+.minnpost-styles table {
+  width: 100%;
+  margin-bottom: 1em;
+  text-align: left;
+  line-height: 1.25em;
+}
+.minnpost-styles table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #c5c5c5;
+  line-height: 1.25em;
+  padding: 0.5em;
+}
+.minnpost-styles table tbody td {
+  vertical-align: top;
+  border-bottom: 1px solid #c5c5c5;
+  padding: 0.5em;
+}
+.minnpost-styles table tbody tr:nth-child(odd) td {
+  background-color: #f8f8f8;
+}
+
+/**
+ * Buttons
+ */
+.minnpost-styles .button {
+  display: inline;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 0.25em 0.5em;
+  font-size: 1em;
+  line-height: 1.5625em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.minnpost-styles .button:focus {
+  border-color: #787878;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.minnpost-styles .button:hover, .minnpost-styles .button:focus {
+  color: #1a1818;
+  text-decoration: none;
+}
+.minnpost-styles .button:active, .minnpost-styles .button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.minnpost-styles .button.disabled, .minnpost-styles .button[disabled], fieldset[disabled] .minnpost-styles .button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: "alpha(opacity=$opacity-ie)";
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.minnpost-styles .button,
+.minnpost-styles a.button {
+  color: #787878;
+  background-color: white;
+  border-color: #787878;
+}
+.minnpost-styles .button:hover, .minnpost-styles .button:focus, .minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle,
+.minnpost-styles a.button:hover,
+.minnpost-styles a.button:focus,
+.minnpost-styles a.button:active,
+.minnpost-styles a.button.active, .open
+.minnpost-styles a.button.dropdown-toggle {
+  color: #787878;
+  background-color: #e6e6e6;
+  border-color: #525252;
+}
+.minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle,
+.minnpost-styles a.button:active,
+.minnpost-styles a.button.active, .open
+.minnpost-styles a.button.dropdown-toggle {
+  background-image: none;
+}
+.minnpost-styles .button.disabled, .minnpost-styles .button.disabled:hover, .minnpost-styles .button.disabled:focus, .minnpost-styles .button.disabled:active, .minnpost-styles .button.disabled.active, .minnpost-styles .button[disabled], .minnpost-styles .button[disabled]:hover, .minnpost-styles .button[disabled]:focus, .minnpost-styles .button[disabled]:active, .minnpost-styles .button[disabled].active, fieldset[disabled] .minnpost-styles .button, fieldset[disabled] .minnpost-styles .button:hover, fieldset[disabled] .minnpost-styles .button:focus, fieldset[disabled] .minnpost-styles .button:active, fieldset[disabled] .minnpost-styles .button.active,
+.minnpost-styles a.button.disabled,
+.minnpost-styles a.button.disabled:hover,
+.minnpost-styles a.button.disabled:focus,
+.minnpost-styles a.button.disabled:active,
+.minnpost-styles a.button.disabled.active,
+.minnpost-styles a.button[disabled],
+.minnpost-styles a.button[disabled]:hover,
+.minnpost-styles a.button[disabled]:focus,
+.minnpost-styles a.button[disabled]:active,
+.minnpost-styles a.button[disabled].active, fieldset[disabled]
+.minnpost-styles a.button, fieldset[disabled]
+.minnpost-styles a.button:hover, fieldset[disabled]
+.minnpost-styles a.button:focus, fieldset[disabled]
+.minnpost-styles a.button:active, fieldset[disabled]
+.minnpost-styles a.button.active {
+  background-color: white;
+  border-color: #787878;
+}
+.minnpost-styles .button-link {
+  color: #801019;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+.minnpost-styles .button-link, .minnpost-styles .button-link:active, .minnpost-styles .button-link[disabled], fieldset[disabled] .minnpost-styles .button-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.minnpost-styles .button-link, .minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus, .minnpost-styles .button-link:active {
+  border-color: transparent;
+}
+.minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus {
+  color: #801019;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.minnpost-styles .button-link[disabled]:hover, .minnpost-styles .button-link[disabled]:focus, fieldset[disabled] .minnpost-styles .button-link:hover, fieldset[disabled] .minnpost-styles .button-link:focus {
+  color: #787878;
+  text-decoration: none;
+}
+.minnpost-styles .button-large {
+  font-size: 2em;
+}
+.minnpost-styles .button-small {
+  font-size: 0.85em;
+}
+.minnpost-styles .button-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.minnpost-styles .button-block + .button-block {
+  margin-top: 5px;
+}
+.minnpost-styles input[type="submit"].button-block,
+.minnpost-styles input[type="reset"].button-block,
+.minnpost-styles input[type="button"].button-block {
+  width: 100%;
+}
+
+/**
+ * Images
+ */
+.minnpost-styles img.rounded {
+  -webkit-border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+.minnpost-styles img.circle {
+  border-radius: 50%;
+}
+
+/**
+ * Thumbnails.  Not just for images, necessarily.
+ */
+.minnpost-styles .thumbnail {
+  display: block;
+  padding: 0.25em;
+  margin-bottom: 1em;
+  line-height: 1.25em;
+  background-color: none;
+  border: 1px solid #c5c5c5;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.minnpost-styles .thumbnail > img,
+.minnpost-styles .thumbnail a > img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.minnpost-styles .thumbnail .caption,
+.minnpost-styles .thumbnail caption {
+  padding: 0.25em 0.5em;
+  color: #9e9e9e;
+}
+.minnpost-styles .thumbnail.thumbnail-inline {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+}
+.minnpost-styles a.thumbnail:hover, .minnpost-styles a.thumbnail:focus, .minnpost-styles a.thumbnail.active {
+  border-color: #801019;
 }
 
 /**
