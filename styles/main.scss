@@ -5,6 +5,7 @@
 
 @import "compass";
 @import "compass/css3";
+@import "compass/css3/user-interface";
 @import "_variables";
 @import "_functions";
 @import "_mixins";
@@ -13,6 +14,7 @@
 @import "_layout";
 @import "_clearfix";
 @import "_typography";
+@import "_buttons";
 @import "_tables";
 @import "_forms";
 @import "_responsive";

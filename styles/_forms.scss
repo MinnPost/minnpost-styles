@@ -119,9 +119,7 @@
 
     // Customize the `:focus` state to imitate native WebKit styles.
     &:focus {
-      border-color: $color-gray;
-      outline: 0;
-      @include box-shadow(inset 0 1px 1px black(0.075), 0 0 8px black(0.5));
+      @include focus-block();
     }
 
     // Placeholder
@@ -228,9 +226,10 @@
   .form-inline {
     // Inline-block all the things for "inline"
     .form-item {
-      display: inline-block;
+      @include inline-block();
       margin-bottom: 0;
       vertical-align: middle;
+      margin-right: $space-horizontal-margin;
     }
 
     .form-item label {
@@ -243,7 +242,7 @@
     // a bug in WebKit: https://github.com/twbs/bootstrap/issues/1969).
     .radio,
     .checkbox {
-      display: inline-block;
+      @include inline-block();
       margin-top: 0;
       margin-bottom: 0;
       padding-left: 0;

@@ -37,6 +37,10 @@
     @include hidden();
   }
 
+  .tab-focus {
+    @include tab-focus();
+  }
+
   // Simple utilities
   .float-right {
     float: right;

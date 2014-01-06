@@ -13,8 +13,10 @@ $text-size: 1em;
 // Spacing
 $space: 1em;
 $space-heading-bottom: 0.85em;
+
 $space-vertical-padding: 0.25em;
 $space-horizontal-padding: 0.5em;
+
 $space-vertical-margin: 0.5em;
 $space-horizontal-margin: 1em;
 
@@ -43,3 +45,6 @@ $color-lightest-gray: lighten($color-lighter-gray, 20%);
 // Primary colors
 $color-minnpost-red: #801019;
 $color-blue: #1D70A4;
+
+// Links
+$color-link: $color-minnpost-red;
