@@ -6,6 +6,101 @@
  * Variables for minnpost-styles
  */
 /**
+ * Functions
+ */
+/**
+ * Mixins
+ */
+/**
+ * Helper utilities
+ */
+/**
+ * Function helpers
+ */
+/**
+ * Responsive
+ */
+/**
+ * Variants
+ */
+/**
+ * Helper classes, repeated from mixins.
+ */
+.minnpost-styles .inline-block {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+}
+.minnpost-styles .clearfix, .minnpost-styles .cf {
+  *zoom: 1;
+}
+.minnpost-styles .clearfix:before, .minnpost-styles .clearfix:after, .minnpost-styles .cf:before, .minnpost-styles .cf:after {
+  content: " ";
+  display: table;
+}
+.minnpost-styles .clearfix:after, .minnpost-styles .cf:after {
+  clear: both;
+}
+.minnpost-styles .tab-focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.minnpost-styles .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.minnpost-styles .text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.minnpost-styles .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.minnpost-styles .screen-reader-only, .minnpost-styles .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.minnpost-styles .hide, .minnpost-styles .hidden {
+  display: none;
+  visibility: hidden;
+}
+.minnpost-styles .tab-focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.minnpost-styles .float-right {
+  float: right;
+}
+.minnpost-styles .float-left {
+  float: left;
+}
+.minnpost-styles .show {
+  display: block;
+}
+.minnpost-styles .show-inline {
+  display: inline;
+}
+.minnpost-styles .invisible {
+  visibility: hidden;
+}
+
+/**
  * Adapted version of Normalize and Eric Meyer's Reset
  * to be within prefix.
  *
@@ -481,6 +576,16 @@ html {
 .minnpost-styles h6 {
   font-size: 11px;
 }
+.minnpost-styles a,
+.minnpost-styles a:visited {
+  color: #801019;
+  text-decoration: none;
+}
+.minnpost-styles a:hover,
+.minnpost-styles a:visited:hover {
+  color: #801019;
+  text-decoration: none;
+}
 .minnpost-styles p {
   margin-bottom: 1em;
   line-height: 1.25em;
@@ -512,11 +617,557 @@ html {
 .minnpost-styles abbr,
 .minnpost-styles .abbr {
   cursor: help;
-  border-bottom: 1px dotted #454545;
+  border-bottom: 1px dotted #525252;
+}
+.minnpost-styles blockquote,
+.minnpost-styles .blockquote {
+  display: block;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  border-left: 5px solid #c5c5c5;
+}
+.minnpost-styles blockquote small,
+.minnpost-styles blockquote .small,
+.minnpost-styles .blockquote small,
+.minnpost-styles .blockquote .small {
+  color: #9e9e9e;
+}
+.minnpost-styles blockquote small:before,
+.minnpost-styles blockquote .small:before,
+.minnpost-styles .blockquote small:before,
+.minnpost-styles .blockquote .small:before {
+  content: '\2014 \00A0';
+}
+.minnpost-styles ul,
+.minnpost-styles ol {
+  margin: 0 0 1em 2em;
+}
+.minnpost-styles ul ul,
+.minnpost-styles ul ol,
+.minnpost-styles ol ul,
+.minnpost-styles ol ol {
+  margin-bottom: 0;
+}
+.minnpost-styles ul {
+  list-style-type: disc;
+}
+.minnpost-styles ul ul {
+  list-style-type: circle;
+}
+.minnpost-styles ol {
+  list-style-type: decimal;
+}
+.minnpost-styles ol ol {
+  list-style-type: lower-roman;
 }
 .minnpost-styles code {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   line-height: 1.25em;
+  font-size: 0.9em;
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+}
+.minnpost-styles pre {
+  margin-bottom: 1em;
+  background-color: #f8f8f8;
+  padding: 1em;
+}
+.minnpost-styles pre code {
+  background-color: inherit;
+  padding: 0;
+}
+
+/**
+ * Buttons
+ */
+.minnpost-styles .button {
+  display: inline;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 0.25em 0.5em;
+  font-size: 1em;
+  line-height: 1.5625em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.minnpost-styles .button:focus {
+  border-color: #787878;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.minnpost-styles .button:hover, .minnpost-styles .button:focus {
+  color: #1a1818;
+  text-decoration: none;
+}
+.minnpost-styles .button:active, .minnpost-styles .button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.minnpost-styles .button.disabled, .minnpost-styles .button[disabled], fieldset[disabled] .minnpost-styles .button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: "alpha(opacity=$opacity-ie)";
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.minnpost-styles .button {
+  color: #787878;
+  background-color: white;
+  border-color: #787878;
+}
+.minnpost-styles .button:hover, .minnpost-styles .button:focus, .minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle {
+  color: #787878;
+  background-color: #e6e6e6;
+  border-color: #525252;
+}
+.minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle {
+  background-image: none;
+}
+.minnpost-styles .button.disabled, .minnpost-styles .button.disabled:hover, .minnpost-styles .button.disabled:focus, .minnpost-styles .button.disabled:active, .minnpost-styles .button.disabled.active, .minnpost-styles .button[disabled], .minnpost-styles .button[disabled]:hover, .minnpost-styles .button[disabled]:focus, .minnpost-styles .button[disabled]:active, .minnpost-styles .button[disabled].active, fieldset[disabled] .minnpost-styles .button, fieldset[disabled] .minnpost-styles .button:hover, fieldset[disabled] .minnpost-styles .button:focus, fieldset[disabled] .minnpost-styles .button:active, fieldset[disabled] .minnpost-styles .button.active {
+  background-color: white;
+  border-color: #787878;
+}
+.minnpost-styles .button-link {
+  color: #801019;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+}
+.minnpost-styles .button-link, .minnpost-styles .button-link:active, .minnpost-styles .button-link[disabled], fieldset[disabled] .minnpost-styles .button-link {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.minnpost-styles .button-link, .minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus, .minnpost-styles .button-link:active {
+  border-color: transparent;
+}
+.minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus {
+  color: #801019;
+  text-decoration: underline;
+  background-color: transparent;
+}
+.minnpost-styles .button-link[disabled]:hover, .minnpost-styles .button-link[disabled]:focus, fieldset[disabled] .minnpost-styles .button-link:hover, fieldset[disabled] .minnpost-styles .button-link:focus {
+  color: #787878;
+  text-decoration: none;
+}
+.minnpost-styles .button-large {
+  font-size: 2em;
+}
+.minnpost-styles .button-small {
+  font-size: 0.85em;
+}
+.minnpost-styles .button-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+.minnpost-styles .button-block + .button-block {
+  margin-top: 5px;
+}
+.minnpost-styles input[type="submit"].button-block,
+.minnpost-styles input[type="reset"].button-block,
+.minnpost-styles input[type="button"].button-block {
+  width: 100%;
+}
+
+/**
+ * Styles for tables.
+ */
+.minnpost-styles table {
+  width: 100%;
+  margin-bottom: 1em;
+  text-align: left;
+  line-height: 1.25em;
+}
+.minnpost-styles table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #c5c5c5;
+  line-height: 1.25em;
+  padding: 0.5em;
+}
+.minnpost-styles table tbody td {
+  vertical-align: top;
+  border-bottom: 1px solid #c5c5c5;
+  padding: 0.5em;
+}
+.minnpost-styles table tbody tr:nth-child(odd) td {
+  background-color: #f8f8f8;
+}
+
+/**
+ * Forms.
+ * Much borrowed from Bootstrap.
+ */
+.minnpost-styles fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.minnpost-styles legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1em;
+  border: 0;
+  border-bottom: 1px solid #9e9e9e;
+}
+.minnpost-styles label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.minnpost-styles input,
+.minnpost-styles textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.minnpost-styles input[type="radio"],
+.minnpost-styles input[type="checkbox"] {
+  margin: 2px 0 0;
+  margin-top: 1px \9;
+  /* IE8-9 */
+  line-height: normal;
+}
+.minnpost-styles input[type="file"] {
+  display: block;
+}
+.minnpost-styles select[multiple],
+.minnpost-styles select[size] {
+  height: auto;
+}
+.minnpost-styles select optgroup {
+  font-size: inherit;
+  font-style: inherit;
+  font-family: inherit;
+}
+.minnpost-styles input[type="file"]:focus,
+.minnpost-styles input[type="radio"]:focus,
+.minnpost-styles input[type="checkbox"]:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.minnpost-styles input[type="number"]::-webkit-outer-spin-button, .minnpost-styles input[type="number"]::-webkit-inner-spin-button {
+  height: auto;
+}
+.minnpost-styles output {
+  display: block;
+  padding-top: 1em;
+  font-size: 1em;
+  line-height: 1.25em;
+}
+.minnpost-styles select,
+.minnpost-styles textarea,
+.minnpost-styles input[type="text"],
+.minnpost-styles input[type="password"],
+.minnpost-styles input[type="datetime"],
+.minnpost-styles input[type="datetime-local"],
+.minnpost-styles input[type="date"],
+.minnpost-styles input[type="month"],
+.minnpost-styles input[type="time"],
+.minnpost-styles input[type="week"],
+.minnpost-styles input[type="number"],
+.minnpost-styles input[type="email"],
+.minnpost-styles input[type="url"],
+.minnpost-styles input[type="search"],
+.minnpost-styles input[type="tel"],
+.minnpost-styles input[type="color"],
+.minnpost-styles .form-input {
+  display: block;
+  width: 100%;
+  min-height: 1.8125em;
+  padding: 0.25em 0.5em;
+  font-size: 1em;
+  line-height: 1.5625em;
+  color: #1a1818;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #9e9e9e;
+  vertical-align: middle;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out, box-shadow ease-in-out;
+  -webkit-transition-delay: 0.15s, 0.15s;
+  -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+.minnpost-styles select:focus,
+.minnpost-styles textarea:focus,
+.minnpost-styles input[type="text"]:focus,
+.minnpost-styles input[type="password"]:focus,
+.minnpost-styles input[type="datetime"]:focus,
+.minnpost-styles input[type="datetime-local"]:focus,
+.minnpost-styles input[type="date"]:focus,
+.minnpost-styles input[type="month"]:focus,
+.minnpost-styles input[type="time"]:focus,
+.minnpost-styles input[type="week"]:focus,
+.minnpost-styles input[type="number"]:focus,
+.minnpost-styles input[type="email"]:focus,
+.minnpost-styles input[type="url"]:focus,
+.minnpost-styles input[type="search"]:focus,
+.minnpost-styles input[type="tel"]:focus,
+.minnpost-styles input[type="color"]:focus,
+.minnpost-styles .form-input:focus {
+  border-color: #787878;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+}
+.minnpost-styles select:-moz-placeholder,
+.minnpost-styles textarea:-moz-placeholder,
+.minnpost-styles input[type="text"]:-moz-placeholder,
+.minnpost-styles input[type="password"]:-moz-placeholder,
+.minnpost-styles input[type="datetime"]:-moz-placeholder,
+.minnpost-styles input[type="datetime-local"]:-moz-placeholder,
+.minnpost-styles input[type="date"]:-moz-placeholder,
+.minnpost-styles input[type="month"]:-moz-placeholder,
+.minnpost-styles input[type="time"]:-moz-placeholder,
+.minnpost-styles input[type="week"]:-moz-placeholder,
+.minnpost-styles input[type="number"]:-moz-placeholder,
+.minnpost-styles input[type="email"]:-moz-placeholder,
+.minnpost-styles input[type="url"]:-moz-placeholder,
+.minnpost-styles input[type="search"]:-moz-placeholder,
+.minnpost-styles input[type="tel"]:-moz-placeholder,
+.minnpost-styles input[type="color"]:-moz-placeholder,
+.minnpost-styles .form-input:-moz-placeholder {
+  color: #9e9e9e;
+}
+.minnpost-styles select::-moz-placeholder,
+.minnpost-styles textarea::-moz-placeholder,
+.minnpost-styles input[type="text"]::-moz-placeholder,
+.minnpost-styles input[type="password"]::-moz-placeholder,
+.minnpost-styles input[type="datetime"]::-moz-placeholder,
+.minnpost-styles input[type="datetime-local"]::-moz-placeholder,
+.minnpost-styles input[type="date"]::-moz-placeholder,
+.minnpost-styles input[type="month"]::-moz-placeholder,
+.minnpost-styles input[type="time"]::-moz-placeholder,
+.minnpost-styles input[type="week"]::-moz-placeholder,
+.minnpost-styles input[type="number"]::-moz-placeholder,
+.minnpost-styles input[type="email"]::-moz-placeholder,
+.minnpost-styles input[type="url"]::-moz-placeholder,
+.minnpost-styles input[type="search"]::-moz-placeholder,
+.minnpost-styles input[type="tel"]::-moz-placeholder,
+.minnpost-styles input[type="color"]::-moz-placeholder,
+.minnpost-styles .form-input::-moz-placeholder {
+  color: #9e9e9e;
+  opacity: 1;
+}
+.minnpost-styles select:-ms-input-placeholder,
+.minnpost-styles textarea:-ms-input-placeholder,
+.minnpost-styles input[type="text"]:-ms-input-placeholder,
+.minnpost-styles input[type="password"]:-ms-input-placeholder,
+.minnpost-styles input[type="datetime"]:-ms-input-placeholder,
+.minnpost-styles input[type="datetime-local"]:-ms-input-placeholder,
+.minnpost-styles input[type="date"]:-ms-input-placeholder,
+.minnpost-styles input[type="month"]:-ms-input-placeholder,
+.minnpost-styles input[type="time"]:-ms-input-placeholder,
+.minnpost-styles input[type="week"]:-ms-input-placeholder,
+.minnpost-styles input[type="number"]:-ms-input-placeholder,
+.minnpost-styles input[type="email"]:-ms-input-placeholder,
+.minnpost-styles input[type="url"]:-ms-input-placeholder,
+.minnpost-styles input[type="search"]:-ms-input-placeholder,
+.minnpost-styles input[type="tel"]:-ms-input-placeholder,
+.minnpost-styles input[type="color"]:-ms-input-placeholder,
+.minnpost-styles .form-input:-ms-input-placeholder {
+  color: #9e9e9e;
+}
+.minnpost-styles select::-webkit-input-placeholder,
+.minnpost-styles textarea::-webkit-input-placeholder,
+.minnpost-styles input[type="text"]::-webkit-input-placeholder,
+.minnpost-styles input[type="password"]::-webkit-input-placeholder,
+.minnpost-styles input[type="datetime"]::-webkit-input-placeholder,
+.minnpost-styles input[type="datetime-local"]::-webkit-input-placeholder,
+.minnpost-styles input[type="date"]::-webkit-input-placeholder,
+.minnpost-styles input[type="month"]::-webkit-input-placeholder,
+.minnpost-styles input[type="time"]::-webkit-input-placeholder,
+.minnpost-styles input[type="week"]::-webkit-input-placeholder,
+.minnpost-styles input[type="number"]::-webkit-input-placeholder,
+.minnpost-styles input[type="email"]::-webkit-input-placeholder,
+.minnpost-styles input[type="url"]::-webkit-input-placeholder,
+.minnpost-styles input[type="search"]::-webkit-input-placeholder,
+.minnpost-styles input[type="tel"]::-webkit-input-placeholder,
+.minnpost-styles input[type="color"]::-webkit-input-placeholder,
+.minnpost-styles .form-input::-webkit-input-placeholder {
+  color: #9e9e9e;
+}
+.minnpost-styles select[disabled], .minnpost-styles select[readonly], fieldset[disabled] .minnpost-styles select,
+.minnpost-styles textarea[disabled],
+.minnpost-styles textarea[readonly], fieldset[disabled]
+.minnpost-styles textarea,
+.minnpost-styles input[type="text"][disabled],
+.minnpost-styles input[type="text"][readonly], fieldset[disabled]
+.minnpost-styles input[type="text"],
+.minnpost-styles input[type="password"][disabled],
+.minnpost-styles input[type="password"][readonly], fieldset[disabled]
+.minnpost-styles input[type="password"],
+.minnpost-styles input[type="datetime"][disabled],
+.minnpost-styles input[type="datetime"][readonly], fieldset[disabled]
+.minnpost-styles input[type="datetime"],
+.minnpost-styles input[type="datetime-local"][disabled],
+.minnpost-styles input[type="datetime-local"][readonly], fieldset[disabled]
+.minnpost-styles input[type="datetime-local"],
+.minnpost-styles input[type="date"][disabled],
+.minnpost-styles input[type="date"][readonly], fieldset[disabled]
+.minnpost-styles input[type="date"],
+.minnpost-styles input[type="month"][disabled],
+.minnpost-styles input[type="month"][readonly], fieldset[disabled]
+.minnpost-styles input[type="month"],
+.minnpost-styles input[type="time"][disabled],
+.minnpost-styles input[type="time"][readonly], fieldset[disabled]
+.minnpost-styles input[type="time"],
+.minnpost-styles input[type="week"][disabled],
+.minnpost-styles input[type="week"][readonly], fieldset[disabled]
+.minnpost-styles input[type="week"],
+.minnpost-styles input[type="number"][disabled],
+.minnpost-styles input[type="number"][readonly], fieldset[disabled]
+.minnpost-styles input[type="number"],
+.minnpost-styles input[type="email"][disabled],
+.minnpost-styles input[type="email"][readonly], fieldset[disabled]
+.minnpost-styles input[type="email"],
+.minnpost-styles input[type="url"][disabled],
+.minnpost-styles input[type="url"][readonly], fieldset[disabled]
+.minnpost-styles input[type="url"],
+.minnpost-styles input[type="search"][disabled],
+.minnpost-styles input[type="search"][readonly], fieldset[disabled]
+.minnpost-styles input[type="search"],
+.minnpost-styles input[type="tel"][disabled],
+.minnpost-styles input[type="tel"][readonly], fieldset[disabled]
+.minnpost-styles input[type="tel"],
+.minnpost-styles input[type="color"][disabled],
+.minnpost-styles input[type="color"][readonly], fieldset[disabled]
+.minnpost-styles input[type="color"],
+.minnpost-styles .form-input[disabled],
+.minnpost-styles .form-input[readonly], fieldset[disabled]
+.minnpost-styles .form-input {
+  cursor: not-allowed;
+  background-color: #c5c5c5;
+}
+.minnpost-styles textarea {
+  height: auto;
+}
+.minnpost-styles .form-item {
+  margin-bottom: 1em;
+}
+.minnpost-styles .radio,
+.minnpost-styles .checkbox {
+  display: block;
+  min-height: 1.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 2em;
+}
+.minnpost-styles .radio label,
+.minnpost-styles .checkbox label {
+  display: inline;
+  font-weight: normal;
+  cursor: pointer;
+}
+.minnpost-styles .radio input[type="radio"],
+.minnpost-styles .radio-inline input[type="radio"],
+.minnpost-styles .checkbox input[type="checkbox"],
+.minnpost-styles .checkbox-inline input[type="checkbox"] {
+  float: left;
+  margin-left: -1.5em;
+}
+.minnpost-styles .radio + .radio,
+.minnpost-styles .checkbox + .checkbox {
+  margin-top: -5px;
+}
+.minnpost-styles .radio-inline,
+.minnpost-styles .checkbox-inline {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+  padding-left: 2em;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+.minnpost-styles .radio-inline + .radio-inline,
+.minnpost-styles .checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 1em;
+}
+.minnpost-styles input[type="radio"][disabled], fieldset[disabled] .minnpost-styles input[type="radio"],
+.minnpost-styles input[type="checkbox"][disabled], fieldset[disabled]
+.minnpost-styles input[type="checkbox"],
+.minnpost-styles .radio[disabled], fieldset[disabled]
+.minnpost-styles .radio,
+.minnpost-styles .radio-inline[disabled], fieldset[disabled]
+.minnpost-styles .radio-inline,
+.minnpost-styles .checkbox[disabled], fieldset[disabled]
+.minnpost-styles .checkbox,
+.minnpost-styles .checkbox-inline[disabled], fieldset[disabled]
+.minnpost-styles .checkbox-inline {
+  cursor: not-allowed;
+}
+.minnpost-styles .form-help {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: #c5c5c5;
+}
+.minnpost-styles .form-inline .form-item {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+  margin-bottom: 0;
+  vertical-align: middle;
+  margin-right: 1em;
+}
+.minnpost-styles .form-inline .form-item label {
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.minnpost-styles .form-inline .radio,
+.minnpost-styles .form-inline .checkbox {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  vertical-align: middle;
+}
+.minnpost-styles .form-inline .radio input[type="radio"],
+.minnpost-styles .form-inline .checkbox input[type="checkbox"] {
+  float: none;
+  margin-left: 0;
 }
 
 /**
@@ -524,10 +1175,30 @@ html {
  */
 .minnpost-styles {
   /**
-   * Images
+   * Images are responsive by default
+   */
+  /**
+   * Tables.  Inspired by Bootstraps method.
    */
 }
-.minnpost-styles .img-responsive {
+.minnpost-styles img {
   max-width: 100%;
   height: auto;
+}
+.minnpost-styles img .nonresponsive {
+  max-width: auto;
+}
+@media (max-width: 960px) {
+  .minnpost-styles .table-responsive {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .minnpost-styles .table-responsive table {
+    margin-bottom: 0;
+  }
 }
