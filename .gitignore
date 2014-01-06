@@ -1,7 +1,9 @@
 node_modules/
 components/
-bower_components/
 !dist
+
+# Include bower components for deployment
+# bower_components/
 
 # General git ignores
 .sass-cache
