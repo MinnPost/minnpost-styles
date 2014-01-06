@@ -4,8 +4,11 @@
  */
 
 @import "compass";
-@import "_mixins";
+@import "compass/css3";
 @import "_variables";
+@import "_functions";
+@import "_mixins";
+@import "_helpers";
 @import "_reset";
 @import "_layout";
 @import "_clearfix";

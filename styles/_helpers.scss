@@ -1,0 +1,61 @@
+/**
+ * Helper classes, repeated from mixins.
+ */
+
+.minnpost-styles {
+
+  // Mixin classes
+  .inline-block {
+    @include inline-block();
+  }
+
+  .clearfix, .cf {
+    @include clearfix();
+  }
+
+  .tab-focus {
+    @include tab-focus();
+  }
+
+  .center-block {
+    @include center-block();
+  }
+
+  .text-overflow {
+    @include text-overflow();
+  }
+
+  .text-hide {
+    @include text-hide();
+  }
+
+  .screen-reader-only, .sr-only {
+    @include screen-reader-only();
+  }
+
+  .hide, .hidden {
+    @include hidden();
+  }
+
+  // Simple utilities
+  .float-right {
+    float: right;
+  }
+
+  .float-left {
+    float: left;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .show-inline {
+    display: inline;
+  }
+
+  .invisible {
+    visibility: hidden;
+  }
+
+}

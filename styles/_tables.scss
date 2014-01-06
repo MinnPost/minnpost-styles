@@ -8,14 +8,14 @@
     width: 100%;
     margin-bottom: $space;
     text-align: left;
-    line-height: $space-line-height;
+    line-height: $text-line-height;
 
     thead {
 
       th {
         vertical-align: bottom;
         border-bottom: 2px solid $color-lighter-gray;
-        line-height: $space-line-height;
+        line-height: $text-line-height;
         padding: (0.5 * $space);
       }
     }

@@ -9,7 +9,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: $space-heading-bottom;
-    line-height: $space-line-height;
+    line-height: $text-line-height;
   }
 
   h1 {
@@ -51,7 +51,7 @@
   // Paragraph
   p {
     margin-bottom: $space;
-    line-height: $space-line-height;
+    line-height: $text-line-height;
   }
 
   // Various text modifiers
@@ -129,7 +129,7 @@
   // Code styles
   code {
     font-family: $font-monospace;
-    line-height: $space-line-height;
+    line-height: $text-line-height;
     font-size: 0.9em;
     background-color: $color-lightest-gray;
     padding: 2px 4px;

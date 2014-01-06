@@ -234,6 +234,90 @@ example here. </code></pre>
 
 
 
+      <h2>Forms</h2>
+
+      <p>Form styles borrowed liberally from Bootstrap.</p>
+
+      <h3>Regular form</h3>
+
+      <p>The following is a basic input form.</p>
+
+      <div class="example">
+        <form role="form">
+          <div class="form-item">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" id="exampleInputEmail1" placeholder="Enter email">
+          </div>
+
+          <div class="form-item">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" id="exampleInputPassword1" placeholder="Password">
+            <p class="form-help">Example block-level help text here.</p>
+          </div>
+
+          <div class="form-item">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="form-help">Example block-level help text here.</p>
+          </div>
+
+          <div class="form-item">
+            <label>Checkboxes</label>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="checkboxes" value="2"> Check, check
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="checkboxes" value="2"> Check me out
+              </label>
+            </div>
+          </div>
+
+          <div class="form-item">
+            <label>Radios</label>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Option 1
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked> Option 2
+              </label>
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Field group with legend</legend>
+
+            <div class="form-item">
+              <label for="exampleTextarea">Lots of text</label>
+              <textarea type="text" id="exampleTextarea" placeholder="Enter something"></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="button">Submit</button>
+        </form>
+
+      </div>
+
+      <h3>Inline form</h3>
+
+      <p>The following is a basic input form.</p>
+
+      <div class="example">
+        <form role="form" class="form-inline">
+          <div class="form-item">
+            <label for="exampleInputEmail1" class="sr-only">Email address</label>
+            <input type="email" id="exampleInputEmail1" placeholder="Enter email">
+          </div>
+
+          <button type="submit" class="button">Submit</button>
+        </form>
+      </div>
+
     </div>
 
     <script src="dist/minnpost-styles.min.js"></script>
