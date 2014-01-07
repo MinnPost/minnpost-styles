@@ -15,7 +15,7 @@
  * Helper utilities
  */
 /**
- * Function helpers
+ * Mixins with parameters
  */
 /**
  * Responsive
@@ -83,6 +83,17 @@
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+}
+@media print {
+  .minnpost-styles .print-visible {
+    display: block;
+  }
+}
+@media print {
+  .minnpost-styles .print-hidden {
+    display: none;
+    visibility: hidden;
+  }
 }
 .minnpost-styles .float-right {
   float: right;
@@ -675,6 +686,87 @@ html {
 .minnpost-styles pre code {
   background-color: inherit;
   padding: 0;
+}
+
+/**
+ * Icons provided by Font Awesome.
+ *
+ * A bit of styling to ensure they work correctly given that we prefix all
+ * the styles.  There should be a better way to handle this.
+ */
+.minnpost-styles {
+  /* makes the font 33% larger relative to the icon container */
+}
+.minnpost-styles .fa,
+.minnpost-styles .loading {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.minnpost-styles .fa-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.minnpost-styles .fa-2x {
+  font-size: 2em;
+}
+.minnpost-styles .fa-3x {
+  font-size: 3em;
+}
+.minnpost-styles .fa-4x {
+  font-size: 4em;
+}
+.minnpost-styles .fa-5x {
+  font-size: 5em;
+}
+.minnpost-styles .fa-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+.minnpost-styles .fa-ul {
+  padding-left: 0;
+  margin-left: 2.142857142857143em;
+  list-style-type: none;
+}
+.minnpost-styles .fa-ul > li {
+  position: relative;
+}
+.minnpost-styles .fa-li {
+  position: absolute;
+  left: -2.142857142857143em;
+  width: 2.142857142857143em;
+  top: 0.14285714285714285em;
+  text-align: center;
+}
+.minnpost-styles .fa-li.fa-lg {
+  left: -1.8571428571428572em;
+}
+.minnpost-styles .fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em;
+}
+.minnpost-styles .loading {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  padding: 1em 2em;
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+}
+.minnpost-styles .loading:before {
+  content: "\f110";
 }
 
 /**
