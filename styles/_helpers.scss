@@ -41,6 +41,14 @@
     @include tab-focus();
   }
 
+  .print-visible {
+    @include print-visible();
+  }
+
+  .print-hidden {
+    @include print-hidden();
+  }
+
   // Simple utilities
   .float-right {
     float: right;

@@ -97,9 +97,23 @@
   outline-offset: -2px;
 }
 
+// Print only
+@mixin print-visible {
+  @media print {
+    display: block;
+  }
+}
+
+// Print hidden
+@mixin print-hidden {
+  @media print {
+    @include hidden();
+  }
+}
+
 
 /**
- * Function helpers
+ * Mixins with parameters
  */
 
 // Placeholder text for color
@@ -117,6 +131,14 @@
   // IE8 filter
   $opacity-ie: ($opacity * 100);
   filter: "alpha(opacity=$opacity-ie)";
+}
+
+// Animation
+@mixin animation($value) {
+  -webkit-animation: $value;
+  -moz-animation: $value;
+  -o-animation: $value;
+  animation: $value;
 }
 
 
