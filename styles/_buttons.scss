@@ -95,15 +95,6 @@
   }
 
 
-  // Button Sizes
-  .button-large {
-    font-size: $text-size * 2;
-  }
-  .button-small {
-    font-size: $text-size * 0.85;
-  }
-
-
   // Block button
   .button-block {
     display: block;
@@ -114,7 +105,7 @@
 
   // Vertically space out multiple block buttons
   .button-block + .button-block {
-    margin-top: 5px;
+    margin-top: $space-vertical-margin;
   }
 
   // Specificity overrides
@@ -124,5 +115,61 @@
     &.button-block {
       width: 100%;
     }
+  }
+
+  // Make the div behave like a button
+  .button-group,
+  .button-group-vertical {
+    @include inline-block();
+    position: relative;
+    vertical-align: middle;
+    > .button {
+      position: relative;
+      float: left;
+      margin-right: 0;
+
+      // Bring the "active" button to the front
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        z-index: 2;
+      }
+      &:focus {
+        // Remove focus outline when dropdown JS adds it after closing the menu
+        outline: none;
+      }
+    }
+  }
+
+  // Prevent double borders when buttons are next to each other
+  .button-group {
+    .button + .button,
+    .button + .button-group,
+    .button-group + .button,
+    .button-group + .button-group {
+      margin-left: -1px;
+    }
+  }
+
+  // Optional: Group multiple button groups together for a toolbar
+  .button-toolbar {
+    margin-left: -5px; // Offset the first child's margin
+    @include clearfix();
+
+    .button-group,
+    .input-group {
+      float: left;
+    }
+    > .button,
+    > .button-group,
+    > .input-group {
+      margin-left: 5px;
+      margin-right: 0;
+    }
+  }
+
+  .button-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    @include border-radius(0);
   }
 }

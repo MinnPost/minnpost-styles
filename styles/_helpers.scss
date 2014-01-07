@@ -50,6 +50,26 @@
   }
 
   // Simple utilities
+  .small {
+    font-size: 0.85em !important;
+  }
+
+  .large {
+    font-size: 1.25em !important;
+  }
+
+  .large-2x {
+    font-size: 2em !important;
+  }
+
+  .large-3x {
+    font-size: 3em !important;
+  }
+
+  .large-4x {
+    font-size: 4em !important;
+  }
+
   .float-right {
     float: right;
   }

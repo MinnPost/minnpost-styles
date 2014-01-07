@@ -294,8 +294,8 @@ example here. </code></pre>
             <legend>Field group with legend</legend>
 
             <div class="form-item">
-              <label for="exampleTextarea">Lots of text</label>
-              <textarea type="text" id="exampleTextarea" placeholder="Enter something"></textarea>
+              <label for="example03">Lots of text</label>
+              <textarea type="text" id="example03" placeholder="Enter something"></textarea>
             </div>
           </fieldset>
 
@@ -309,21 +309,54 @@ example here. </code></pre>
 
       <h3>Inline form</h3>
 
-      <p>The following is a basic input form.</p>
+      <p>The following is a basic inline form.</p>
 
       <div class="example">
         <form role="form" class="form-inline">
           <div class="form-item">
-            <label for="exampleInputEmail1" class="sr-only">Email address</label>
-            <input type="email" id="exampleInputEmail1" placeholder="Email">
+            <label for="example51" class="sr-only">Email address</label>
+            <input type="email" id="example51" placeholder="Email">
           </div>
 
           <div class="form-item">
-            <label for="exampleInputPassword1" class="sr-only">Password</label>
-            <input type="password" id="exampleInputPassword1" placeholder="Password">
+            <label for="example52" class="sr-only">Password</label>
+            <input type="password" id="example52" placeholder="Password">
           </div>
 
           <button type="submit" class="button">Submit</button>
+        </form>
+      </div>
+      <div class="example-code">
+<pre><code> </pre></code>
+      </div>
+
+      <h3>Input group</h3>
+
+      <p>For single input forms, use an input group.</p>
+
+      <div class="example">
+        <form role="form">
+          <div class="form-input-group">
+            <label for="address" class="sr-only">Email address</label>
+            <input type="text" id="address" placeholder="Search by address">
+
+            <div class="button-group">
+              <button type="submit" class="button"><i class="fa fa-compass"></i></button>
+              <button type="submit" class="button">Search</button>
+            </div>
+          </div>
+        </form>
+
+        <form role="form" class="large">
+          <div class="form-input-group">
+            <label for="address2" class="sr-only">Email address</label>
+            <input type="text" id="address2" placeholder="Search by address">
+
+            <div class="button-group">
+              <button type="submit" class="button"><i class="fa fa-compass"></i></button>
+              <button type="submit" class="button">Search</button>
+            </div>
+          </div>
         </form>
       </div>
       <div class="example-code">
@@ -346,11 +379,15 @@ example here. </code></pre>
         </p>
 
         <p>
-          <button class="button button-large">Large</button>
+          <button class="button large">Large</button>
         </p>
 
         <p>
-          <button class="button button-small">Small</button>
+          <button class="button large-2x"><i class="fa fa-flash"></i> Flash 2x</button>
+        </p>
+
+        <p>
+          <button class="button small">Small</button>
         </p>
 
         <p>
@@ -366,6 +403,42 @@ example here. </code></pre>
 &lt;button class="button button-small"&gt;Small&lt;/button&gt; </pre></code>
       </div>
 
+      <h3>Button groups</h3>
+
+      <p>Buttons next to each other.</p>
+
+      <div class="example">
+        <div class="button-group">
+          <button class="button">Button</button>
+          <button class="button">2</button>
+          <button class="button">3</button>
+        </div>
+      </div>
+      <div class="example-code">
+<pre><code> </pre></code>
+      </div>
+
+      <h3>Button toolbar</h3>
+
+      <p>Buttons groups next to each other.</p>
+
+      <div class="example">
+        <div class="button-toolbar">
+          <div class="button-group">
+            <button class="button">Button</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+          </div>
+
+          <div class="button-group">
+            <button class="button">1</button>
+            <button class="button">2</button>
+          </div>
+        </div>
+      </div>
+      <div class="example-code">
+<pre><code> </pre></code>
+      </div>
 
 
 
