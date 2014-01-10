@@ -27,3 +27,14 @@ body .example-code {
   background-color: transparent;
   padding: 0;
 }
+
+body .grid-container {
+  background-color: #ABABAB;
+}
+body .grid-25,
+body .grid-50 {
+  background-color: #DCDCDC;
+}
+body .grid-inner {
+  background-color: #898989;
+}

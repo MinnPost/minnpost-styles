@@ -50,7 +50,10 @@ module.exports = function(grunt) {
         javascriptsDir: 'js',
         //importPath: 'bower_components',
         httpPath: './',
-        relativeAssets: true
+        relativeAssets: true,
+        // See: https://github.com/nathansmith/unsemantic/issues/3
+        // This does not seem to surpress the deprecation warnings.
+        quiet: true
       },
       dist: {
         options: {

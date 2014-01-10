@@ -16,6 +16,7 @@
     "tests"
   ],
   "devDependencies": {
-    "holderjs": "~2.2.0"
+    "holderjs": "~2.2.0",
+    "unsemantic": "https://github.com/nathansmith/unsemantic.git"
   }
 }

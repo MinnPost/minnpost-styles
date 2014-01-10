@@ -26,10 +26,6 @@ All commands are assumed to on the [command line](http://en.wikipedia.org/wiki/C
 1. Install [Bower](http://bower.io/): `npm install -g bower`
 1. Install [Ruby](http://www.ruby-lang.org/en/downloads/), though it is probably already installed on your system.
 1. Install [Bundler](http://gembundler.com/): `gem install bundler`
-1. Install [Sass](http://sass-lang.com/): `gem install sass`
-   * On a Mac do: `sudo gem install sass`
-1. Install [Compass](http://compass-style.org/): `gem install compass`
-   * On a Mac do: `sudo gem install compass`
 
 ### Get code and install packages
 
@@ -39,6 +35,8 @@ Get the code for this project and install the necessary dependency libraries and
 1. Go into the project directory: `cd minnpost-styles`
 1. Install NodeJS packages: `npm install`
 1. Install Bower components: `bower install`
+1. Install Ruby gems: 'bundle install'
+    * On a Mac you will probably have to do: `sudo bundle install`
 
 ### Running
 

@@ -6,6 +6,16 @@
 $full-page-container-width: 960px;
 $sidebar-page-container-width: 640px;
 
+// Responsive container
+$media-mobile-max: 640px !default;
+$media-tablet-min: 641px !default;
+$media-tablet-max: 959px !default;
+$media-desktop-min: 960px !default;
+
+// Unsemantic
+$unsemantic-ie7-support: false;
+$gutter-half: 0.5em;
+
 // Text
 $text-line-height: 1.25em;
 $text-size: 1em;

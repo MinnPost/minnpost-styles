@@ -7,7 +7,7 @@
     <meta name="description" content="The MinnPost super-fly style guide, specifically focused on interactive and news applications made by the MinnData team.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="dist/minnpost-styles.min.css">
+    <link rel="stylesheet" href="dist/minnpost-styles.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="styles/demo.css">
   </head>
@@ -42,6 +42,64 @@
 &lt;/body&gt; </code></pre>
       </div>
 
+
+
+
+
+
+      <h2>Grid</h2>
+
+      <p>The grid is provided by <a href="http://unsemantic.com/" target="_blank">Unsemantic</a>.  Unsemantic provides a responsive grid that easily customizable through SASS.</p>
+
+      <div class="example">
+        <div class="grid-container bottom-spacer">
+          <div class="grid-25">
+            <div class="grid-inner">
+              I am 25% wide.
+            </div>
+          </div>
+          <div class="grid-50">
+            <div class="grid-inner">
+              I am 50% wide.
+            </div>
+          </div>
+          <div class="grid-25">
+            <div class="grid-inner">
+              I am 25% wide.
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-container grid-parent grid-pull-out bottom-spacer">
+          <div class="grid-25">
+            <div class="grid-inner">
+              I am 25% wide.
+            </div>
+          </div>
+          <div class="grid-25">
+            <div class="grid-inner">
+              I am 25% wide.
+            </div>
+          </div>
+          <div class="grid-25">
+            <div class="grid-inner">
+              I am 25% wide.
+            </div>
+          </div>
+          <div class="grid-25">
+            <div class="grid-inner">
+              I am 25% wide.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="example-code">
+<pre><code> </code></pre>
+      </div>
+
+      <h3>Break points</h3>
+
+      <p>There are some built-in break points.  It is important to note that though it is good practice to make sure your application looks good on all devices, using common breakpoints is not always a good idea.  <strong>You should make breakpoints where content needs to change, not at "common" breakpoints</strong>.</p>
 
 
       <h2>Typography</h2>

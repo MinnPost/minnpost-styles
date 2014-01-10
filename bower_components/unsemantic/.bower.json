@@ -1,0 +1,14 @@
+{
+  "name": "unsemantic",
+  "homepage": "https://github.com/nathansmith/unsemantic",
+  "_release": "4a505f3f56",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4a505f3f56a9ca00fb85adad6a50912482433b83"
+  },
+  "_source": "https://github.com/nathansmith/unsemantic.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/nathansmith/unsemantic.git",
+  "_direct": true
+}

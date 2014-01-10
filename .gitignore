@@ -1,6 +1,7 @@
 node_modules/
 components/
 !dist
+.bundle
 
 # Include bower components for deployment
 # bower_components/
