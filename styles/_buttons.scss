@@ -169,7 +169,7 @@
     }
   }
 
-  .button-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  .button-group > .button:not(:first-child):not(:last-child) {
     @include border-radius(0);
   }
 }
