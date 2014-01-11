@@ -7,11 +7,11 @@
     <meta name="description" content="The MinnPost super-fly style guide, specifically focused on interactive and news applications made by the MinnData team.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="dist/minnpost-styles.css">
+    <link rel="stylesheet" href="dist/minnpost-styles.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="styles/demo.css">
   </head>
-  <body class="minnpost-styles">
+  <body class="mp">
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -26,10 +26,10 @@
 
       <h2>Basic usage</h2>
 
-      <p>Since these styles were made for projects that will get embedded in existing sites, all styles are prefixed with <code>.minnpost-styles</code>.  This means you should wrap your markup like so:</p>
+      <p>Since these styles were made for projects that will get embedded in existing sites, all styles are prefixed with <code>.mp</code>.  This means you should wrap your markup like so:</p>
 
       <div class="example-code">
-<pre><code>&lt;div class="minnpost-styles"&gt;
+<pre><code>&lt;div class="mp"&gt;
   ...
 &lt;/div&gt; </code></pre>
       </div>
@@ -37,10 +37,20 @@
       <p>Or, if you are not embedding, simply add the class to the body:</p>
 
       <div class="example-code">
-<pre><code>&lt;body class="minnpost-styles"&gt;
+<pre><code>&lt;body class="mp"&gt;
 ...
 &lt;/body&gt; </code></pre>
       </div>
+
+
+
+      <h2>Responsive</h2>
+
+      <p>All styles are as responsive as possible by default.</p>
+
+      <h3>Break points</h3>
+
+      <p>There are only a handful of predefined breakpoints provided; things that we use often.  Predefined breakpoints made sense when there were two devices to think about, but not anymore.  <strong>You should make breakpoints where content needs to change, not at "common" breakpoints</strong>.</p>
 
 
 
@@ -49,57 +59,59 @@
 
       <h2>Grid</h2>
 
-      <p>The grid is provided by <a href="http://unsemantic.com/" target="_blank">Unsemantic</a>.  Unsemantic provides a responsive grid that easily customizable through SASS.</p>
+      <p>A really, really basic fluid grid is provided.</p>
 
       <div class="example">
-        <div class="grid-container bottom-spacer">
-          <div class="grid-25">
-            <div class="grid-inner">
-              I am 25% wide.
-            </div>
+
+        <div class="row">
+          <div class="column-25">
+            <p>25%</p>
           </div>
-          <div class="grid-50">
-            <div class="grid-inner">
-              I am 50% wide.
-            </div>
+          <div class="column-25">
+            <p>25%</p>
           </div>
-          <div class="grid-25">
-            <div class="grid-inner">
-              I am 25% wide.
-            </div>
+          <div class="column-50">
+            <p>50%</p>
           </div>
         </div>
 
-        <div class="grid-container grid-parent grid-pull-out bottom-spacer">
-          <div class="grid-25">
-            <div class="grid-inner">
-              I am 25% wide.
-            </div>
+        <div class="row">
+          <div class="column-33">
+            <p>33%</p>
           </div>
-          <div class="grid-25">
-            <div class="grid-inner">
-              I am 25% wide.
-            </div>
-          </div>
-          <div class="grid-25">
-            <div class="grid-inner">
-              I am 25% wide.
-            </div>
-          </div>
-          <div class="grid-25">
-            <div class="grid-inner">
-              I am 25% wide.
-            </div>
+          <div class="column-66">
+            <p>66%</p>
           </div>
         </div>
+
+        <div class="row">
+          <div class="column-15">
+            <p>15%</p>
+          </div>
+          <div class="column-10">
+            <p>10%</p>
+          </div>
+          <div class="column-5">
+            <p>5%</p>
+          </div>
+          <div class="column-20">
+            <p>20%</p>
+          </div>
+          <div class="column-20">
+            <p>20%</p>
+          </div>
+          <div class="column-30">
+            <p>30%</p>
+          </div>
+        </div>
+
       </div>
       <div class="example-code">
 <pre><code> </code></pre>
       </div>
 
-      <h3>Break points</h3>
 
-      <p>There are some built-in break points.  It is important to note that though it is good practice to make sure your application looks good on all devices, using common breakpoints is not always a good idea.  <strong>You should make breakpoints where content needs to change, not at "common" breakpoints</strong>.</p>
+
 
 
       <h2>Typography</h2>

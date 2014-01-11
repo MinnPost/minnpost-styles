@@ -2,7 +2,7 @@
  * Layout and spacing styles.
  */
 
-.minnpost-styles {
+#{$selector-wrapper} {
 
   .full-page-container {
     max-width: $full-page-container-width;

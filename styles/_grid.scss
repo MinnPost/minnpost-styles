@@ -1,33 +1,41 @@
 /**
- * Grid setup using Unsemantic
- * http://unsemantic.com/
- *
- * There should be a better way to include this, but can't
- * find it.  Also, there will be a bunch of deprecation warnings
- * when compiling with SASS but these can be ignored.
+ * Really basic fluid grid system
  */
 
-.minnpost-styles {
-  @import "../bower_components/unsemantic/assets/sass/partials/_unsemantic-ie-snap";
+#{$selector-wrapper} {
 
-  @media screen {
-    @import "../bower_components/unsemantic/assets/sass/partials/_unsemantic-grid-base-tablet";
-  }
+  .row {
+    @include clearfix();
+    margin-left: $grid-gutter * -1;
+    margin-right: $grid-gutter * -1;
+    margin-bottom: $space-horizontal-margin;
 
-  @media screen and (max-width: $media-mobile-max) {
-    @import "../bower_components/unsemantic/assets/sass/partials/_unsemantic-grid-mobile";
-  }
+    .column {
+      position: relative;
+      min-height: 1px;
+      float: left;
+      padding-left: $grid-gutter;
+      padding-right: $grid-gutter;
+    }
 
-  @media screen and (min-width: $media-tablet-min) and (max-width: $media-tablet-max) {
-    @import "../bower_components/unsemantic/assets/sass/partials/_unsemantic-grid-tablet";
-  }
+    // Make grids in 5 intervals
+    @for $i from 1 through 20 {
+      $width: ($i * 5);
 
-  @media screen and (min-width: $media-desktop-min) {
-    @import "../bower_components/unsemantic/assets/sass/partials/_unsemantic-grid-desktop";
-  }
+      .column-#{($i * 5)} {
+        @extend .column;
+        width: $width * 1%;
+      }
+    }
 
-  .grid-pull-out {
-    margin-left: $gutter-half * -1 !important;
-    margin-right: $gutter-half * -1 !important;
+    // Make 33 intervals
+    @for $i from 1 through 2 {
+      $width: ($i / 3 * 100);
+
+      .column-#{floor($width)} {
+        @extend .column;
+        width: $width * 1%;
+      }
+    }
   }
 }

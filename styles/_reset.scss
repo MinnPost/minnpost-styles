@@ -10,14 +10,15 @@
  * Reset styles for container.
  */
 
-.minnpost-styles {
+#{$selector-wrapper} {
   font-size: 100%;
+  -webkit-tap-highlight-color: black(0);
 }
 
 /**
  * Specific styles for when the body has the prefix.
  */
-body.minnpost-styles {
+body#{$selector-wrapper} {
   margin: 0;
   padding: 0;
   border: 0;
@@ -38,7 +39,13 @@ html {
     -webkit-text-size-adjust: 100%; /* 2 */
 }
 
-.minnpost-styles {
+#{$selector-wrapper} {
+
+  *,
+  *:before,
+  *:after {
+    @include box-sizing(border-box);
+  }
 
   /**
    * Eric Meyer Reset
@@ -346,6 +353,9 @@ html {
   input,
   select,
   textarea {
+      font-family: inherit; /* 1 */
+      font-size: inherit; /* 1 */
+      line-height: inherit; /* 1 */
       font-family: inherit; /* 1 */
       font-size: 100%; /* 2 */
       margin: 0; /* 3 */

@@ -2,7 +2,7 @@
  * Labels
  */
 
-.minnpost-styles {
+#{$selector-wrapper} {
   .label {
     display: inline;
     padding: $space-vertical-padding $space-horizontal-padding;

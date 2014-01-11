@@ -2,63 +2,59 @@
  * Variables for minnpost-styles
  */
 
+// Selectors
+$selector-wrapper: ".mp" !default;
+
 // Containers
-$full-page-container-width: 960px;
-$sidebar-page-container-width: 640px;
+$full-page-container-width: 960px !default;
+$sidebar-page-container-width: 640px !default;
 
-// Responsive container
-$media-mobile-max: 640px !default;
-$media-tablet-min: 641px !default;
-$media-tablet-max: 959px !default;
-$media-desktop-min: 960px !default;
-
-// Unsemantic
-$unsemantic-ie7-support: false;
-$gutter-half: 0.5em;
+// Grid
+$grid-gutter: 0.5em !default;
 
 // Text
-$text-line-height: 1.25em;
-$text-size: 1em;
-$text-size-small: 0.85em;
+$text-line-height: 1.25em !default;
+$text-size: 1em !default;
+$text-size-small: 0.85em !default;
 
 // Spacing
-$space: 1em;
-$space-heading-bottom: 0.85em;
+$space: 1em !default;
+$space-heading-bottom: 0.85em !default;
 
-$space-vertical-padding: 0.25em;
-$space-horizontal-padding: 0.5em;
+$space-vertical-padding: 0.25em !default;
+$space-horizontal-padding: 0.5em !default;
 
-$space-vertical-margin: 0.5em;
-$space-horizontal-margin: 1em;
+$space-vertical-margin: 0.5em !default;
+$space-horizontal-margin: 1em !default;
 
 // Radius
-$radius: .25em;
+$radius: .25em !default;
 
 // Fonts
-$font-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-$font-serif: Georgia, "Times New Roman", Times, serif;
-$font-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 
 // Font sizes
-$font-size-base: 14px;
+$font-size-base: 14px !default;
 
 // Basic colors
-$color-text: #1A1818;
-$color-white: #FFFFFF;
-$color-black: #000000;
+$color-text: #1A1818 !default;
+$color-white: #FFFFFF !default;
+$color-black: #000000 !default;
 
 // Gray colors
-$color-gray: #787878;
-$color-dark-gray: darken($color-gray, 15%);
-$color-darker-gray: darken($color-dark-gray, 15%);
-$color-darkest-gray: darken($color-darker-gray, 20%);
-$color-light-gray: lighten($color-gray, 15%);
-$color-lighter-gray: lighten($color-light-gray, 15%);
-$color-lightest-gray: lighten($color-lighter-gray, 20%);
+$color-gray: #787878 !default;
+$color-dark-gray: darken($color-gray, 15%) !default;
+$color-darker-gray: darken($color-dark-gray, 15%) !default;
+$color-darkest-gray: darken($color-darker-gray, 20%) !default;
+$color-light-gray: lighten($color-gray, 15%) !default;
+$color-lighter-gray: lighten($color-light-gray, 15%) !default;
+$color-lightest-gray: lighten($color-lighter-gray, 20%) !default;
 
 // Primary colors
-$color-minnpost-red: #801019;
-$color-blue: #1D70A4;
+$color-minnpost-red: #801019 !default;
+$color-blue: #1D70A4 !default;
 
 // Links
-$color-link: $color-minnpost-red;
+$color-link: $color-minnpost-red !default;

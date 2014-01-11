@@ -5,7 +5,7 @@
  * the styles.  There should be a better way to handle this.
  */
 
-.minnpost-styles {
+#{$selector-wrapper} {
 
   .fa,
   .loading {

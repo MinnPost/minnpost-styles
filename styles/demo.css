@@ -1,14 +1,22 @@
 /**
  * Demo specific styles.
  */
-body .example {
+
+.mp .example h2 {
+  margin-top: inherit;
+}
+.mp h2 {
+  margin-top: 3em;
+}
+
+.mp .example {
   background-color: #fff;
   border: 1px solid #DDDDDD;
   border-radius: 4px 4px 0 0;
   padding: 2em 1em 1em 1em;
 }
 
-body .example-code {
+.mp .example-code {
   background-color: #fafafa;
   border: 1px solid #DDDDDD;
   border-radius: 4px;
@@ -28,13 +36,8 @@ body .example-code {
   padding: 0;
 }
 
-body .grid-container {
-  background-color: #ABABAB;
-}
-body .grid-25,
-body .grid-50 {
-  background-color: #DCDCDC;
-}
-body .grid-inner {
-  background-color: #898989;
+.mp .example .row [class^="column-"] {
+  border: 1px dashed #BFBFBF;
+  background-color: #EFEFEF;
+  padding-top: 1em;
 }
