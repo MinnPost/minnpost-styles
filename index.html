@@ -16,7 +16,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="full-page-container">
+    <div class="minnpost-page-container">
       <div class="spacer"></div>
 
       <h1>MinnPost Styles</h1>
@@ -51,7 +51,7 @@
 
       <h2>Grid</h2>
 
-      <p>A really, really basic mobile-fist fluid grid is provided.  There are 5 provided groups of breakpoints, <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>, and widths are provided in 5% intervals as well as 33% and 66%.  This makes combinations such as <code>.column-small-50</code>, which means that any width greater than or equal to 420px will be 50% wide.</p>
+      <p>A really, really basic, mobile-first, fluid grid is provided.  There are 5 provided groups of breakpoints, <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>, and widths are provided in 5% intervals as well as 33% and 66%.  This makes combinations such as <code>.column-small-50</code>, which means that any width greater than or equal to 420px will be 50% wide.</p>
 
       <div class="example">
 
@@ -468,7 +468,7 @@ example here. </code></pre>
         </p>
 
         <p>
-          <button class="button large-2x"><i class="fa fa-flash"></i> Flash 2x</button>
+          <button class="button xlarge"><i class="fa fa-flash"></i> Flash xLarge</button>
         </p>
 
         <p>
@@ -652,6 +652,52 @@ example here. </code></pre>
 <pre><code> </pre></code>
       </div>
 
+
+
+
+
+      <h2>Helper classes</h2>
+
+      <p>The following helper classes have a SASS @mixin counter part that you can use in your SASS files.</p>
+
+      <ul>
+        <li><code>.inline-block</code>: Cross-browser inline-block.</li>
+        <li><code>.clearfix</code>: Cross-browser clearfix hack.  Also available is <code>.cf</code></li>
+        <li><code>.tab-focus</code>: Provides a consistent WebKit-style focus.</li>
+        <li><code>.center-block</code>: Makes a block that is center and should be given a width.</li>
+        <li><code>.text-overflow</code>: Cuts content off and adds ellipses.  Requires inline-block or block for proper styling.</li>
+        <li><code>.text-hide</code>: Hides text, but still read by screen reader.</li>
+        <li><code>.screen-reader-only</code>: Screen reader only.</li>
+        <li><code>.screen-reader-only</code>: Screen reader only.  Also available is <code>.sr-only</code></li>
+        <li><code>.hidden</code>: Hidden from view and screen readers.  Also available is <code>.hide</code></li>
+        <li><code>.hidden</code>: Hidden from view and screen readers.  Also available is <code>.hide</code></li>
+        <li><code>.print-visible</code>: Visible on print only.</li>
+        <li><code>.print-hidden</code>: Not visible on print.</li>
+      </ul>
+
+      <p>The following are simply helpful classes (no SASS counter parts).</p>
+
+      <ul>
+        <li><code>.xsmall</code>, <code>.small</code>, <code>.large</code>, <code>.xlarge</code>, <code>.xxlarge</code>, <code>.xxlarge</code>: Ups the font size, and given that almost all measurements are in em's then it will also increase the overall spacing.</li>
+        <li><code>.float-right</code>: Float right.</li>
+        <li><code>.float-left</code>: Float left.</li>
+        <li><code>.show</code>: Does a display block.</li>
+        <li><code>.show-inline</code>: Does a display inline.</li>
+      </ul>
+
+
+
+
+
+      <h2>MinnPost specific</h2>
+
+      <p>There are just a few classes that are specific to MinnPost's workflow.</p>
+
+      <ul>
+        <li><code>.minnpost-page-container</code>: Mimics the page container on the MinnPost site.</li>
+        <li><code>.minnpost-article-container</code>: Provides a container that is the same size as a normal article page (with a sidebar).</li>
+        <li><code>.minnpost-full-container</code>: Provides a container that is the same size as a full page article (without a sidebar).</li>
+      </ul>
 
 
 

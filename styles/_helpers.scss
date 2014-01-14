@@ -37,10 +37,6 @@
     @include hidden();
   }
 
-  .tab-focus {
-    @include tab-focus();
-  }
-
   .print-visible {
     @include print-visible();
   }
@@ -50,6 +46,10 @@
   }
 
   // Simple utilities
+  .xsmall {
+    font-size: $text-size-small !important;
+  }
+
   .small {
     font-size: $text-size-small !important;
   }
@@ -58,24 +58,24 @@
     font-size: 1.25em !important;
   }
 
-  .large-2x {
+  .xlarge {
     font-size: 2em !important;
   }
 
-  .large-3x {
+  .xxlarge {
     font-size: 3em !important;
   }
 
-  .large-4x {
+  .xxxlarge {
     font-size: 4em !important;
   }
 
   .float-right {
-    float: right;
+    float: right !important;
   }
 
   .float-left {
-    float: left;
+    float: left !important;
   }
 
   .show {

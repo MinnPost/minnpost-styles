@@ -5,17 +5,21 @@
 #{$selector-wrapper} {
 
   // The following are mostly minnpost-specific
-  .full-page-container {
+  .minnpost-page-container {
     @include center-block();
     max-width: $minnpost-full-width;
+
+    @media screen and (max-width: $minnpost-full-width + 20px) {
+      margin: 0 10px;
+    }
   }
 
-  .sidebar-page-container {
+  .minnpost-article-container {
     @include center-block();
     max-width: $minnpost-article-width;
   }
 
-  .interactive-container {
+  .minnpost-full-container {
     @include center-block();
     max-width: $minnpost-full-width;
   }
