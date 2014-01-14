@@ -1,0 +1,22 @@
+/**
+ * Specific to MinnPost but could be helpful to you.
+ */
+
+#{$selector-wrapper} {
+
+  // The following are mostly minnpost-specific
+  .full-page-container {
+    @include center-block();
+    max-width: $minnpost-full-width;
+  }
+
+  .sidebar-page-container {
+    @include center-block();
+    max-width: $minnpost-article-width;
+  }
+
+  .interactive-container {
+    @include center-block();
+    max-width: $minnpost-full-width;
+  }
+}

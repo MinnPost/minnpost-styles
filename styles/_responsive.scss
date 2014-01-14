@@ -11,17 +11,17 @@
     max-width: 100%;
     height: auto;
 
-    .nonresponsive {
+    &.nonresponsive {
       max-width: auto;
     }
   }
 
   /**
-   * Tables.  Inspired by Bootstraps method.
+   * Responsive tables wrapper.  Inspired by Bootstraps method.
    */
   .table-responsive {
 
-    @media (max-width: $full-page-container-width) {
+    @media (max-width: nth($responsive-points, 2)) {
       width: 100%;
       margin-bottom: $space;
       overflow-x: scroll;

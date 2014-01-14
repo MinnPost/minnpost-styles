@@ -44,14 +44,6 @@
 
 
 
-      <h2>Responsive</h2>
-
-      <p>All styles are as responsive as possible by default.</p>
-
-      <h3>Break points</h3>
-
-      <p>There are only a handful of predefined breakpoints provided; things that we use often.  Predefined breakpoints made sense when there were two devices to think about, but not anymore.  <strong>You should make breakpoints where content needs to change, not at "common" breakpoints</strong>.</p>
-
 
 
 
@@ -59,49 +51,58 @@
 
       <h2>Grid</h2>
 
-      <p>A really, really basic fluid grid is provided.</p>
+      <p>A really, really basic mobile-fist fluid grid is provided.  There are 5 provided groups of breakpoints, <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>, and widths are provided in 5% intervals as well as 33% and 66%.  This makes combinations such as <code>.column-small-50</code>, which means that any width greater than or equal to 420px will be 50% wide.</p>
 
       <div class="example">
 
         <div class="row">
-          <div class="column-25">
-            <p>25%</p>
+          <div class="column-medium-25">
+            <p>25% m+</p>
           </div>
-          <div class="column-25">
-            <p>25%</p>
+          <div class="column-medium-25">
+            <p>25% m+</p>
           </div>
-          <div class="column-50">
-            <p>50%</p>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="column-33">
-            <p>33%</p>
-          </div>
-          <div class="column-66">
-            <p>66%</p>
+          <div class="column-medium-50">
+            <p>50% m+</p>
           </div>
         </div>
 
         <div class="row">
-          <div class="column-15">
-            <p>15%</p>
+          <div class="column-small-33">
+            <p>33% s+</p>
           </div>
-          <div class="column-10">
-            <p>10%</p>
+          <div class="column-small-66">
+            <p>66% s+</p>
           </div>
-          <div class="column-5">
-            <p>5%</p>
+        </div>
+
+        <div class="row">
+          <div class="column-large-15">
+            <p>15% l+</p>
           </div>
-          <div class="column-20">
-            <p>20%</p>
+          <div class="column-large-10">
+            <p>10% l+</p>
           </div>
-          <div class="column-20">
-            <p>20%</p>
+          <div class="column-large-5">
+            <p>5% l+</p>
           </div>
-          <div class="column-30">
-            <p>30%</p>
+          <div class="column-large-20">
+            <p>20% l+</p>
+          </div>
+          <div class="column-large-20">
+            <p>20% l+</p>
+          </div>
+          <div class="column-large-30">
+            <p>30% l+</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column-small-33 column-medium-50">
+            <p>33% s+ 50% m+</p>
+          </div>
+          <div class="column-small-66 column-medium-50">
+            <p>66% s+ 50% m+</p>
           </div>
         </div>
 
@@ -109,6 +110,20 @@
       <div class="example-code">
 <pre><code> </code></pre>
       </div>
+
+      <h3>Breakpoints</h3>
+
+      <p>Predefined breakpoints are silly.  Breakpoints should be defined when content or style no longer makes sense.  That said, MinnPost Styles provides some defaults that we use often on our projects.</p>
+
+      <p>If you are using SASS, it is very simple to update the breakpoints and the size names.  Simply update the following variables.</p>
+
+<pre><code>$responsive-points: 0px 420px 640px 960px 1200px;
+$responsive-classes: xsmall small medium large xlarge; </code></pre>
+
+      <p>Ensure that there are the same number of sizes as there are classes or problems will ensue.  Also note that <code>0px</code> has a special meaning in that it will not be wrapped in a media query and will apply to all browsers.  This means you could turn off the responsive bits by doing the following:</p>
+
+<pre><code>$responsive-points: 0px;
+$responsive-classes: all; </code></pre>
 
 
 

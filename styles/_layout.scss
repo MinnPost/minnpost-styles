@@ -4,30 +4,16 @@
 
 #{$selector-wrapper} {
 
-  .full-page-container {
-    max-width: $full-page-container-width;
-    margin: 0 auto;
-  }
-
-  .sidebar-page-container {
-    max-width: $sidebar-page-container-width;
-    margin: 0 auto;
-  }
-
-  .interactive-container {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
+  // General spacing classes
   .spacer {
     height: $space;
   }
 
   .top-spacer {
-    margin-top: $space;
+    margin-top: $space-vertical-margin;
   }
 
   .bottom-spacer {
-    margin-bottom: $space;
+    margin-bottom: $space-vertical-margin;
   }
 }

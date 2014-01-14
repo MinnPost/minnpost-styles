@@ -111,6 +111,16 @@
   }
 }
 
+// Colunn
+@mixin column {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  padding-left: $grid-gutter;
+  padding-right: $grid-gutter;
+  width: 100%;
+}
+
 
 /**
  * Mixins with parameters

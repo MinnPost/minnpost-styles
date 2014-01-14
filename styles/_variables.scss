@@ -5,9 +5,9 @@
 // Selectors
 $selector-wrapper: ".mp" !default;
 
-// Containers
-$full-page-container-width: 960px !default;
-$sidebar-page-container-width: 640px !default;
+// Responsive
+$responsive-points: 0px 420px 640px 960px 1200px !default;
+$responsive-classes: xsmall small medium large xlarge !default;
 
 // Grid
 $grid-gutter: 0.5em !default;
@@ -20,15 +20,13 @@ $text-size-small: 0.85em !default;
 // Spacing
 $space: 1em !default;
 $space-heading-bottom: 0.85em !default;
-
 $space-vertical-padding: 0.25em !default;
 $space-horizontal-padding: 0.5em !default;
-
-$space-vertical-margin: 0.5em !default;
+$space-vertical-margin: 1em !default;
 $space-horizontal-margin: 1em !default;
 
 // Radius
-$radius: .25em !default;
+$radius: 0.25em !default;
 
 // Fonts
 $font-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
@@ -58,3 +56,7 @@ $color-blue: #1D70A4 !default;
 
 // Links
 $color-link: $color-minnpost-red !default;
+
+// Minnpost specific
+$minnpost-full-width: 960px;
+$minnpost-article-width: 640px;
