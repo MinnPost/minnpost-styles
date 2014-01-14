@@ -1,0 +1,14 @@
+/**
+ * Styles for (highchart) charts
+ */
+
+
+#{$selector-wrapper} {
+
+  .chart {
+    width: 100%;
+    height: 20em;
+    margin-bottom: $space-vertical-margin * 2;
+  }
+
+}

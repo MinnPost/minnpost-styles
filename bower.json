@@ -16,6 +16,10 @@
     "tests"
   ],
   "devDependencies": {
-    "holderjs": "~2.2.0"
+    "holderjs": "~2.2.0",
+    "requirejs": "~2.1.10",
+    "jquery": "1.10",
+    "highcharts": "~3.0.7",
+    "underscore": "~1.5.2"
   }
 }

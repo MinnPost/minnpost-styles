@@ -24,109 +24,6 @@
  * Variants
  */
 /**
- * Helper classes, repeated from mixins.
- */
-.mp .inline-block {
-  display: -moz-inline-stack;
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
-  margin-right: 0.25em;
-}
-.mp .clearfix, .mp .cf {
-  *zoom: 1;
-}
-.mp .clearfix:before, .mp .clearfix:after, .mp .cf:before, .mp .cf:after {
-  content: " ";
-  display: table;
-}
-.mp .clearfix:after, .mp .cf:after {
-  clear: both;
-}
-.mp .tab-focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-.mp .center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.mp .text-overflow {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.mp .text-hide {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
-.mp .screen-reader-only, .mp .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.mp .hide, .mp .hidden {
-  display: none;
-  visibility: hidden;
-}
-.mp .tab-focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-@media print {
-  .mp .print-visible {
-    display: block;
-  }
-}
-@media print {
-  .mp .print-hidden {
-    display: none;
-    visibility: hidden;
-  }
-}
-.mp .small {
-  font-size: 0.85em !important;
-}
-.mp .large {
-  font-size: 1.25em !important;
-}
-.mp .large-2x {
-  font-size: 2em !important;
-}
-.mp .large-3x {
-  font-size: 3em !important;
-}
-.mp .large-4x {
-  font-size: 4em !important;
-}
-.mp .float-right {
-  float: right;
-}
-.mp .float-left {
-  float: left;
-}
-.mp .show {
-  display: block;
-}
-.mp .show-inline {
-  display: inline;
-}
-.mp .invisible {
-  visibility: hidden;
-}
-
-/**
  * Adapted version of Normalize and Eric Meyer's Reset
  * to be within prefix.
  *
@@ -537,6 +434,107 @@ html {
 .mp table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/**
+ * Helper classes, repeated from mixins.
+ */
+.mp .inline-block {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+}
+.mp .clearfix, .mp .cf {
+  *zoom: 1;
+}
+.mp .clearfix:before, .mp .clearfix:after, .mp .cf:before, .mp .cf:after {
+  content: " ";
+  display: table;
+}
+.mp .clearfix:after, .mp .cf:after {
+  clear: both;
+}
+.mp .tab-focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.mp .center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mp .text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.mp .text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.mp .screen-reader-only, .mp .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.mp .hide, .mp .hidden {
+  display: none;
+  visibility: hidden;
+}
+@media print {
+  .mp .print-visible {
+    display: block;
+  }
+}
+@media print {
+  .mp .print-hidden {
+    display: none;
+    visibility: hidden;
+  }
+}
+.mp .xsmall {
+  font-size: 0.85em !important;
+}
+.mp .small {
+  font-size: 0.85em !important;
+}
+.mp .large {
+  font-size: 1.25em !important;
+}
+.mp .xlarge {
+  font-size: 2em !important;
+}
+.mp .xxlarge {
+  font-size: 3em !important;
+}
+.mp .xxxlarge {
+  font-size: 4em !important;
+}
+.mp .float-right {
+  float: right !important;
+}
+.mp .float-left {
+  float: left !important;
+}
+.mp .show {
+  display: block;
+}
+.mp .show-inline {
+  display: inline;
+}
+.mp .invisible {
+  visibility: hidden;
 }
 
 /**
@@ -1947,6 +1945,15 @@ html {
 }
 
 /**
+ * Styles for (highchart) charts
+ */
+.mp .chart {
+  width: 100%;
+  height: 20em;
+  margin-bottom: 2em;
+}
+
+/**
  * Responsive styles for minnpost-styles.
  */
 .mp {
@@ -1982,19 +1989,24 @@ html {
 /**
  * Specific to MinnPost but could be helpful to you.
  */
-.mp .full-page-container {
+.mp .minnpost-page-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 960px;
 }
-.mp .sidebar-page-container {
+@media screen and (max-width: 980px) {
+  .mp .minnpost-page-container {
+    margin: 0 10px;
+  }
+}
+.mp .minnpost-article-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
   max-width: 640px;
 }
-.mp .interactive-container {
+.mp .minnpost-full-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
