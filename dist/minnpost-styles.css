@@ -26,46 +26,46 @@
 /**
  * Helper classes, repeated from mixins.
  */
-.minnpost-styles .inline-block {
+.mp .inline-block {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
   *display: inline;
   margin-right: 0.25em;
 }
-.minnpost-styles .clearfix, .minnpost-styles .cf {
+.mp .clearfix, .mp .cf {
   *zoom: 1;
 }
-.minnpost-styles .clearfix:before, .minnpost-styles .clearfix:after, .minnpost-styles .cf:before, .minnpost-styles .cf:after {
+.mp .clearfix:before, .mp .clearfix:after, .mp .cf:before, .mp .cf:after {
   content: " ";
   display: table;
 }
-.minnpost-styles .clearfix:after, .minnpost-styles .cf:after {
+.mp .clearfix:after, .mp .cf:after {
   clear: both;
 }
-.minnpost-styles .tab-focus {
+.mp .tab-focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.minnpost-styles .center-block {
+.mp .center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.minnpost-styles .text-overflow {
+.mp .text-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.minnpost-styles .text-hide {
+.mp .text-hide {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
   border: 0;
 }
-.minnpost-styles .screen-reader-only, .minnpost-styles .sr-only {
+.mp .screen-reader-only, .mp .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -75,54 +75,54 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-.minnpost-styles .hide, .minnpost-styles .hidden {
+.mp .hide, .mp .hidden {
   display: none;
   visibility: hidden;
 }
-.minnpost-styles .tab-focus {
+.mp .tab-focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 @media print {
-  .minnpost-styles .print-visible {
+  .mp .print-visible {
     display: block;
   }
 }
 @media print {
-  .minnpost-styles .print-hidden {
+  .mp .print-hidden {
     display: none;
     visibility: hidden;
   }
 }
-.minnpost-styles .small {
+.mp .small {
   font-size: 0.85em !important;
 }
-.minnpost-styles .large {
+.mp .large {
   font-size: 1.25em !important;
 }
-.minnpost-styles .large-2x {
+.mp .large-2x {
   font-size: 2em !important;
 }
-.minnpost-styles .large-3x {
+.mp .large-3x {
   font-size: 3em !important;
 }
-.minnpost-styles .large-4x {
+.mp .large-4x {
   font-size: 4em !important;
 }
-.minnpost-styles .float-right {
+.mp .float-right {
   float: right;
 }
-.minnpost-styles .float-left {
+.mp .float-left {
   float: left;
 }
-.minnpost-styles .show {
+.mp .show {
   display: block;
 }
-.minnpost-styles .show-inline {
+.mp .show-inline {
   display: inline;
 }
-.minnpost-styles .invisible {
+.mp .invisible {
   visibility: hidden;
 }
 
@@ -136,14 +136,15 @@
 /**
  * Reset styles for container.
  */
-.minnpost-styles {
+.mp {
   font-size: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /**
  * Specific styles for when the body has the prefix.
  */
-body.minnpost-styles {
+body.mp {
   margin: 0;
   padding: 0;
   border: 0;
@@ -164,7 +165,7 @@ html {
   /* 2 */
 }
 
-.minnpost-styles {
+.mp {
   /**
    * Eric Meyer Reset
    */
@@ -314,19 +315,26 @@ html {
    * Remove most spacing between table cells.
    */
 }
-.minnpost-styles div, .minnpost-styles span, .minnpost-styles applet, .minnpost-styles object, .minnpost-styles iframe,
-.minnpost-styles h1, .minnpost-styles h2, .minnpost-styles h3, .minnpost-styles h4, .minnpost-styles h5, .minnpost-styles h6, .minnpost-styles p, .minnpost-styles blockquote, .minnpost-styles pre,
-.minnpost-styles a, .minnpost-styles abbr, .minnpost-styles acronym, .minnpost-styles address, .minnpost-styles big, .minnpost-styles cite, .minnpost-styles code,
-.minnpost-styles del, .minnpost-styles dfn, .minnpost-styles em, .minnpost-styles img, .minnpost-styles ins, .minnpost-styles kbd, .minnpost-styles q, .minnpost-styles s, .minnpost-styles samp,
-.minnpost-styles small, .minnpost-styles strike, .minnpost-styles strong, .minnpost-styles sub, .minnpost-styles sup, .minnpost-styles tt, .minnpost-styles var,
-.minnpost-styles b, .minnpost-styles u, .minnpost-styles i, .minnpost-styles center,
-.minnpost-styles dl, .minnpost-styles dt, .minnpost-styles dd, .minnpost-styles ol, .minnpost-styles ul, .minnpost-styles li,
-.minnpost-styles fieldset, .minnpost-styles form, .minnpost-styles label, .minnpost-styles legend,
-.minnpost-styles table, .minnpost-styles caption, .minnpost-styles tbody, .minnpost-styles tfoot, .minnpost-styles thead, .minnpost-styles tr, .minnpost-styles th, .minnpost-styles td,
-.minnpost-styles article, .minnpost-styles aside, .minnpost-styles canvas, .minnpost-styles details, .minnpost-styles embed,
-.minnpost-styles figure, .minnpost-styles figcaption, .minnpost-styles footer, .minnpost-styles header, .minnpost-styles hgroup,
-.minnpost-styles menu, .minnpost-styles nav, .minnpost-styles output, .minnpost-styles ruby, .minnpost-styles section, .minnpost-styles summary,
-.minnpost-styles time, .minnpost-styles mark, .minnpost-styles audio, .minnpost-styles video {
+.mp *,
+.mp *:before,
+.mp *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.mp div, .mp span, .mp applet, .mp object, .mp iframe,
+.mp h1, .mp h2, .mp h3, .mp h4, .mp h5, .mp h6, .mp p, .mp blockquote, .mp pre,
+.mp a, .mp abbr, .mp acronym, .mp address, .mp big, .mp cite, .mp code,
+.mp del, .mp dfn, .mp em, .mp img, .mp ins, .mp kbd, .mp q, .mp s, .mp samp,
+.mp small, .mp strike, .mp strong, .mp sub, .mp sup, .mp tt, .mp var,
+.mp b, .mp u, .mp i, .mp center,
+.mp dl, .mp dt, .mp dd, .mp ol, .mp ul, .mp li,
+.mp fieldset, .mp form, .mp label, .mp legend,
+.mp table, .mp caption, .mp tbody, .mp tfoot, .mp thead, .mp tr, .mp th, .mp td,
+.mp article, .mp aside, .mp canvas, .mp details, .mp embed,
+.mp figure, .mp figcaption, .mp footer, .mp header, .mp hgroup,
+.mp menu, .mp nav, .mp output, .mp ruby, .mp section, .mp summary,
+.mp time, .mp mark, .mp audio, .mp video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -334,134 +342,140 @@ html {
   font: inherit;
   vertical-align: baseline;
 }
-.minnpost-styles ol, .minnpost-styles ul {
+.mp ol, .mp ul {
   list-style: none;
 }
-.minnpost-styles blockquote, .minnpost-styles q {
+.mp blockquote, .mp q {
   quotes: none;
 }
-.minnpost-styles blockquote:before, .minnpost-styles blockquote:after,
-.minnpost-styles q:before, .minnpost-styles q:after {
+.mp blockquote:before, .mp blockquote:after,
+.mp q:before, .mp q:after {
   content: '';
   content: none;
 }
-.minnpost-styles table {
+.mp table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.minnpost-styles article,
-.minnpost-styles aside,
-.minnpost-styles details,
-.minnpost-styles figcaption,
-.minnpost-styles figure,
-.minnpost-styles footer,
-.minnpost-styles header,
-.minnpost-styles hgroup,
-.minnpost-styles main,
-.minnpost-styles nav,
-.minnpost-styles section,
-.minnpost-styles summary {
+.mp article,
+.mp aside,
+.mp details,
+.mp figcaption,
+.mp figure,
+.mp footer,
+.mp header,
+.mp hgroup,
+.mp main,
+.mp nav,
+.mp section,
+.mp summary {
   display: block;
 }
-.minnpost-styles audio,
-.minnpost-styles canvas,
-.minnpost-styles video {
+.mp audio,
+.mp canvas,
+.mp video {
   display: inline-block;
 }
-.minnpost-styles audio:not([controls]) {
+.mp audio:not([controls]) {
   display: none;
   height: 0;
 }
-.minnpost-styles [hidden],
-.minnpost-styles template {
+.mp [hidden],
+.mp template {
   display: none;
 }
-.minnpost-styles a {
+.mp a {
   background: transparent;
 }
-.minnpost-styles a:focus {
+.mp a:focus {
   outline: thin dotted;
 }
-.minnpost-styles a:active,
-.minnpost-styles a:hover {
+.mp a:active,
+.mp a:hover {
   outline: 0;
 }
-.minnpost-styles h1 {
+.mp h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
-.minnpost-styles abbr[title] {
+.mp abbr[title] {
   border-bottom: 1px dotted;
 }
-.minnpost-styles b,
-.minnpost-styles strong {
+.mp b,
+.mp strong {
   font-weight: bold;
 }
-.minnpost-styles dfn {
+.mp dfn {
   font-style: italic;
 }
-.minnpost-styles hr {
+.mp hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
-.minnpost-styles mark {
+.mp mark {
   background: #ff0;
   color: #000;
 }
-.minnpost-styles code,
-.minnpost-styles kbd,
-.minnpost-styles pre,
-.minnpost-styles samp {
+.mp code,
+.mp kbd,
+.mp pre,
+.mp samp {
   font-family: monospace, serif;
   font-size: 1em;
 }
-.minnpost-styles pre {
+.mp pre {
   white-space: pre-wrap;
 }
-.minnpost-styles q {
+.mp q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-.minnpost-styles small {
+.mp small {
   font-size: 80%;
 }
-.minnpost-styles sub,
-.minnpost-styles sup {
+.mp sub,
+.mp sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
 }
-.minnpost-styles sup {
+.mp sup {
   top: -0.5em;
 }
-.minnpost-styles sub {
+.mp sub {
   bottom: -0.25em;
 }
-.minnpost-styles img {
+.mp img {
   border: 0;
 }
-.minnpost-styles svg:not(:root) {
+.mp svg:not(:root) {
   overflow: hidden;
 }
-.minnpost-styles figure {
+.mp figure {
   margin: 0;
 }
-.minnpost-styles fieldset {
+.mp fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
-.minnpost-styles legend {
+.mp legend {
   border: 0;
   /* 1 */
   padding: 0;
   /* 2 */
 }
-.minnpost-styles button,
-.minnpost-styles input,
-.minnpost-styles select,
-.minnpost-styles textarea {
+.mp button,
+.mp input,
+.mp select,
+.mp textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
   font-family: inherit;
   /* 1 */
   font-size: 100%;
@@ -469,35 +483,35 @@ html {
   margin: 0;
   /* 3 */
 }
-.minnpost-styles button,
-.minnpost-styles input {
+.mp button,
+.mp input {
   line-height: normal;
 }
-.minnpost-styles button,
-.minnpost-styles select {
+.mp button,
+.mp select {
   text-transform: none;
 }
-.minnpost-styles button,
-.minnpost-styles html input[type="button"],
-.minnpost-styles input[type="reset"],
-.minnpost-styles input[type="submit"] {
+.mp button,
+.mp html input[type="button"],
+.mp input[type="reset"],
+.mp input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
   /* 3 */
 }
-.minnpost-styles button[disabled],
-.minnpost-styles html input[disabled] {
+.mp button[disabled],
+.mp html input[disabled] {
   cursor: default;
 }
-.minnpost-styles input[type="checkbox"],
-.minnpost-styles input[type="radio"] {
+.mp input[type="checkbox"],
+.mp input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
 }
-.minnpost-styles input[type="search"] {
+.mp input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   -moz-box-sizing: content-box;
@@ -505,200 +519,560 @@ html {
   /* 2 */
   box-sizing: content-box;
 }
-.minnpost-styles input[type="search"]::-webkit-search-cancel-button,
-.minnpost-styles input[type="search"]::-webkit-search-decoration {
+.mp input[type="search"]::-webkit-search-cancel-button,
+.mp input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-.minnpost-styles button::-moz-focus-inner,
-.minnpost-styles input::-moz-focus-inner {
+.mp button::-moz-focus-inner,
+.mp input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-.minnpost-styles textarea {
+.mp textarea {
   overflow: auto;
   /* 1 */
   vertical-align: top;
   /* 2 */
 }
-.minnpost-styles table {
+.mp table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 /**
- * Layout and spacing styles.
+ * Really basic fluid grid system
  */
-.minnpost-styles .full-page-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-.minnpost-styles .sidebar-page-container {
-  max-width: 640px;
-  margin: 0 auto;
-}
-.minnpost-styles .interactive-container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-.minnpost-styles .spacer {
-  height: 1em;
-}
-.minnpost-styles .top-spacer {
-  margin-top: 1em;
-}
-.minnpost-styles .bottom-spacer {
+.mp .row {
+  *zoom: 1;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
   margin-bottom: 1em;
+}
+.mp .row:before, .mp .row:after {
+  content: " ";
+  display: table;
+}
+.mp .row:after {
+  clear: both;
+}
+.mp .row .column-xsmall, .mp .row .column-xsmall-5, .mp .row .column-xsmall-10, .mp .row .column-xsmall-15, .mp .row .column-xsmall-20, .mp .row .column-xsmall-25, .mp .row .column-xsmall-30, .mp .row .column-xsmall-35, .mp .row .column-xsmall-40, .mp .row .column-xsmall-45, .mp .row .column-xsmall-50, .mp .row .column-xsmall-55, .mp .row .column-xsmall-60, .mp .row .column-xsmall-65, .mp .row .column-xsmall-70, .mp .row .column-xsmall-75, .mp .row .column-xsmall-80, .mp .row .column-xsmall-85, .mp .row .column-xsmall-90, .mp .row .column-xsmall-95, .mp .row .column-xsmall-100, .mp .row .column-xsmall-33, .mp .row .column-xsmall-66 {
+  position: relative;
+  min-height: 1px;
+  float: left;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: 100%;
+}
+.mp .row .column-xsmall-5 {
+  width: 5%;
+}
+.mp .row .column-xsmall-10 {
+  width: 10%;
+}
+.mp .row .column-xsmall-15 {
+  width: 15%;
+}
+.mp .row .column-xsmall-20 {
+  width: 20%;
+}
+.mp .row .column-xsmall-25 {
+  width: 25%;
+}
+.mp .row .column-xsmall-30 {
+  width: 30%;
+}
+.mp .row .column-xsmall-35 {
+  width: 35%;
+}
+.mp .row .column-xsmall-40 {
+  width: 40%;
+}
+.mp .row .column-xsmall-45 {
+  width: 45%;
+}
+.mp .row .column-xsmall-50 {
+  width: 50%;
+}
+.mp .row .column-xsmall-55 {
+  width: 55%;
+}
+.mp .row .column-xsmall-60 {
+  width: 60%;
+}
+.mp .row .column-xsmall-65 {
+  width: 65%;
+}
+.mp .row .column-xsmall-70 {
+  width: 70%;
+}
+.mp .row .column-xsmall-75 {
+  width: 75%;
+}
+.mp .row .column-xsmall-80 {
+  width: 80%;
+}
+.mp .row .column-xsmall-85 {
+  width: 85%;
+}
+.mp .row .column-xsmall-90 {
+  width: 90%;
+}
+.mp .row .column-xsmall-95 {
+  width: 95%;
+}
+.mp .row .column-xsmall-100 {
+  width: 100%;
+}
+.mp .row .column-xsmall-33 {
+  width: 33.33333%;
+}
+.mp .row .column-xsmall-66 {
+  width: 66.66667%;
+}
+@media (min-width: 420px) {
+  .mp .row .column-small, .mp .row .column-small-5, .mp .row .column-small-10, .mp .row .column-small-15, .mp .row .column-small-20, .mp .row .column-small-25, .mp .row .column-small-30, .mp .row .column-small-35, .mp .row .column-small-40, .mp .row .column-small-45, .mp .row .column-small-50, .mp .row .column-small-55, .mp .row .column-small-60, .mp .row .column-small-65, .mp .row .column-small-70, .mp .row .column-small-75, .mp .row .column-small-80, .mp .row .column-small-85, .mp .row .column-small-90, .mp .row .column-small-95, .mp .row .column-small-100, .mp .row .column-small-33, .mp .row .column-small-66 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 100%;
+  }
+  .mp .row .column-small-5 {
+    width: 5%;
+  }
+  .mp .row .column-small-10 {
+    width: 10%;
+  }
+  .mp .row .column-small-15 {
+    width: 15%;
+  }
+  .mp .row .column-small-20 {
+    width: 20%;
+  }
+  .mp .row .column-small-25 {
+    width: 25%;
+  }
+  .mp .row .column-small-30 {
+    width: 30%;
+  }
+  .mp .row .column-small-35 {
+    width: 35%;
+  }
+  .mp .row .column-small-40 {
+    width: 40%;
+  }
+  .mp .row .column-small-45 {
+    width: 45%;
+  }
+  .mp .row .column-small-50 {
+    width: 50%;
+  }
+  .mp .row .column-small-55 {
+    width: 55%;
+  }
+  .mp .row .column-small-60 {
+    width: 60%;
+  }
+  .mp .row .column-small-65 {
+    width: 65%;
+  }
+  .mp .row .column-small-70 {
+    width: 70%;
+  }
+  .mp .row .column-small-75 {
+    width: 75%;
+  }
+  .mp .row .column-small-80 {
+    width: 80%;
+  }
+  .mp .row .column-small-85 {
+    width: 85%;
+  }
+  .mp .row .column-small-90 {
+    width: 90%;
+  }
+  .mp .row .column-small-95 {
+    width: 95%;
+  }
+  .mp .row .column-small-100 {
+    width: 100%;
+  }
+  .mp .row .column-small-33 {
+    width: 33.33333%;
+  }
+  .mp .row .column-small-66 {
+    width: 66.66667%;
+  }
+}
+@media (min-width: 640px) {
+  .mp .row .column-medium, .mp .row .column-medium-5, .mp .row .column-medium-10, .mp .row .column-medium-15, .mp .row .column-medium-20, .mp .row .column-medium-25, .mp .row .column-medium-30, .mp .row .column-medium-35, .mp .row .column-medium-40, .mp .row .column-medium-45, .mp .row .column-medium-50, .mp .row .column-medium-55, .mp .row .column-medium-60, .mp .row .column-medium-65, .mp .row .column-medium-70, .mp .row .column-medium-75, .mp .row .column-medium-80, .mp .row .column-medium-85, .mp .row .column-medium-90, .mp .row .column-medium-95, .mp .row .column-medium-100, .mp .row .column-medium-33, .mp .row .column-medium-66 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 100%;
+  }
+  .mp .row .column-medium-5 {
+    width: 5%;
+  }
+  .mp .row .column-medium-10 {
+    width: 10%;
+  }
+  .mp .row .column-medium-15 {
+    width: 15%;
+  }
+  .mp .row .column-medium-20 {
+    width: 20%;
+  }
+  .mp .row .column-medium-25 {
+    width: 25%;
+  }
+  .mp .row .column-medium-30 {
+    width: 30%;
+  }
+  .mp .row .column-medium-35 {
+    width: 35%;
+  }
+  .mp .row .column-medium-40 {
+    width: 40%;
+  }
+  .mp .row .column-medium-45 {
+    width: 45%;
+  }
+  .mp .row .column-medium-50 {
+    width: 50%;
+  }
+  .mp .row .column-medium-55 {
+    width: 55%;
+  }
+  .mp .row .column-medium-60 {
+    width: 60%;
+  }
+  .mp .row .column-medium-65 {
+    width: 65%;
+  }
+  .mp .row .column-medium-70 {
+    width: 70%;
+  }
+  .mp .row .column-medium-75 {
+    width: 75%;
+  }
+  .mp .row .column-medium-80 {
+    width: 80%;
+  }
+  .mp .row .column-medium-85 {
+    width: 85%;
+  }
+  .mp .row .column-medium-90 {
+    width: 90%;
+  }
+  .mp .row .column-medium-95 {
+    width: 95%;
+  }
+  .mp .row .column-medium-100 {
+    width: 100%;
+  }
+  .mp .row .column-medium-33 {
+    width: 33.33333%;
+  }
+  .mp .row .column-medium-66 {
+    width: 66.66667%;
+  }
+}
+@media (min-width: 960px) {
+  .mp .row .column-large, .mp .row .column-large-5, .mp .row .column-large-10, .mp .row .column-large-15, .mp .row .column-large-20, .mp .row .column-large-25, .mp .row .column-large-30, .mp .row .column-large-35, .mp .row .column-large-40, .mp .row .column-large-45, .mp .row .column-large-50, .mp .row .column-large-55, .mp .row .column-large-60, .mp .row .column-large-65, .mp .row .column-large-70, .mp .row .column-large-75, .mp .row .column-large-80, .mp .row .column-large-85, .mp .row .column-large-90, .mp .row .column-large-95, .mp .row .column-large-100, .mp .row .column-large-33, .mp .row .column-large-66 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 100%;
+  }
+  .mp .row .column-large-5 {
+    width: 5%;
+  }
+  .mp .row .column-large-10 {
+    width: 10%;
+  }
+  .mp .row .column-large-15 {
+    width: 15%;
+  }
+  .mp .row .column-large-20 {
+    width: 20%;
+  }
+  .mp .row .column-large-25 {
+    width: 25%;
+  }
+  .mp .row .column-large-30 {
+    width: 30%;
+  }
+  .mp .row .column-large-35 {
+    width: 35%;
+  }
+  .mp .row .column-large-40 {
+    width: 40%;
+  }
+  .mp .row .column-large-45 {
+    width: 45%;
+  }
+  .mp .row .column-large-50 {
+    width: 50%;
+  }
+  .mp .row .column-large-55 {
+    width: 55%;
+  }
+  .mp .row .column-large-60 {
+    width: 60%;
+  }
+  .mp .row .column-large-65 {
+    width: 65%;
+  }
+  .mp .row .column-large-70 {
+    width: 70%;
+  }
+  .mp .row .column-large-75 {
+    width: 75%;
+  }
+  .mp .row .column-large-80 {
+    width: 80%;
+  }
+  .mp .row .column-large-85 {
+    width: 85%;
+  }
+  .mp .row .column-large-90 {
+    width: 90%;
+  }
+  .mp .row .column-large-95 {
+    width: 95%;
+  }
+  .mp .row .column-large-100 {
+    width: 100%;
+  }
+  .mp .row .column-large-33 {
+    width: 33.33333%;
+  }
+  .mp .row .column-large-66 {
+    width: 66.66667%;
+  }
+}
+@media (min-width: 1200px) {
+  .mp .row .column-xlarge, .mp .row .column-xlarge-5, .mp .row .column-xlarge-10, .mp .row .column-xlarge-15, .mp .row .column-xlarge-20, .mp .row .column-xlarge-25, .mp .row .column-xlarge-30, .mp .row .column-xlarge-35, .mp .row .column-xlarge-40, .mp .row .column-xlarge-45, .mp .row .column-xlarge-50, .mp .row .column-xlarge-55, .mp .row .column-xlarge-60, .mp .row .column-xlarge-65, .mp .row .column-xlarge-70, .mp .row .column-xlarge-75, .mp .row .column-xlarge-80, .mp .row .column-xlarge-85, .mp .row .column-xlarge-90, .mp .row .column-xlarge-95, .mp .row .column-xlarge-100, .mp .row .column-xlarge-33, .mp .row .column-xlarge-66 {
+    position: relative;
+    min-height: 1px;
+    float: left;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: 100%;
+  }
+  .mp .row .column-xlarge-5 {
+    width: 5%;
+  }
+  .mp .row .column-xlarge-10 {
+    width: 10%;
+  }
+  .mp .row .column-xlarge-15 {
+    width: 15%;
+  }
+  .mp .row .column-xlarge-20 {
+    width: 20%;
+  }
+  .mp .row .column-xlarge-25 {
+    width: 25%;
+  }
+  .mp .row .column-xlarge-30 {
+    width: 30%;
+  }
+  .mp .row .column-xlarge-35 {
+    width: 35%;
+  }
+  .mp .row .column-xlarge-40 {
+    width: 40%;
+  }
+  .mp .row .column-xlarge-45 {
+    width: 45%;
+  }
+  .mp .row .column-xlarge-50 {
+    width: 50%;
+  }
+  .mp .row .column-xlarge-55 {
+    width: 55%;
+  }
+  .mp .row .column-xlarge-60 {
+    width: 60%;
+  }
+  .mp .row .column-xlarge-65 {
+    width: 65%;
+  }
+  .mp .row .column-xlarge-70 {
+    width: 70%;
+  }
+  .mp .row .column-xlarge-75 {
+    width: 75%;
+  }
+  .mp .row .column-xlarge-80 {
+    width: 80%;
+  }
+  .mp .row .column-xlarge-85 {
+    width: 85%;
+  }
+  .mp .row .column-xlarge-90 {
+    width: 90%;
+  }
+  .mp .row .column-xlarge-95 {
+    width: 95%;
+  }
+  .mp .row .column-xlarge-100 {
+    width: 100%;
+  }
+  .mp .row .column-xlarge-33 {
+    width: 33.33333%;
+  }
+  .mp .row .column-xlarge-66 {
+    width: 66.66667%;
+  }
 }
 
 /**
- * Clearfix for minnpost-styles.
+ * Layout and spacing styles.
  */
-.minnpost-styles {
-  /**
-   * Clearfix from
-   * http://nicolasgallagher.com/micro-clearfix-hack/
-   */
+.mp .spacer {
+  height: 1em;
 }
-.minnpost-styles .cf:before,
-.minnpost-styles .cf:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
+.mp .top-spacer {
+  margin-top: 1em;
 }
-.minnpost-styles .cf:after {
-  clear: both;
-}
-.minnpost-styles .cf {
-  *zoom: 1;
+.mp .bottom-spacer {
+  margin-bottom: 1em;
 }
 
 /**
  * Typography styles.
  */
-.minnpost-styles {
+.mp {
   font-size: 14px;
   line-height: 1.5;
 }
-.minnpost-styles h1, .minnpost-styles h2, .minnpost-styles h3, .minnpost-styles h4, .minnpost-styles h5, .minnpost-styles h6 {
+.mp h1, .mp h2, .mp h3, .mp h4, .mp h5, .mp h6 {
   margin-bottom: 0.85em;
   line-height: 1.25em;
 }
-.minnpost-styles h1 {
+.mp h1 {
   font-size: 36px;
 }
-.minnpost-styles h2 {
+.mp h2 {
   font-size: 30px;
 }
-.minnpost-styles h3 {
+.mp h3 {
   font-size: 23px;
 }
-.minnpost-styles h4 {
+.mp h4 {
   font-size: 17px;
 }
-.minnpost-styles h5 {
+.mp h5 {
   font-size: 14px;
 }
-.minnpost-styles h6 {
+.mp h6 {
   font-size: 11px;
 }
-.minnpost-styles a,
-.minnpost-styles a:visited {
+.mp a,
+.mp a:visited {
   color: #801019;
   text-decoration: none;
 }
-.minnpost-styles a:hover,
-.minnpost-styles a:visited:hover {
+.mp a:hover,
+.mp a:visited:hover {
   color: #801019;
   text-decoration: none;
 }
-.minnpost-styles p {
+.mp p {
   margin-bottom: 1em;
   line-height: 1.25em;
 }
-.minnpost-styles small,
-.minnpost-styles .small {
+.mp small,
+.mp .small {
   font-size: 85%;
 }
-.minnpost-styles strong,
-.minnpost-styles .strong {
+.mp strong,
+.mp .strong {
   font-weight: bold;
 }
-.minnpost-styles em,
-.minnpost-styles .em {
+.mp em,
+.mp .em {
   font-style: italic;
 }
-.minnpost-styles .text-left {
+.mp .text-left {
   text-align: left;
 }
-.minnpost-styles .text-right {
+.mp .text-right {
   text-align: right;
 }
-.minnpost-styles .text-center {
+.mp .text-center {
   text-align: center;
 }
-.minnpost-styles .text-justify {
+.mp .text-justify {
   text-align: justify;
 }
-.minnpost-styles abbr,
-.minnpost-styles .abbr {
+.mp abbr,
+.mp .abbr {
   cursor: help;
   border-bottom: 1px dotted #525252;
 }
-.minnpost-styles blockquote,
-.minnpost-styles .blockquote {
+.mp blockquote,
+.mp .blockquote {
   display: block;
   padding: 0.5em 1em;
   margin-bottom: 1em;
   border-left: 5px solid #c5c5c5;
 }
-.minnpost-styles blockquote small,
-.minnpost-styles blockquote .small,
-.minnpost-styles .blockquote small,
-.minnpost-styles .blockquote .small {
+.mp blockquote small,
+.mp blockquote .small,
+.mp .blockquote small,
+.mp .blockquote .small {
   color: #9e9e9e;
 }
-.minnpost-styles blockquote small:before,
-.minnpost-styles blockquote .small:before,
-.minnpost-styles .blockquote small:before,
-.minnpost-styles .blockquote .small:before {
+.mp blockquote small:before,
+.mp blockquote .small:before,
+.mp .blockquote small:before,
+.mp .blockquote .small:before {
   content: '\2014 \00A0';
 }
-.minnpost-styles ul,
-.minnpost-styles ol {
+.mp ul,
+.mp ol {
   margin: 0 0 1em 2em;
 }
-.minnpost-styles ul ul,
-.minnpost-styles ul ol,
-.minnpost-styles ol ul,
-.minnpost-styles ol ol {
+.mp ul ul,
+.mp ul ol,
+.mp ol ul,
+.mp ol ol {
   margin-bottom: 0;
 }
-.minnpost-styles ul {
+.mp ul {
   list-style-type: disc;
 }
-.minnpost-styles ul ul {
+.mp ul ul {
   list-style-type: circle;
 }
-.minnpost-styles ol {
+.mp ol {
   list-style-type: decimal;
 }
-.minnpost-styles ol ol {
+.mp ol ol {
   list-style-type: lower-roman;
 }
-.minnpost-styles code {
+.mp code {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   line-height: 1.25em;
   font-size: 0.9em;
   background-color: #f8f8f8;
   padding: 2px 4px;
 }
-.minnpost-styles pre {
+.mp pre {
   margin-bottom: 1em;
   background-color: #f8f8f8;
   padding: 1em;
 }
-.minnpost-styles pre code {
+.mp pre code {
   background-color: inherit;
   padding: 0;
 }
@@ -709,11 +1083,11 @@ html {
  * A bit of styling to ensure they work correctly given that we prefix all
  * the styles.  There should be a better way to handle this.
  */
-.minnpost-styles {
+.mp {
   /* makes the font 33% larger relative to the icon container */
 }
-.minnpost-styles .fa,
-.minnpost-styles .loading {
+.mp .fa,
+.mp .loading {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -726,51 +1100,51 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.minnpost-styles .fa-lg {
+.mp .fa-lg {
   font-size: 1.3333333333333333em;
   line-height: 0.75em;
   vertical-align: -15%;
 }
-.minnpost-styles .fa-2x {
+.mp .fa-2x {
   font-size: 2em;
 }
-.minnpost-styles .fa-3x {
+.mp .fa-3x {
   font-size: 3em;
 }
-.minnpost-styles .fa-4x {
+.mp .fa-4x {
   font-size: 4em;
 }
-.minnpost-styles .fa-5x {
+.mp .fa-5x {
   font-size: 5em;
 }
-.minnpost-styles .fa-fw {
+.mp .fa-fw {
   width: 1.2857142857142858em;
   text-align: center;
 }
-.minnpost-styles .fa-ul {
+.mp .fa-ul {
   padding-left: 0;
   margin-left: 2.142857142857143em;
   list-style-type: none;
 }
-.minnpost-styles .fa-ul > li {
+.mp .fa-ul > li {
   position: relative;
 }
-.minnpost-styles .fa-li {
+.mp .fa-li {
   position: absolute;
   left: -2.142857142857143em;
   width: 2.142857142857143em;
   top: 0.14285714285714285em;
   text-align: center;
 }
-.minnpost-styles .fa-li.fa-lg {
+.mp .fa-li.fa-lg {
   left: -1.8571428571428572em;
 }
-.minnpost-styles .fa-border {
+.mp .fa-border {
   padding: .2em .25em .15em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em;
 }
-.minnpost-styles .loading {
+.mp .loading {
   display: block;
   text-align: center;
   font-size: 2em;
@@ -780,14 +1154,14 @@ html {
   -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
 }
-.minnpost-styles .loading:before {
+.mp .loading:before {
   content: "\f110";
 }
 
 /**
  * Buttons
  */
-.minnpost-styles .button {
+.mp .button {
   display: inline;
   display: -moz-inline-stack;
   display: inline-block;
@@ -809,7 +1183,7 @@ html {
   -moz-user-select: none;
   user-select: none;
 }
-.minnpost-styles .button:focus {
+.mp .button:focus {
   border-color: #787878;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
@@ -819,18 +1193,18 @@ html {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.minnpost-styles .button:hover, .minnpost-styles .button:focus {
+.mp .button:hover, .mp .button:focus {
   color: #1a1818;
   text-decoration: none;
 }
-.minnpost-styles .button:active, .minnpost-styles .button.active {
+.mp .button:active, .mp .button.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-.minnpost-styles .button.disabled, .minnpost-styles .button[disabled], fieldset[disabled] .minnpost-styles .button {
+.mp .button.disabled, .mp .button[disabled], fieldset[disabled] .mp .button {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -839,87 +1213,87 @@ html {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.minnpost-styles .button,
-.minnpost-styles a.button {
+.mp .button,
+.mp a.button {
   color: #787878;
   background-color: white;
   border-color: #787878;
 }
-.minnpost-styles .button:hover, .minnpost-styles .button:focus, .minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle,
-.minnpost-styles a.button:hover,
-.minnpost-styles a.button:focus,
-.minnpost-styles a.button:active,
-.minnpost-styles a.button.active, .open
-.minnpost-styles a.button.dropdown-toggle {
+.mp .button:hover, .mp .button:focus, .mp .button:active, .mp .button.active, .open .mp .button.dropdown-toggle,
+.mp a.button:hover,
+.mp a.button:focus,
+.mp a.button:active,
+.mp a.button.active, .open
+.mp a.button.dropdown-toggle {
   color: #787878;
   background-color: #e6e6e6;
   border-color: #525252;
 }
-.minnpost-styles .button:active, .minnpost-styles .button.active, .open .minnpost-styles .button.dropdown-toggle,
-.minnpost-styles a.button:active,
-.minnpost-styles a.button.active, .open
-.minnpost-styles a.button.dropdown-toggle {
+.mp .button:active, .mp .button.active, .open .mp .button.dropdown-toggle,
+.mp a.button:active,
+.mp a.button.active, .open
+.mp a.button.dropdown-toggle {
   background-image: none;
 }
-.minnpost-styles .button.disabled, .minnpost-styles .button.disabled:hover, .minnpost-styles .button.disabled:focus, .minnpost-styles .button.disabled:active, .minnpost-styles .button.disabled.active, .minnpost-styles .button[disabled], .minnpost-styles .button[disabled]:hover, .minnpost-styles .button[disabled]:focus, .minnpost-styles .button[disabled]:active, .minnpost-styles .button[disabled].active, fieldset[disabled] .minnpost-styles .button, fieldset[disabled] .minnpost-styles .button:hover, fieldset[disabled] .minnpost-styles .button:focus, fieldset[disabled] .minnpost-styles .button:active, fieldset[disabled] .minnpost-styles .button.active,
-.minnpost-styles a.button.disabled,
-.minnpost-styles a.button.disabled:hover,
-.minnpost-styles a.button.disabled:focus,
-.minnpost-styles a.button.disabled:active,
-.minnpost-styles a.button.disabled.active,
-.minnpost-styles a.button[disabled],
-.minnpost-styles a.button[disabled]:hover,
-.minnpost-styles a.button[disabled]:focus,
-.minnpost-styles a.button[disabled]:active,
-.minnpost-styles a.button[disabled].active, fieldset[disabled]
-.minnpost-styles a.button, fieldset[disabled]
-.minnpost-styles a.button:hover, fieldset[disabled]
-.minnpost-styles a.button:focus, fieldset[disabled]
-.minnpost-styles a.button:active, fieldset[disabled]
-.minnpost-styles a.button.active {
+.mp .button.disabled, .mp .button.disabled:hover, .mp .button.disabled:focus, .mp .button.disabled:active, .mp .button.disabled.active, .mp .button[disabled], .mp .button[disabled]:hover, .mp .button[disabled]:focus, .mp .button[disabled]:active, .mp .button[disabled].active, fieldset[disabled] .mp .button, fieldset[disabled] .mp .button:hover, fieldset[disabled] .mp .button:focus, fieldset[disabled] .mp .button:active, fieldset[disabled] .mp .button.active,
+.mp a.button.disabled,
+.mp a.button.disabled:hover,
+.mp a.button.disabled:focus,
+.mp a.button.disabled:active,
+.mp a.button.disabled.active,
+.mp a.button[disabled],
+.mp a.button[disabled]:hover,
+.mp a.button[disabled]:focus,
+.mp a.button[disabled]:active,
+.mp a.button[disabled].active, fieldset[disabled]
+.mp a.button, fieldset[disabled]
+.mp a.button:hover, fieldset[disabled]
+.mp a.button:focus, fieldset[disabled]
+.mp a.button:active, fieldset[disabled]
+.mp a.button.active {
   background-color: white;
   border-color: #787878;
 }
-.minnpost-styles .button-link {
+.mp .button-link {
   color: #801019;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
 }
-.minnpost-styles .button-link, .minnpost-styles .button-link:active, .minnpost-styles .button-link[disabled], fieldset[disabled] .minnpost-styles .button-link {
+.mp .button-link, .mp .button-link:active, .mp .button-link[disabled], fieldset[disabled] .mp .button-link {
   background-color: transparent;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-.minnpost-styles .button-link, .minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus, .minnpost-styles .button-link:active {
+.mp .button-link, .mp .button-link:hover, .mp .button-link:focus, .mp .button-link:active {
   border-color: transparent;
 }
-.minnpost-styles .button-link:hover, .minnpost-styles .button-link:focus {
+.mp .button-link:hover, .mp .button-link:focus {
   color: #801019;
   text-decoration: underline;
   background-color: transparent;
 }
-.minnpost-styles .button-link[disabled]:hover, .minnpost-styles .button-link[disabled]:focus, fieldset[disabled] .minnpost-styles .button-link:hover, fieldset[disabled] .minnpost-styles .button-link:focus {
+.mp .button-link[disabled]:hover, .mp .button-link[disabled]:focus, fieldset[disabled] .mp .button-link:hover, fieldset[disabled] .mp .button-link:focus {
   color: #787878;
   text-decoration: none;
 }
-.minnpost-styles .button-block {
+.mp .button-block {
   display: block;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
-.minnpost-styles .button-block + .button-block {
-  margin-top: 0.5em;
+.mp .button-block + .button-block {
+  margin-top: 1em;
 }
-.minnpost-styles input[type="submit"].button-block,
-.minnpost-styles input[type="reset"].button-block,
-.minnpost-styles input[type="button"].button-block {
+.mp input[type="submit"].button-block,
+.mp input[type="reset"].button-block,
+.mp input[type="button"].button-block {
   width: 100%;
 }
-.minnpost-styles .button-group,
-.minnpost-styles .button-group-vertical {
+.mp .button-group,
+.mp .button-group-vertical {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -928,51 +1302,51 @@ html {
   position: relative;
   vertical-align: middle;
 }
-.minnpost-styles .button-group > .button,
-.minnpost-styles .button-group-vertical > .button {
+.mp .button-group > .button,
+.mp .button-group-vertical > .button {
   position: relative;
   float: left;
   margin-right: 0;
 }
-.minnpost-styles .button-group > .button:hover, .minnpost-styles .button-group > .button:focus, .minnpost-styles .button-group > .button:active, .minnpost-styles .button-group > .button.active,
-.minnpost-styles .button-group-vertical > .button:hover,
-.minnpost-styles .button-group-vertical > .button:focus,
-.minnpost-styles .button-group-vertical > .button:active,
-.minnpost-styles .button-group-vertical > .button.active {
+.mp .button-group > .button:hover, .mp .button-group > .button:focus, .mp .button-group > .button:active, .mp .button-group > .button.active,
+.mp .button-group-vertical > .button:hover,
+.mp .button-group-vertical > .button:focus,
+.mp .button-group-vertical > .button:active,
+.mp .button-group-vertical > .button.active {
   z-index: 2;
 }
-.minnpost-styles .button-group > .button:focus,
-.minnpost-styles .button-group-vertical > .button:focus {
+.mp .button-group > .button:focus,
+.mp .button-group-vertical > .button:focus {
   outline: none;
 }
-.minnpost-styles .button-group .button + .button,
-.minnpost-styles .button-group .button + .button-group,
-.minnpost-styles .button-group .button-group + .button,
-.minnpost-styles .button-group .button-group + .button-group {
+.mp .button-group .button + .button,
+.mp .button-group .button + .button-group,
+.mp .button-group .button-group + .button,
+.mp .button-group .button-group + .button-group {
   margin-left: -1px;
 }
-.minnpost-styles .button-toolbar {
+.mp .button-toolbar {
   margin-left: -5px;
   *zoom: 1;
 }
-.minnpost-styles .button-toolbar:before, .minnpost-styles .button-toolbar:after {
+.mp .button-toolbar:before, .mp .button-toolbar:after {
   content: " ";
   display: table;
 }
-.minnpost-styles .button-toolbar:after {
+.mp .button-toolbar:after {
   clear: both;
 }
-.minnpost-styles .button-toolbar .button-group,
-.minnpost-styles .button-toolbar .input-group {
+.mp .button-toolbar .button-group,
+.mp .button-toolbar .input-group {
   float: left;
 }
-.minnpost-styles .button-toolbar > .button,
-.minnpost-styles .button-toolbar > .button-group,
-.minnpost-styles .button-toolbar > .input-group {
+.mp .button-toolbar > .button,
+.mp .button-toolbar > .button-group,
+.mp .button-toolbar > .input-group {
   margin-left: 5px;
   margin-right: 0;
 }
-.minnpost-styles .button-group > .button:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.mp .button-group > .button:not(:first-child):not(:last-child) {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -981,15 +1355,65 @@ html {
 }
 
 /**
+ * Labels
+ */
+.mp .label {
+  display: inline;
+  padding: 0.25em 0.5em;
+  font-size: 0.85em;
+  font-weight: bold;
+  line-height: 1em;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #525252;
+}
+.mp .label[href]:hover, .mp .label[href]:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #2b2b2b;
+}
+.mp .label:empty {
+  display: none;
+}
+.btn .mp .label {
+  position: relative;
+  top: -1px;
+}
+
+/**
+ * Alert messages.
+ */
+.mp .alert {
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid transparent;
+  background-color: #c5c5c5;
+}
+.mp .alert h4 {
+  margin-top: 0;
+  color: inherit;
+}
+.mp .alert > p,
+.mp .alert > ul {
+  margin-bottom: 0;
+}
+.mp .alert > p + p {
+  margin-top: 0.5em;
+}
+
+/**
  * Forms.
  * Much borrowed from Bootstrap.
  */
-.minnpost-styles fieldset {
+.mp fieldset {
   padding: 0;
   margin: 0;
   border: 0;
 }
-.minnpost-styles legend {
+.mp legend {
   display: block;
   width: 100%;
   padding: 0;
@@ -997,69 +1421,69 @@ html {
   border: 0;
   border-bottom: 1px solid #9e9e9e;
 }
-.minnpost-styles label {
+.mp label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
 }
-.minnpost-styles input,
-.minnpost-styles textarea {
+.mp input,
+.mp textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.minnpost-styles input[type="radio"],
-.minnpost-styles input[type="checkbox"] {
+.mp input[type="radio"],
+.mp input[type="checkbox"] {
   margin: 2px 0 0;
   margin-top: 1px \9;
   /* IE8-9 */
   line-height: normal;
 }
-.minnpost-styles input[type="file"] {
+.mp input[type="file"] {
   display: block;
 }
-.minnpost-styles select[multiple],
-.minnpost-styles select[size] {
+.mp select[multiple],
+.mp select[size] {
   height: auto;
 }
-.minnpost-styles select optgroup {
+.mp select optgroup {
   font-size: inherit;
   font-style: inherit;
   font-family: inherit;
 }
-.minnpost-styles input[type="file"]:focus,
-.minnpost-styles input[type="radio"]:focus,
-.minnpost-styles input[type="checkbox"]:focus {
+.mp input[type="file"]:focus,
+.mp input[type="radio"]:focus,
+.mp input[type="checkbox"]:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-.minnpost-styles input[type="number"]::-webkit-outer-spin-button, .minnpost-styles input[type="number"]::-webkit-inner-spin-button {
+.mp input[type="number"]::-webkit-outer-spin-button, .mp input[type="number"]::-webkit-inner-spin-button {
   height: auto;
 }
-.minnpost-styles output {
+.mp output {
   display: block;
   padding-top: 1em;
   font-size: 1em;
   line-height: 1.25em;
 }
-.minnpost-styles select,
-.minnpost-styles textarea,
-.minnpost-styles input[type="text"],
-.minnpost-styles input[type="password"],
-.minnpost-styles input[type="datetime"],
-.minnpost-styles input[type="datetime-local"],
-.minnpost-styles input[type="date"],
-.minnpost-styles input[type="month"],
-.minnpost-styles input[type="time"],
-.minnpost-styles input[type="week"],
-.minnpost-styles input[type="number"],
-.minnpost-styles input[type="email"],
-.minnpost-styles input[type="url"],
-.minnpost-styles input[type="search"],
-.minnpost-styles input[type="tel"],
-.minnpost-styles input[type="color"],
-.minnpost-styles .form-input {
+.mp select,
+.mp textarea,
+.mp input[type="text"],
+.mp input[type="password"],
+.mp input[type="datetime"],
+.mp input[type="datetime-local"],
+.mp input[type="date"],
+.mp input[type="month"],
+.mp input[type="time"],
+.mp input[type="week"],
+.mp input[type="number"],
+.mp input[type="email"],
+.mp input[type="url"],
+.mp input[type="search"],
+.mp input[type="tel"],
+.mp input[type="color"],
+.mp .form-input {
   display: block;
   width: 100%;
   min-height: 1.8125em;
@@ -1080,191 +1504,191 @@ html {
   -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-.minnpost-styles select:focus,
-.minnpost-styles textarea:focus,
-.minnpost-styles input[type="text"]:focus,
-.minnpost-styles input[type="password"]:focus,
-.minnpost-styles input[type="datetime"]:focus,
-.minnpost-styles input[type="datetime-local"]:focus,
-.minnpost-styles input[type="date"]:focus,
-.minnpost-styles input[type="month"]:focus,
-.minnpost-styles input[type="time"]:focus,
-.minnpost-styles input[type="week"]:focus,
-.minnpost-styles input[type="number"]:focus,
-.minnpost-styles input[type="email"]:focus,
-.minnpost-styles input[type="url"]:focus,
-.minnpost-styles input[type="search"]:focus,
-.minnpost-styles input[type="tel"]:focus,
-.minnpost-styles input[type="color"]:focus,
-.minnpost-styles .form-input:focus {
+.mp select:focus,
+.mp textarea:focus,
+.mp input[type="text"]:focus,
+.mp input[type="password"]:focus,
+.mp input[type="datetime"]:focus,
+.mp input[type="datetime-local"]:focus,
+.mp input[type="date"]:focus,
+.mp input[type="month"]:focus,
+.mp input[type="time"]:focus,
+.mp input[type="week"]:focus,
+.mp input[type="number"]:focus,
+.mp input[type="email"]:focus,
+.mp input[type="url"]:focus,
+.mp input[type="search"]:focus,
+.mp input[type="tel"]:focus,
+.mp input[type="color"]:focus,
+.mp .form-input:focus {
   border-color: #787878;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
 }
-.minnpost-styles select:-moz-placeholder,
-.minnpost-styles textarea:-moz-placeholder,
-.minnpost-styles input[type="text"]:-moz-placeholder,
-.minnpost-styles input[type="password"]:-moz-placeholder,
-.minnpost-styles input[type="datetime"]:-moz-placeholder,
-.minnpost-styles input[type="datetime-local"]:-moz-placeholder,
-.minnpost-styles input[type="date"]:-moz-placeholder,
-.minnpost-styles input[type="month"]:-moz-placeholder,
-.minnpost-styles input[type="time"]:-moz-placeholder,
-.minnpost-styles input[type="week"]:-moz-placeholder,
-.minnpost-styles input[type="number"]:-moz-placeholder,
-.minnpost-styles input[type="email"]:-moz-placeholder,
-.minnpost-styles input[type="url"]:-moz-placeholder,
-.minnpost-styles input[type="search"]:-moz-placeholder,
-.minnpost-styles input[type="tel"]:-moz-placeholder,
-.minnpost-styles input[type="color"]:-moz-placeholder,
-.minnpost-styles .form-input:-moz-placeholder {
+.mp select:-moz-placeholder,
+.mp textarea:-moz-placeholder,
+.mp input[type="text"]:-moz-placeholder,
+.mp input[type="password"]:-moz-placeholder,
+.mp input[type="datetime"]:-moz-placeholder,
+.mp input[type="datetime-local"]:-moz-placeholder,
+.mp input[type="date"]:-moz-placeholder,
+.mp input[type="month"]:-moz-placeholder,
+.mp input[type="time"]:-moz-placeholder,
+.mp input[type="week"]:-moz-placeholder,
+.mp input[type="number"]:-moz-placeholder,
+.mp input[type="email"]:-moz-placeholder,
+.mp input[type="url"]:-moz-placeholder,
+.mp input[type="search"]:-moz-placeholder,
+.mp input[type="tel"]:-moz-placeholder,
+.mp input[type="color"]:-moz-placeholder,
+.mp .form-input:-moz-placeholder {
   color: #9e9e9e;
 }
-.minnpost-styles select::-moz-placeholder,
-.minnpost-styles textarea::-moz-placeholder,
-.minnpost-styles input[type="text"]::-moz-placeholder,
-.minnpost-styles input[type="password"]::-moz-placeholder,
-.minnpost-styles input[type="datetime"]::-moz-placeholder,
-.minnpost-styles input[type="datetime-local"]::-moz-placeholder,
-.minnpost-styles input[type="date"]::-moz-placeholder,
-.minnpost-styles input[type="month"]::-moz-placeholder,
-.minnpost-styles input[type="time"]::-moz-placeholder,
-.minnpost-styles input[type="week"]::-moz-placeholder,
-.minnpost-styles input[type="number"]::-moz-placeholder,
-.minnpost-styles input[type="email"]::-moz-placeholder,
-.minnpost-styles input[type="url"]::-moz-placeholder,
-.minnpost-styles input[type="search"]::-moz-placeholder,
-.minnpost-styles input[type="tel"]::-moz-placeholder,
-.minnpost-styles input[type="color"]::-moz-placeholder,
-.minnpost-styles .form-input::-moz-placeholder {
+.mp select::-moz-placeholder,
+.mp textarea::-moz-placeholder,
+.mp input[type="text"]::-moz-placeholder,
+.mp input[type="password"]::-moz-placeholder,
+.mp input[type="datetime"]::-moz-placeholder,
+.mp input[type="datetime-local"]::-moz-placeholder,
+.mp input[type="date"]::-moz-placeholder,
+.mp input[type="month"]::-moz-placeholder,
+.mp input[type="time"]::-moz-placeholder,
+.mp input[type="week"]::-moz-placeholder,
+.mp input[type="number"]::-moz-placeholder,
+.mp input[type="email"]::-moz-placeholder,
+.mp input[type="url"]::-moz-placeholder,
+.mp input[type="search"]::-moz-placeholder,
+.mp input[type="tel"]::-moz-placeholder,
+.mp input[type="color"]::-moz-placeholder,
+.mp .form-input::-moz-placeholder {
   color: #9e9e9e;
   opacity: 1;
 }
-.minnpost-styles select:-ms-input-placeholder,
-.minnpost-styles textarea:-ms-input-placeholder,
-.minnpost-styles input[type="text"]:-ms-input-placeholder,
-.minnpost-styles input[type="password"]:-ms-input-placeholder,
-.minnpost-styles input[type="datetime"]:-ms-input-placeholder,
-.minnpost-styles input[type="datetime-local"]:-ms-input-placeholder,
-.minnpost-styles input[type="date"]:-ms-input-placeholder,
-.minnpost-styles input[type="month"]:-ms-input-placeholder,
-.minnpost-styles input[type="time"]:-ms-input-placeholder,
-.minnpost-styles input[type="week"]:-ms-input-placeholder,
-.minnpost-styles input[type="number"]:-ms-input-placeholder,
-.minnpost-styles input[type="email"]:-ms-input-placeholder,
-.minnpost-styles input[type="url"]:-ms-input-placeholder,
-.minnpost-styles input[type="search"]:-ms-input-placeholder,
-.minnpost-styles input[type="tel"]:-ms-input-placeholder,
-.minnpost-styles input[type="color"]:-ms-input-placeholder,
-.minnpost-styles .form-input:-ms-input-placeholder {
+.mp select:-ms-input-placeholder,
+.mp textarea:-ms-input-placeholder,
+.mp input[type="text"]:-ms-input-placeholder,
+.mp input[type="password"]:-ms-input-placeholder,
+.mp input[type="datetime"]:-ms-input-placeholder,
+.mp input[type="datetime-local"]:-ms-input-placeholder,
+.mp input[type="date"]:-ms-input-placeholder,
+.mp input[type="month"]:-ms-input-placeholder,
+.mp input[type="time"]:-ms-input-placeholder,
+.mp input[type="week"]:-ms-input-placeholder,
+.mp input[type="number"]:-ms-input-placeholder,
+.mp input[type="email"]:-ms-input-placeholder,
+.mp input[type="url"]:-ms-input-placeholder,
+.mp input[type="search"]:-ms-input-placeholder,
+.mp input[type="tel"]:-ms-input-placeholder,
+.mp input[type="color"]:-ms-input-placeholder,
+.mp .form-input:-ms-input-placeholder {
   color: #9e9e9e;
 }
-.minnpost-styles select::-webkit-input-placeholder,
-.minnpost-styles textarea::-webkit-input-placeholder,
-.minnpost-styles input[type="text"]::-webkit-input-placeholder,
-.minnpost-styles input[type="password"]::-webkit-input-placeholder,
-.minnpost-styles input[type="datetime"]::-webkit-input-placeholder,
-.minnpost-styles input[type="datetime-local"]::-webkit-input-placeholder,
-.minnpost-styles input[type="date"]::-webkit-input-placeholder,
-.minnpost-styles input[type="month"]::-webkit-input-placeholder,
-.minnpost-styles input[type="time"]::-webkit-input-placeholder,
-.minnpost-styles input[type="week"]::-webkit-input-placeholder,
-.minnpost-styles input[type="number"]::-webkit-input-placeholder,
-.minnpost-styles input[type="email"]::-webkit-input-placeholder,
-.minnpost-styles input[type="url"]::-webkit-input-placeholder,
-.minnpost-styles input[type="search"]::-webkit-input-placeholder,
-.minnpost-styles input[type="tel"]::-webkit-input-placeholder,
-.minnpost-styles input[type="color"]::-webkit-input-placeholder,
-.minnpost-styles .form-input::-webkit-input-placeholder {
+.mp select::-webkit-input-placeholder,
+.mp textarea::-webkit-input-placeholder,
+.mp input[type="text"]::-webkit-input-placeholder,
+.mp input[type="password"]::-webkit-input-placeholder,
+.mp input[type="datetime"]::-webkit-input-placeholder,
+.mp input[type="datetime-local"]::-webkit-input-placeholder,
+.mp input[type="date"]::-webkit-input-placeholder,
+.mp input[type="month"]::-webkit-input-placeholder,
+.mp input[type="time"]::-webkit-input-placeholder,
+.mp input[type="week"]::-webkit-input-placeholder,
+.mp input[type="number"]::-webkit-input-placeholder,
+.mp input[type="email"]::-webkit-input-placeholder,
+.mp input[type="url"]::-webkit-input-placeholder,
+.mp input[type="search"]::-webkit-input-placeholder,
+.mp input[type="tel"]::-webkit-input-placeholder,
+.mp input[type="color"]::-webkit-input-placeholder,
+.mp .form-input::-webkit-input-placeholder {
   color: #9e9e9e;
 }
-.minnpost-styles select[disabled], .minnpost-styles select[readonly], fieldset[disabled] .minnpost-styles select,
-.minnpost-styles textarea[disabled],
-.minnpost-styles textarea[readonly], fieldset[disabled]
-.minnpost-styles textarea,
-.minnpost-styles input[type="text"][disabled],
-.minnpost-styles input[type="text"][readonly], fieldset[disabled]
-.minnpost-styles input[type="text"],
-.minnpost-styles input[type="password"][disabled],
-.minnpost-styles input[type="password"][readonly], fieldset[disabled]
-.minnpost-styles input[type="password"],
-.minnpost-styles input[type="datetime"][disabled],
-.minnpost-styles input[type="datetime"][readonly], fieldset[disabled]
-.minnpost-styles input[type="datetime"],
-.minnpost-styles input[type="datetime-local"][disabled],
-.minnpost-styles input[type="datetime-local"][readonly], fieldset[disabled]
-.minnpost-styles input[type="datetime-local"],
-.minnpost-styles input[type="date"][disabled],
-.minnpost-styles input[type="date"][readonly], fieldset[disabled]
-.minnpost-styles input[type="date"],
-.minnpost-styles input[type="month"][disabled],
-.minnpost-styles input[type="month"][readonly], fieldset[disabled]
-.minnpost-styles input[type="month"],
-.minnpost-styles input[type="time"][disabled],
-.minnpost-styles input[type="time"][readonly], fieldset[disabled]
-.minnpost-styles input[type="time"],
-.minnpost-styles input[type="week"][disabled],
-.minnpost-styles input[type="week"][readonly], fieldset[disabled]
-.minnpost-styles input[type="week"],
-.minnpost-styles input[type="number"][disabled],
-.minnpost-styles input[type="number"][readonly], fieldset[disabled]
-.minnpost-styles input[type="number"],
-.minnpost-styles input[type="email"][disabled],
-.minnpost-styles input[type="email"][readonly], fieldset[disabled]
-.minnpost-styles input[type="email"],
-.minnpost-styles input[type="url"][disabled],
-.minnpost-styles input[type="url"][readonly], fieldset[disabled]
-.minnpost-styles input[type="url"],
-.minnpost-styles input[type="search"][disabled],
-.minnpost-styles input[type="search"][readonly], fieldset[disabled]
-.minnpost-styles input[type="search"],
-.minnpost-styles input[type="tel"][disabled],
-.minnpost-styles input[type="tel"][readonly], fieldset[disabled]
-.minnpost-styles input[type="tel"],
-.minnpost-styles input[type="color"][disabled],
-.minnpost-styles input[type="color"][readonly], fieldset[disabled]
-.minnpost-styles input[type="color"],
-.minnpost-styles .form-input[disabled],
-.minnpost-styles .form-input[readonly], fieldset[disabled]
-.minnpost-styles .form-input {
+.mp select[disabled], .mp select[readonly], fieldset[disabled] .mp select,
+.mp textarea[disabled],
+.mp textarea[readonly], fieldset[disabled]
+.mp textarea,
+.mp input[type="text"][disabled],
+.mp input[type="text"][readonly], fieldset[disabled]
+.mp input[type="text"],
+.mp input[type="password"][disabled],
+.mp input[type="password"][readonly], fieldset[disabled]
+.mp input[type="password"],
+.mp input[type="datetime"][disabled],
+.mp input[type="datetime"][readonly], fieldset[disabled]
+.mp input[type="datetime"],
+.mp input[type="datetime-local"][disabled],
+.mp input[type="datetime-local"][readonly], fieldset[disabled]
+.mp input[type="datetime-local"],
+.mp input[type="date"][disabled],
+.mp input[type="date"][readonly], fieldset[disabled]
+.mp input[type="date"],
+.mp input[type="month"][disabled],
+.mp input[type="month"][readonly], fieldset[disabled]
+.mp input[type="month"],
+.mp input[type="time"][disabled],
+.mp input[type="time"][readonly], fieldset[disabled]
+.mp input[type="time"],
+.mp input[type="week"][disabled],
+.mp input[type="week"][readonly], fieldset[disabled]
+.mp input[type="week"],
+.mp input[type="number"][disabled],
+.mp input[type="number"][readonly], fieldset[disabled]
+.mp input[type="number"],
+.mp input[type="email"][disabled],
+.mp input[type="email"][readonly], fieldset[disabled]
+.mp input[type="email"],
+.mp input[type="url"][disabled],
+.mp input[type="url"][readonly], fieldset[disabled]
+.mp input[type="url"],
+.mp input[type="search"][disabled],
+.mp input[type="search"][readonly], fieldset[disabled]
+.mp input[type="search"],
+.mp input[type="tel"][disabled],
+.mp input[type="tel"][readonly], fieldset[disabled]
+.mp input[type="tel"],
+.mp input[type="color"][disabled],
+.mp input[type="color"][readonly], fieldset[disabled]
+.mp input[type="color"],
+.mp .form-input[disabled],
+.mp .form-input[readonly], fieldset[disabled]
+.mp .form-input {
   cursor: not-allowed;
   background-color: #c5c5c5;
 }
-.minnpost-styles textarea {
+.mp textarea {
   height: auto;
 }
-.minnpost-styles .form-item {
+.mp .form-item {
   margin-bottom: 1em;
 }
-.minnpost-styles .radio,
-.minnpost-styles .checkbox {
+.mp .radio,
+.mp .checkbox {
   display: block;
   min-height: 1.25em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding-left: 2em;
 }
-.minnpost-styles .radio label,
-.minnpost-styles .checkbox label {
+.mp .radio label,
+.mp .checkbox label {
   display: inline;
   font-weight: normal;
   cursor: pointer;
 }
-.minnpost-styles .radio input[type="radio"],
-.minnpost-styles .radio-inline input[type="radio"],
-.minnpost-styles .checkbox input[type="checkbox"],
-.minnpost-styles .checkbox-inline input[type="checkbox"] {
+.mp .radio input[type="radio"],
+.mp .radio-inline input[type="radio"],
+.mp .checkbox input[type="checkbox"],
+.mp .checkbox-inline input[type="checkbox"] {
   float: left;
   margin-left: -1.5em;
 }
-.minnpost-styles .radio + .radio,
-.minnpost-styles .checkbox + .checkbox {
+.mp .radio + .radio,
+.mp .checkbox + .checkbox {
   margin-top: -5px;
 }
-.minnpost-styles .radio-inline,
-.minnpost-styles .checkbox-inline {
+.mp .radio-inline,
+.mp .checkbox-inline {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -1276,31 +1700,31 @@ html {
   font-weight: normal;
   cursor: pointer;
 }
-.minnpost-styles .radio-inline + .radio-inline,
-.minnpost-styles .checkbox-inline + .checkbox-inline {
+.mp .radio-inline + .radio-inline,
+.mp .checkbox-inline + .checkbox-inline {
   margin-top: 0;
   margin-left: 1em;
 }
-.minnpost-styles input[type="radio"][disabled], fieldset[disabled] .minnpost-styles input[type="radio"],
-.minnpost-styles input[type="checkbox"][disabled], fieldset[disabled]
-.minnpost-styles input[type="checkbox"],
-.minnpost-styles .radio[disabled], fieldset[disabled]
-.minnpost-styles .radio,
-.minnpost-styles .radio-inline[disabled], fieldset[disabled]
-.minnpost-styles .radio-inline,
-.minnpost-styles .checkbox[disabled], fieldset[disabled]
-.minnpost-styles .checkbox,
-.minnpost-styles .checkbox-inline[disabled], fieldset[disabled]
-.minnpost-styles .checkbox-inline {
+.mp input[type="radio"][disabled], fieldset[disabled] .mp input[type="radio"],
+.mp input[type="checkbox"][disabled], fieldset[disabled]
+.mp input[type="checkbox"],
+.mp .radio[disabled], fieldset[disabled]
+.mp .radio,
+.mp .radio-inline[disabled], fieldset[disabled]
+.mp .radio-inline,
+.mp .checkbox[disabled], fieldset[disabled]
+.mp .checkbox,
+.mp .checkbox-inline[disabled], fieldset[disabled]
+.mp .checkbox-inline {
   cursor: not-allowed;
 }
-.minnpost-styles .form-help {
+.mp .form-help {
   display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   color: #c5c5c5;
 }
-.minnpost-styles .form-inline .form-item {
+.mp .form-inline .form-item {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -1310,12 +1734,12 @@ html {
   vertical-align: middle;
   margin-right: 1em;
 }
-.minnpost-styles .form-inline .form-item label {
+.mp .form-inline .form-item label {
   margin-bottom: 0;
   vertical-align: middle;
 }
-.minnpost-styles .form-inline .radio,
-.minnpost-styles .form-inline .checkbox {
+.mp .form-inline .radio,
+.mp .form-inline .checkbox {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -1326,140 +1750,140 @@ html {
   padding-left: 0;
   vertical-align: middle;
 }
-.minnpost-styles .form-inline .radio input[type="radio"],
-.minnpost-styles .form-inline .checkbox input[type="checkbox"] {
+.mp .form-inline .radio input[type="radio"],
+.mp .form-inline .checkbox input[type="checkbox"] {
   float: none;
   margin-left: 0;
 }
-.minnpost-styles .form-input-group {
+.mp .form-input-group {
   position: relative;
   display: table;
   border-collapse: separate;
   margin-bottom: 1em;
 }
-.minnpost-styles .form-input-group[class*="col-"] {
+.mp .form-input-group[class*="col-"] {
   float: none;
   padding-left: 0;
   padding-right: 0;
 }
-.minnpost-styles .form-input-group select,
-.minnpost-styles .form-input-group textarea,
-.minnpost-styles .form-input-group input[type="text"],
-.minnpost-styles .form-input-group input[type="password"],
-.minnpost-styles .form-input-group input[type="datetime"],
-.minnpost-styles .form-input-group input[type="datetime-local"],
-.minnpost-styles .form-input-group input[type="date"],
-.minnpost-styles .form-input-group input[type="month"],
-.minnpost-styles .form-input-group input[type="time"],
-.minnpost-styles .form-input-group input[type="week"],
-.minnpost-styles .form-input-group input[type="number"],
-.minnpost-styles .form-input-group input[type="email"],
-.minnpost-styles .form-input-group input[type="url"],
-.minnpost-styles .form-input-group input[type="search"],
-.minnpost-styles .form-input-group input[type="tel"],
-.minnpost-styles .form-input-group input[type="color"],
-.minnpost-styles .form-input-group .form-input {
+.mp .form-input-group select,
+.mp .form-input-group textarea,
+.mp .form-input-group input[type="text"],
+.mp .form-input-group input[type="password"],
+.mp .form-input-group input[type="datetime"],
+.mp .form-input-group input[type="datetime-local"],
+.mp .form-input-group input[type="date"],
+.mp .form-input-group input[type="month"],
+.mp .form-input-group input[type="time"],
+.mp .form-input-group input[type="week"],
+.mp .form-input-group input[type="number"],
+.mp .form-input-group input[type="email"],
+.mp .form-input-group input[type="url"],
+.mp .form-input-group input[type="search"],
+.mp .form-input-group input[type="tel"],
+.mp .form-input-group input[type="color"],
+.mp .form-input-group .form-input {
   float: left;
   width: 100%;
   margin-bottom: 0;
   display: table-cell;
 }
-.minnpost-styles .form-input-group select:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group textarea:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="text"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="password"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="datetime"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="datetime-local"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="date"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="month"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="time"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="week"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="number"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="email"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="url"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="search"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="tel"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group input[type="color"]:not(:first-child):not(:last-child),
-.minnpost-styles .form-input-group .form-input:not(:first-child):not(:last-child) {
+.mp .form-input-group select:not(:first-child):not(:last-child),
+.mp .form-input-group textarea:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="text"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="password"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="datetime"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="datetime-local"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="date"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="month"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="time"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="week"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="number"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="email"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="url"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="search"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="tel"]:not(:first-child):not(:last-child),
+.mp .form-input-group input[type="color"]:not(:first-child):not(:last-child),
+.mp .form-input-group .form-input:not(:first-child):not(:last-child) {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
 }
-.minnpost-styles .form-input-group .button-group {
+.mp .form-input-group .button-group {
   position: relative;
   display: table-cell;
   white-space: nowrap;
   vertical-align: middle;
 }
-.minnpost-styles .form-input-group .button-group:not(:first-child):not(:last-child) {
+.mp .form-input-group .button-group:not(:first-child):not(:last-child) {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
 }
-.minnpost-styles .form-input-group .button-group > .button {
+.mp .form-input-group .button-group > .button {
   position: relative;
 }
-.minnpost-styles .form-input-group .button-group > .button + .button {
+.mp .form-input-group .button-group > .button + .button {
   margin-left: -1px;
 }
-.minnpost-styles .form-input-group .button-group > .button:hover, .minnpost-styles .form-input-group .button-group > .button:focus, .minnpost-styles .form-input-group .button-group > .button:active {
+.mp .form-input-group .button-group > .button:hover, .mp .form-input-group .button-group > .button:focus, .mp .form-input-group .button-group > .button:active {
   z-index: 2;
 }
-.minnpost-styles .form-input-group .button-group:first-child > .button,
-.minnpost-styles .form-input-group .button-group:first-child > .button-group {
+.mp .form-input-group .button-group:first-child > .button,
+.mp .form-input-group .button-group:first-child > .button-group {
   margin-right: -1px;
 }
-.minnpost-styles .form-input-group .button-group:last-child > .button,
-.minnpost-styles .form-input-group .button-group:last-child > .button-group {
+.mp .form-input-group .button-group:last-child > .button,
+.mp .form-input-group .button-group:last-child > .button-group {
   margin-left: -1px;
 }
 
 /**
  * Styles for tables.
  */
-.minnpost-styles table {
+.mp table {
   width: 100%;
   margin-bottom: 1em;
   text-align: left;
   line-height: 1.25em;
 }
-.minnpost-styles table thead th {
+.mp table thead th {
   vertical-align: bottom;
   border-bottom: 2px solid #c5c5c5;
   line-height: 1.25em;
   padding: 0.5em;
 }
-.minnpost-styles table tbody td {
+.mp table tbody td {
   vertical-align: top;
   border-bottom: 1px solid #c5c5c5;
   padding: 0.5em;
 }
-.minnpost-styles table tbody tr:nth-child(odd) td {
+.mp table tbody tr:nth-child(odd) td {
   background-color: #f8f8f8;
 }
 
 /**
  * Images
  */
-.minnpost-styles img.rounded {
+.mp img.rounded {
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
   -ms-border-radius: 0.25em;
   -o-border-radius: 0.25em;
   border-radius: 0.25em;
 }
-.minnpost-styles img.circle {
+.mp img.circle {
   border-radius: 50%;
 }
 
 /**
  * Thumbnails.  Not just for images, necessarily.
  */
-.minnpost-styles .thumbnail {
+.mp .thumbnail {
   display: block;
   padding: 0.25em;
   margin-bottom: 1em;
@@ -1471,47 +1895,77 @@ html {
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-.minnpost-styles .thumbnail > img,
-.minnpost-styles .thumbnail a > img {
+.mp .thumbnail > img,
+.mp .thumbnail a > img {
   margin-left: auto;
   margin-right: auto;
 }
-.minnpost-styles .thumbnail .caption,
-.minnpost-styles .thumbnail caption {
+.mp .thumbnail .caption,
+.mp .thumbnail caption {
   padding: 0.25em 0.5em;
   color: #9e9e9e;
 }
-.minnpost-styles .thumbnail.thumbnail-inline {
+.mp .thumbnail.thumbnail-inline {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
   *display: inline;
   margin-right: 0.25em;
 }
-.minnpost-styles a.thumbnail:hover, .minnpost-styles a.thumbnail:focus, .minnpost-styles a.thumbnail.active {
+.mp a.thumbnail:hover, .mp a.thumbnail:focus, .mp a.thumbnail.active {
   border-color: #801019;
+}
+
+/**
+ * Progress bars.
+ */
+.mp .progress {
+  overflow: hidden;
+  height: 1.25em;
+  margin-bottom: 1em;
+  background-color: #c5c5c5;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.mp .progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 0.85em;
+  line-height: 1.25em;
+  color: white;
+  text-align: center;
+  background-color: #787878;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -moz-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
 }
 
 /**
  * Responsive styles for minnpost-styles.
  */
-.minnpost-styles {
+.mp {
   /**
    * Images are responsive by default
    */
   /**
-   * Tables.  Inspired by Bootstraps method.
+   * Responsive tables wrapper.  Inspired by Bootstraps method.
    */
 }
-.minnpost-styles img {
+.mp img {
   max-width: 100%;
   height: auto;
 }
-.minnpost-styles img .nonresponsive {
+.mp img.nonresponsive {
   max-width: auto;
 }
-@media (max-width: 960px) {
-  .minnpost-styles .table-responsive {
+@media (max-width: 420px) {
+  .mp .table-responsive {
     width: 100%;
     margin-bottom: 1em;
     overflow-x: scroll;
@@ -1520,7 +1974,29 @@ html {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
   }
-  .minnpost-styles .table-responsive table {
+  .mp .table-responsive table {
     margin-bottom: 0;
   }
+}
+
+/**
+ * Specific to MinnPost but could be helpful to you.
+ */
+.mp .full-page-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
+}
+.mp .sidebar-page-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+}
+.mp .interactive-container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 960px;
 }
