@@ -57,7 +57,7 @@
   // Various text modifiers
   small,
   .small {
-    font-size: 85%;
+    font-size: $text-size-small;
   }
   strong,
   .strong {
@@ -124,6 +124,17 @@
     ol {
       list-style-type: lower-roman;
     }
+  }
+
+  // Footnote
+  .footnote {
+    font-size: $text-size-small;
+    font-style: italic;
+    color: $color-dark-gray;
+    margin-top: $space-vertical-margin * 2;
+    margin-bottom: $space-vertical-margin;
+    border-top: 1px solid $color-light-gray;
+    padding-top: $space-vertical-padding * 2;
   }
 
   // Code styles

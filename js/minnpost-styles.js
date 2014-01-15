@@ -13,7 +13,7 @@
     module.exports = MP;
   }
   else if (typeof define === 'function' && define.amd) {
-    define(function() {
+    define('minnpost-styles', function() {
       return MP;
     });
   }

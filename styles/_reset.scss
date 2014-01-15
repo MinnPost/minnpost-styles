@@ -152,7 +152,7 @@ html {
    * Remove the gray background color from active links in IE 10.
    */
 
-  a {
+  a:active {
       background: transparent;
   }
 

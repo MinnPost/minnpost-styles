@@ -7,8 +7,11 @@
     <meta name="description" content="The MinnPost super-fly style guide, specifically focused on interactive and news applications made by the MinnData team.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="dist/minnpost-styles.min.css">
+    <base target=”_blank” />
+
+    <link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="dist/minnpost-styles.min.css">
     <link rel="stylesheet" href="demo/demo.css">
   </head>
   <body class="mp">
@@ -268,6 +271,19 @@ example here. </code></pre>
       </div>
       <div class="example-code">
 <pre><code>&lt;code&gt;code&lt;/code&gt; </code></pre>
+      </div>
+
+      <h3>Footnote</h3>
+
+      <div class="example">
+        <div class="footnote">
+          <p>This is a footnote example.</p>
+        </div>
+      </div>
+      <div class="example-code">
+<pre><code>&lt;div class="footnote"&gt;
+  &lt;p>This is a footnote example&lt;/p>
+&lt;/div&gt; </code></pre>
       </div>
 
 
@@ -568,7 +584,7 @@ example here. </code></pre>
 
       <h2>Icons</h2>
 
-      <p>Icons provided by <a href="http://fontawesome.io/" target="_blank">Font Awesome</a>; see the site for the full list of icons.  Kept independent so that MinnPost Styles stays small if you don't need them.  Use the Bootstrap CDN to include the CSS</p>
+      <p>Icons provided by <a href="http://fontawesome.io/">Font Awesome</a>; see the site for the full list of icons.  Kept independent so that MinnPost Styles stays small if you don't need them.  Use the Bootstrap CDN to include the CSS</p>
 
       <pre><code>&lt;link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"&gt; </code></pre>
 
@@ -730,6 +746,72 @@ example here. </code></pre>
 
       <div class="example">
         <div class="chart chart-bar-example"></div>
+      </div>
+      <div class="example-code">
+<pre><code> </pre></code>
+      </div>
+
+
+
+
+
+
+      <h2>Maps</h2>
+
+      <p>Styling for maps provided through Leaflet or Mapbox.js.  Note that Mapbox.js is a subset of Leaflet.  We use the Mapbox.js styling because it is a nice style and provides consistency across maps that may or may not use the Mapbox.js styles.  Include the CSS before MinnPost styles.</p>
+
+      <pre><code>&lt;link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css"&gt; </code></pre>
+
+      <h3>Javascript</h3>
+
+      <p>Helpful methods and values are available in the <code>minnpost-styles.maps.js</code> file under the <code>MP.maps</code> property.</p>
+
+      <h3>Attribution</h3>
+
+      <p>With most map services like OpenStreetMap and Mapbox, their terms of use require attribution of some sort.  The requirement is usually to have a link on the page, not necessarily on the map.  By default, the attribution control is added to a leaflet map, so you must remove it.</p>
+
+      <pre><code>// Remove attribute
+map.removeControl(map.attributionControl);
+// Handy attribution
+MP.maps.mapboxAttribution;
+MP.maps.openstreetmapAttribution; </code></pre>
+
+      <div class="example">
+        <div class="footnote">
+          <p>Map attribution.  <span class="map-attribution"></span></p>
+        </div>
+      </div>
+      <div class="example-code">
+<pre><code> </pre></code>
+      </div>
+
+      <h3>Basic leaflet map</h3>
+
+      <div class="example">
+        <div class="map" id="example-leaflet-map"></div>
+
+        <div class="footnote">
+          <p>Map attribution.  <span class="map-attribution"></span></p>
+        </div>
+      </div>
+      <div class="example-code">
+<pre><code> </pre></code>
+      </div>
+
+      <h3>Markers and features</h3>
+
+      <p>The <a href="https://www.mapbox.com/maki/">Maki icon set</a> provided by Mapbox is a basic icon set focused on points of interests.  Mapbox provides a <a href="https://www.mapbox.com/developers/api/#Stand-alone.markers">static API for the icons</a> that can be used to make markers pretty easily.  There is a simple icon factory method in <code>MP.maps</code>.</p>
+
+      <pre><code>var icon = MP.maps.makeMakiIcon('cinema', 'm', '232323'); </pre></code>
+
+      <p>For non-marker feature, like polygons, there is a default style provided under <code>MP.maps.mapStyle</code>.</p>
+
+      <div class="example">
+        <div class="map" id="example-markers-features-map"></div>
+
+        <div class="footnote">
+          <p>Map attribution.  <span class="map-attribution"></span></p>
+        </div>
       </div>
       <div class="example-code">
 <pre><code> </pre></code>

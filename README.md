@@ -53,3 +53,9 @@ To build or compile all the assets together and create a new version in the `dis
 1. Run: `grunt`
 1. Commit changes and push up to Github, including the `gh-pages` branch
 
+## Inspiration and 3rd Party Code
+
+Some code and inspiration taken from other, awesome libraries.
+
+* Many parts are taken directly from [Bootstrap](http://getbootstrap.com/) ([license](https://github.com/twbs/bootstrap/blob/master/LICENSE)).
+* Small parts taken from [Mapbox.js](https://www.mapbox.com/mapbox.js/) ([license](https://github.com/mapbox/mapbox.js/blob/master/LICENSE.md)).

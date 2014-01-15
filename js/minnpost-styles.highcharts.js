@@ -9,11 +9,11 @@
   }
   // AMD?
   else if (typeof define === 'function' && define.amd) {
-    define(['minnpost-styles', 'jquery', 'Highcharts'], factory);
+    define('minnpost-styles.highcharts', ['minnpost-styles', 'jquery', 'Highcharts'], factory);
   }
   // Browser global
-  else if (global.MP && global.jQuery) {
-    factory(global.MP);
+  else if (global.MP && global.jQuery && global.Highcharts) {
+    factory(global.MP, global.jQuery, global.Highcharts);
   }
   else {
     throw new Error('Could not find dependencies for MinnPost Styles Highchart.' );

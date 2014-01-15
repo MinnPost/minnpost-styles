@@ -16,11 +16,12 @@ require.config({
   paths: {
     'underscore': '../bower_components/underscore/underscore-min',
     'jquery': '../bower_components/jquery/jquery.min',
-    'Highcharts': '../bower_components/highcharts/highcharts'
+    'Highcharts': '../bower_components/highcharts/highcharts',
+    'Leaflet': '../bower_components/leaflet/dist/leaflet'
   }
 });
 
-require(['underscore', 'minnpost-styles', 'minnpost-styles.highcharts'], function(_, MP) {
+require(['underscore', 'jquery', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps'], function(_, $, MP) {
 
   // Highcharts
   var exampleData = [{
@@ -52,4 +53,36 @@ require(['underscore', 'minnpost-styles', 'minnpost-styles.highcharts'], functio
       data: [640, 765, 999, 123]
     }]
   }));
+
+
+  // Basic maps
+  MP.maps.makeLeafletMap('example-leaflet-map');
+
+  // Marker map
+  var markerMap = MP.maps.makeLeafletMap('example-markers-features-map');
+
+  // Markers
+  var iconCinema = MP.maps.makeMakiIcon('cinema', 'm');
+  var iconBlank = MP.maps.makeMakiIcon('', 's', '222222');
+  L.marker(MP.maps.minneapolisPoint, { icon: iconCinema })
+    .addTo(markerMap).bindPopup('Minneapolis', {
+      closeButton: false
+    });
+  L.marker(MP.maps.stPaulPoint, { icon: iconBlank })
+    .addTo(markerMap).bindPopup('St. Paul', {
+      closeButton: false
+    });
+
+  // GeoJSON example
+  $.getJSON('http://boundaries.minnpost.com/1.0/boundary/27-county-2010/?callback=?', function(data) {
+    if (data.simple_shape) {
+      L.geoJson(data.simple_shape, {
+        style: MP.maps.mapStyle
+      }).addTo(markerMap);
+    }
+  });
+
+
+  // Attribution
+  $('.map-attribution').html(MP.maps.mapboxAttribution + ' ' + MP.maps.openstreetmapAttribution);
 });
