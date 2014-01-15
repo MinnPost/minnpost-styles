@@ -1308,6 +1308,7 @@ html {
   margin-right: 0.25em;
   position: relative;
   vertical-align: middle;
+  margin-bottom: 1em;
 }
 .mp .button-group > .button,
 .mp .button-group-vertical > .button {
@@ -1965,9 +1966,6 @@ html {
 /**
  * Styles for Leaflet and Mapbox maps.
  */
-.mp {
-  /* popup */
-}
 .mp .map {
   width: 100%;
   height: 25em;
@@ -2003,6 +2001,46 @@ html {
   border-color: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   box-shadow: none;
+}
+.mp .leaflet-popup-content-wrapper,
+.mp .map-legends,
+.mp .map-tooltip {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.mp .map-legends,
+.mp .map-tooltip {
+  max-width: 300px;
+}
+.mp .map-legends .map-legend {
+  padding: 10px;
+}
+.mp .map-tooltip {
+  z-index: 999999;
+  padding: 10px;
+  min-width: 180px;
+  max-height: 400px;
+  overflow: auto;
+  opacity: 1;
+  -webkit-transition: opacity 150ms;
+  -moz-transition: opacity 150ms;
+  -o-transition: opacity 150ms;
+  transition: opacity 150ms;
+}
+.mp .map-tooltip .close {
+  text-indent: -999em;
+  overflow: hidden;
+  display: none;
+}
+.mp .map-tooltip.closable .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 3px;
+}
+.mp .map-tooltip.closable .close:active {
+  background-color: #f8f8f8;
 }
 .mp .leaflet-popup {
   position: absolute;
