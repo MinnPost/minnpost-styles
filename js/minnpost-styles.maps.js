@@ -43,8 +43,7 @@
     opacity: 0.9,
     fill: true,
     fillColor: '#2DA51D',
-    fillOpacity: 0.2,
-    clickable: false
+    fillOpacity: 0.2
   };
   MP.maps.mapboxAttribution = 'Some map imagery provided by <a href="https://www.mapbox.com/about/maps/" target="_blank">Mapbox</a>.';
   MP.maps.openstreetmapAttribution = 'Some map data provided by &copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors.';
@@ -93,5 +92,39 @@
       className: 'maki-marker'
     }));
   };
+
+  // Basic control for a staticly places tooltip
+  MP.maps.TooltipControl = L.Control.extend({
+    options: {
+      position: 'topright'
+    },
+
+    initialize: function() {
+    },
+
+    update: function(content) {
+      this._contentWrapper.innerHTML = content;
+      this.show();
+    },
+
+    show: function() {
+      this._container.style.display = 'block';
+    },
+
+    hide: function() {
+      this._container.style.display = 'none';
+    },
+
+    onAdd: function(map) {
+      this._container = L.DomUtil.create('div', 'map-tooltip');
+      this._contentWrapper = L.DomUtil.create('div', 'map-tooltip-content');
+      this._container.appendChild(this._contentWrapper);
+      this.hide();
+      return this._container;
+    },
+
+    onRemove: function(map) {
+    }
+  });
 
 });

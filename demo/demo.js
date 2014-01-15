@@ -77,7 +77,9 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
 
   // Marker map
   var markerMap = MP.maps.makeLeafletMap('example-markers-features-map');
+  var tooltipControl = new MP.maps.TooltipControl();
   markerMap.setZoom(9);
+  markerMap.addControl(tooltipControl);
 
   // Markers
   var iconCinema = MP.maps.makeMakiIcon('cinema', 'm');
@@ -95,7 +97,15 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
   $.getJSON('http://boundaries.minnpost.com/1.0/boundary/27-county-2010/?callback=?', function(data) {
     if (data.simple_shape) {
       L.geoJson(data.simple_shape, {
-        style: MP.maps.mapStyle
+        style: MP.maps.mapStyle,
+        onEachFeature: function(feature, layer) {
+          layer.on('mouseover', function(e) {
+            tooltipControl.update('Hennepin County');
+          });
+          layer.on('mouseout', function(e) {
+            tooltipControl.hide();
+          });
+        }
       }).addTo(markerMap);
     }
   });

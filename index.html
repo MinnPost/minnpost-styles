@@ -787,6 +787,8 @@ MP.maps.openstreetmapAttribution; </code></pre>
 
       <h3>Basic leaflet map</h3>
 
+      <p>You can switch the different base maps that we have created through Mapbox.  If you are not making a MinnPost project, please use your own base layers as their use costs us money.</p>
+
       <div class="example">
         <div class="button-group map-baselayer-choices">
           <button class="button" data-map="mapboxSatelliteStreets">Satellite</button>
@@ -812,7 +814,7 @@ MP.maps.openstreetmapAttribution; </code></pre>
 
       <pre><code>var icon = MP.maps.makeMakiIcon('cinema', 'm', '232323'); </pre></code>
 
-      <p>For non-marker feature, like polygons, there is a default style provided under <code>MP.maps.mapStyle</code>.</p>
+      <p>For non-marker feature, like polygons, there is a default style provided under <code>MP.maps.mapStyle</code>.  Also, for simple tooltip static hovers, there is a <code>MP.maps.TooltipControl</code> Leaflet control to easily manage tooltips.</p>
 
       <div class="example">
         <div class="map" id="example-markers-features-map"></div>
