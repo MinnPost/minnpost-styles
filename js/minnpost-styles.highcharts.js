@@ -5,7 +5,7 @@
 (function(global, factory) {
   // Common JS (i.e. browserify) environment
   if (typeof module !== 'undefined' && module.exports && typeof require === 'function') {
-    factory(require('MP'), require('jquery'), require('Highcharts'));
+    factory(require('minnpost-styles'), require('jquery'), require('Highcharts'));
   }
   // AMD?
   else if (typeof define === 'function' && define.amd) {

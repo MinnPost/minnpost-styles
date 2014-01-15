@@ -2,3 +2,38 @@
  * Navigation stuff
  */
 
+.navigation {
+
+  ul {
+    @extend .clearfix;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+
+    > li {
+      position: relative;
+      display: block;
+
+      > a {
+        position: relative;
+        display: block;
+        //padding: @nav-link-padding;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          //background-color: @nav-link-hover-bg;
+        }
+      }
+    }
+  }
+
+  &.stuck {
+    background-color: $color-white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 1em;
+    border-bottom: 1px solid $color-dark-gray;
+  }
+}
