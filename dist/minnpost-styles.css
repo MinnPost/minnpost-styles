@@ -281,7 +281,7 @@ html {
 .mp template {
   display: none;
 }
-.mp a {
+.mp a:active {
   background: transparent;
 }
 .mp a:focus {
@@ -990,7 +990,7 @@ html {
 }
 .mp small,
 .mp .small {
-  font-size: 85%;
+  font-size: 0.85em;
 }
 .mp strong,
 .mp .strong {
@@ -1057,6 +1057,15 @@ html {
 }
 .mp ol ol {
   list-style-type: lower-roman;
+}
+.mp .footnote {
+  font-size: 0.85em;
+  font-style: italic;
+  color: #525252;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  border-top: 1px solid #9e9e9e;
+  padding-top: 0.5em;
 }
 .mp code {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -1951,6 +1960,94 @@ html {
   width: 100%;
   height: 20em;
   margin-bottom: 2em;
+}
+
+/**
+ * Styles for Leaflet and Mapbox maps.
+ */
+.mp {
+  /* popup */
+}
+.mp .map {
+  width: 100%;
+  height: 25em;
+  margin-bottom: 2em;
+}
+.mp .leaflet-map-pane,
+.mp .leaflet-tile,
+.mp .leaflet-marker-icon,
+.mp .leaflet-marker-shadow,
+.mp .leaflet-tile-pane,
+.mp .leaflet-tile-container,
+.mp .leaflet-overlay-pane,
+.mp .leaflet-shadow-pane,
+.mp .leaflet-marker-pane,
+.mp .leaflet-popup-pane,
+.mp .leaflet-overlay-pane svg,
+.mp .leaflet-zoom-box,
+.mp .leaflet-image-layer,
+.mp .leaflet-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.mp .leaflet-bar a, .mp .leaflet-bar a:hover {
+  color: #404040;
+  color: rgba(0, 0, 0, 0.75);
+  border-bottom: 1px solid #ddd;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+.mp .leaflet-control-layers, .mp .leaflet-bar {
+  background-color: #fff;
+  border: 1px solid #999;
+  border-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+  box-shadow: none;
+}
+.mp .leaflet-popup {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+}
+.mp .leaflet-popup-content-wrapper {
+  padding: 1px;
+  text-align: left;
+  pointer-events: all;
+}
+.mp .leaflet-popup-content {
+  padding: 10px 10px 15px;
+  margin: 0;
+  line-height: inherit;
+}
+.mp .leaflet-popup-tip-container {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+.mp .leaflet-popup-tip {
+  width: 0;
+  height: 0;
+  margin: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+  box-shadow: none;
+}
+.mp .leaflet-popup-close-button {
+  text-indent: -999em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: all;
+}
+.mp .leaflet-popup-close-button:hover {
+  background-color: #f8f8f8;
+}
+.mp .leaflet-popup-scrolled {
+  overflow: auto;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
 
 /**
