@@ -2,25 +2,23 @@
  * Specific to MinnPost but could be helpful to you.
  */
 
-#{$selector-wrapper} {
 
-  // The following are mostly minnpost-specific
-  .minnpost-page-container {
-    @include center-block();
-    max-width: $minnpost-full-width;
+// The following are mostly minnpost-specific
+.minnpost-page-container {
+  @include center-block();
+  max-width: $minnpost-full-width;
 
-    @media screen and (max-width: $minnpost-full-width + 20px) {
-      margin: 0 10px;
-    }
+  @media screen and (max-width: $minnpost-full-width + 20px) {
+    margin: 0 10px;
   }
+}
 
-  .minnpost-article-container {
-    @include center-block();
-    max-width: $minnpost-article-width;
-  }
+.minnpost-article-container {
+  @include center-block();
+  max-width: $minnpost-article-width;
+}
 
-  .minnpost-full-container {
-    @include center-block();
-    max-width: $minnpost-full-width;
-  }
+.minnpost-full-container {
+  @include center-block();
+  max-width: $minnpost-full-width;
 }

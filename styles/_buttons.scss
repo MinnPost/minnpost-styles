@@ -2,176 +2,172 @@
  * Buttons
  */
 
+.button {
+  display: inline;
+  @include inline-block();
 
-#{$selector-wrapper} {
+  margin-bottom: 0; // For input.button
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
 
-  .button {
-    display: inline;
-    @include inline-block();
+  padding: $space-vertical-padding $space-horizontal-padding;
+  font-size: $text-size;
+  line-height: $text-line-height * 1.25;
 
-    margin-bottom: 0; // For input.button
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-    border: 1px solid transparent;
-    white-space: nowrap;
+  @include user-select(none);
 
-    padding: $space-vertical-padding $space-horizontal-padding;
-    font-size: $text-size;
-    line-height: $text-line-height * 1.25;
+  &:focus {
+    @include focus-block();
+    @include tab-focus();
+  }
 
-    @include user-select(none);
+  &:hover,
+  &:focus {
+    color: $color-text;
+    text-decoration: none;
+  }
 
-    &:focus {
-      @include focus-block();
-      @include tab-focus();
-    }
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    @include box-shadow(inset 0 3px 5px black(0.125));
+  }
 
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none; // Future-proof disabling of clicks
+    @include opacity(0.65);
+    @include box-shadow(none);
+  }
+}
+
+// Button colors
+.button,
+a.button {
+  @include button-variant($color-gray, $color-white, $color-gray);
+}
+
+// Make a button look and behave like a link
+.button-link {
+  color: $color-link;
+  font-weight: normal;
+  cursor: pointer;
+  border-radius: 0;
+
+  &,
+  &:active,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: transparent;
+    @include box-shadow(none);
+  }
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: transparent;
+  }
+  &:hover,
+  &:focus {
+    color: $color-link;
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  &[disabled],
+  fieldset[disabled] & {
     &:hover,
     &:focus {
-      color: $color-text;
+      color: $color-gray;
       text-decoration: none;
     }
-
-    &:active,
-    &.active {
-      outline: 0;
-      background-image: none;
-      @include box-shadow(inset 0 3px 5px black(0.125));
-    }
-
-    &.disabled,
-    &[disabled],
-    fieldset[disabled] & {
-      cursor: not-allowed;
-      pointer-events: none; // Future-proof disabling of clicks
-      @include opacity(0.65);
-      @include box-shadow(none);
-    }
   }
+}
 
-  // Button colors
-  .button,
-  a.button {
-    @include button-variant($color-gray, $color-white, $color-gray);
+
+// Block button
+.button-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Vertically space out multiple block buttons
+.button-block + .button-block {
+  margin-top: $space-vertical-margin;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.button-block {
+    width: 100%;
   }
+}
 
-  // Make a button look and behave like a link
-  .button-link {
-    color: $color-link;
-    font-weight: normal;
-    cursor: pointer;
-    border-radius: 0;
+// Make the div behave like a button
+.button-group,
+.button-group-vertical {
+  @include inline-block();
+  position: relative;
+  vertical-align: middle;
+  margin-bottom: $space-vertical-margin;
 
-    &,
-    &:active,
-    &[disabled],
-    fieldset[disabled] & {
-      background-color: transparent;
-      @include box-shadow(none);
-    }
-    &,
+  > .button {
+    position: relative;
+    float: left;
+    margin-right: 0;
+
+    // Bring the "active" button to the front
     &:hover,
     &:focus,
-    &:active {
-      border-color: transparent;
+    &:active,
+    &.active {
+      z-index: 2;
     }
-    &:hover,
     &:focus {
-      color: $color-link;
-      text-decoration: underline;
-      background-color: transparent;
-    }
-    &[disabled],
-    fieldset[disabled] & {
-      &:hover,
-      &:focus {
-        color: $color-gray;
-        text-decoration: none;
-      }
+      // Remove focus outline when dropdown JS adds it after closing the menu
+      outline: none;
     }
   }
+}
 
-
-  // Block button
-  .button-block {
-    display: block;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+// Prevent double borders when buttons are next to each other
+.button-group {
+  .button + .button,
+  .button + .button-group,
+  .button-group + .button,
+  .button-group + .button-group {
+    margin-left: -1px;
   }
+}
 
-  // Vertically space out multiple block buttons
-  .button-block + .button-block {
-    margin-top: $space-vertical-margin;
-  }
+// Optional: Group multiple button groups together for a toolbar
+.button-toolbar {
+  margin-left: -5px; // Offset the first child's margin
+  @include clearfix();
 
-  // Specificity overrides
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
-    &.button-block {
-      width: 100%;
-    }
-  }
-
-  // Make the div behave like a button
   .button-group,
-  .button-group-vertical {
-    @include inline-block();
-    position: relative;
-    vertical-align: middle;
-    margin-bottom: $space-vertical-margin;
-
-    > .button {
-      position: relative;
-      float: left;
-      margin-right: 0;
-
-      // Bring the "active" button to the front
-      &:hover,
-      &:focus,
-      &:active,
-      &.active {
-        z-index: 2;
-      }
-      &:focus {
-        // Remove focus outline when dropdown JS adds it after closing the menu
-        outline: none;
-      }
-    }
+  .input-group {
+    float: left;
   }
-
-  // Prevent double borders when buttons are next to each other
-  .button-group {
-    .button + .button,
-    .button + .button-group,
-    .button-group + .button,
-    .button-group + .button-group {
-      margin-left: -1px;
-    }
+  > .button,
+  > .button-group,
+  > .input-group {
+    margin-left: 5px;
+    margin-right: 0;
   }
+}
 
-  // Optional: Group multiple button groups together for a toolbar
-  .button-toolbar {
-    margin-left: -5px; // Offset the first child's margin
-    @include clearfix();
-
-    .button-group,
-    .input-group {
-      float: left;
-    }
-    > .button,
-    > .button-group,
-    > .input-group {
-      margin-left: 5px;
-      margin-right: 0;
-    }
-  }
-
-  .button-group > .button:not(:first-child):not(:last-child) {
-    @include border-radius(0);
-  }
+.button-group > .button:not(:first-child):not(:last-child) {
+  @include border-radius(0);
 }

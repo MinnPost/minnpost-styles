@@ -2,92 +2,89 @@
  * Helper classes, repeated from mixins.
  */
 
-#{$selector-wrapper} {
 
-  // Mixin classes
-  .inline-block {
-    @include inline-block();
-  }
+// Mixin classes
+.inline-block {
+  @include inline-block();
+}
 
-  .clearfix, .cf {
-    @include clearfix();
-  }
+.clearfix, .cf {
+  @include clearfix();
+}
 
-  .tab-focus {
-    @include tab-focus();
-  }
+.tab-focus {
+  @include tab-focus();
+}
 
-  .center-block {
-    @include center-block();
-  }
+.center-block {
+  @include center-block();
+}
 
-  .text-overflow {
-    @include text-overflow();
-  }
+.text-overflow {
+  @include text-overflow();
+}
 
-  .text-hide {
-    @include text-hide();
-  }
+.text-hide {
+  @include text-hide();
+}
 
-  .screen-reader-only, .sr-only {
-    @include screen-reader-only();
-  }
+.screen-reader-only, .sr-only {
+  @include screen-reader-only();
+}
 
-  .hide, .hidden {
-    @include hidden();
-  }
+.hide, .hidden {
+  @include hidden();
+}
 
-  .print-visible {
-    @include print-visible();
-  }
+.print-visible {
+  @include print-visible();
+}
 
-  .print-hidden {
-    @include print-hidden();
-  }
+.print-hidden {
+  @include print-hidden();
+}
 
-  // Simple utilities
-  .xsmall {
-    font-size: $text-size-small !important;
-  }
+// Simple utilities
+.xsmall {
+  font-size: $text-size-small !important;
+}
 
-  .small {
-    font-size: $text-size-small !important;
-  }
+.small {
+  font-size: $text-size-small !important;
+}
 
-  .large {
-    font-size: 1.25em !important;
-  }
+.large {
+  font-size: 1.25em !important;
+}
 
-  .xlarge {
-    font-size: 2em !important;
-  }
+.xlarge {
+  font-size: 2em !important;
+}
 
-  .xxlarge {
-    font-size: 3em !important;
-  }
+.xxlarge {
+  font-size: 3em !important;
+}
 
-  .xxxlarge {
-    font-size: 4em !important;
-  }
+.xxxlarge {
+  font-size: 4em !important;
+}
 
-  .float-right {
-    float: right !important;
-  }
+.float-right {
+  float: right !important;
+}
 
-  .float-left {
-    float: left !important;
-  }
+.float-left {
+  float: left !important;
+}
 
-  .show {
-    display: block;
-  }
+.show {
+  display: block;
+}
 
-  .show-inline {
-    display: inline;
-  }
+.show-inline {
+  display: inline;
+}
 
-  .invisible {
-    visibility: hidden;
-  }
-
+.invisible {
+  visibility: hidden;
 }

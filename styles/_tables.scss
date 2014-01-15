@@ -2,37 +2,35 @@
  * Styles for tables.
  */
 
-#{$selector-wrapper} {
 
-  table {
-    width: 100%;
-    margin-bottom: $space;
-    text-align: left;
-    line-height: $text-line-height;
+table {
+  width: 100%;
+  margin-bottom: $space;
+  text-align: left;
+  line-height: $text-line-height;
 
-    thead {
+  thead {
 
-      th {
-        vertical-align: bottom;
-        border-bottom: 2px solid $color-lighter-gray;
-        line-height: $text-line-height;
-        padding: (0.5 * $space);
-      }
-    }
-
-    tbody {
-
-      td {
-        vertical-align: top;
-        border-bottom: 1px solid $color-lighter-gray;
-        padding: (0.5 * $space);
-      }
-
-      // Stripes
-      tr:nth-child(odd) td {
-        background-color: $color-lightest-gray;
-      }
+    th {
+      vertical-align: bottom;
+      border-bottom: 2px solid $color-lighter-gray;
+      line-height: $text-line-height;
+      padding: (0.5 * $space);
     }
   }
 
+  tbody {
+
+    td {
+      vertical-align: top;
+      border-bottom: 1px solid $color-lighter-gray;
+      padding: (0.5 * $space);
+    }
+
+    // Stripes
+    tr:nth-child(odd) td {
+      background-color: $color-lightest-gray;
+    }
+  }
 }
+

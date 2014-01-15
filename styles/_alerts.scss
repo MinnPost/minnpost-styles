@@ -2,29 +2,25 @@
  * Alert messages.
  */
 
+.alert {
+  padding: $space-horizontal-padding;
+  margin-bottom: $space-horizontal-margin;
+  border: 1px solid transparent;
 
-#{$selector-wrapper} {
+  background-color: $color-lighter-gray;
 
-  .alert {
-    padding: $space-horizontal-padding;
-    margin-bottom: $space-horizontal-margin;
-    border: 1px solid transparent;
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    color: inherit;
+  }
 
-    background-color: $color-lighter-gray;
-
-    // Headings for larger alerts
-    h4 {
-      margin-top: 0;
-      color: inherit;
-    }
-
-    // Improve alignment and spacing of inner content
-    > p,
-    > ul {
-      margin-bottom: 0;
-    }
-    > p + p {
-      margin-top: $space-horizontal-margin / 2;
-    }
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+  > p + p {
+    margin-top: $space-horizontal-margin / 2;
   }
 }

@@ -2,18 +2,17 @@
  * Layout and spacing styles.
  */
 
-#{$selector-wrapper} {
 
-  // General spacing classes
-  .spacer {
-    height: $space;
-  }
 
-  .top-spacer {
-    margin-top: $space-vertical-margin;
-  }
+// General spacing classes
+.spacer {
+  height: $space;
+}
 
-  .bottom-spacer {
-    margin-bottom: $space-vertical-margin;
-  }
+.top-spacer {
+  margin-top: $space-vertical-margin;
+}
+
+.bottom-spacer {
+  margin-bottom: $space-vertical-margin;
 }

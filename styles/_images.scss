@@ -2,16 +2,13 @@
  * Images
  */
 
-#{$selector-wrapper} {
 
-  // Rounded corners
-  img.rounded {
-    @include border-radius($radius);
-  }
+// Rounded corners
+img.rounded {
+  @include border-radius($radius);
+}
 
-  // Perfect circle
-  img.circle {
-    border-radius: 50%; // set radius in percents
-  }
-
+// Perfect circle
+img.circle {
+  border-radius: 50%; // set radius in percents
 }

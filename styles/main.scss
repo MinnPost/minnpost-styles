@@ -10,20 +10,23 @@
 @import "_functions";
 @import "_mixins";
 @import "_reset";
-@import "_helpers";
-@import "_grid";
-@import "_layout";
-@import "_typography";
-@import "_icons";
-@import "_buttons";
-@import "_labels";
-@import "_alerts";
-@import "_forms";
-@import "_tables";
-@import "_images";
-@import "_thumbnails";
-@import "_progress";
-@import "_charts";
-@import "_maps";
-@import "_responsive";
-@import "_minnpost";
+
+#{$selector-wrapper} {
+  @import "_helpers";
+  @import "_grid";
+  @import "_layout";
+  @import "_typography";
+  @import "_icons";
+  @import "_buttons";
+  @import "_labels";
+  @import "_alerts";
+  @import "_forms";
+  @import "_tables";
+  @import "_images";
+  @import "_thumbnails";
+  @import "_progress";
+  @import "_charts";
+  @import "_maps";
+  @import "_responsive";
+  @import "_minnpost";
+}
