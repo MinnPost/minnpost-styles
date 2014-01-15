@@ -21,7 +21,7 @@ require.config({
   }
 });
 
-require(['underscore', 'jquery', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps'], function(_, $, MP) {
+require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps'], function(_, $, L, MP) {
 
   // Highcharts
   var exampleData = [{
@@ -55,11 +55,29 @@ require(['underscore', 'jquery', 'minnpost-styles', 'minnpost-styles.highcharts'
   }));
 
 
-  // Basic maps
-  MP.maps.makeLeafletMap('example-leaflet-map');
+  // Basic maps with layer choices
+  var basicMapLayer = new L.tileLayer('//{s}.tiles.mapbox.com/v3/' + MP.maps.mapboxStreetsLightLabels + '/{z}/{x}/{y}.png');
+  var basicMap = new L.Map('example-leaflet-map', MP.maps.mapOptions);
+  basicMap.addLayer(basicMapLayer);
+  basicMap.setView(MP.maps.minneapolisPoint, 8);
+  basicMap.removeControl(basicMap.attributionControl);
+
+  $('.map-baselayer-choices .button').on('click', function(e) {
+    e.preventDefault();
+    var $link = $(this);
+    var $links = $link.parent().find('.button');
+    var layer = MP.maps[$link.data('map')];
+
+    $links.removeClass('active');
+    $link.addClass('active');
+    basicMap.removeLayer(basicMapLayer);
+    basicMapLayer = new L.tileLayer('//{s}.tiles.mapbox.com/v3/' + layer + '/{z}/{x}/{y}.png');
+    basicMap.addLayer(basicMapLayer);
+  });
 
   // Marker map
   var markerMap = MP.maps.makeLeafletMap('example-markers-features-map');
+  markerMap.setZoom(9);
 
   // Markers
   var iconCinema = MP.maps.makeMakiIcon('cinema', 'm');

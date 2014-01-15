@@ -123,6 +123,8 @@
     @include inline-block();
     position: relative;
     vertical-align: middle;
+    margin-bottom: $space-vertical-margin;
+
     > .button {
       position: relative;
       float: left;
