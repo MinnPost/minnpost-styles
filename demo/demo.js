@@ -133,5 +133,8 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
   function navs() {
     // Sticky horizontal
     $('.example-navigation-container-hStick .navigation').mpHStick();
+
+    // Scoll spy it all
+    $('body').mpScrollSpy();
   }
 });

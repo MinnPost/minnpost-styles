@@ -3,25 +3,45 @@
  */
 
 .navigation {
+  margin-bottom: $space-vertical-margin;
 
   ul {
     @extend .clearfix;
-    margin-bottom: 0;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
     list-style: none;
 
     > li {
       position: relative;
       display: block;
+      font-size: $text-size-large;
 
       > a {
         position: relative;
         display: block;
-        //padding: @nav-link-padding;
+        padding: $space-vertical-padding $space-horizontal-padding;
+
         &:hover,
         &:focus {
           text-decoration: none;
           //background-color: @nav-link-hover-bg;
+        }
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  &.horizontal {
+    ul {
+
+      li {
+        float: left;
+
+        + li {
+          margin-left: $space-horizontal-margin;;
         }
       }
     }
@@ -35,5 +55,10 @@
     right: 0;
     min-height: 1em;
     border-bottom: 1px solid $color-dark-gray;
+    padding: ($space-vertical-padding * 2) 0;
+    z-index: 99;
+
+    @include box-shadow(0px 2px 8px black(0.15));
+    @include transition(width .6s ease);
   }
 }
