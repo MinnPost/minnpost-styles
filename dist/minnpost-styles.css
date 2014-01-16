@@ -436,9 +436,73 @@ html {
   border-spacing: 0;
 }
 
-/**
- * Helper classes, repeated from mixins.
- */
+.mp {
+  /**
+   * Helper classes, repeated from mixins.
+   */
+  /**
+   * Really basic fluid grid system
+   */
+  /**
+   * Layout and spacing styles.
+   */
+  /**
+   * Typography styles.
+   */
+  /**
+   * Icons provided by Font Awesome.
+   *
+   * A bit of styling to ensure they work correctly given that we prefix all
+   * the styles.  There should be a better way to handle this.
+   */
+  /* makes the font 33% larger relative to the icon container */
+  /**
+   * Buttons
+   */
+  /**
+   * Labels
+   */
+  /**
+   * Alert messages.
+   */
+  /**
+   * Forms.
+   * Much borrowed from Bootstrap.
+   */
+  /**
+   * Styles for tables.
+   */
+  /**
+   * Images
+   */
+  /**
+   * Thumbnails.  Not just for images, necessarily.
+   */
+  /**
+   * Progress bars.
+   */
+  /**
+   * Navigation stuff
+   */
+  /**
+   * Styles for (highchart) charts
+   */
+  /**
+   * Styles for Leaflet and Mapbox maps.
+   */
+  /**
+   * Responsive styles for minnpost-styles.
+   */
+  /**
+   * Images are responsive by default
+   */
+  /**
+   * Responsive tables wrapper.  Inspired by Bootstraps method.
+   */
+  /**
+   * Specific to MinnPost but could be helpful to you.
+   */
+}
 .mp .inline-block {
   display: -moz-inline-stack;
   display: inline-block;
@@ -446,14 +510,14 @@ html {
   *display: inline;
   margin-right: 0.25em;
 }
-.mp .clearfix, .mp .cf {
+.mp .clearfix, .mp .navigation ul, .mp .cf {
   *zoom: 1;
 }
-.mp .clearfix:before, .mp .clearfix:after, .mp .cf:before, .mp .cf:after {
+.mp .clearfix:before, .mp .navigation ul:before, .mp .clearfix:after, .mp .navigation ul:after, .mp .cf:before, .mp .cf:after {
   content: " ";
   display: table;
 }
-.mp .clearfix:after, .mp .cf:after {
+.mp .clearfix:after, .mp .navigation ul:after, .mp .cf:after {
   clear: both;
 }
 .mp .tab-focus {
@@ -536,10 +600,6 @@ html {
 .mp .invisible {
   visibility: hidden;
 }
-
-/**
- * Really basic fluid grid system
- */
 .mp .row {
   *zoom: 1;
   margin-left: -0.5em;
@@ -931,10 +991,6 @@ html {
     width: 66.66667%;
   }
 }
-
-/**
- * Layout and spacing styles.
- */
 .mp .spacer {
   height: 1em;
 }
@@ -944,10 +1000,6 @@ html {
 .mp .bottom-spacer {
   margin-bottom: 1em;
 }
-
-/**
- * Typography styles.
- */
 .mp {
   font-size: 14px;
   line-height: 1.5;
@@ -1083,16 +1135,6 @@ html {
   background-color: inherit;
   padding: 0;
 }
-
-/**
- * Icons provided by Font Awesome.
- *
- * A bit of styling to ensure they work correctly given that we prefix all
- * the styles.  There should be a better way to handle this.
- */
-.mp {
-  /* makes the font 33% larger relative to the icon container */
-}
 .mp .fa,
 .mp .loading {
   display: -moz-inline-stack;
@@ -1164,10 +1206,6 @@ html {
 .mp .loading:before {
   content: "\f110";
 }
-
-/**
- * Buttons
- */
 .mp .button {
   display: inline;
   display: -moz-inline-stack;
@@ -1361,10 +1399,6 @@ html {
   -o-border-radius: 0;
   border-radius: 0;
 }
-
-/**
- * Labels
- */
 .mp .label {
   display: inline;
   padding: 0.25em 0.5em;
@@ -1390,10 +1424,6 @@ html {
   position: relative;
   top: -1px;
 }
-
-/**
- * Alert messages.
- */
 .mp .alert {
   padding: 0.5em;
   margin-bottom: 1em;
@@ -1411,11 +1441,6 @@ html {
 .mp .alert > p + p {
   margin-top: 0.5em;
 }
-
-/**
- * Forms.
- * Much borrowed from Bootstrap.
- */
 .mp fieldset {
   padding: 0;
   margin: 0;
@@ -1849,10 +1874,6 @@ html {
 .mp .form-input-group .button-group:last-child > .button-group {
   margin-left: -1px;
 }
-
-/**
- * Styles for tables.
- */
 .mp table {
   width: 100%;
   margin-bottom: 1em;
@@ -1873,10 +1894,6 @@ html {
 .mp table tbody tr:nth-child(odd) td {
   background-color: #f8f8f8;
 }
-
-/**
- * Images
- */
 .mp img.rounded {
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
@@ -1887,10 +1904,6 @@ html {
 .mp img.circle {
   border-radius: 50%;
 }
-
-/**
- * Thumbnails.  Not just for images, necessarily.
- */
 .mp .thumbnail {
   display: block;
   padding: 0.25em;
@@ -1923,10 +1936,6 @@ html {
 .mp a.thumbnail:hover, .mp a.thumbnail:focus, .mp a.thumbnail.active {
   border-color: #801019;
 }
-
-/**
- * Progress bars.
- */
 .mp .progress {
   overflow: hidden;
   height: 1.25em;
@@ -1953,19 +1962,59 @@ html {
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
-
-/**
- * Styles for (highchart) charts
- */
+.mp .navigation {
+  margin-bottom: 1em;
+}
+.mp .navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mp .navigation ul > li {
+  position: relative;
+  display: block;
+  font-size: 1.25em;
+}
+.mp .navigation ul > li > a {
+  position: relative;
+  display: block;
+  padding: 0.25em 0.5em;
+}
+.mp .navigation ul > li > a:hover, .mp .navigation ul > li > a:focus {
+  text-decoration: none;
+}
+.mp .navigation ul > li > a.active {
+  font-weight: bold;
+}
+.mp .navigation.horizontal ul li {
+  float: left;
+}
+.mp .navigation.horizontal ul li + li {
+  margin-left: 1em;
+}
+.mp .navigation.stuck {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  min-height: 1em;
+  border-bottom: 1px solid #525252;
+  padding: 0.5em 0;
+  z-index: 99;
+  -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -moz-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
 .mp .chart {
   width: 100%;
   height: 20em;
   margin-bottom: 2em;
 }
-
-/**
- * Styles for Leaflet and Mapbox maps.
- */
 .mp .map {
   width: 100%;
   height: 25em;
@@ -2087,18 +2136,6 @@ html {
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
 }
-
-/**
- * Responsive styles for minnpost-styles.
- */
-.mp {
-  /**
-   * Images are responsive by default
-   */
-  /**
-   * Responsive tables wrapper.  Inspired by Bootstraps method.
-   */
-}
 .mp img {
   max-width: 100%;
   height: auto;
@@ -2120,10 +2157,6 @@ html {
     margin-bottom: 0;
   }
 }
-
-/**
- * Specific to MinnPost but could be helpful to you.
- */
 .mp .minnpost-page-container {
   display: block;
   margin-left: auto;
