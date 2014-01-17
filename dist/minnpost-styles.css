@@ -1992,23 +1992,25 @@ html {
 .mp .navigation.horizontal ul li + li {
   margin-left: 1em;
 }
-.mp .navigation.stuck {
-  background-color: white;
+.mp .stuck {
   position: fixed;
+  min-height: 1em;
+  z-index: 99;
+}
+.mp .stuck.top {
+  background-color: white;
   top: 0;
   left: 0;
   right: 0;
   min-height: 1em;
   border-bottom: 1px solid #525252;
   padding: 0.5em 0;
-  z-index: 99;
   -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
-  -webkit-transition: width 0.6s ease;
-  -moz-transition: width 0.6s ease;
-  -o-transition: width 0.6s ease;
-  transition: width 0.6s ease;
+}
+.mp .stuck.container {
+  top: 0;
 }
 .mp .chart {
   width: 100%;
