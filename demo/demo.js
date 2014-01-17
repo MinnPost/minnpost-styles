@@ -132,9 +132,18 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
   // Navigations
   function navs() {
     // Sticky horizontal
-    $('.example-navigation-container-hStick .navigation').mpHStick();
+    $('.example-stick-top').mpStick();
 
     // Scoll spy it all
     $('body').mpScrollSpy();
+
+    // Vertical stick
+    $('.example-stick-container').mpStick({
+      activeClass: 'stuck container',
+      wrapperClass: '',
+      container: $('.example-stick-container').parent().parent(),
+      topPadding: 20,
+      throttle: 100
+    });
   }
 });

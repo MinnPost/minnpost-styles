@@ -23,29 +23,32 @@
   // Wrapper object for some various things
   MP.nav = MP.nav || {};
 
-  // Plugin for horizontal sticky menu
-  MP.nav.MPHorizontalStickDefaults = {
-    activeClass: 'stuck',
+  // Plugin for sticking things.  Defaults are for sticking to top.
+  MP.nav.MPStickDefaults = {
+    activeClass: 'stuck top',
     wrapperClass: 'minnpost-full-container',
+    topPadding: 0,
     throttle: 90
   };
-  function MPHorizontalStick(element, options) {
+  function MPStick(element, options) {
     this.element = element;
     this.$element = $(element);
-    this._defaults = MP.nav.MPHorizontalStickDefaults;
+    this._defaults = MP.nav.MPStickDefaults;
     this.options = $.extend( {}, this._defaults, options);
-    this._name = 'mpHStick';
-    this._scrollEvent = 'scroll.mp.mpHStick';
+    this._name = 'mpStick';
+    this._scrollEvent = 'scroll.mp.mpStick';
     this._on = false;
     this.init();
   }
-  MPHorizontalStick.prototype = {
+  MPStick.prototype = {
     init: function() {
       // If contaier not passed, use parent
       this.$container = (this.options.container === undefined) ? this.$element.parent() : $(this.options.container);
 
+      this.elementHeight = this.$element.outerHeight(true);
+
       // Create a spacer element so content doesn't jump
-      this.$spacer = $('<div>').height(this.$element.height()).hide();
+      this.$spacer = $('<div>').height(this.elementHeight).hide();
       this.$element.after(this.$spacer);
 
       // Add wrapper
@@ -63,23 +66,30 @@
       var containerTop = this.$container.offset().top;
       var containerBottom = containerTop + this.$container.height();
       var scrollTop = $(window).scrollTop();
+      var bottom = (containerBottom - this.elementHeight - this.options.topPadding - 5);
 
-      if (!this._on && scrollTop > containerTop && scrollTop < containerBottom) {
+      if (!this._on && scrollTop > containerTop && scrollTop < bottom) {
         this.on();
       }
-      else if (this._on && (scrollTop < containerTop || scrollTop > containerBottom)) {
+      else if (this._on && (scrollTop < containerTop || scrollTop > bottom)) {
         this.off();
       }
     },
 
     on: function() {
       this.$element.addClass(this.options.activeClass);
+      if (this.options.topPadding) {
+        this.$element.css('top', this.options.topPadding);
+      }
       this.$spacer.show();
       this._on = true;
     },
 
     off: function() {
       this.$element.removeClass(this.options.activeClass);
+      if (this.options.topPadding) {
+        this.$element.css('top', 'inherit');
+      }
       this.$spacer.hide();
       this._on = false;
     },
@@ -89,10 +99,10 @@
     }
   };
   // Register plugin
-  $.fn.mpHStick = function(options) {
+  $.fn.mpStick = function(options) {
     return this.each(function() {
-      if (!$.data(this, 'mpHStick')) {
-        $.data(this, 'mpHStick', new MPHorizontalStick(this, options));
+      if (!$.data(this, 'mpStick')) {
+        $.data(this, 'mpStick', new MPStick(this, options));
       }
     });
   };
@@ -103,7 +113,7 @@
   MP.nav.MPScrollSpyDefaults = {
     activeClass: 'active',
     offset: 80,
-    throttle: 90
+    throttle: 200
   };
   function MPScrollSpy(element, options) {
     this.element = element;
@@ -175,4 +185,6 @@
       }
     });
   };
+
+
 });

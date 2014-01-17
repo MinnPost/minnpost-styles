@@ -36,7 +36,7 @@
   padding: 0;
 }
 
-.mp .example .row [class^="column-"] {
+.mp .example-grid .row [class^="column-"] {
   border: 1px dashed #BFBFBF;
   background-color: #EFEFEF;
   padding-top: 1em;
