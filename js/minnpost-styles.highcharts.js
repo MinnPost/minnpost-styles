@@ -64,14 +64,13 @@
     xAxis: {
       title: {
         enabled: false,
-        text: '[Update me]',
+        text: 'Units (un)',
+        margin: 15,
         style: {
           color: 'inherit',
           fontWeight: 'normal'
         }
       },
-      minPadding: 0,
-      maxPadding: 0,
       lineColor: MP.highcharts.colors.interface,
       tickColor: MP.highcharts.colors.interface,
       labels: {
@@ -84,9 +83,9 @@
     },
     yAxis: {
       title: {
-        enabled: false,
-        text: '[Update me]',
-        margin: 40,
+        enabled: true,
+        text: 'Units (un)',
+        margin: 15,
         style: {
           color: 'inherit',
           fontWeight: 'normal'
@@ -122,7 +121,7 @@
           }
         },
         marker: {
-          fillColor: '#ffffff',
+          fillColor: '#FFFFFF',
           lineWidth: 2,
           lineColor: null,
           symbol: 'circle',
@@ -162,6 +161,35 @@
     xAxis: {
       labels: {
         y: 0
+      }
+    }
+  });
+
+  // Scatter plot
+  MP.highcharts.scatterOptions = $.extend(true, {}, MP.highcharts.defaults, {
+    chart: {
+      type: 'scatter'
+    },
+    xAxis: {
+      title: {
+        enabled: true
+      }
+    },
+    plotOptions: {
+      scatter: {
+        marker: {
+          radius: 5,
+          lineWidth: 2,
+          lineColor: 'rgba(255, 255, 255, 0.2)',
+          hover: {
+            lineColor: 'rgba(255, 255, 255, 1)'
+          }
+        }
+      }
+    },
+    tooltip: {
+      formatter: function() {
+        return '<strong>' + this.series.name + '</strong>: (' + this.x + ', ' + this.y + ')';
       }
     }
   });

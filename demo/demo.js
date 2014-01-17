@@ -62,6 +62,19 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
         data: [640, 765, 999, 123]
       }]
     }));
+
+    // Scatterplot
+    MP.highcharts.makeChart('.chart-scatter-example', $.extend(true, {}, MP.highcharts.scatterOptions, {
+      series: [{
+        name: 'Example',
+        data: [[11, 23], [12, 22], [13, 28], [14, 30], [14.01, 30], [15, 30], [16, 33],
+          [11.2, 22], [12.7, 21], [13.2, 27], [14.1, 34], [15.8, 33], [16.3, 30]]
+      },
+      {
+        name: 'Example 2',
+        data: [[11, 13], [12, 10], [13, 9], [14, 6], [15, 8], [16, 7]]
+      }]
+    }));
   }
 
 
@@ -131,11 +144,11 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
 
   // Navigations
   function navs() {
-    // Sticky horizontal
-    $('.example-stick-top').mpStick();
-
     // Scoll spy it all
     $('body').mpScrollSpy();
+
+    // Sticky horizontal
+    $('.example-stick-top').mpStick();
 
     // Vertical stick
     $('.example-stick-container').mpStick({

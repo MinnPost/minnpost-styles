@@ -66,12 +66,13 @@
       var containerTop = this.$container.offset().top;
       var containerBottom = containerTop + this.$container.height();
       var scrollTop = $(window).scrollTop();
-      var bottom = (containerBottom - this.elementHeight - this.options.topPadding - 5);
+      var top = (containerTop - this.options.topPadding);
+      var bottom = (containerBottom - this.elementHeight - this.options.topPadding - 2);
 
-      if (!this._on && scrollTop > containerTop && scrollTop < bottom) {
+      if (!this._on && scrollTop > top && scrollTop < bottom) {
         this.on();
       }
-      else if (this._on && (scrollTop < containerTop || scrollTop > bottom)) {
+      else if (this._on && (scrollTop < top || scrollTop > bottom)) {
         this.off();
       }
     },
