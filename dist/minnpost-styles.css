@@ -497,7 +497,8 @@ html {
    * Images are responsive by default
    */
   /**
-   * Responsive tables wrapper.  Inspired by Bootstraps method.
+   * Responsive tables wrapper.  Inspired by Bootstraps method.  Class
+   * for each responsive break-point.
    */
   /**
    * Specific to MinnPost but could be helpful to you.
@@ -613,7 +614,7 @@ html {
 .mp .row:after {
   clear: both;
 }
-.mp .row .column-xsmall, .mp .row .column-xsmall-5, .mp .row .column-xsmall-10, .mp .row .column-xsmall-15, .mp .row .column-xsmall-20, .mp .row .column-xsmall-25, .mp .row .column-xsmall-30, .mp .row .column-xsmall-35, .mp .row .column-xsmall-40, .mp .row .column-xsmall-45, .mp .row .column-xsmall-50, .mp .row .column-xsmall-55, .mp .row .column-xsmall-60, .mp .row .column-xsmall-65, .mp .row .column-xsmall-70, .mp .row .column-xsmall-75, .mp .row .column-xsmall-80, .mp .row .column-xsmall-85, .mp .row .column-xsmall-90, .mp .row .column-xsmall-95, .mp .row .column-xsmall-100, .mp .row .column-xsmall-33, .mp .row .column-xsmall-66 {
+.mp .row .column-all, .mp .row .column-all-5, .mp .row .column-all-10, .mp .row .column-all-15, .mp .row .column-all-20, .mp .row .column-all-25, .mp .row .column-all-30, .mp .row .column-all-35, .mp .row .column-all-40, .mp .row .column-all-45, .mp .row .column-all-50, .mp .row .column-all-55, .mp .row .column-all-60, .mp .row .column-all-65, .mp .row .column-all-70, .mp .row .column-all-75, .mp .row .column-all-80, .mp .row .column-all-85, .mp .row .column-all-90, .mp .row .column-all-95, .mp .row .column-all-100, .mp .row .column-all-33, .mp .row .column-all-66 {
   position: relative;
   min-height: 1px;
   float: left;
@@ -621,70 +622,70 @@ html {
   padding-right: 0.5em;
   width: 100%;
 }
-.mp .row .column-xsmall-5 {
+.mp .row .column-all-5 {
   width: 5%;
 }
-.mp .row .column-xsmall-10 {
+.mp .row .column-all-10 {
   width: 10%;
 }
-.mp .row .column-xsmall-15 {
+.mp .row .column-all-15 {
   width: 15%;
 }
-.mp .row .column-xsmall-20 {
+.mp .row .column-all-20 {
   width: 20%;
 }
-.mp .row .column-xsmall-25 {
+.mp .row .column-all-25 {
   width: 25%;
 }
-.mp .row .column-xsmall-30 {
+.mp .row .column-all-30 {
   width: 30%;
 }
-.mp .row .column-xsmall-35 {
+.mp .row .column-all-35 {
   width: 35%;
 }
-.mp .row .column-xsmall-40 {
+.mp .row .column-all-40 {
   width: 40%;
 }
-.mp .row .column-xsmall-45 {
+.mp .row .column-all-45 {
   width: 45%;
 }
-.mp .row .column-xsmall-50 {
+.mp .row .column-all-50 {
   width: 50%;
 }
-.mp .row .column-xsmall-55 {
+.mp .row .column-all-55 {
   width: 55%;
 }
-.mp .row .column-xsmall-60 {
+.mp .row .column-all-60 {
   width: 60%;
 }
-.mp .row .column-xsmall-65 {
+.mp .row .column-all-65 {
   width: 65%;
 }
-.mp .row .column-xsmall-70 {
+.mp .row .column-all-70 {
   width: 70%;
 }
-.mp .row .column-xsmall-75 {
+.mp .row .column-all-75 {
   width: 75%;
 }
-.mp .row .column-xsmall-80 {
+.mp .row .column-all-80 {
   width: 80%;
 }
-.mp .row .column-xsmall-85 {
+.mp .row .column-all-85 {
   width: 85%;
 }
-.mp .row .column-xsmall-90 {
+.mp .row .column-all-90 {
   width: 90%;
 }
-.mp .row .column-xsmall-95 {
+.mp .row .column-all-95 {
   width: 95%;
 }
-.mp .row .column-xsmall-100 {
+.mp .row .column-all-100 {
   width: 100%;
 }
-.mp .row .column-xsmall-33 {
+.mp .row .column-all-33 {
   width: 33.33333%;
 }
-.mp .row .column-xsmall-66 {
+.mp .row .column-all-66 {
   width: 66.66667%;
 }
 @media (min-width: 420px) {
@@ -990,6 +991,9 @@ html {
   .mp .row .column-xlarge-66 {
     width: 66.66667%;
   }
+}
+.mp .section {
+  margin-bottom: 5em;
 }
 .mp .spacer {
   height: 1em;
@@ -2146,7 +2150,7 @@ html {
   max-width: auto;
 }
 @media (max-width: 420px) {
-  .mp .table-responsive {
+  .mp .table-responsive-small {
     width: 100%;
     margin-bottom: 1em;
     overflow-x: scroll;
@@ -2155,7 +2159,49 @@ html {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
   }
-  .mp .table-responsive table {
+  .mp .table-responsive-small table {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 640px) {
+  .mp .table-responsive-medium {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mp .table-responsive-medium table {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 960px) {
+  .mp .table-responsive-large {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mp .table-responsive-large table {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .mp .table-responsive-xlarge {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mp .table-responsive-xlarge table {
     margin-bottom: 0;
   }
 }
