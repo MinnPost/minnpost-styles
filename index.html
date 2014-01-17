@@ -24,297 +24,367 @@
 
       <h1>MinnPost Styles</h1>
 
-      <p>The MinnPost super-fly style guide, specifically focused on interactive and news applications made by the MinnData team.</p>
+      <div class="section">
+        <p class="large">Welcome to MinnPost Styles, super-fly, style guide focused on interactive and news applications made by the <a href="http://code.minnpost.com/">MinnData team</a>.  <em>This is currently a work in progress.</em></p>
+      </div>
 
 
-      <h2>Basic usage</h2>
 
-      <p>Since these styles were made for projects that will get embedded in existing sites, all styles are prefixed with <code>.mp</code>.  This means you should wrap your markup like so:</p>
+      <div class="section">
+        <h2>About</h2>
 
-      <div class="example-code">
-<pre><code>&lt;div class="mp"&gt;
-  ...
+        <p>MinnPost Styles is a CSS and JS framework.  The CSS source is written in <a href="http://sass-lang.com/">SASS</a> and is extendable if you want to include the framework via SASS.</p>
+
+        <p>Lots of inspiration and some code was taken from such amazing projects such as <a href="http://getbootstrap.com/">Bootstrap</a>, Mapbox.js, and more.  The source code can be found on <a href="https://github.com/MinnPost/minnpost-styles">Github</a>.
+      </div>
+
+
+
+      <div class="section">
+        <h2>Basic usage</h2>
+
+        <p>It is suggest that you install MinnPost Styles with <a href="http://bower.io/">Bower</a>.</p>
+
+        <div class="example-code">
+          <pre><code>bower install minnpost-styles </code></pre>
+        </div>
+
+        <h3>CSS</h3>
+
+        <p>Include the CSS as you would for any other library by putting the folling in the <code>head</code> section of your HTML document.</p>
+
+        <div class="example-code">
+          <pre><code>&lt;link rel="stylesheet" href="bower_components/minnpost-styles/dist/minnpost-styles.min.css"&gt; </code></pre>
+        </div>
+
+        <h4>Wrapper class</h4>
+
+        <p>Since these styles were made for projects that will get embedded in existing sites, all styles are prefixed with the <code>mp</code> class.  This means you should wrap your markup like so:</p>
+
+        <div class="example-code">
+          <pre><code>&lt;div class="mp"&gt; ... &lt;/div&gt; </code></pre>
+        </div>
+
+        <p>Or, if you are not embedding, simply add the class to the body:</p>
+
+        <div class="example-code">
+          <pre><code>&lt;body class="mp"&gt; ... &lt;/body&gt; </code></pre>
+        </div>
+
+        <h3>Javascript</h3>
+
+        <p>There are Javascript parts for common interactions and interactive parts.  You can include all the JS by adding the following near the end of your HTML document:</p>
+
+        <div class="example-code">
+          <pre><code>&lt;script src="bower_components/minnpost-styles/dist/minnpost-styles.min.js"&gt;&lt;/script&gt; </code></pre>
+        </div>
+
+        <h4>Use a module loader</h4>
+
+        <p>The JS parts of MinnPost styles will all go into a global <code>MP</code> variable by default, but it is suggested to use a module loader like <a href="http://requirejs.org/">RequireJS</a> or <a href="http://browserify.org/">Browserify</a>.  The following is a sample usage with RequireJS:</p>
+
+        <div class="example-code">
+          <pre><code>require.config({
+  shim: { 'underscore': { exports: '_' } },
+  paths: {
+    'underscore': 'bower_components/underscore/underscore-min',
+    'jquery': 'bower_components/jquery/jquery.min',
+    'minnpost-styles': 'bower_components/minnpost-styles/minnpost-styles.min',
+    'minnpost-styles.nav': 'bower_components/minnpost-styles/minnpost-styles.nav.min'
+  }
+});
+
+require(['underscore', 'jquery', 'minnpost-styles', 'minnpost-styles.nav'], function(_, $, L, MP) {
+  // MP is extended with the various JS parts
+  $(document).ready(function() {
+    // Scoll spy it all
+    $('body').mpScrollSpy();
+  });
+});
+          </code></pre>
+        </div>
+      </div>
+
+
+
+      <div class="section">
+        <h2>Grid</h2>
+
+        <p>A really, really basic, mobile-first, fluid grid is provided.  There are 5 provided groups of breakpoints, <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>, and widths are provided in 5% intervals as well as 33% and 66%.  This makes combinations such as <code>.column-small-50</code>, which means that any width greater than or equal to 420px will be 50% wide.</p>
+
+        <div class="example example-grid">
+
+          <div class="row">
+            <div class="column-medium-25">
+              <p>25% m+</p>
+            </div>
+            <div class="column-medium-25">
+              <p>25% m+</p>
+            </div>
+            <div class="column-medium-50">
+              <p>50% m+</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column-small-33">
+              <p>33% s+</p>
+            </div>
+            <div class="column-small-66">
+              <p>66% s+</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column-large-15">
+              <p>15% l+</p>
+            </div>
+            <div class="column-large-10">
+              <p>10% l+</p>
+            </div>
+            <div class="column-large-5">
+              <p>5% l+</p>
+            </div>
+            <div class="column-large-20">
+              <p>20% l+</p>
+            </div>
+            <div class="column-large-20">
+              <p>20% l+</p>
+            </div>
+            <div class="column-large-30">
+              <p>30% l+</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column-small-33 column-medium-50">
+              <p>33% s+ 50% m+</p>
+            </div>
+            <div class="column-small-66 column-medium-50">
+              <p>66% s+ 50% m+</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="example-code">
+<pre><code>&lt;div class="row"&gt;
+  &lt;div class="column-small-33 column-medium-50"&gt;
+    &lt;p&gt;33% s+ 50% m+&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="column-small-66 column-medium-50"&gt;
+    &lt;p&gt;66% s+ 50% m+&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt; </code></pre>
-      </div>
-
-      <p>Or, if you are not embedding, simply add the class to the body:</p>
-
-      <div class="example-code">
-<pre><code>&lt;body class="mp"&gt;
-...
-&lt;/body&gt; </code></pre>
-      </div>
-
-
-
-
-
-
-
-
-      <h2>Grid</h2>
-
-      <p>A really, really basic, mobile-first, fluid grid is provided.  There are 5 provided groups of breakpoints, <code>xsmall</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>, and widths are provided in 5% intervals as well as 33% and 66%.  This makes combinations such as <code>.column-small-50</code>, which means that any width greater than or equal to 420px will be 50% wide.</p>
-
-      <div class="example example-grid">
-
-        <div class="row">
-          <div class="column-medium-25">
-            <p>25% m+</p>
-          </div>
-          <div class="column-medium-25">
-            <p>25% m+</p>
-          </div>
-          <div class="column-medium-50">
-            <p>50% m+</p>
-          </div>
         </div>
 
-        <div class="row">
-          <div class="column-small-33">
-            <p>33% s+</p>
-          </div>
-          <div class="column-small-66">
-            <p>66% s+</p>
-          </div>
-        </div>
+        <h3>Breakpoints</h3>
 
-        <div class="row">
-          <div class="column-large-15">
-            <p>15% l+</p>
-          </div>
-          <div class="column-large-10">
-            <p>10% l+</p>
-          </div>
-          <div class="column-large-5">
-            <p>5% l+</p>
-          </div>
-          <div class="column-large-20">
-            <p>20% l+</p>
-          </div>
-          <div class="column-large-20">
-            <p>20% l+</p>
-          </div>
-          <div class="column-large-30">
-            <p>30% l+</p>
-          </div>
-        </div>
+        <p>Predefined breakpoints are silly.  Breakpoints should be defined when content or style no longer makes sense.  That said, MinnPost Styles provides some defaults that we use often on our projects.</p>
 
-        <div class="row">
-          <div class="column-small-33 column-medium-50">
-            <p>33% s+ 50% m+</p>
-          </div>
-          <div class="column-small-66 column-medium-50">
-            <p>66% s+ 50% m+</p>
-          </div>
-        </div>
+        <p>If you are using SASS, it is very simple to update the breakpoints and the size names.  Simply update the following variables.</p>
 
-      </div>
-      <div class="example-code">
-<pre><code> </code></pre>
-      </div>
 
-      <h3>Breakpoints</h3>
-
-      <p>Predefined breakpoints are silly.  Breakpoints should be defined when content or style no longer makes sense.  That said, MinnPost Styles provides some defaults that we use often on our projects.</p>
-
-      <p>If you are using SASS, it is very simple to update the breakpoints and the size names.  Simply update the following variables.</p>
-
+        <div class="example-code">
 <pre><code>$responsive-points: 0px 420px 640px 960px 1200px;
-$responsive-classes: xsmall small medium large xlarge; </code></pre>
+$responsive-classes: all small medium large xlarge; </code></pre>
+        </div>
 
-      <p>Ensure that there are the same number of sizes as there are classes or problems will ensue.  Also note that <code>0px</code> has a special meaning in that it will not be wrapped in a media query and will apply to all browsers.  This means you could turn off the responsive bits by doing the following:</p>
+        <p>Ensure that there are the same number of sizes as there are classes or problems will ensue.  Also note that <code>0px</code> has a special meaning in that it will not be wrapped in a media query and will apply to all browsers.  This means you could turn off the responsive bits by doing the following:</p>
 
+        <div class="example-code">
 <pre><code>$responsive-points: 0px;
 $responsive-classes: all; </code></pre>
-
-
-
-
-
-      <h2>Typography</h2>
-
-      <h3>Headings</h3>
-
-      <p>The following are the styling of the headings, h1, h2, etc.</p>
-
-      <div class="example">
-        <h1>h1 Example heading</h1>
-        <h2>h2 Example heading</h2>
-        <h3>h3 Example heading</h3>
-        <h4>h4 Example heading</h4>
-        <h5>h5 Example heading</h5>
-        <h6>h6 Example heading</h6>
+        </div>
       </div>
-      <div class="example-code">
+
+
+
+      <div class="section">
+        <h2>Typography</h2>
+
+        <h3>Headings</h3>
+
+        <p>The following are the styling of the headings, h1, h2, etc.</p>
+
+        <div class="example">
+          <h1>h1 Example heading</h1>
+          <h2>h2 Example heading</h2>
+          <h3>h3 Example heading</h3>
+          <h4>h4 Example heading</h4>
+          <h5>h5 Example heading</h5>
+          <h6>h6 Example heading</h6>
+        </div>
+        <div class="example-code">
 <pre><code>&lt;h1&gt;h1 Example heading&lt;/h1&gt;
   ... </code></pre>
-      </div>
+        </div>
 
-      <h3>Paragraph</h3>
+        <h3>Paragraph</h3>
 
-      <div class="example">
-        <p>This is some example text.  And this is some more.  Really great stuff here.</p>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;p&gt;Some text&lt;/p&gt; </code></pre>
-      </div>
+        <div class="example">
+          <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable nina fearless eat the grass friend his zzz home impressed kitten house loves sneak snuggliest mom cat happy! Waffles, her cat classy happy! Bed here years, whisker awesomeness kitties sucked oh shenanigans yoda friend backyard girlfriend kitty. Belly, knock over the lamp rescuing he persian impressed purses gf's.</p>
+        </div>
+        <div class="example-code">
+          <pre><code>&lt;p&gt;Some text...&lt;/p&gt; </code></pre>
+        </div>
 
-      <h3>Links</h3>
+        <h3>Links</h3>
 
-      <p>Links are used for inline navigation.  For external links, it is often a good idea to use the <code>target="_blank"</code> attribute as it will open the link in a new tab.</p>
+        <p>Links are used for inline navigation.  For external links, it is often a good idea to use the <code>target="_blank"</code> attribute as it will open the link in a new tab.</p>
 
-      <div class="example">
-        <p>This is a <a href="#">link</a>.</p>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;a href="#"&gt;link&lt;/a&gt; </code></pre>
-      </div>
+        <div class="example">
+          <p>This is a <a href="#">link</a>.</p>
+        </div>
+        <div class="example-code">
+          <pre><code>&lt;a href="#"&gt;link&lt;/a&gt; </code></pre>
+        </div>
 
-      <h3>Text modifiers</h3>
+        <h3>Text modifiers</h3>
 
-      <div class="example">
-        <p>
-          <small>This is small text.</small>
-          <strong>This is bold text.</strong>
-          <em>This is emphasizes text.</em>
-        </p>
-      </div>
-      <div class="example-code">
+        <div class="example">
+          <p>
+            <small>This is small text.</small>
+            <strong>This is bold text.</strong>
+            <em>This is emphasizes text.</em>
+          </p>
+        </div>
+        <div class="example-code">
 <pre><code>&lt;small&gt;This is small text.&lt;/small&gt;
 &lt;strong&gt;This is bold text.&lt;/strong&gt;
 &lt;em&gt;This is emphasizes text.&lt;/em&gt; </code></pre>
-      </div>
+        </div>
 
-      <h3>Abbreviations</h3>
+        <h3>Abbreviations</h3>
 
-      <div class="example">
-        <p>
-          <abbr title="HyperText Markup Language">HTML</abbr> is an abbreviation of HyperText Markup Language.
-        </p>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; </code></pre>
-      </div>
+        <div class="example">
+          <p>
+            <abbr title="HyperText Markup Language">HTML</abbr> is an abbreviation of HyperText Markup Language.
+          </p>
+        </div>
+        <div class="example-code">
+          <pre><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; </code></pre>
+        </div>
 
-      <h3>Blockquotes</h3>
+        <h3>Blockquotes</h3>
 
-      <p>Use a <code>&lt;small&gt;</code> element for the attribution of the quote.</p>
+        <p>Use a <code>&lt;small&gt;</code> element for the attribution of the quote.</p>
 
-      <div class="example">
-        <blockquote>
-          <p>Someone said something really awesome and important once.</p>
-          <small>Someone famous</small>
-        </blockquote>
-      </div>
-      <div class="example-code">
+        <div class="example">
+          <blockquote>
+            <p>Someone said something really awesome and important once.</p>
+            <small>Someone famous</small>
+          </blockquote>
+        </div>
+        <div class="example-code">
 <pre><code>&lt;blockquote&gt;
   &lt;p&gt;Someone said something really awesome and important once.&lt;/p&gt;
   &lt;small&gt;Someone famous&lt;/small&gt;
 &lt;/blockquote&gt; </code></pre>
-      </div>
+        </div>
 
-      <h3>Lists</h3>
+        <h3>Lists</h3>
 
-      <div class="example">
-        <ul>
-          <li>unordered list example</li>
-          <li>another thing</li>
-          <li>nested items
-            <ul>
-              <li>nested item 1</li>
-              <li>nested item 2</li>
-            </ul>
-          </li>
-          <li>Another item</li>
-        </ul>
-      </div>
-      <div class="example-code">
+        <div class="example">
+          <ul>
+            <li>unordered list example</li>
+            <li>another thing</li>
+            <li>nested items
+              <ul>
+                <li>nested item 1</li>
+                <li>nested item 2</li>
+              </ul>
+            </li>
+            <li>Another item</li>
+          </ul>
+        </div>
+        <div class="example-code">
 <pre><code>&lt;ul&gt;
   &lt;li&gt;Unordered list example&lt;/li&gt;
 &lt;/ul&gt; </code></pre>
-      </div>
+        </div>
 
-      <div class="example">
-        <ol>
-          <li>ordered list example</li>
-          <li>another thing</li>
-          <li>nested items
-            <ol>
-              <li>nested item 1</li>
-              <li>nested item 2</li>
-            </ol>
-          </li>
-          <li>Another item</li>
-        </ol>
-      </div>
-      <div class="example-code">
+        <div class="example">
+          <ol>
+            <li>ordered list example</li>
+            <li>another thing</li>
+            <li>nested items
+              <ol>
+                <li>nested item 1</li>
+                <li>nested item 2</li>
+              </ol>
+            </li>
+            <li>Another item</li>
+          </ol>
+        </div>
+        <div class="example-code">
 <pre><code>&lt;ol&gt;
   &lt;li&gt;Ordered list example&lt;/li&gt;
 &lt;/ol&gt; </code></pre>
-      </div>
+        </div>
 
-      <h3>Code</h3>
+        <h3>Code</h3>
 
-      <div class="example">
-        <p>
-          Inline <code>code</code> example.
-        </p>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;code&gt;code&lt;/code&gt; </code></pre>
-      </div>
+        <div class="example">
+          <p>
+            Inline <code>code</code> example.
+          </p>
+        </div>
+        <div class="example-code">
+          <pre><code>&lt;code&gt;code&lt;/code&gt; </code></pre>
+        </div>
 
-      <div class="example">
-        <pre><code>Code block
-example here. </code></pre>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;code&gt;code&lt;/code&gt; </code></pre>
-      </div>
+        <div class="example">
+          <pre><code>['Code block',
+'example here.']; </code></pre>
+        </div>
+        <div class="example-code">
+          <pre><code>&lt;pre&gt;&lt;code&gt;code&lt;/code&gt;&lt;/pre&gt; </code></pre>
+        </div>
 
-      <h3>Footnote</h3>
+        <h3>Footnote</h3>
 
-      <div class="example">
-        <div class="footnote">
-          <p>This is a footnote example.</p>
+        <div class="example">
+          <div class="footnote">
+            <p>This is a footnote example.</p>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code>&lt;div class="footnote"&gt;
+    &lt;p>This is a footnote example&lt;/p>
+  &lt;/div&gt; </code></pre>
         </div>
       </div>
-      <div class="example-code">
-<pre><code>&lt;div class="footnote"&gt;
-  &lt;p>This is a footnote example&lt;/p>
-&lt;/div&gt; </code></pre>
-      </div>
 
 
 
 
-      <h2>Tables</h2>
+      <div class="section">
+        <h2>Tables</h2>
 
-      <p>Wrap tables in a <code>.table-responsive</code> class so that it will become scrollable on smaller devices.</p>
+        <p>Wrap tables in a <code>.table-responsive-*</code> class so that it will become scrollable on smaller devices.  Breakpoint suffixes from <code>$responsive-classes</code> SASS variable and determine the max-width to begin making the table responsive.</p>
 
-      <div class="example">
-        <div class="table-responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>First column</th><th>second</th>
-              </tr>
-            </thead>
+        <div class="example">
+          <div class="table-responsive-medium">
+            <table>
+              <thead>
+                <tr>
+                  <th>First column</th><th>second</th><th>third</th><th>fourth</th><th>fifth</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              <tr>
-                <td>data</td><td>2</td>
-              </tr>
-              <tr>
-                <td>somre more data here</td><td>42</td>
-              </tr>
-            </tbody>
-          </table>
+              <tbody>
+                <tr>
+                  <td>data</td><td>2</td><td><p>longer paragraph text is over here</p></td><td>42,000,424,242.00</td><td>MORE!</td>
+                </tr>
+                <tr>
+                  <td>somre more data here</td><td>42</td><td><p>longer paragraph text is over here</p></td><td>42,000,424,242.00</td><td>MORE!</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;div class="table-responsive"&gt;
+        <div class="example-code">
+<pre><code>&lt;div class="table-responsive-medium"&gt;
   &lt;table&gt;
     &lt;thead&gt;
       &lt;tr&gt;
@@ -332,138 +402,153 @@ example here. </code></pre>
     &lt;/tbody&gt;
   &lt;/table&gt;
 &lt;/div&gt; </code></pre>
+        </div>
       </div>
 
 
 
-      <h2>Forms</h2>
+      <div class="section">
+        <h2>Forms</h2>
 
-      <p>Form styles borrowed liberally from Bootstrap.</p>
+        <h3>Regular form</h3>
 
-      <h3>Regular form</h3>
+        <p>The following is a basic input form.</p>
 
-      <p>The following is a basic input form.</p>
-
-      <div class="example">
-        <form role="form">
-          <div class="form-item">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" id="exampleInputEmail1" placeholder="Enter email">
-          </div>
-
-          <div class="form-item">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" id="exampleInputPassword1" placeholder="Password">
-            <p class="form-help">Example block-level help text here.</p>
-          </div>
-
-          <div class="form-item">
-            <label for="exampleInputFile">File input</label>
-            <input type="file" id="exampleInputFile">
-            <p class="form-help">Example block-level help text here.</p>
-          </div>
-
-          <div class="form-item">
-            <label>Checkboxes</label>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="checkboxes" value="2"> Check, check
-              </label>
+        <div class="example">
+          <form role="form">
+            <div class="form-item">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" id="exampleInputEmail1" placeholder="Enter email">
             </div>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="checkboxes" value="2"> Check me out
-              </label>
-            </div>
-          </div>
-
-          <div class="form-item">
-            <label>Radios</label>
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Option 1
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked> Option 2
-              </label>
-            </div>
-          </div>
-
-          <fieldset>
-            <legend>Field group with legend</legend>
 
             <div class="form-item">
-              <label for="example03">Lots of text</label>
-              <textarea type="text" id="example03" placeholder="Enter something"></textarea>
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" id="exampleInputPassword1" placeholder="Password">
+              <p class="form-help">Example block-level help text here.</p>
             </div>
-          </fieldset>
 
-          <button type="submit" class="button">Submit</button>
-        </form>
-
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-      <h3>Inline form</h3>
-
-      <p>The following is a basic inline form.</p>
-
-      <div class="example">
-        <form role="form" class="form-inline">
-          <div class="form-item">
-            <label for="example51" class="sr-only">Email address</label>
-            <input type="email" id="example51" placeholder="Email">
-          </div>
-
-          <div class="form-item">
-            <label for="example52" class="sr-only">Password</label>
-            <input type="password" id="example52" placeholder="Password">
-          </div>
-
-          <button type="submit" class="button">Submit</button>
-        </form>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-      <h3>Input group</h3>
-
-      <p>For single input forms, use an input group.</p>
-
-      <div class="example">
-        <form role="form">
-          <div class="form-input-group">
-            <label for="address" class="sr-only">Email address</label>
-            <input type="text" id="address" placeholder="Search by address">
-
-            <div class="button-group">
-              <button type="submit" class="button"><i class="fa fa-compass"></i></button>
-              <button type="submit" class="button">Search</button>
+            <div class="form-item">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="form-help">Example block-level help text here.</p>
             </div>
-          </div>
-        </form>
 
-        <form role="form" class="large">
-          <div class="form-input-group">
-            <label for="address2" class="sr-only">Email address</label>
-            <input type="text" id="address2" placeholder="Search by address">
-
-            <div class="button-group">
-              <button type="submit" class="button"><i class="fa fa-compass"></i></button>
-              <button type="submit" class="button">Search</button>
+            <div class="form-item">
+              <label>Checkboxes</label>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="checkboxes" value="2"> Check, check
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="checkboxes" value="2"> Check me out
+                </label>
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
 
+            <div class="form-item">
+              <label>Radios</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> Option 1
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked> Option 2
+                </label>
+              </div>
+            </div>
+
+            <fieldset>
+              <legend>Field group with legend</legend>
+
+              <div class="form-item">
+                <label for="example03">Lots of text</label>
+                <textarea type="text" id="example03" placeholder="Enter something"></textarea>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="button">Submit</button>
+          </form>
+
+        </div>
+        <div class="example-code">
+<pre><code>&lt;form role="form"&gt;
+  &lt;div class="form-item"&gt;
+    &lt;label for="exampleInputEmail1"&gt;Email address&lt;/label&gt;
+    &lt;input type="email" id="exampleInputEmail1" placeholder="Enter email"&gt;
+  &lt;/div&gt;
+
+  ...
+
+  &lt;div class="checkbox"&gt;
+    &lt;label&gt;
+      &lt;input type="checkbox" name="checkboxes" value="2"&gt; Check, check
+    &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+&lt;/form&gt; </pre></code>
+        </div>
+
+        <h3>Inline form</h3>
+
+        <p>The following is a basic inline form.</p>
+
+        <div class="example">
+          <form role="form" class="form-inline">
+            <div class="form-item">
+              <label for="example51" class="sr-only">Email address</label>
+              <input type="email" id="example51" placeholder="Email">
+            </div>
+
+            <div class="form-item">
+              <label for="example52" class="sr-only">Password</label>
+              <input type="password" id="example52" placeholder="Password">
+            </div>
+
+            <button type="submit" class="button">Submit</button>
+          </form>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+
+        <h3>Input group</h3>
+
+        <p>For single input forms, use an input group.</p>
+
+        <div class="example">
+          <form role="form">
+            <div class="form-input-group">
+              <label for="address" class="sr-only">Email address</label>
+              <input type="text" id="address" placeholder="Search by address">
+
+              <div class="button-group">
+                <button type="submit" class="button"><i class="fa fa-compass"></i></button>
+                <button type="submit" class="button">Search</button>
+              </div>
+            </div>
+          </form>
+
+          <form role="form" class="large">
+            <div class="form-input-group">
+              <label for="address2" class="sr-only">Email address</label>
+              <input type="text" id="address2" placeholder="Search by address">
+
+              <div class="button-group">
+                <button type="submit" class="button"><i class="fa fa-compass"></i></button>
+                <button type="submit" class="button">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+      </div>
 
 
 
@@ -938,7 +1023,9 @@ MP.maps.openstreetmapAttribution; </code></pre>
 
     </div>
 
-    <script src="dist/minnpost-styles.min.js"></script>
+
+
+
     <script src="bower_components/holderjs/holder.js"></script>
     <script data-main="demo/demo" src="bower_components/requirejs/require.js"></script>
 

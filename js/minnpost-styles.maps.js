@@ -1,5 +1,5 @@
 /**
- * Stylings for Highcharts
+ * Stylings and interactions for maps
  */
 
 (function(global, factory) {

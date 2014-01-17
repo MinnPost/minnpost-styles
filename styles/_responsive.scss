@@ -16,21 +16,22 @@ img {
 }
 
 /**
- * Responsive tables wrapper.  Inspired by Bootstraps method.
+ * Responsive tables wrapper.  Inspired by Bootstraps method.  Class
+ * for each responsive break-point.
  */
-.table-responsive {
 
-  @media (max-width: nth($responsive-points, 2)) {
-    width: 100%;
-    margin-bottom: $space;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: 1px solid $color-light-gray;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
 
-    table {
-      margin-bottom: 0;
+@for $p from 1 to length($responsive-points) + 1 {
+  $width: nth($responsive-points, $p);
+  $class: nth($responsive-classes, $p);
+
+  // Since this is a max-width approach a width of 0 is not
+  // valuable to us.
+  @if $width != 0 {
+    @media (max-width: $width) {
+      .table-responsive-#{$class} {
+        @include responsive-table();
+      }
     }
   }
 }

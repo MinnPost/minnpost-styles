@@ -2,22 +2,24 @@
  * Demo specific styles.
  */
 
+.mp .section {
+  padding-bottom: 4em;
+  border-bottom: 1px solid #EDEDED;
+}
+
 .mp .example h2 {
   margin-top: inherit;
 }
-.mp h2 {
-  margin-top: 3em;
-}
 
 .mp .example {
-  background-color: #fff;
+  background-color: #FFFFFF;
   border: 1px solid #DDDDDD;
   border-radius: 4px 4px 0 0;
   padding: 2em 1em 1em 1em;
 }
 
 .mp .example-code {
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   border: 1px solid #DDDDDD;
   border-radius: 4px;
   padding: .5em;

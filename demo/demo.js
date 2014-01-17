@@ -12,12 +12,16 @@ require.config({
       'deps': ['jquery']
     }
   },
-  baseUrl: 'js',
+  baseUrl: 'dist',
   paths: {
     'underscore': '../bower_components/underscore/underscore-min',
     'jquery': '../bower_components/jquery/jquery.min',
     'Highcharts': '../bower_components/highcharts/highcharts',
-    'Leaflet': '../bower_components/leaflet/dist/leaflet'
+    'Leaflet': '../bower_components/leaflet/dist/leaflet',
+    'minnpost-styles': 'minnpost-styles.all.min',
+    'minnpost-styles.highcharts': 'minnpost-styles.all.min',
+    'minnpost-styles.maps': 'minnpost-styles.all.min',
+    'minnpost-styles.nav': 'minnpost-styles.all.min',
   }
 });
 

@@ -1,5 +1,5 @@
 /**
- * Stylings for Highcharts
+ * Navigation interaction
  */
 
 (function(global, factory) {
@@ -31,6 +31,7 @@
     throttle: 90
   };
   function MPStick(element, options) {
+    // Defined some values and process options
     this.element = element;
     this.$element = $(element);
     this._defaults = MP.nav.MPStickDefaults;
@@ -38,6 +39,7 @@
     this._name = 'mpStick';
     this._scrollEvent = 'scroll.mp.mpStick';
     this._on = false;
+
     this.init();
   }
   MPStick.prototype = {
@@ -69,6 +71,8 @@
       var top = (containerTop - this.options.topPadding);
       var bottom = (containerBottom - this.elementHeight - this.options.topPadding - 2);
 
+      // Test whether we are in the container and whether its
+      // already stuck or not
       if (!this._on && scrollTop > top && scrollTop < bottom) {
         this.on();
       }
@@ -110,23 +114,26 @@
 
 
 
-  // Plugin for scoll spying
+  // Plugin for scroll spying
   MP.nav.MPScrollSpyDefaults = {
     activeClass: 'active',
     offset: 80,
     throttle: 200
   };
   function MPScrollSpy(element, options) {
+    // Set some initial values and options
     this.element = element;
     this.$element = $(element);
     this._defaults = MP.nav.MPScrollSpyDefaults;
     this.options = $.extend( {}, this._defaults, options);
     this._name = 'mpScollSpy';
     this._scrollEvent = 'scroll.mp.mpScollSpy';
+
     this.init();
   }
   MPScrollSpy.prototype = {
     init: function() {
+      // Get listeners and targets
       this.$listeners = this.$element.find('[data-spy-on]');
       this.$targets = this.$element.find('[data-spy-me]');
 
@@ -152,6 +159,7 @@
         }
       });
 
+      // Once found one, then mark the listener
       if (target) {
         this.$listeners.removeClass(this.options.activeClass);
         this.$element.find('[data-spy-on="' + target + '"]').addClass(this.options.activeClass);

@@ -7,7 +7,7 @@ $selector-wrapper: ".mp" !default;
 
 // Responsive
 $responsive-points: 0px 420px 640px 960px 1200px !default;
-$responsive-classes: xsmall small medium large xlarge !default;
+$responsive-classes: all small medium large xlarge !default;
 
 // Grid
 $grid-gutter: 0.5em !default;
