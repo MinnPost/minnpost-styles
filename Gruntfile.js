@@ -84,11 +84,25 @@ module.exports = function(grunt) {
         separator: '\r\n\r\n'
       },
       // JS
-      js: {
-        src: [
-          'js/site.js'
-        ],
+      all: {
+        src: [ 'js/*.js' ],
+        dest: 'dist/<%= pkg.name %>.all.js'
+      },
+      base: {
+        src: ['js/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.js'
+      },
+      highcharts: {
+        src: ['js/<%= pkg.name %>.highcharts.js'],
+        dest: 'dist/<%= pkg.name %>.highcharts.js'
+      },
+      maps: {
+        src: ['js/<%= pkg.name %>.maps.js'],
+        dest: 'dist/<%= pkg.name %>.maps.js'
+      },
+      nav: {
+        src: ['js/<%= pkg.name %>.nav.js'],
+        dest: 'dist/<%= pkg.name %>.nav.js'
       },
       // CSS
       css: {
@@ -104,9 +118,25 @@ module.exports = function(grunt) {
       options: {
         banner: '<%= meta.banner %>'
       },
-      dist: {
-        src: ['<%= concat.js.dest %>'],
+      all: {
+        src: ['dist/<%= pkg.name %>.all.js'],
+        dest: 'dist/<%= pkg.name %>.all.min.js'
+      },
+      base: {
+        src: ['dist/<%= pkg.name %>.js'],
         dest: 'dist/<%= pkg.name %>.min.js'
+      },
+      highcharts: {
+        src: ['dist/<%= pkg.name %>.highcharts.js'],
+        dest: 'dist/<%= pkg.name %>.highcharts.min.js'
+      },
+      maps: {
+        src: ['dist/<%= pkg.name %>.maps.js'],
+        dest: 'dist/<%= pkg.name %>.maps.min.js'
+      },
+      nav: {
+        src: ['dist/<%= pkg.name %>.nav.js'],
+        dest: 'dist/<%= pkg.name %>.nav.min.js'
       }
     },
 
