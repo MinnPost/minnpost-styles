@@ -104,6 +104,14 @@ module.exports = function(grunt) {
         src: ['js/<%= pkg.name %>.nav.js'],
         dest: 'dist/<%= pkg.name %>.nav.js'
       },
+      datatables: {
+        src: ['js/<%= pkg.name %>.datatables.js'],
+        dest: 'dist/<%= pkg.name %>.datatables.js'
+      },
+      formatters: {
+        src: ['js/<%= pkg.name %>.formatters.js'],
+        dest: 'dist/<%= pkg.name %>.formatters.js'
+      },
       // CSS
       css: {
         src: [
@@ -137,6 +145,14 @@ module.exports = function(grunt) {
       nav: {
         src: ['dist/<%= pkg.name %>.nav.js'],
         dest: 'dist/<%= pkg.name %>.nav.min.js'
+      },
+      datatables: {
+        src: ['dist/<%= pkg.name %>.datatables.js'],
+        dest: 'dist/<%= pkg.name %>.datatables.min.js'
+      },
+      formatters: {
+        src: ['dist/<%= pkg.name %>.formatters.js'],
+        dest: 'dist/<%= pkg.name %>.formatters.min.js'
       }
     },
 

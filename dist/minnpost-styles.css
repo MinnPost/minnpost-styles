@@ -491,6 +491,9 @@ html {
    * Styles for Leaflet and Mapbox maps.
    */
   /**
+   * Datatables
+   */
+  /**
    * Responsive styles for minnpost-styles.
    */
   /**
@@ -605,7 +608,6 @@ html {
   *zoom: 1;
   margin-left: -0.5em;
   margin-right: -0.5em;
-  margin-bottom: 1em;
 }
 .mp .row:before, .mp .row:after {
   content: " ";
@@ -1139,7 +1141,7 @@ html {
   background-color: inherit;
   padding: 0;
 }
-.mp .fa,
+.mp .fa, .mp .datatable table .sorting:after, .mp .datatable table .sorting_asc:after, .mp .datatable table .sorting_desc:after,
 .mp .loading {
   display: -moz-inline-stack;
   display: inline-block;
@@ -2141,6 +2143,77 @@ html {
   overflow: auto;
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
+}
+.mp .datatable .dataTables_processing {
+  display: none;
+}
+.mp .datatable .dataTables_filter {
+  text-align: right;
+}
+.mp .datatable .dataTables_filter label, .mp .datatable .dataTables_filter input {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+}
+.mp .datatable .dataTables_paginate {
+  text-align: right;
+}
+.mp .datatable .dataTables_paginate a {
+  margin-right: 1em;
+}
+.mp .datatable .dataTables_paginate .icon-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.mp .datatable .dataTables_paginate .paginate_disabled_previous,
+.mp .datatable .dataTables_paginate .paginate_disabled_next {
+  color: #787878;
+}
+.mp .datatable .dataTables_paginate .paginate_enabled_previous,
+.mp .datatable .dataTables_paginate .paginate_enabled_next {
+  cursor: pointer;
+}
+.mp .datatable .dataTables_info {
+  color: #9e9e9e;
+}
+.mp .datatable table .sorting,
+.mp .datatable table .sorting_asc,
+.mp .datatable table .sorting_desc {
+  cursor: pointer;
+}
+.mp .datatable table .sorting_asc,
+.mp .datatable table .sorting_desc,
+.mp .datatable table .sorting_1 {
+  border-left: 2px solid #525252;
+  border-right: 2px solid #525252;
+}
+.mp .datatable table .sorting_asc,
+.mp .datatable table .sorting_desc {
+  border-top: 2px solid #525252;
+}
+.mp .datatable table tbody tr:last-child .sorting_1 {
+  border-bottom: 2px solid #525252;
+}
+.mp .datatable table .sorting:after, .mp .datatable table .sorting_asc:after, .mp .datatable table .sorting_desc:after {
+  color: #9e9e9e;
+  content: "\f0dc";
+  float: right;
+}
+.mp .datatable table .sorting_asc:after {
+  color: #2b2b2b;
+  content: "\f0dd";
+}
+.mp .datatable table .sorting_desc:after {
+  color: #525252;
+  content: "\f0de";
 }
 .mp img {
   max-width: 100%;
