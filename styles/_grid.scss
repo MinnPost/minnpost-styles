@@ -7,7 +7,6 @@
   @include clearfix();
   margin-left: $grid-gutter * -1;
   margin-right: $grid-gutter * -1;
-  margin-bottom: $space-horizontal-margin;
 
   // Make grid intervals
   $intervals: ();

@@ -22,5 +22,8 @@
     "highcharts": "~3.0.7",
     "underscore": "~1.5.2",
     "leaflet": "~0.7.1"
+  },
+  "dependencies": {
+    "datatables": "~1.9.4"
   }
 }

@@ -18,20 +18,23 @@ require.config({
     'jquery': '../bower_components/jquery/jquery.min',
     'Highcharts': '../bower_components/highcharts/highcharts',
     'Leaflet': '../bower_components/leaflet/dist/leaflet',
+    'datatables': '../bower_components/datatables/media/js/jquery.dataTables',
     'minnpost-styles': 'minnpost-styles.all.min',
     'minnpost-styles.highcharts': 'minnpost-styles.all.min',
     'minnpost-styles.maps': 'minnpost-styles.all.min',
     'minnpost-styles.nav': 'minnpost-styles.all.min',
+    'minnpost-styles.datatables': 'minnpost-styles.all.min'
   }
 });
 
-require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps', 'minnpost-styles.nav'], function(_, $, L, MP) {
+require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps', 'minnpost-styles.nav', 'minnpost-styles.datatables'], function(_, $, L, MP) {
 
   // When document is ready
   $(document).ready(function() {
     highcharts();
     maps();
     navs();
+    datatables();
   });
 
 
@@ -162,5 +165,68 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
       topPadding: 20,
       throttle: 100
     });
+  }
+
+
+
+  // Datatables
+  function datatables() {
+    var sampleCSVData = [];
+    var tableColumns = {};
+    var options = {};
+    var i;
+    var row;
+    var $dataTable;
+
+    // Make some data
+    for (i = 0; i < 55; i++) {
+      row = [];
+      row.push(_.sample(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K']));
+      row.push(_.random(1, 12) + '/' + _.random(1, 28) + '/' + _.random(1975, 2014));
+      row.push((_.random(1000, 10000) / 100).toString());
+      row.push(_.random(10000, 100000).toString());
+      row.push(_.sample(['lastA', 'lastB', 'lastC', 'lastD', 'lastE', 'lastF', 'lastG', 'lastH', 'lastI', 'lastJ', 'lastK']));
+      row.push(_.sample(['firstA', 'firstB', 'firstC', 'firstD', 'firstE', 'firstF', 'firstG', 'firstH', 'firstI', 'firstJ', 'firstK']));
+      sampleCSVData.push(row);
+    }
+
+    // Define specific about how the columns work.
+    tableColumns = $.extend(true, {}, {
+      0: { sTitle: 'Thing' },
+      1: { sTitle: 'Date' },
+      // Makes it so that the last name column sorts on
+      // both last and first name
+      4: {
+        sTitle: 'Last',
+        aDataSort: [4, 5]
+      },
+      5: {
+        sTitle: 'First',
+        bSortable: false
+      },
+      3: {
+        sTitle: 'Number',
+        bSearchable: false,
+        mRender: function(data, type, full) {
+          return data;
+          //return thisApp.formatNumber(parseFloat(data), 2);
+        }
+      },
+      2: {
+        sTitle: 'Money',
+        sClass: 'money',
+        bSearchable: false,
+        mRender: function(data, type, full) {
+          return data;
+          //return thisApp.formatCurrency(parseFloat(data), 2);
+        }
+      }
+    });
+    options = $.extend(true, {}, {
+      aaData: sampleCSVData,
+      aoColumns: _.values(tableColumns)
+    }, options);
+
+    MP.datatables.makeTable($('.datatable-example'), options);
   }
 });

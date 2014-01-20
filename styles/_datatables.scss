@@ -1,0 +1,72 @@
+/**
+ * Datatables
+ */
+
+.datatable {
+
+  .dataTables_processing {
+    display: none;
+  }
+
+  .dataTables_filter {
+    text-align: right;
+
+    label, input {
+      @include inline-block();
+    }
+  }
+
+  .dataTables_paginate {
+    text-align: right;
+
+    a {
+      margin-right: $space-horizontal-margin;
+    }
+
+    .icon-text {
+      @include screen-reader-only();
+    }
+
+    .paginate_disabled_previous,
+    .paginate_disabled_next {
+      color: $color-gray;
+    }
+
+    .paginate_enabled_previous,
+    .paginate_enabled_next {
+      cursor: pointer;
+    }
+  }
+
+  .dataTables_info {
+    color: $color-light-gray;
+  }
+
+  table {
+
+    .sorting,
+    .sorting_asc,
+    .sorting_desc {
+      cursor: pointer;
+    }
+
+    .sorting:after {
+      @extend .fa;
+      color: $color-light-gray;
+      content: "\f0dc";
+      float: right;
+    }
+
+    .sorting_asc:after {
+      @extend .sorting:after;
+      color: $color-darker-gray;
+      content: "\f0dd";
+    }
+
+    .sorting_desc:after {
+      @extend .sorting:after;
+      color: $color-dark-gray;
+      content: "\f0de";
+    }
+  }
+}
