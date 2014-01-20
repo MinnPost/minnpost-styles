@@ -23,11 +23,12 @@ require.config({
     'minnpost-styles.highcharts': 'minnpost-styles.all.min',
     'minnpost-styles.maps': 'minnpost-styles.all.min',
     'minnpost-styles.nav': 'minnpost-styles.all.min',
-    'minnpost-styles.datatables': 'minnpost-styles.all.min'
+    'minnpost-styles.datatables': 'minnpost-styles.all.min',
+    'minnpost-styles.formatters': 'minnpost-styles.all.min'
   }
 });
 
-require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps', 'minnpost-styles.nav', 'minnpost-styles.datatables'], function(_, $, L, MP) {
+require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps', 'minnpost-styles.nav', 'minnpost-styles.datatables', 'minnpost-styles.formatters'], function(_, $, L, MP) {
 
   // When document is ready
   $(document).ready(function() {
@@ -208,8 +209,7 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
         sTitle: 'Number',
         bSearchable: false,
         mRender: function(data, type, full) {
-          return data;
-          //return thisApp.formatNumber(parseFloat(data), 2);
+          return MP.formatters.integer(parseFloat(data));
         }
       },
       2: {
@@ -217,8 +217,7 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
         sClass: 'money',
         bSearchable: false,
         mRender: function(data, type, full) {
-          return data;
-          //return thisApp.formatCurrency(parseFloat(data), 2);
+          return MP.formatters.currency(parseFloat(data));
         }
       }
     });

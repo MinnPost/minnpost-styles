@@ -50,6 +50,22 @@
       cursor: pointer;
     }
 
+    .sorting_asc,
+    .sorting_desc,
+    .sorting_1 {
+      border-left: 2px solid $color-dark-gray;
+      border-right: 2px solid $color-dark-gray;
+    }
+
+    .sorting_asc,
+    .sorting_desc {
+      border-top: 2px solid $color-dark-gray;
+    }
+
+    tbody tr:last-child .sorting_1 {
+      border-bottom: 2px solid $color-dark-gray;
+    }
+
     .sorting:after {
       @extend .fa;
       color: $color-light-gray;
