@@ -72,4 +72,9 @@
     }, 0));
   };
 
+  // Identifier/slug maker
+  MP.formatters.identifier = function(str) {
+    return str.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-').replace(/[^\w-]+/g,'');
+  };
+
 });
