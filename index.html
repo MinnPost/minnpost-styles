@@ -25,7 +25,7 @@
       <h1>MinnPost Styles</h1>
 
       <div class="section">
-        <p class="large">Welcome to MinnPost Styles, super-fly, style guide focused on interactive and news applications made by the <a href="http://code.minnpost.com/">MinnData team</a>.  <em>This is currently a work in progress.</em></p>
+        <p class="xlarge">Welcome to MinnPost Styles, super-fly, style guide focused on interactive and news applications made by the <a href="http://code.minnpost.com/">MinnData team</a>.  <em>This is currently a work in progress.</em></p>
       </div>
 
 
@@ -208,15 +208,38 @@ $responsive-classes: all; </code></pre>
 
         <div class="example">
           <h1>h1 Example heading</h1>
+          <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable.</p>
+
           <h2>h2 Example heading</h2>
+          <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable.</p>
+
           <h3>h3 Example heading</h3>
+          <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable.</p>
+
           <h4>h4 Example heading</h4>
+          <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable.</p>
+
           <h5>h5 Example heading</h5>
+          <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable.</p>
+
           <h6>h6 Example heading</h6>
+          <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable.</p>
+
         </div>
         <div class="example-code">
 <pre><code>&lt;h1&gt;h1 Example heading&lt;/h1&gt;
   ... </code></pre>
+</div>
+
+        <h3>Component labels</h3>
+
+        <p>The following are styling for non-heading labels for components like charts or tables.<p>
+
+        <div class="example">
+          <div class="component-label">Component label</div>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;div class="component-label"&gt;Component label&lt;/div&gt; </code></pre>
         </div>
 
         <h3>Paragraph</h3>
@@ -270,11 +293,19 @@ $responsive-classes: all; </code></pre>
             <strong>This is bold text.</strong>
             <em>This is emphasizes text.</em>
           </p>
+
+          <p>Some text
+            <sup>Super script</sup>
+            then some
+            <sub>Sub script</sub>
+          </p>
         </div>
         <div class="example-code">
 <pre><code>&lt;small&gt;This is small text.&lt;/small&gt;
 &lt;strong&gt;This is bold text.&lt;/strong&gt;
-&lt;em&gt;This is emphasizes text.&lt;/em&gt; </code></pre>
+&lt;em&gt;This is emphasizes text.&lt;/em&gt;
+&lt;sup&gt;Super-script text.&lt;/sup&gt;
+&lt;sub&gt;Subscript text.&lt;/sub&gt; </code></pre>
         </div>
 
         <h3>Abbreviations</h3>
@@ -366,15 +397,39 @@ $responsive-classes: all; </code></pre>
 
         <h3>Footnote</h3>
 
+        <p>Footnotes are for footnotes, attribution, and other notes that are not needed to be specifically with its related content.</p>
+
         <div class="example">
           <div class="footnote">
             <p>This is a footnote example.</p>
           </div>
         </div>
         <div class="example-code">
-  <pre><code>&lt;div class="footnote"&gt;
-    &lt;p>This is a footnote example&lt;/p>
-  &lt;/div&gt; </code></pre>
+<pre><code>&lt;div class="footnote"&gt;
+  &lt;p&gt;This is a footnote example&lt;/p&gt;
+&lt;/div&gt; </code></pre>
+        </div>
+
+        <h3>Credit</h3>
+
+        <p>Credits are specifically for components like images, or charts, most likely within a full article context.</p>
+
+        <div class="example">
+          <p class="credit">This is a credit example.</p>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;p class="credit"&gt;This is a credit example&lt;/p&gt; </code></pre>
+        </div>
+
+        <h3>Caption</h3>
+
+        <p>Captions are small, simple bits of information giving a specific component context, such as for an image or chart.</p>
+
+        <div class="example">
+          <p class="caption">This is a caption example.  Happy my she boy. Give me fish cats, cat terrified lived catnip comfortable nina fearless eat the grass friend his zzz home impressed kitten house loves sneak snuggliest mom cat happy! Waffles, her cat classy happy!</p>
+        </div>
+        <div class="example-code">
+  <pre><code>&lt;p class="caption"&gt; This is a caption example &lt;/p&gt; </code></pre>
         </div>
       </div>
 
@@ -386,7 +441,11 @@ $responsive-classes: all; </code></pre>
 
         <p>Wrap tables in a <code>.table-responsive-*</code> class so that it will become scrollable on smaller devices.  Breakpoint suffixes from <code>$responsive-classes</code> SASS variable and determine the max-width to begin making the table responsive.</p>
 
+        <p>Use a <code>striped</code> or <code>striped-even</code> class on the table to add stripes to every other row.</p>
+
         <div class="example">
+          <div class="component-label">Table example</div>
+
           <div class="table-responsive-medium">
             <table>
               <thead>

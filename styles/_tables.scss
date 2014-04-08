@@ -12,6 +12,7 @@ table {
   thead {
 
     th {
+      font-weight: bold;
       vertical-align: bottom;
       border-bottom: 2px solid $color-lighter-gray;
       line-height: $text-line-height;
@@ -22,15 +23,16 @@ table {
   tbody {
 
     td {
-      vertical-align: top;
+      font-weight: 300;
+      vertical-align: middle;
       border-bottom: 1px solid $color-lighter-gray;
       padding: (0.5 * $space);
     }
+  }
 
-    // Stripes
-    tr:nth-child(odd) td {
-      background-color: $color-lightest-gray;
-    }
+  // Stripes
+  &.striped tbody tr:nth-child(odd) td,
+  &.striped-even tbody tr:nth-child(even) td {
+    background-color: $color-lightest-gray;
   }
 }
-

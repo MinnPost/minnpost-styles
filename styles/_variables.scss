@@ -13,14 +13,13 @@ $responsive-classes: all small medium large xlarge !default;
 $grid-gutter: 0.5em !default;
 
 // Text
-$text-line-height: 1.25em !default;
+$text-line-height: 1.5em !default;
 $text-size: 1em !default;
 $text-size-small: 0.85em !default;
 $text-size-large: 1.25em !default;
 
 // Spacing
 $space: 1em !default;
-$space-heading-bottom: 0.85em !default;
 $space-vertical-padding: 0.25em !default;
 $space-horizontal-padding: 0.5em !default;
 $space-vertical-margin: 1em !default;
@@ -29,16 +28,27 @@ $space-horizontal-margin: 1em !default;
 // Radius
 $radius: 0.25em !default;
 
-// Fonts
-$font-sans-serif: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
-$font-serif: Georgia, "Times New Roman", Times, serif !default;
+// Font sizes
+$font-size-base: 16px !default;
+
+// Default text font
+// http://www.google.com/fonts#UsePlace:use/Collection:Open+Sans
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
+$font-text: "Open Sans", sans-serif, Helvetica, Arial, "Lucida Grande", sans-serif !default;
+
+// Heading font
+// http://www.google.com/fonts#UsePlace:use/Collection:Montserrat
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+$font-heading: "Montserrat", sans-serif, Georgia, "Times New Roman", Times !default;
+
+// Monospace font
 $font-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 
-// Font sizes
-$font-size-base: 14px !default;
+// General color
+$color-heading: #282828 !default;
+$color-text: #434343 !default;
 
 // Basic colors
-$color-text: #1A1818 !default;
 $color-white: #FFFFFF !default;
 $color-black: #000000 !default;
 
@@ -56,7 +66,7 @@ $color-minnpost-red: #801019 !default;
 $color-blue: #1D70A4 !default;
 
 // Links
-$color-link: $color-minnpost-red !default;
+$color-link: $color-blue !default;
 
 // Minnpost specific
 $minnpost-full-width: 960px;

@@ -22,8 +22,6 @@ body#{$selector-wrapper} {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -67,8 +65,6 @@ html {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
   }
   ol, ul {
@@ -176,16 +172,6 @@ html {
   /* ==========================================================================
      Typography
      ========================================================================== */
-
-  /**
-   * Address variable `h1` font-size and margin within `section` and `article`
-   * contexts in Firefox 4+, Safari 5, and Chrome.
-   */
-
-  h1 {
-      font-size: 2em;
-      margin: 0.67em 0;
-  }
 
   /**
    * Address styling not present in IE 8/9, Safari 5, and Chrome.

@@ -4,11 +4,17 @@
 
 & {
   font-size: $font-size-base;
-  line-height: 1.5;
+  line-height: $text-line-height;
+  font-family: $font-text;
+  color: $color-text;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: $space-heading-bottom;
+  color: $color-heading;
+  font-family: $font-heading;
+  font-weight: bold;
+  margin-top: $space-vertical-margin * 0.25;
+  margin-bottom: $space-vertical-margin * 0.5;
   line-height: $text-line-height;
 }
 
@@ -17,15 +23,15 @@ h1 {
 }
 
 h2 {
-  font-size: floor($font-size-base * 2.15);
+  font-size: floor($font-size-base * 2.25);
 }
 
 h3 {
-  font-size: floor($font-size-base * 1.7);
+  font-size: floor($font-size-base * 1.85);
 }
 
 h4 {
-  font-size: floor($font-size-base * 1.25);
+  font-size: floor($font-size-base * 1.5);
 }
 
 h5 {
@@ -45,7 +51,7 @@ a:visited {
 a:hover,
 a:visited:hover {
   color: $color-link;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 // Paragraph
@@ -104,8 +110,13 @@ ul,
 ol {
   margin: 0 0 $space ($space * 2);
 
+  li {
+    margin-bottom: $space-vertical-margin * .25;
+  }
+
   ul,
   ol {
+    margin-top: $space-vertical-margin * .25;
     margin-bottom: 0;
   }
 }
@@ -141,15 +152,31 @@ ol {
   }
 }
 
-// Footnote
-.footnote {
+// Non-heading labels
+.component-label {
+  font-weight: bold;
+  font-style: $font-heading;
+  font-size: $font-size-base * 1.25;
+  margin-bottom: $space-vertical-margin * 0.5;
+}
+
+// Footnotes, credits, captions
+.footnote,
+.credit {
   font-size: $text-size-small;
-  font-style: italic;
-  color: $color-dark-gray;
-  margin-top: $space-vertical-margin * 2;
+  color: $color-lighter-gray;
+  margin-top: $space-vertical-margin;
   margin-bottom: $space-vertical-margin;
-  border-top: 1px solid $color-light-gray;
   padding-top: $space-vertical-padding * 2;
+}
+
+.footnote {
+  margin-top: $space-vertical-margin * 2;
+  border-top: 1px solid $color-lighter-gray;
+}
+
+.caption {
+  font-size: $text-size-small;
 }
 
 // Code styles
