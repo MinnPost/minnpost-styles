@@ -32,17 +32,13 @@ $radius: 0.25em !default;
 $font-size-base: 16px !default;
 
 // Default text font
-// http://www.google.com/fonts#UsePlace:use/Collection:Open+Sans
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
-$font-text: "Open Sans", sans-serif, Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-text: "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif !default;
 
 // Heading font
-// http://www.google.com/fonts#UsePlace:use/Collection:Montserrat
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-$font-heading: "Montserrat", sans-serif, Georgia, "Times New Roman", Times !default;
+$font-heading: "Montserrat", Georgia, "Times New Roman", Times, sans-serif !default;
 
 // Monospace font
-$font-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 
 // General color
 $color-heading: #282828 !default;
