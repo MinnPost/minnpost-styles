@@ -1116,6 +1116,17 @@ html {
 .mp ol ol {
   list-style-type: lower-roman;
 }
+.mp .text-block {
+  display: block;
+  max-width: 32em;
+  margin: 0 auto;
+}
+.mp .text-block.left {
+  margin: 0 auto 0 0;
+}
+.mp .text-block.right {
+  margin: 0 0 0 auto;
+}
 .mp .footnote {
   font-size: 0.85em;
   font-style: italic;
