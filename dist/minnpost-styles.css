@@ -1,9 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700);
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 /**
  * Main SASS file for minnpost-styles.  Combines other files
  * in specific order.
  */
+/**
+ * Load some fonts here.
+ */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat-Regular"), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat-Bold"), url(http://themes.googleusercontent.com/static/fonts/montserrat/v4/IQHow_FEYlDC4Gzy_m8fcnbFhgvWbfSbdVg11QabG8w.woff) format("woff");
+}
+
 /**
  * Variables for minnpost-styles
  */
@@ -999,12 +1015,12 @@ html {
 .mp {
   font-size: 16px;
   line-height: 1.5em;
-  font-family: "Open Sans", sans-serif, Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #434343;
 }
 .mp h1, .mp h2, .mp h3, .mp h4, .mp h5, .mp h6 {
   color: #282828;
-  font-family: "Montserrat", sans-serif, Georgia, "Times New Roman", Times;
+  font-family: "Montserrat", Georgia, "Times New Roman", Times, sans-serif;
   font-weight: bold;
   margin-top: 0.25em;
   margin-bottom: 0.5em;
@@ -1130,7 +1146,7 @@ html {
 }
 .mp .component-label {
   font-weight: bold;
-  font-style: "Montserrat", sans-serif, Georgia, "Times New Roman", Times;
+  font-style: "Montserrat", Georgia, "Times New Roman", Times, sans-serif;
   font-size: 20px;
   margin-bottom: 0.5em;
 }
