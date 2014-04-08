@@ -228,6 +228,29 @@ $responsive-classes: all; </code></pre>
           <pre><code>&lt;p&gt;Some text...&lt;/p&gt; </code></pre>
         </div>
 
+        <h3>Text block</h3>
+
+        <p>For optimal readablity, large blocks of text should not necessarily fill the whole container.  This is using <code>em</code>'s which means the container is based on the font size.</p>
+
+        <div class="example">
+          <div class="text-block">
+            <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable nina fearless eat the grass friend his zzz home impressed kitten house loves sneak snuggliest mom cat happy! Waffles, her cat classy happy! Bed here years, whisker awesomeness kitties sucked oh shenanigans yoda friend backyard girlfriend kitty. Belly, knock over the lamp rescuing he persian impressed purses gf's.</p>
+          </div>
+
+          <div class="text-block large left text-justify">
+            <p>Thinks heart prince cat birdwatching chase the red dot kitty honey shenanigans slept sleepy cat, kitten face little cat her life found fuzzy. Cat kitten sunbathe cat crosseyed cat little kitty photobomb looks curls, happy my she boy. Give me fish cats, cat terrified lived catnip comfortable nina fearless eat the grass friend his zzz home impressed kitten house loves sneak snuggliest mom cat happy! Waffles, her cat classy happy! Bed here years, whisker awesomeness kitties sucked oh shenanigans yoda friend backyard girlfriend kitty. Belly, knock over the lamp rescuing he persian impressed purses gf's.</p>
+          </div>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;div class="text-block"&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class="text-block large left text-justify"&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+&lt;/div&gt; </code></pre>
+        </div>
+
         <h3>Links</h3>
 
         <p>Links are used for inline navigation.  For external links, it is often a good idea to use the <code>target="_blank"</code> attribute as it will open the link in a new tab.</p>
@@ -937,7 +960,7 @@ $responsive-classes: all; </code></pre>
 
       <h2>Maps</h2>
 
-      <p>Styling for maps provided through Leaflet or Mapbox.js.  Note that Mapbox.js is a subset of Leaflet.  We use the Mapbox.js styling because it is a nice style and provides consistency across maps that may or may not use the Mapbox.js styles.  Include the CSS before MinnPost styles.</p>
+      <p>Styling for maps provided through Leaflet or Mapbox.js.  Note that Mapbox.js is a superset of Leaflet.  We use the Mapbox.js styling because it is a nice style and provides consistency across maps that may or may not use the Mapbox.js styles.  Include the CSS before MinnPost styles.</p>
 
       <pre><code>&lt;link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css"&gt; </code></pre>
 
