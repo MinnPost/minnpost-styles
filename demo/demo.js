@@ -15,7 +15,7 @@ require.config({
   baseUrl: 'dist',
   paths: {
     'underscore': '../bower_components/underscore/underscore-min',
-    'jquery': '../bower_components/jquery/jquery.min',
+    'jquery': '../bower_components/jquery/dist/jquery.min',
     'highcharts': '../bower_components/highcharts/highcharts',
     'leaflet': '../bower_components/leaflet/dist/leaflet',
     'datatables': '../bower_components/datatables/media/js/jquery.dataTables',
