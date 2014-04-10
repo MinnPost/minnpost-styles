@@ -84,32 +84,24 @@ module.exports = function(grunt) {
         separator: '\r\n\r\n'
       },
       // JS
-      all: {
-        src: [ 'js/*.js' ],
-        dest: 'dist/<%= pkg.name %>.all.js'
-      },
-      base: {
-        src: ['js/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
-      },
       highcharts: {
-        src: ['js/<%= pkg.name %>.highcharts.js'],
+        src: ['js/highcharts.js'],
         dest: 'dist/<%= pkg.name %>.highcharts.js'
       },
       maps: {
-        src: ['js/<%= pkg.name %>.maps.js'],
+        src: ['js/maps.js'],
         dest: 'dist/<%= pkg.name %>.maps.js'
       },
       nav: {
-        src: ['js/<%= pkg.name %>.nav.js'],
+        src: ['js/nav.js'],
         dest: 'dist/<%= pkg.name %>.nav.js'
       },
       datatables: {
-        src: ['js/<%= pkg.name %>.datatables.js'],
+        src: ['js/datatables.js'],
         dest: 'dist/<%= pkg.name %>.datatables.js'
       },
       formatters: {
-        src: ['js/<%= pkg.name %>.formatters.js'],
+        src: ['js/formatters.js'],
         dest: 'dist/<%= pkg.name %>.formatters.js'
       },
       // CSS
@@ -125,14 +117,6 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         banner: '<%= meta.banner %>'
-      },
-      all: {
-        src: ['dist/<%= pkg.name %>.all.js'],
-        dest: 'dist/<%= pkg.name %>.all.min.js'
-      },
-      base: {
-        src: ['dist/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.min.js'
       },
       highcharts: {
         src: ['dist/<%= pkg.name %>.highcharts.js'],

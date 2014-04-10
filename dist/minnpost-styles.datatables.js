@@ -5,34 +5,27 @@
 (function(global, factory) {
   // Common JS (i.e. browserify) environment
   if (typeof module !== 'undefined' && module.exports && typeof require === 'function') {
-    factory(require('minnpost-styles'), require('underscore'), require('jquery'), require('datatables'));
+    module.experts = factory(require('underscore'), require('jquery'), require('datatables'));
   }
-  // AMD?
+  // AMD
   else if (typeof define === 'function' && define.amd) {
-    define('minnpost-styles.datatables', ['minnpost-styles', 'underscore', 'jquery', 'datatables'], factory);
+    define(['underscore', 'jquery', 'datatables'], factory);
   }
   // Browser global
-  else if (global.MP && global._ && global.jQuery.fn.dataTable) {
-    factory(global.MP, global._, global.jQuery);
+  else if (global._ && global.jQuery.fn.dataTable) {
+    global.MP = global.MP || {};
+    global.MP.datatables = factory(global._, global.jQuery);
   }
   else {
     throw new Error('Could not find dependencies for MinnPost Styles Datatables.' );
   }
-})(typeof window !== 'undefined' ? window : this, function(MP, _, $) {
+})(typeof window !== 'undefined' ? window : this, function(_, $, dt) {
 
   // Placeholder for datatables stuff
-  MP.datatables = MP.datatables || {};
-
-  // Basic datatable creator wrapper
-  MP.datatables.makeTable = function($container, options) {
-    var $table = $container.find('table');
-    options = $.extend(true, {}, options, MP.datatables.defaultOptions);
-    $table.dataTable(options);
-    return $table;
-  };
+  var datatables = {};
 
   // Default options
-  MP.datatables.defaultOptions = {
+  datatables.defaultOptions = {
     iDisplayLength: 10,
     bLengthChange: false,
     bProcessing: false,
@@ -52,6 +45,14 @@
     fnDrawCallback: function() {
       $(this).parent().parent().find('.dataTables_filter input').attr('placeholder', 'Search table');
     }
+  };
+
+  // Basic datatable creator wrapper
+  datatables.makeTable = function($container, options) {
+    var $table = $container.find('table');
+    options = $.extend(true, {}, options, datatables.defaultOptions);
+    $table.dataTable(options);
+    return $table;
   };
 
   // Clear all filtering.
@@ -110,7 +111,7 @@
   // have the class .datatables-filter-links.
   // Use: data-col attribute to choose column
   // Use: data-text for the text to filter with
-  MP.datatables.listenFilterLinks = function($datatable, $container, activeClass) {
+  datatables.listenFilterLinks = function($datatable, $container, activeClass) {
     activeClass = activeClass || 'active';
 
     $container.on('click.mp.filterLinks', '.datatables-filter-link', function(e) {
@@ -128,5 +129,7 @@
       $thisLink.addClass(activeClass);
     });
   };
+
+  return datatables;
 
 });

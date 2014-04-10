@@ -21,9 +21,9 @@
     "jquery": "1.10",
     "highcharts": "~3.0.7",
     "underscore": "~1.5.2",
-    "leaflet": "~0.7.1"
+    "leaflet": "~0.7.1",
+    "datatables": "~1.9.4"
   },
   "dependencies": {
-    "datatables": "~1.9.4"
   }
 }

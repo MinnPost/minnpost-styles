@@ -5,26 +5,27 @@
 (function(global, factory) {
   // Common JS (i.e. browserify) environment
   if (typeof module !== 'undefined' && module.exports && typeof require === 'function') {
-    factory(require('minnpost-styles'), require('jquery'), require('underscore'));
+    module.exports = factory(require('jquery'), require('underscore'));
   }
   // AMD?
   else if (typeof define === 'function' && define.amd) {
-    define('minnpost-styles.nav', ['minnpost-styles', 'jquery', 'underscore'], factory);
+    define(['jquery', 'underscore'], factory);
   }
   // Browser global
-  else if (global.MP && global.jQuery && global._) {
-    factory(global.MP, global.jQuery, global._);
+  else if (global.jQuery && global._) {
+    global.MP = global.MP || {};
+    global.MP.nav = factory(global.jQuery, global._);
   }
   else {
-    throw new Error('Could not find dependencies for MinnPost Styles Maps.' );
+    throw new Error('Could not find dependencies for MinnPost Styles Navigation.' );
   }
-})(typeof window !== 'undefined' ? window : this, function(MP, $, _) {
+})(typeof window !== 'undefined' ? window : this, function($, _) {
 
   // Wrapper object for some various things
-  MP.nav = MP.nav || {};
+  var nav = {};
 
   // Plugin for sticking things.  Defaults are for sticking to top.
-  MP.nav.MPStickDefaults = {
+  nav.MPStickDefaults = {
     activeClass: 'stuck top',
     wrapperClass: 'minnpost-full-container',
     topPadding: 0,
@@ -34,7 +35,7 @@
     // Defined some values and process options
     this.element = element;
     this.$element = $(element);
-    this._defaults = MP.nav.MPStickDefaults;
+    this._defaults = nav.MPStickDefaults;
     this.options = $.extend( {}, this._defaults, options);
     this._name = 'mpStick';
     this._scrollEvent = 'scroll.mp.mpStick';
@@ -115,7 +116,7 @@
 
 
   // Plugin for scroll spying
-  MP.nav.MPScrollSpyDefaults = {
+  nav.MPScrollSpyDefaults = {
     activeClass: 'active',
     offset: 80,
     throttle: 200
@@ -124,7 +125,7 @@
     // Set some initial values and options
     this.element = element;
     this.$element = $(element);
-    this._defaults = MP.nav.MPScrollSpyDefaults;
+    this._defaults = nav.MPScrollSpyDefaults;
     this.options = $.extend( {}, this._defaults, options);
     this._name = 'mpScollSpy';
     this._scrollEvent = 'scroll.mp.mpScollSpy';
@@ -195,5 +196,5 @@
     });
   };
 
-
+  return nav;
 });

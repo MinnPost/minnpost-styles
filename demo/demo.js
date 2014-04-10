@@ -16,48 +16,50 @@ require.config({
   paths: {
     'underscore': '../bower_components/underscore/underscore-min',
     'jquery': '../bower_components/jquery/jquery.min',
-    'Highcharts': '../bower_components/highcharts/highcharts',
-    'Leaflet': '../bower_components/leaflet/dist/leaflet',
+    'highcharts': '../bower_components/highcharts/highcharts',
+    'leaflet': '../bower_components/leaflet/dist/leaflet',
     'datatables': '../bower_components/datatables/media/js/jquery.dataTables',
-    'minnpost-styles': 'minnpost-styles.all.min',
-    'minnpost-styles.highcharts': 'minnpost-styles.all.min',
-    'minnpost-styles.maps': 'minnpost-styles.all.min',
-    'minnpost-styles.nav': 'minnpost-styles.all.min',
-    'minnpost-styles.datatables': 'minnpost-styles.all.min',
-    'minnpost-styles.formatters': 'minnpost-styles.all.min'
+    'hcharts': 'minnpost-styles.highcharts.min',
+    'maps': 'minnpost-styles.maps.min',
+    'nav': 'minnpost-styles.nav.min',
+    'dtables': 'minnpost-styles.datatables.min',
+    'formatters': 'minnpost-styles.formatters.min'
   }
 });
 
-require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.highcharts', 'minnpost-styles.maps', 'minnpost-styles.nav', 'minnpost-styles.datatables', 'minnpost-styles.formatters'], function(_, $, L, MP) {
+require([
+  'underscore', 'jquery', 'leaflet',
+  'hcharts', 'maps', 'nav', 'dtables', 'formatters'
+], function(_, $, L, hcharts, maps, nav, dtables, formatters) {
 
   // When document is ready
   $(document).ready(function() {
-    highcharts();
-    maps();
-    navs();
-    datatables();
+    makeHighcharts();
+    makeMaps();
+    makeNavs();
+    makeDatatables();
   });
 
 
   // Highcharts
-  function highcharts() {
+  function makeHighcharts() {
     var exampleData = [{
       name: 'Example',
       data: [ 6 , 11, 32, 110, 235, 369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662, 26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605, 24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586, 22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950, 10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104 ]
     }];
 
     // Line chart
-    MP.highcharts.makeChart('.chart-line-example', $.extend(true, {}, MP.highcharts.lineOptions, {
+    hcharts.makeChart('.chart-line-example', $.extend(true, {}, hcharts.lineOptions, {
       series: exampleData
     }));
 
     // Column chart
-    MP.highcharts.makeChart('.chart-column-example', $.extend(true, {}, MP.highcharts.columnOptions, {
+    hcharts.makeChart('.chart-column-example', $.extend(true, {}, hcharts.columnOptions, {
       series: exampleData
     }));
 
     // Bar chart
-    MP.highcharts.makeChart('.chart-bar-example', $.extend(true, {}, MP.highcharts.barOptions, {
+    hcharts.makeChart('.chart-bar-example', $.extend(true, {}, hcharts.barOptions, {
       xAxis: {
         categories: ['A', 'B', 'C', 'D']
       },
@@ -72,7 +74,7 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
     }));
 
     // Scatterplot
-    MP.highcharts.makeChart('.chart-scatter-example', $.extend(true, {}, MP.highcharts.scatterOptions, {
+    hcharts.makeChart('.chart-scatter-example', $.extend(true, {}, hcharts.scatterOptions, {
       series: [{
         name: 'Example',
         data: [[11, 23], [12, 22], [13, 28], [14, 30], [14.01, 30], [15, 30], [16, 33],
@@ -88,19 +90,19 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
 
 
   // Maps
-  function maps() {
+  function makeMaps() {
     // Basic maps with layer choices
-    var basicMapLayer = new L.tileLayer('//{s}.tiles.mapbox.com/v3/' + MP.maps.mapboxStreetsLightLabels + '/{z}/{x}/{y}.png');
-    var basicMap = new L.Map('example-leaflet-map', MP.maps.mapOptions);
+    var basicMapLayer = new L.tileLayer('//{s}.tiles.mapbox.com/v3/' + maps.mapboxStreetsLightLabels + '/{z}/{x}/{y}.png');
+    var basicMap = new L.Map('example-leaflet-map', maps.mapOptions);
     basicMap.addLayer(basicMapLayer);
-    basicMap.setView(MP.maps.minneapolisPoint, 8);
+    basicMap.setView(maps.minneapolisPoint, 8);
     basicMap.removeControl(basicMap.attributionControl);
 
     $('.map-baselayer-choices .button').on('click', function(e) {
       e.preventDefault();
       var $link = $(this);
       var $links = $link.parent().find('.button');
-      var layer = MP.maps[$link.data('map')];
+      var layer = maps[$link.data('map')];
 
       $links.removeClass('active');
       $link.addClass('active');
@@ -110,19 +112,19 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
     });
 
     // Marker map
-    var markerMap = MP.maps.makeLeafletMap('example-markers-features-map');
-    var tooltipControl = new MP.maps.TooltipControl();
+    var markerMap = maps.makeLeafletMap('example-markers-features-map');
+    var tooltipControl = new maps.TooltipControl();
     markerMap.setZoom(9);
     markerMap.addControl(tooltipControl);
 
     // Markers
-    var iconCinema = MP.maps.makeMakiIcon('cinema', 'm');
-    var iconBlank = MP.maps.makeMakiIcon('', 's', '222222');
-    L.marker(MP.maps.minneapolisPoint, { icon: iconCinema })
+    var iconCinema = maps.makeMakiIcon('cinema', 'm');
+    var iconBlank = maps.makeMakiIcon('', 's', '222222');
+    L.marker(maps.minneapolisPoint, { icon: iconCinema })
       .addTo(markerMap).bindPopup('Minneapolis', {
         closeButton: false
       });
-    L.marker(MP.maps.stPaulPoint, { icon: iconBlank })
+    L.marker(maps.stPaulPoint, { icon: iconBlank })
       .addTo(markerMap).bindPopup('St. Paul', {
         closeButton: false
       });
@@ -131,7 +133,7 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
     $.getJSON('http://boundaries.minnpost.com/1.0/boundary/27-county-2010/?callback=?', function(data) {
       if (data.simple_shape) {
         L.geoJson(data.simple_shape, {
-          style: MP.maps.mapStyle,
+          style: maps.mapStyle,
           onEachFeature: function(feature, layer) {
             layer.on('mouseover', function(e) {
               tooltipControl.update('Hennepin County');
@@ -145,13 +147,13 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
     });
 
     // Attribution
-    $('.map-attribution').html(MP.maps.mapboxAttribution + ' ' + MP.maps.openstreetmapAttribution);
+    $('.map-attribution').html(maps.mapboxAttribution + ' ' + maps.openstreetmapAttribution);
   }
 
 
 
   // Navigations
-  function navs() {
+  function makeNavs() {
     // Scoll spy it all
     $('body').mpScrollSpy();
 
@@ -171,7 +173,7 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
 
 
   // Datatables
-  function datatables() {
+  function makeDatatables() {
     var sampleCSVData = [];
     var tableColumns = {};
     var options = {};
@@ -209,7 +211,7 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
         sTitle: 'Number',
         bSearchable: false,
         mRender: function(data, type, full) {
-          return MP.formatters.integer(parseFloat(data));
+          return formatters.integer(parseFloat(data));
         }
       },
       2: {
@@ -217,7 +219,7 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
         sClass: 'money',
         bSearchable: false,
         mRender: function(data, type, full) {
-          return MP.formatters.currency(parseFloat(data));
+          return formatters.currency(parseFloat(data));
         }
       }
     });
@@ -226,6 +228,6 @@ require(['underscore', 'jquery', 'Leaflet', 'minnpost-styles', 'minnpost-styles.
       aoColumns: _.values(tableColumns)
     }, options);
 
-    MP.datatables.makeTable($('.datatable-example'), options);
+    dtables.makeTable($('.datatable-example'), options);
   }
 });

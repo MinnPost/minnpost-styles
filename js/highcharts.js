@@ -5,41 +5,42 @@
 (function(global, factory) {
   // Common JS (i.e. browserify) environment
   if (typeof module !== 'undefined' && module.exports && typeof require === 'function') {
-    factory(require('minnpost-styles'), require('jquery'), require('Highcharts'));
+    module.exports = factory(require('jquery'), require('highcharts'));
   }
-  // AMD?
+  // AMD
   else if (typeof define === 'function' && define.amd) {
-    define('minnpost-styles.highcharts', ['minnpost-styles', 'jquery', 'Highcharts'], factory);
+    define(['jquery', 'highcharts'], factory);
   }
   // Browser global
-  else if (global.MP && global.jQuery && global.Highcharts) {
-    factory(global.MP, global.jQuery, global.Highcharts);
+  else if (global.jQuery && global.Highcharts) {
+    global.MP = global.MP || {};
+    global.MP.highcharts = factory(global.jQuery, global.Highcharts);
   }
   else {
     throw new Error('Could not find dependencies for MinnPost Styles Highchart.' );
   }
-})(typeof window !== 'undefined' ? window : this, function(MP, $, Highcharts) {
+})(typeof window !== 'undefined' ? window : this, function($, Highcharts) {
 
   // Placeholder for highcharts stuff
-  MP.highcharts = MP.highcharts || {};
+  var highcharts = {};
 
   // A wrapper to make highchart with selector and
   // return the highcharts object
-  MP.highcharts.makeChart = function(selector, options) {
+  highcharts.makeChart = function(selector, options) {
     var chart = $(selector).highcharts(options);
     return chart.highcharts();
   };
 
   // Common colors
-  MP.highcharts.colors = {};
-  MP.highcharts.colors.interface = '#BCBCBC';
+  highcharts.colors = {};
+  highcharts.colors.interface = '#BCBCBC';
 
   // Common defauls
-  MP.highcharts.defaults = {
+  highcharts.defaults = {
     chart: {
       style: {
         fontFamily: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
-        color: MP.highcharts.colors.interface
+        color: highcharts.colors.interface
       }
     },
     colors: ['#094C86', '#0D6CBF', '#098643', '#4C8609'],
@@ -71,8 +72,8 @@
           fontWeight: 'normal'
         }
       },
-      lineColor: MP.highcharts.colors.interface,
-      tickColor: MP.highcharts.colors.interface,
+      lineColor: highcharts.colors.interface,
+      tickColor: highcharts.colors.interface,
       labels: {
         y: 18,
         //format: '${value}'
@@ -92,7 +93,7 @@
         }
       },
       min: 0,
-      lineColor: MP.highcharts.colors.interface,
+      lineColor: highcharts.colors.interface,
       gridLineDashStyle: 'ShortDash'
     },
     tooltip: {
@@ -108,7 +109,7 @@
   };
 
   // Line charts defaults
-  MP.highcharts.lineOptions = $.extend(true, {}, MP.highcharts.defaults, {
+  highcharts.lineOptions = $.extend(true, {}, highcharts.defaults, {
     chart: {
       type: 'line'
     },
@@ -137,7 +138,7 @@
   });
 
   // Column charts defaults
-  MP.highcharts.columnOptions = $.extend(true, {}, MP.highcharts.defaults, {
+  highcharts.columnOptions = $.extend(true, {}, highcharts.defaults, {
     chart: {
       type: 'column'
     },
@@ -149,7 +150,7 @@
   });
 
   // Bar charts defaults
-  MP.highcharts.barOptions = $.extend(true, {}, MP.highcharts.defaults, {
+  highcharts.barOptions = $.extend(true, {}, highcharts.defaults, {
     chart: {
       type: 'bar'
     },
@@ -166,7 +167,7 @@
   });
 
   // Scatter plot
-  MP.highcharts.scatterOptions = $.extend(true, {}, MP.highcharts.defaults, {
+  highcharts.scatterOptions = $.extend(true, {}, highcharts.defaults, {
     chart: {
       type: 'scatter'
     },
@@ -194,4 +195,5 @@
     }
   });
 
+  return highcharts;
 });

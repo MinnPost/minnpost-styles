@@ -5,26 +5,27 @@
 (function(global, factory) {
   // Common JS (i.e. browserify) environment
   if (typeof module !== 'undefined' && module.exports && typeof require === 'function') {
-    factory(require('minnpost-styles'), require('underscore'));
+    module.exports = factory(require('underscore'));
   }
-  // AMD?
+  // AMD
   else if (typeof define === 'function' && define.amd) {
-    define('minnpost-styles.formatters', ['minnpost-styles', 'underscore'], factory);
+    define(['underscore'], factory);
   }
   // Browser global
-  else if (global.MP && global._) {
-    factory(global.MP, global._);
+  else if (global._) {
+    global.MP = global.MP || {};
+    global.MP.formatters = factory(global._);
   }
   else {
     throw new Error('Could not find dependencies for MinnPost Styles Formatters.' );
   }
-})(typeof window !== 'undefined' ? window : this, function(MP, _) {
+})(typeof window !== 'undefined' ? window : this, function(_) {
 
   // Placeholder for formatters stuff
-  MP.formatters = MP.formatters || {};
+  var formatters = {};
 
   // Format number
-  MP.formatters.number = function(num, decimals) {
+  formatters.number = function(num, decimals) {
     decimals = (decimals || decimals === 0) ? decimals : 2;
     var rgx = (/(\d+)(\d{3})/);
     split = num.toFixed(decimals).toString().split('.');
@@ -36,36 +37,36 @@
   };
 
   // Format integer
-  MP.formatters.integer = function(num, round) {
+  formatters.integer = function(num, round) {
     round = round || true;
     num = (round) ? Math.round(num) : num;
-    return MP.formatters.number(num, 0);
+    return formatters.number(num, 0);
   };
 
   // Basic US currency
-  MP.formatters.currency = function(num) {
-    return '$' + MP.formatters.number(num, 2);
+  formatters.currency = function(num) {
+    return '$' + formatters.number(num, 2);
   };
 
   // Percentage
-  MP.formatters.percent = function(num, decimals) {
+  formatters.percent = function(num, decimals) {
     decimals = (decimals || decimals === 0) ? decimals : 1;
-    return MP.formatters.number(num * 100, decimals) + '%';
+    return formatters.number(num * 100, decimals) + '%';
   };
 
   // Percent change
-  MP.formatters.percentChange = function(num, decimals) {
-    return ((num > 0) ? '+' : '') + MP.formatters.percent(num, decimals);
+  formatters.percentChange = function(num, decimals) {
+    return ((num > 0) ? '+' : '') + formatters.percent(num, decimals);
   };
 
   // Number change
-  MP.formatters.change = function(num, decimals) {
+  formatters.change = function(num, decimals) {
     decimals = (decimals || decimals === 0) ? decimals : 2;
-    return ((num > 0) ? '+' : '') + MP.formatters.number(num);
+    return ((num > 0) ? '+' : '') + formatters.number(num);
   };
 
   // Converts string into a hash (very basically).
-  MP.formatters.hash = function(str) {
+  formatters.hash = function(str) {
     return Math.abs(_.reduce(str.split(''), function(a, b) {
       a = ((a << 5) - a) + b.charCodeAt(0);
       return a & a;
@@ -73,8 +74,10 @@
   };
 
   // Identifier/slug maker
-  MP.formatters.identifier = function(str) {
+  formatters.identifier = function(str) {
     return str.toLowerCase().replace(/[^\w ]+/g,'').replace(/ +/g,'-').replace(/[^\w-]+/g,'');
   };
+
+  return formatters;
 
 });
