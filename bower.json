@@ -15,8 +15,10 @@
     "test",
     "tests",
     "demo",
-    "images",
-    "js"
+    "js",
+    ".gitignore",
+    "Gemfile*"
+
   ],
   "devDependencies": {
     "holderjs": "~2.2.0",
