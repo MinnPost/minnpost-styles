@@ -73,29 +73,28 @@
 
         <h3>Javascript</h3>
 
-        <p>There are Javascript parts for common interactions and interactive parts.  You can include all the JS by adding the following near the end of your HTML document:</p>
+        <p>There are Javascript parts for common interactions and interactive parts.  Include the relevant JS files by adding the following near the end of your HTML document:</p>
 
         <div class="example-code">
-          <pre><code>&lt;script src="bower_components/minnpost-styles/dist/minnpost-styles.min.js"&gt;&lt;/script&gt; </code></pre>
+          <pre><code>&lt;script src="bower_components/minnpost-styles/dist/minnpost-styles.nav.min.js"&gt;&lt;/script&gt; </code></pre>
         </div>
 
         <h4>Use a module loader</h4>
 
-        <p>The JS parts of MinnPost styles will all go into a global <code>MP</code> variable by default, but it is suggested to use a module loader like <a href="http://requirejs.org/">RequireJS</a> or <a href="http://browserify.org/">Browserify</a>.  The following is a sample usage with RequireJS:</p>
+        <p>The JS parts of MinnPost styles will all go into a global variable by default, for example <code>MP.nav</code>, but it is suggested to use a module loader like <a href="http://requirejs.org/">RequireJS</a> or <a href="http://browserify.org/">Browserify</a>.  The following is a sample usage with RequireJS:</p>
 
         <div class="example-code">
-          <pre><code>require.config({
-  shim: { 'underscore': { exports: '_' } },
+          <pre><code>
+require.config({
   paths: {
     'underscore': 'bower_components/underscore/underscore-min',
-    'jquery': 'bower_components/jquery/jquery.min',
-    'minnpost-styles': 'bower_components/minnpost-styles/minnpost-styles.min',
-    'minnpost-styles.nav': 'bower_components/minnpost-styles/minnpost-styles.nav.min'
+    'jquery': 'bower_components/jquery/dist/jquery.min',
+    'nav': 'bower_components/minnpost-styles/minnpost-styles.nav.min'
   }
 });
 
-require(['underscore', 'jquery', 'minnpost-styles', 'minnpost-styles.nav'], function(_, $, L, MP) {
-  // MP is extended with the various JS parts
+require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
+  // Nav creates some jQuery plugins
   $(document).ready(function() {
     // Scoll spy it all
     $('body').mpScrollSpy();
