@@ -23,14 +23,15 @@ require.config({
     'maps': 'minnpost-styles.maps.min',
     'nav': 'minnpost-styles.nav.min',
     'dtables': 'minnpost-styles.datatables.min',
-    'formatters': 'minnpost-styles.formatters.min'
+    'formatters': 'minnpost-styles.formatters.min',
+    'colors': 'minnpost-styles.colors.min'
   }
 });
 
 require([
   'underscore', 'jquery', 'leaflet',
-  'hcharts', 'maps', 'nav', 'dtables', 'formatters'
-], function(_, $, L, hcharts, maps, nav, dtables, formatters) {
+  'hcharts', 'maps', 'nav', 'dtables', 'formatters', 'colors'
+], function(_, $, L, hcharts, maps, nav, dtables, formatters, colors) {
 
   // When document is ready
   $(document).ready(function() {
@@ -38,6 +39,7 @@ require([
     makeMaps();
     makeNavs();
     makeDatatables();
+    makeColors();
   });
 
 
@@ -229,5 +231,22 @@ require([
     }, options);
 
     dtables.makeTable($('.datatable-example'), options);
+  }
+
+
+
+  // Make color swatches
+  function makeColors() {
+    var swatchTemplate = _.template($('#template-color-swatch').html());
+
+    // Add color swatches
+    $('.interface-colors-placeholder').html(swatchTemplate({
+      colors: colors.interface,
+      type: ''
+    }));
+    $('.data-colors-placeholder').html(swatchTemplate({
+      colors: colors.data,
+      type: 'data'
+    }));
   }
 });

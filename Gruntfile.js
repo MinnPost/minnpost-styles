@@ -104,6 +104,10 @@ module.exports = function(grunt) {
         src: ['js/formatters.js'],
         dest: 'dist/<%= pkg.name %>.formatters.js'
       },
+      colors: {
+        src: ['js/colors.js'],
+        dest: 'dist/<%= pkg.name %>.colors.js'
+      },
       // CSS
       css: {
         src: [
@@ -137,6 +141,10 @@ module.exports = function(grunt) {
       formatters: {
         src: ['dist/<%= pkg.name %>.formatters.js'],
         dest: 'dist/<%= pkg.name %>.formatters.min.js'
+      },
+      colors: {
+        src: ['dist/<%= pkg.name %>.colors.js'],
+        dest: 'dist/<%= pkg.name %>.colors.min.js'
       }
     },
 

@@ -17,8 +17,8 @@
     "demo",
     "js",
     ".gitignore",
-    "Gemfile*"
-
+    "Gemfile",
+    "Gemfile.lock"
   ],
   "devDependencies": {
     "holderjs": "~2.2.0",

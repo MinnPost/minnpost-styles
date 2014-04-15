@@ -12,7 +12,8 @@
   vertical-align: middle;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid transparent;
+  border: none;
+
   white-space: nowrap;
 
   padding: $space-vertical-padding $space-horizontal-padding;
@@ -52,7 +53,7 @@
 // Button colors
 .button,
 a.button {
-  @include button-variant($color-gray, $color-white, $color-gray);
+  @include button-variant($color-gray, $color-light-gray, $color-gray);
 }
 
 // Make a button look and behave like a link

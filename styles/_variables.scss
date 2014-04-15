@@ -40,29 +40,35 @@ $font-heading: "Montserrat", Georgia, "Times New Roman", Times, sans-serif !defa
 // Monospace font
 $font-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 
-// General color
-$color-heading: #282828 !default;
-$color-text: #434343 !default;
-
 // Basic colors
 $color-white: #FFFFFF !default;
 $color-black: #000000 !default;
 
 // Gray colors
 $color-gray: #787878 !default;
-$color-dark-gray: darken($color-gray, 15%) !default;
-$color-darker-gray: darken($color-dark-gray, 15%) !default;
-$color-darkest-gray: darken($color-darker-gray, 20%) !default;
+$color-darker-gray: darken($color-gray, 30%) !default;
+$color-darkest-gray: darken($color-gray, 50%) !default;
 $color-light-gray: lighten($color-gray, 15%) !default;
-$color-lighter-gray: lighten($color-light-gray, 15%) !default;
-$color-lightest-gray: lighten($color-lighter-gray, 20%) !default;
+$color-lighter-gray: lighten($color-gray, 30%) !default;
+$color-lightest-gray: lighten($color-gray, 50%) !default;
 
-// Primary colors
+// Interface colors (need to maintain in JS as well)
+$color-dark-gray: #282828 !default;
+$color-medium-gray: #434343 !default;
 $color-minnpost-red: #801019 !default;
 $color-blue: #1D70A4 !default;
+// Make list for easy class making
+$colors-interface-names: "dark-gray"      "medium-gray"      "minnpost-red"      "blue" !default;
+$colors-interface:       $color-dark-gray $color-medium-gray $color-minnpost-red $color-blue !default;
 
-// Links
+// Interface designations
 $color-link: $color-blue !default;
+$color-heading: $color-dark-gray !default;
+$color-text: $color-medium-gray !default;
+
+// Data colors (need to maintain in JS as well)
+$colors-data-names: "green1" "green2" "green3" "purple" "blue1" "blue2" "blue3" "red"  "orange" "yellow" !default;
+$colors-data:       #1D8C47  #32955D  #36A174  #5124B2  #0D57A0 #0793AB #55CBDD #D13D29 #F55F29 #FF9F29 !default;
 
 // Minnpost specific
 $minnpost-full-width: 960px;

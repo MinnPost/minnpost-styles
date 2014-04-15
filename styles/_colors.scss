@@ -1,0 +1,25 @@
+/**
+ * Some styles for the colors.  Colors are actually
+ * stored in the _variables file.
+ */
+
+
+// Make helper classes for each interface color
+@for $p from 1 to length($colors-interface-names) + 1 {
+  .color-#{nth($colors-interface-names, $p)} {
+    color: nth($colors-interface, $p);
+  }
+  .bg-color-#{nth($colors-interface-names, $p)} {
+    background-color: nth($colors-interface, $p);
+  }
+}
+
+// Make helper classes for each data color
+@for $p from 1 to length($colors-data-names) + 1 {
+  .color-data-#{nth($colors-data-names, $p)} {
+    color: nth($colors-data, $p);
+  }
+  .bg-color-data-#{nth($colors-data-names, $p)} {
+    background-color: nth($colors-data, $p);
+  }
+}

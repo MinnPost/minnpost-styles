@@ -43,3 +43,13 @@
   background-color: #EFEFEF;
   padding-top: 1em;
 }
+
+.mp .color-swatch {
+  width: 8em;
+  height: 8em;
+  padding: 2em 0;
+  text-align: center;
+  margin: 0 1em 1em 0;
+  color: #FFFFFF;
+  float: left;
+}

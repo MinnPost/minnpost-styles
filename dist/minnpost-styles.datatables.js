@@ -5,7 +5,7 @@
 (function(global, factory) {
   // Common JS (i.e. browserify) environment
   if (typeof module !== 'undefined' && module.exports && typeof require === 'function') {
-    module.experts = factory(require('underscore'), require('jquery'), require('datatables'));
+    module.exports = factory(require('underscore'), require('jquery'), require('datatables'));
   }
   // AMD
   else if (typeof define === 'function' && define.amd) {
