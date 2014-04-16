@@ -1796,7 +1796,6 @@ html {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
-  z-index: 10;
 }
 .mp select:-moz-placeholder,
 .mp textarea:-moz-placeholder,

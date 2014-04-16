@@ -793,7 +793,17 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           </form>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>&lt;form role="form" class="large"&gt;
+  &lt;div class="form-input-group"&gt;
+    &lt;label for="address" class="sr-only"&gt;Email address&lt;/label&gt;
+    &lt;input type="text" id="address" placeholder="Search by address"&gt;
+
+    &lt;div class="button-group"&gt;
+      &lt;button type="submit" class="button button-primary" title="Search an address"&gt;Search&lt;/button&gt;
+      &lt;button type="submit" class="button button-info" title="Use your current location"&gt;&lt;i class="fa fa-location-arrow"&gt;&lt;/i&gt;&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt; </code></pre>
         </div>
       </div>
 
@@ -854,17 +864,15 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <div class="example">
           <i class="fa fa-compass"></i>
-          <i class="fa fa-compass fa-lg"></i>
-          <i class="fa fa-compass fa-3x"></i>
           <i class="fa fa-compass fa-spin"></i>
           <i class="fa fa-compass fa-flip-horizontal"></i>
+          <i class="fa fa-compass xlarge"></i>
         </div>
         <div class="example-code">
-  <pre><code>&lt;i class="fa fa-compass"&gt;&lt;/i&gt;
-  &lt;i class="fa fa-compass fa-lg"&gt;&lt;/i&gt;
-  &lt;i class="fa fa-compass fa-3x"&gt;&lt;/i&gt;
-  &lt;i class="fa fa-compass fa-spin"&gt;&lt;/i&gt;
-  &lt;i class="fa fa-compass fa-flip-horizontal"&gt;&lt;/i&gt; </code></pre>
+<pre><code>&lt;i class="fa fa-compass"&gt;&lt;/i&gt;
+&lt;i class="fa fa-compass fa-spin"&gt;&lt;/i&gt;
+&lt;i class="fa fa-compass fa-flip-horizontal"&gt;&lt;/i&gt;
+&lt;i class="fa fa-compass xlarge"&gt;&lt;/i&gt; </code></pre>
         </div>
 
         <h3>Loading</h3>
