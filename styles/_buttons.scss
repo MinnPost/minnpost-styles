@@ -2,6 +2,44 @@
  * Buttons
  */
 
+
+// Button variants creation
+// -------------------------
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color;
+    background-color: darken($background, 10%);
+    border-color: darken($border, 15%);
+  }
+  &:active,
+  &.active {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $background;
+      border-color: $border;
+    }
+  }
+}
+
+
+// Base button class
 .button {
   display: inline;
   @include inline-block();
@@ -12,11 +50,11 @@
   vertical-align: middle;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: none;
+  border: 1px solid transparent;
 
   white-space: nowrap;
 
-  padding: $space-vertical-padding $space-horizontal-padding;
+  padding: $space-vertical-padding $space-horizontal-padding * 2;
   font-size: $text-size;
   line-height: $text-line-height * 1.25;
 
@@ -50,10 +88,17 @@
   }
 }
 
-// Button colors
+// Button colors, first is default
 .button,
 a.button {
-  @include button-variant($color-gray, $color-light-gray, $color-gray);
+  @include button-variant($color-medium-gray, $color-white, $color-medium-gray);
+}
+// Use button lists
+@each $b in $colors-buttons {
+  .button-#{nth($b, 1)},
+  a.button-#{nth($b, 1)} {
+    @include button-variant($color-white, nth($b, 2), darken(nth($b, 2), 5%));
+  }
 }
 
 // Make a button look and behave like a link
@@ -154,7 +199,7 @@ input[type="button"] {
 
 // Optional: Group multiple button groups together for a toolbar
 .button-toolbar {
-  margin-left: -5px; // Offset the first child's margin
+  margin-left: $space-horizontal-margin * -1; // Offset the first child's margin
   @include clearfix();
 
   .button-group,
@@ -164,7 +209,7 @@ input[type="button"] {
   > .button,
   > .button-group,
   > .input-group {
-    margin-left: 5px;
+    margin-left: $space-horizontal-margin;
     margin-right: 0;
   }
 }

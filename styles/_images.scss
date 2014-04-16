@@ -2,6 +2,14 @@
  * Images
  */
 
+img {
+  max-width: 100%;
+  height: auto;
+
+  &.nonresponsive {
+    max-width: auto;
+  }
+}
 
 // Rounded corners
 img.rounded {

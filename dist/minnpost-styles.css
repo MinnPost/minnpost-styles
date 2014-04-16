@@ -39,9 +39,6 @@
  * Responsive
  */
 /**
- * Variants
- */
-/**
  * Adapted version of Normalize and Eric Meyer's Reset
  * to be within prefix.
  *
@@ -479,6 +476,10 @@ html {
    * Styles for tables.
    */
   /**
+   * Responsive tables wrapper.  Inspired by Bootstraps method.  Class
+   * for each responsive break-point.
+   */
+  /**
    * Images
    */
   /**
@@ -498,16 +499,6 @@ html {
    */
   /**
    * Datatables
-   */
-  /**
-   * Responsive styles for minnpost-styles.
-   */
-  /**
-   * Images are responsive by default
-   */
-  /**
-   * Responsive tables wrapper.  Inspired by Bootstraps method.  Class
-   * for each responsive break-point.
    */
   /**
    * Some styles for the colors.  Colors are actually
@@ -536,7 +527,7 @@ html {
 }
 .mp .tab-focus {
   outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 3px auto #787878;
   outline-offset: -2px;
 }
 .mp .center-block {
@@ -581,6 +572,9 @@ html {
     visibility: hidden;
   }
 }
+.mp .xxsmall {
+  font-size: 0.425em !important;
+}
 .mp .xsmall {
   font-size: 0.6375em !important;
 }
@@ -591,13 +585,13 @@ html {
   font-size: 1.25em !important;
 }
 .mp .xlarge {
-  font-size: 2em !important;
+  font-size: 1.875em !important;
 }
 .mp .xxlarge {
-  font-size: 3em !important;
+  font-size: 2.8125em !important;
 }
 .mp .xxxlarge {
-  font-size: 4em !important;
+  font-size: 3.75em !important;
 }
 .mp .float-right {
   float: right !important;
@@ -1269,9 +1263,9 @@ html {
   vertical-align: middle;
   cursor: pointer;
   background-image: none;
-  border: none;
+  border: 1px solid transparent;
   white-space: nowrap;
-  padding: 0.25em 0.5em;
+  padding: 0.25em 1em;
   font-size: 1em;
   line-height: 1.875em;
   -webkit-user-select: none;
@@ -1281,11 +1275,11 @@ html {
 .mp .button:focus {
   border-color: #787878;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
   outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 3px auto #787878;
   outline-offset: -2px;
 }
 .mp .button:hover, .mp .button:focus {
@@ -1310,24 +1304,22 @@ html {
 }
 .mp .button,
 .mp a.button {
-  color: #787878;
-  background-color: #9e9e9e;
-  border-color: #787878;
+  color: #434343;
+  background-color: white;
+  border-color: #434343;
 }
-.mp .button:hover, .mp .button:focus, .mp .button:active, .mp .button.active, .open .mp .button.dropdown-toggle,
+.mp .button:hover, .mp .button:focus, .mp .button:active, .mp .button.active,
 .mp a.button:hover,
 .mp a.button:focus,
 .mp a.button:active,
-.mp a.button.active, .open
-.mp a.button.dropdown-toggle {
-  color: #787878;
-  background-color: #858585;
-  border-color: #525252;
+.mp a.button.active {
+  color: #434343;
+  background-color: #e6e6e6;
+  border-color: #1d1d1d;
 }
-.mp .button:active, .mp .button.active, .open .mp .button.dropdown-toggle,
+.mp .button:active, .mp .button.active,
 .mp a.button:active,
-.mp a.button.active, .open
-.mp a.button.dropdown-toggle {
+.mp a.button.active {
   background-image: none;
 }
 .mp .button.disabled, .mp .button.disabled:hover, .mp .button.disabled:focus, .mp .button.disabled:active, .mp .button.disabled.active, .mp .button[disabled], .mp .button[disabled]:hover, .mp .button[disabled]:focus, .mp .button[disabled]:active, .mp .button[disabled].active, fieldset[disabled] .mp .button, fieldset[disabled] .mp .button:hover, fieldset[disabled] .mp .button:focus, fieldset[disabled] .mp .button:active, fieldset[disabled] .mp .button.active,
@@ -1346,8 +1338,203 @@ html {
 .mp a.button:focus, fieldset[disabled]
 .mp a.button:active, fieldset[disabled]
 .mp a.button.active {
-  background-color: #9e9e9e;
-  border-color: #787878;
+  background-color: white;
+  border-color: #434343;
+}
+.mp .button-primary,
+.mp a.button-primary {
+  color: white;
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-primary:hover, .mp .button-primary:focus, .mp .button-primary:active, .mp .button-primary.active,
+.mp a.button-primary:hover,
+.mp a.button-primary:focus,
+.mp a.button-primary:active,
+.mp a.button-primary.active {
+  color: white;
+  background-color: #155279;
+  border-color: #0e354d;
+}
+.mp .button-primary:active, .mp .button-primary.active,
+.mp a.button-primary:active,
+.mp a.button-primary.active {
+  background-image: none;
+}
+.mp .button-primary.disabled, .mp .button-primary.disabled:hover, .mp .button-primary.disabled:focus, .mp .button-primary.disabled:active, .mp .button-primary.disabled.active, .mp .button-primary[disabled], .mp .button-primary[disabled]:hover, .mp .button-primary[disabled]:focus, .mp .button-primary[disabled]:active, .mp .button-primary[disabled].active, fieldset[disabled] .mp .button-primary, fieldset[disabled] .mp .button-primary:hover, fieldset[disabled] .mp .button-primary:focus, fieldset[disabled] .mp .button-primary:active, fieldset[disabled] .mp .button-primary.active,
+.mp a.button-primary.disabled,
+.mp a.button-primary.disabled:hover,
+.mp a.button-primary.disabled:focus,
+.mp a.button-primary.disabled:active,
+.mp a.button-primary.disabled.active,
+.mp a.button-primary[disabled],
+.mp a.button-primary[disabled]:hover,
+.mp a.button-primary[disabled]:focus,
+.mp a.button-primary[disabled]:active,
+.mp a.button-primary[disabled].active, fieldset[disabled]
+.mp a.button-primary, fieldset[disabled]
+.mp a.button-primary:hover, fieldset[disabled]
+.mp a.button-primary:focus, fieldset[disabled]
+.mp a.button-primary:active, fieldset[disabled]
+.mp a.button-primary.active {
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-success,
+.mp a.button-success {
+  color: white;
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-success:hover, .mp .button-success:focus, .mp .button-success:active, .mp .button-success.active,
+.mp a.button-success:hover,
+.mp a.button-success:focus,
+.mp a.button-success:active,
+.mp a.button-success.active {
+  color: white;
+  background-color: #155279;
+  border-color: #0e354d;
+}
+.mp .button-success:active, .mp .button-success.active,
+.mp a.button-success:active,
+.mp a.button-success.active {
+  background-image: none;
+}
+.mp .button-success.disabled, .mp .button-success.disabled:hover, .mp .button-success.disabled:focus, .mp .button-success.disabled:active, .mp .button-success.disabled.active, .mp .button-success[disabled], .mp .button-success[disabled]:hover, .mp .button-success[disabled]:focus, .mp .button-success[disabled]:active, .mp .button-success[disabled].active, fieldset[disabled] .mp .button-success, fieldset[disabled] .mp .button-success:hover, fieldset[disabled] .mp .button-success:focus, fieldset[disabled] .mp .button-success:active, fieldset[disabled] .mp .button-success.active,
+.mp a.button-success.disabled,
+.mp a.button-success.disabled:hover,
+.mp a.button-success.disabled:focus,
+.mp a.button-success.disabled:active,
+.mp a.button-success.disabled.active,
+.mp a.button-success[disabled],
+.mp a.button-success[disabled]:hover,
+.mp a.button-success[disabled]:focus,
+.mp a.button-success[disabled]:active,
+.mp a.button-success[disabled].active, fieldset[disabled]
+.mp a.button-success, fieldset[disabled]
+.mp a.button-success:hover, fieldset[disabled]
+.mp a.button-success:focus, fieldset[disabled]
+.mp a.button-success:active, fieldset[disabled]
+.mp a.button-success.active {
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-info,
+.mp a.button-info {
+  color: white;
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-info:hover, .mp .button-info:focus, .mp .button-info:active, .mp .button-info.active,
+.mp a.button-info:hover,
+.mp a.button-info:focus,
+.mp a.button-info:active,
+.mp a.button-info.active {
+  color: white;
+  background-color: #155279;
+  border-color: #0e354d;
+}
+.mp .button-info:active, .mp .button-info.active,
+.mp a.button-info:active,
+.mp a.button-info.active {
+  background-image: none;
+}
+.mp .button-info.disabled, .mp .button-info.disabled:hover, .mp .button-info.disabled:focus, .mp .button-info.disabled:active, .mp .button-info.disabled.active, .mp .button-info[disabled], .mp .button-info[disabled]:hover, .mp .button-info[disabled]:focus, .mp .button-info[disabled]:active, .mp .button-info[disabled].active, fieldset[disabled] .mp .button-info, fieldset[disabled] .mp .button-info:hover, fieldset[disabled] .mp .button-info:focus, fieldset[disabled] .mp .button-info:active, fieldset[disabled] .mp .button-info.active,
+.mp a.button-info.disabled,
+.mp a.button-info.disabled:hover,
+.mp a.button-info.disabled:focus,
+.mp a.button-info.disabled:active,
+.mp a.button-info.disabled.active,
+.mp a.button-info[disabled],
+.mp a.button-info[disabled]:hover,
+.mp a.button-info[disabled]:focus,
+.mp a.button-info[disabled]:active,
+.mp a.button-info[disabled].active, fieldset[disabled]
+.mp a.button-info, fieldset[disabled]
+.mp a.button-info:hover, fieldset[disabled]
+.mp a.button-info:focus, fieldset[disabled]
+.mp a.button-info:active, fieldset[disabled]
+.mp a.button-info.active {
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-warning,
+.mp a.button-warning {
+  color: white;
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-warning:hover, .mp .button-warning:focus, .mp .button-warning:active, .mp .button-warning.active,
+.mp a.button-warning:hover,
+.mp a.button-warning:focus,
+.mp a.button-warning:active,
+.mp a.button-warning.active {
+  color: white;
+  background-color: #155279;
+  border-color: #0e354d;
+}
+.mp .button-warning:active, .mp .button-warning.active,
+.mp a.button-warning:active,
+.mp a.button-warning.active {
+  background-image: none;
+}
+.mp .button-warning.disabled, .mp .button-warning.disabled:hover, .mp .button-warning.disabled:focus, .mp .button-warning.disabled:active, .mp .button-warning.disabled.active, .mp .button-warning[disabled], .mp .button-warning[disabled]:hover, .mp .button-warning[disabled]:focus, .mp .button-warning[disabled]:active, .mp .button-warning[disabled].active, fieldset[disabled] .mp .button-warning, fieldset[disabled] .mp .button-warning:hover, fieldset[disabled] .mp .button-warning:focus, fieldset[disabled] .mp .button-warning:active, fieldset[disabled] .mp .button-warning.active,
+.mp a.button-warning.disabled,
+.mp a.button-warning.disabled:hover,
+.mp a.button-warning.disabled:focus,
+.mp a.button-warning.disabled:active,
+.mp a.button-warning.disabled.active,
+.mp a.button-warning[disabled],
+.mp a.button-warning[disabled]:hover,
+.mp a.button-warning[disabled]:focus,
+.mp a.button-warning[disabled]:active,
+.mp a.button-warning[disabled].active, fieldset[disabled]
+.mp a.button-warning, fieldset[disabled]
+.mp a.button-warning:hover, fieldset[disabled]
+.mp a.button-warning:focus, fieldset[disabled]
+.mp a.button-warning:active, fieldset[disabled]
+.mp a.button-warning.active {
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-danger,
+.mp a.button-danger {
+  color: white;
+  background-color: #1d70a4;
+  border-color: #19618e;
+}
+.mp .button-danger:hover, .mp .button-danger:focus, .mp .button-danger:active, .mp .button-danger.active,
+.mp a.button-danger:hover,
+.mp a.button-danger:focus,
+.mp a.button-danger:active,
+.mp a.button-danger.active {
+  color: white;
+  background-color: #155279;
+  border-color: #0e354d;
+}
+.mp .button-danger:active, .mp .button-danger.active,
+.mp a.button-danger:active,
+.mp a.button-danger.active {
+  background-image: none;
+}
+.mp .button-danger.disabled, .mp .button-danger.disabled:hover, .mp .button-danger.disabled:focus, .mp .button-danger.disabled:active, .mp .button-danger.disabled.active, .mp .button-danger[disabled], .mp .button-danger[disabled]:hover, .mp .button-danger[disabled]:focus, .mp .button-danger[disabled]:active, .mp .button-danger[disabled].active, fieldset[disabled] .mp .button-danger, fieldset[disabled] .mp .button-danger:hover, fieldset[disabled] .mp .button-danger:focus, fieldset[disabled] .mp .button-danger:active, fieldset[disabled] .mp .button-danger.active,
+.mp a.button-danger.disabled,
+.mp a.button-danger.disabled:hover,
+.mp a.button-danger.disabled:focus,
+.mp a.button-danger.disabled:active,
+.mp a.button-danger.disabled.active,
+.mp a.button-danger[disabled],
+.mp a.button-danger[disabled]:hover,
+.mp a.button-danger[disabled]:focus,
+.mp a.button-danger[disabled]:active,
+.mp a.button-danger[disabled].active, fieldset[disabled]
+.mp a.button-danger, fieldset[disabled]
+.mp a.button-danger:hover, fieldset[disabled]
+.mp a.button-danger:focus, fieldset[disabled]
+.mp a.button-danger:active, fieldset[disabled]
+.mp a.button-danger.active {
+  background-color: #1d70a4;
+  border-color: #19618e;
 }
 .mp .button-link {
   color: #1d70a4;
@@ -1422,7 +1609,7 @@ html {
   margin-left: -1px;
 }
 .mp .button-toolbar {
-  margin-left: -5px;
+  margin-left: -1em;
   *zoom: 1;
 }
 .mp .button-toolbar:before, .mp .button-toolbar:after {
@@ -1439,7 +1626,7 @@ html {
 .mp .button-toolbar > .button,
 .mp .button-toolbar > .button-group,
 .mp .button-toolbar > .input-group {
-  margin-left: 5px;
+  margin-left: 1em;
   margin-right: 0;
 }
 .mp .button-group > .button:not(:first-child):not(:last-child) {
@@ -1538,7 +1725,7 @@ html {
 .mp input[type="radio"]:focus,
 .mp input[type="checkbox"]:focus {
   outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 3px auto #787878;
   outline-offset: -2px;
 }
 .mp input[type="number"]::-webkit-outer-spin-button, .mp input[type="number"]::-webkit-inner-spin-button {
@@ -1606,9 +1793,10 @@ html {
 .mp .form-input:focus {
   border-color: #787878;
   outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 2px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 .mp select:-moz-placeholder,
 .mp textarea:-moz-placeholder,
@@ -1946,6 +2134,69 @@ html {
 .mp table.striped tbody tr:nth-child(odd) td, .mp table.striped-even tbody tr:nth-child(even) td {
   background-color: #f8f8f8;
 }
+@media (max-width: 420px) {
+  .mp .table-responsive-small {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mp .table-responsive-small table {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 640px) {
+  .mp .table-responsive-medium {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mp .table-responsive-medium table {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 960px) {
+  .mp .table-responsive-large {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mp .table-responsive-large table {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 1200px) {
+  .mp .table-responsive-xlarge {
+    width: 100%;
+    margin-bottom: 1em;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border: 1px solid #9e9e9e;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mp .table-responsive-xlarge table {
+    margin-bottom: 0;
+  }
+}
+.mp img {
+  max-width: 100%;
+  height: auto;
+}
+.mp img.nonresponsive {
+  max-width: auto;
+}
 .mp img.rounded {
   -webkit-border-radius: 0.25em;
   -moz-border-radius: 0.25em;
@@ -2260,69 +2511,6 @@ html {
 .mp .datatable table .sorting_desc:after {
   color: #282828;
   content: "\f0de";
-}
-.mp img {
-  max-width: 100%;
-  height: auto;
-}
-.mp img.nonresponsive {
-  max-width: auto;
-}
-@media (max-width: 420px) {
-  .mp .table-responsive-small {
-    width: 100%;
-    margin-bottom: 1em;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: 1px solid #9e9e9e;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-  }
-  .mp .table-responsive-small table {
-    margin-bottom: 0;
-  }
-}
-@media (max-width: 640px) {
-  .mp .table-responsive-medium {
-    width: 100%;
-    margin-bottom: 1em;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: 1px solid #9e9e9e;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-  }
-  .mp .table-responsive-medium table {
-    margin-bottom: 0;
-  }
-}
-@media (max-width: 960px) {
-  .mp .table-responsive-large {
-    width: 100%;
-    margin-bottom: 1em;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: 1px solid #9e9e9e;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-  }
-  .mp .table-responsive-large table {
-    margin-bottom: 0;
-  }
-}
-@media (max-width: 1200px) {
-  .mp .table-responsive-xlarge {
-    width: 100%;
-    margin-bottom: 1em;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    border: 1px solid #9e9e9e;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-  }
-  .mp .table-responsive-xlarge table {
-    margin-bottom: 0;
-  }
 }
 .mp .color-dark-gray {
   color: #282828;

@@ -18,9 +18,9 @@
   }
 
   // Now make grid classes for each breakpoint
-  @for $p from 1 to length($responsive-points) + 1 {
-    $width: nth($responsive-points, $p);
-    $class: nth($responsive-classes, $p);
+  @each $r in $responsive-points {
+    $width: nth($r, 2);
+    $class: nth($r, 1);
 
     // If the width is zero, then it should simple be
     // the default

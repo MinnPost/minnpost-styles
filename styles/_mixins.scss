@@ -35,8 +35,15 @@
   // Default
   outline: thin dotted;
   // WebKit
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 3px auto $color-gray;
   outline-offset: -2px;
+}
+
+// General focus for block elements
+@mixin focus-block() {
+  border-color: $color-gray;
+  outline: 0;
+  @include box-shadow(inset 0 1px 1px black(0.075), 0 0 2px black(0.5));
 }
 
 // Center-align a block level element
@@ -79,13 +86,6 @@
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
-}
-
-// General focus for block elements
-@mixin focus-block() {
-  border-color: $color-gray;
-  outline: 0;
-  @include box-shadow(inset 0 1px 1px black(0.075), 0 0 8px black(0.5));
 }
 
 // Print only
@@ -178,47 +178,5 @@
   only screen and (                min-resolution: 2dppx) {
     background-image: url("$file-2x");
     background-size: $width-1x $height-1x;
-  }
-}
-
-
-/**
- * Variants
- */
-
-// Button variants
-// -------------------------
-// Easily pump out default styles, as well as :hover, :focus, :active,
-// and disabled options for all buttons
-@mixin button-variant($color, $background, $border) {
-  color: $color;
-  background-color: $background;
-  border-color: $border;
-
-  &:hover,
-  &:focus,
-  &:active,
-  &.active,
-  .open &.dropdown-toggle {
-    color: $color;
-    background-color: darken($background, 10%);
-    border-color: darken($border, 15%);
-  }
-  &:active,
-  &.active,
-  .open &.dropdown-toggle {
-    background-image: none;
-  }
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &,
-    &:hover,
-    &:focus,
-    &:active,
-    &.active {
-      background-color: $background;
-      border-color: $border;
-    }
   }
 }

@@ -118,6 +118,7 @@ input[type="color"],
   // Customize the `:focus` state to imitate native WebKit styles.
   &:focus {
     @include focus-block();
+    z-index: 10;
   }
 
   // Placeholder

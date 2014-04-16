@@ -247,19 +247,23 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <p>Predefined breakpoints are silly.  Breakpoints should be defined when content or style no longer makes sense.  That said, MinnPost Styles provides some defaults that we use often on our projects.</p>
 
-        <p>If you are using SASS, it is very simple to update the breakpoints and the size names.  Simply update the following variables.</p>
+        <p>If you are using SASS, it is very simple to update the breakpoints and the size names.  Simply update the following variable with something similar to the following.  Each sub list consists of the class suffix and breakpoint.</p>
 
 
         <div class="example-code">
-<pre><code>$responsive-points: 0px 420px 640px 960px 1200px;
-$responsive-classes: all small medium large xlarge; </code></pre>
+<pre><code>$responsive-points: (
+  ("all", 0px),
+  ("small", 420px),
+  ("medium", 640px),
+  ("large", 960px),
+  ("xlarge", 1200px)
+) </code></pre>
         </div>
 
-        <p>Ensure that there are the same number of sizes as there are classes or problems will ensue.  Also note that <code>0px</code> has a special meaning in that it will not be wrapped in a media query and will apply to all browsers.  This means you could turn off the responsive bits by doing the following:</p>
+        <p>Note that <code>0px</code> has a special meaning in that it will not be wrapped in a media query and will apply to all browsers.  This means you could turn off the responsive bits by doing the following:</p>
 
         <div class="example-code">
-<pre><code>$responsive-points: 0px;
-$responsive-classes: all; </code></pre>
+<pre><code>$responsive-points: ( ("all", 0px) );</code></pre>
         </div>
       </div>
 
@@ -558,39 +562,65 @@ $responsive-classes: all; </code></pre>
       <div class="section">
         <h2 id="buttons">Buttons <a href="#buttons" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-        <p>Different types of buttons.  The <code>&lt;button&gt;</code> is the preferred element.</p>
+        <p>Different types of buttons.  The <code>&lt;button&gt;</code> is the preferred element to use, but you can use other elements if needed.</p>
 
         <div class="example">
           <p>
             <button class="button">Button</button>
             <a href="#" class="button">Link</a>
             <span class="button">Span</span>
-            <button class="button button-link">Link</button>
-          </p>
-
-          <p>
-            <button class="button large">Large</button>
-          </p>
-
-          <p>
-            <button class="button xlarge"><i class="fa fa-flash"></i> Flash xLarge</button>
-          </p>
-
-          <p>
-            <button class="button small">Small</button>
-          </p>
-
-          <p>
+            <button class="button button-link">Button link</button>
             <button class="button disabled">Disabled</button>
+            <button class="button active">Active</button>
           </p>
         </div>
         <div class="example-code">
 <pre><code>&lt;button class="button"&gt;Button&lt;/button&gt;
 &lt;a href="#" class="button"&gt;Link&lt;/a&gt;
 &lt;span class="button"&gt;Span&lt;/span&gt;
-&lt;button class="button button-link"&gt;Link&lt;/button&gt;
-&lt;button class="button button-large"&gt;Large&lt;/button&gt;
-&lt;button class="button button-small"&gt;Small&lt;/button&gt; </code></pre>
+&lt;button class="button button-link"&gt;Button link&lt;/button&gt;
+&lt;button class="button disabled"&gt;Disabled&lt;/button&gt;
+&lt;button class="button active"&gt;Active&lt;/button&gt; </code></pre>
+        </div>
+
+        <p>There are different types of buttons with different colors as well.</p>
+
+        <div class="example">
+          <p>
+            <button class="button button-primary">Primary</button>
+            <button class="button button-success">Success</button>
+            <button class="button button-info">Info</button>
+            <button class="button button-warning">Warning</button>
+            <button class="button button-danger">Danger</button>
+          </p>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;button class="button button-primary"&gt;primary&lt;/button&gt;
+&lt;button class="button button-success"&gt;success&lt;/button&gt;
+&lt;button class="button button-info"&gt;info&lt;/button&gt;
+&lt;button class="button button-warning"&gt;warning&lt;/button&gt;
+&lt;button class="button button-danger"&gt;danger&lt;/button&gt;</code></pre>
+        </div>
+
+        <p>You can use the helper classes to make different sized buttons as well.</p>
+
+        <div class="example">
+          <p>
+            <button class="button xxsmall">xxSmall</button>
+            <button class="button xsmall">xSmall</button>
+            <button class="button small">Small</button>
+            <button class="button large">Large</button>
+            <button class="button xlarge">xLarge</button>
+            <button class="button xxlarge">xxLarge</button>
+          </p>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;button class="button xxsmall"&gt;xxSmall&lt;/button&gt;
+&lt;button class="button xsmall"&gt;xsmall&lt;/button&gt;
+&lt;button class="button small"&gt;small&lt;/button&gt;
+&lt;button class="button large"&gt;large&lt;/button&gt;
+&lt;button class="button xlarge"&gt;xlarge&lt;/button&gt;
+&lt;button class="button xxlarge"&gt;xxlarge&lt;/button&gt; </code></pre>
         </div>
 
         <h3>Button groups</h3>
@@ -610,7 +640,7 @@ $responsive-classes: all; </code></pre>
 
         <h3>Button toolbar</h3>
 
-        <p>Buttons groups next to each other.</p>
+        <p>Buttons groups next to each other in a toolbar.</p>
 
         <div class="example">
           <div class="button-toolbar">
@@ -621,8 +651,9 @@ $responsive-classes: all; </code></pre>
             </div>
 
             <div class="button-group">
-              <button class="button">1</button>
-              <button class="button">2</button>
+              <button class="button button-primary">Primary</button>
+              <button class="button button-info">Info 1</button>
+              <button class="button button-info">Info 2</button>
             </div>
           </div>
         </div>
@@ -696,7 +727,7 @@ $responsive-classes: all; </code></pre>
               </div>
             </fieldset>
 
-            <button type="submit" class="button">Submit</button>
+            <button type="submit" class="button button-primary">Submit</button>
           </form>
 
         </div>
@@ -715,13 +746,13 @@ $responsive-classes: all; </code></pre>
     &lt;/label&gt;
   &lt;/div&gt;
 
-  &lt;button type="submit" class="button"&gt;Submit&lt;/button&gt;
+  &lt;button type="submit" class="button button-primary"&gt;Submit&lt;/button&gt;
 &lt;/form&gt; </code></pre>
         </div>
 
         <h3>Inline form</h3>
 
-        <p>The following is a basic inline form.</p>
+        <p>The following is a basic inline form.  Inline forms are for multiple, but few inputs.</p>
 
         <div class="example">
           <form role="form" class="form-inline">
@@ -735,11 +766,13 @@ $responsive-classes: all; </code></pre>
               <input type="password" id="example52" placeholder="Password">
             </div>
 
-            <button type="submit" class="button">Submit</button>
+            <button type="submit" class="button button-primary">Submit</button>
           </form>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>&lt;form role="form" class="form-inline"&gt;
+  ...
+&lt;/form&gt; </code></pre>
         </div>
 
         <h3>Input group</h3>
@@ -747,26 +780,14 @@ $responsive-classes: all; </code></pre>
         <p>For single input forms, use an input group.</p>
 
         <div class="example">
-          <form role="form">
+          <form role="form" class="large">
             <div class="form-input-group">
               <label for="address" class="sr-only">Email address</label>
               <input type="text" id="address" placeholder="Search by address">
 
               <div class="button-group">
-                <button type="submit" class="button">Search</button>
-                <button type="submit" class="button"><i class="fa fa-compass"></i></button>
-              </div>
-            </div>
-          </form>
-
-          <form role="form" class="large">
-            <div class="form-input-group">
-              <label for="address2" class="sr-only">Email address</label>
-              <input type="text" id="address2" placeholder="Search by address">
-
-              <div class="button-group">
-                <button type="submit" class="button">Search</button>
-                <button type="submit" class="button"><i class="fa fa-compass"></i></button>
+                <button type="submit" class="button button-primary" title="Search an address">Search</button>
+                <button type="submit" class="button button-info" title="Use your current location"><i class="fa fa-location-arrow"></i></button>
               </div>
             </div>
           </form>

@@ -45,6 +45,10 @@
 }
 
 // Simple utilities
+.xxsmall {
+  font-size: $text-size-small * 0.5 !important;
+}
+
 .xsmall {
   font-size: $text-size-small * 0.75 !important;
 }
@@ -58,15 +62,15 @@
 }
 
 .xlarge {
-  font-size: 2em !important;
+  font-size: $text-size-large * 1.5 !important;
 }
 
 .xxlarge {
-  font-size: 3em !important;
+  font-size: $text-size-large * 2.25 !important;
 }
 
 .xxxlarge {
-  font-size: 4em !important;
+  font-size: $text-size-large * 3 !important;
 }
 
 .float-right {

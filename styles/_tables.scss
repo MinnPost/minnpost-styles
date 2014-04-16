@@ -36,3 +36,22 @@ table {
     background-color: $color-lightest-gray;
   }
 }
+
+/**
+ * Responsive tables wrapper.  Inspired by Bootstraps method.  Class
+ * for each responsive break-point.
+ */
+@each $r in $responsive-points {
+  $width: nth($r, 2);
+  $class: nth($r, 1);
+
+  // Since this is a max-width approach a width of 0 is not
+  // valuable to us.
+  @if $width != 0 {
+    @media (max-width: $width) {
+      .table-responsive-#{$class} {
+        @include responsive-table();
+      }
+    }
+  }
+}
