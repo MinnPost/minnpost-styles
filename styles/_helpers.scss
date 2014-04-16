@@ -46,7 +46,7 @@
 
 // Simple utilities
 .xsmall {
-  font-size: $text-size-small !important;
+  font-size: $text-size-small * 0.75 !important;
 }
 
 .small {

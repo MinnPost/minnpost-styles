@@ -25,13 +25,13 @@
       <h1>MinnPost Styles</h1>
 
       <div class="section">
-        <p class="xlarge">Welcome to MinnPost Styles, super-fly, style guide focused on interactive and news applications made by the <a href="http://code.minnpost.com/">MinnData team</a>.  <em>This is currently a work in progress.</em></p>
+        <p class="xlarge">Welcome to MinnPost Styles, a super-fly, style guide focused on interactive and news applications made by the <a href="http://code.minnpost.com/">MinnData team</a>.  <em>A work in progress.</em></p>
       </div>
 
 
 
       <div class="section">
-        <h2>About</h2>
+        <h2 id="about">About <a href="#about" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
         <p>MinnPost Styles is a CSS and JS framework.  The CSS source is written in <a href="http://sass-lang.com/">SASS</a> and is extendable if you want to include the framework via SASS.</p>
 
@@ -45,7 +45,7 @@
 
 
       <div class="section">
-        <h2>Usage</h2>
+        <h2 id="usage">Usage <a href="#usage" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
         <p>It is suggest that you install MinnPost Styles with <a href="http://bower.io/">Bower</a>.  Otherwise, get the code from <a href="https://github.com/minnpost/minnpost-styles">Github</a>.</p>
 
@@ -97,11 +97,11 @@
 
             <tbody>
               <tr><td>Colors</td><td>(none)</td></tr>
-              <tr><td>Datatables</td><td><a href="http://datatables.net/">Datatables</a></td></tr>
+              <tr><td><a href="#datatables" target="_self">Datatables</a></td><td><a href="http://datatables.net/">Datatables</a></td></tr>
               <tr><td>Formatters</td><td>(none)</td></tr>
-              <tr><td>Highcharts</td><td><a href="http://www.highcharts.com/">Highcharts</a></td></tr>
-              <tr><td>Maps</td><td><a href="http://leafletjs.com/">Leaflet</a></td></tr>
-              <tr><td>Nav</td><td>(none)</td></tr>
+              <tr><td><a href="#highcharts" target="_self">Highcharts</a></td><td><a href="http://www.highcharts.com/">Highcharts</a></td></tr>
+              <tr><td><a href="#maps" target="_self">Maps</a></td><td><a href="http://leafletjs.com/">Leaflet</a></td></tr>
+              <tr><td><a href="#navigation" target="_self">Nav</a></td><td>(none)</td></tr>
             </tbody>
           </table>
         </div>
@@ -134,7 +134,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
 
       <div class="section">
-        <h2>Colors</h2>
+        <h2 id="colors">Colors <a href="#colors" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
         <script id="template-color-swatch" type="text/template">
           <div class="cf">
@@ -174,7 +174,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
 
       <div class="section">
-        <h2>Grid</h2>
+        <h2 id="grid">Grid <a href="#grid" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
         <p>A really, really basic, mobile-first, fluid grid is provided.  There are 5 provided groups of breakpoints, <code>all</code>, <code>small</code>, <code>medium</code>, <code>large</code>, <code>xlarge</code>, and widths are provided in 5% intervals as well as 33% and 66%.  This makes combinations such as <code>.column-small-50</code>, which means that any width greater than or equal to 420px will be 50% wide.</p>
 
@@ -266,7 +266,7 @@ $responsive-classes: all; </code></pre>
 
 
       <div class="section">
-        <h2>Typography</h2>
+        <h2 id="typography">Typography <a href="#typography" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
         <h3>Headings</h3>
 
@@ -503,7 +503,7 @@ $responsive-classes: all; </code></pre>
 
 
       <div class="section">
-        <h2>Tables</h2>
+        <h2 id="tables">Tables <a href="#tables" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
         <p>Wrap tables in a <code>.table-responsive-*</code> class so that it will become scrollable on smaller devices.  Breakpoint suffixes from <code>$responsive-classes</code> SASS variable and determine the max-width to begin making the table responsive.</p>
 
@@ -556,7 +556,85 @@ $responsive-classes: all; </code></pre>
 
 
       <div class="section">
-        <h2>Forms</h2>
+        <h2 id="buttons">Buttons <a href="#buttons" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <p>Different types of buttons.  The <code>&lt;button&gt;</code> is the preferred element.</p>
+
+        <div class="example">
+          <p>
+            <button class="button">Button</button>
+            <a href="#" class="button">Link</a>
+            <span class="button">Span</span>
+            <button class="button button-link">Link</button>
+          </p>
+
+          <p>
+            <button class="button large">Large</button>
+          </p>
+
+          <p>
+            <button class="button xlarge"><i class="fa fa-flash"></i> Flash xLarge</button>
+          </p>
+
+          <p>
+            <button class="button small">Small</button>
+          </p>
+
+          <p>
+            <button class="button disabled">Disabled</button>
+          </p>
+        </div>
+        <div class="example-code">
+  <pre><code>&lt;button class="button"&gt;Button&lt;/button&gt;
+  &lt;a href="#" class="button"&gt;Link&lt;/a&gt;
+  &lt;span class="button"&gt;Span&lt;/span&gt;
+  &lt;button class="button button-link"&gt;Link&lt;/button&gt;
+  &lt;button class="button button-large"&gt;Large&lt;/button&gt;
+  &lt;button class="button button-small"&gt;Small&lt;/button&gt; </pre></code>
+        </div>
+
+        <h3>Button groups</h3>
+
+        <p>Buttons next to each other.</p>
+
+        <div class="example">
+          <div class="button-group">
+            <button class="button">Button</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+
+        <h3>Button toolbar</h3>
+
+        <p>Buttons groups next to each other.</p>
+
+        <div class="example">
+          <div class="button-toolbar">
+            <div class="button-group">
+              <button class="button">Button</button>
+              <button class="button">2</button>
+              <button class="button">3</button>
+            </div>
+
+            <div class="button-group">
+              <button class="button">1</button>
+              <button class="button">2</button>
+            </div>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+      </div>
+
+
+
+      <div class="section">
+        <h2 id="forms">Forms <a href="#forms" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
         <h3>Regular form</h3>
 
@@ -700,517 +778,474 @@ $responsive-classes: all; </code></pre>
 
 
 
-      <h2>Buttons</h2>
+      <div class="section">
+        <h2 id="media">Media <a href="#media" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-      <p>Different types of buttons.  The <code>&lt;button&gt;</code> is the preferred element.</p>
+        <h3>Images</h3>
 
-      <div class="example">
-        <p>
-          <button class="button">Button</button>
-          <a href="#" class="button">Link</a>
-          <span class="button">Span</span>
-          <button class="button button-link">Link</button>
-        </p>
+        <div class="example">
+          <img data-src="holder.js/150x150" class="rounded">
+          <img data-src="holder.js/150x150" class="circle">
 
-        <p>
-          <button class="button large">Large</button>
-        </p>
-
-        <p>
-          <button class="button xlarge"><i class="fa fa-flash"></i> Flash xLarge</button>
-        </p>
-
-        <p>
-          <button class="button small">Small</button>
-        </p>
-
-        <p>
-          <button class="button disabled">Disabled</button>
-        </p>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;button class="button"&gt;Button&lt;/button&gt;
-&lt;a href="#" class="button"&gt;Link&lt;/a&gt;
-&lt;span class="button"&gt;Span&lt;/span&gt;
-&lt;button class="button button-link"&gt;Link&lt;/button&gt;
-&lt;button class="button button-large"&gt;Large&lt;/button&gt;
-&lt;button class="button button-small"&gt;Small&lt;/button&gt; </pre></code>
-      </div>
-
-      <h3>Button groups</h3>
-
-      <p>Buttons next to each other.</p>
-
-      <div class="example">
-        <div class="button-group">
-          <button class="button">Button</button>
-          <button class="button">2</button>
-          <button class="button">3</button>
+          <img src="http://placekitten.com/150/150" class="rounded">
+          <img src="http://placekitten.com/150/150" class="circle">
         </div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
 
-      <h3>Button toolbar</h3>
+        <h3>Thumbnails</h3>
 
-      <p>Buttons groups next to each other.</p>
+        <div class="example">
+          <a href="#" class="thumbnail thumbnail-inline">
+            <img data-src="holder.js/100x100">
+          </a>
 
-      <div class="example">
-        <div class="button-toolbar">
-          <div class="button-group">
-            <button class="button">Button</button>
-            <button class="button">2</button>
-            <button class="button">3</button>
-          </div>
+          <a href="#" class="thumbnail thumbnail-inline">
+            <img data-src="holder.js/100x100">
+          </a>
 
-          <div class="button-group">
-            <button class="button">1</button>
-            <button class="button">2</button>
+          <div class="thumbnail">
+            <img data-src="holder.js/100x100">
+
+            <div class="caption">
+              <p>This is a caption</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-
-
-      <h2>Images</h2>
-
-      <div class="example">
-        <img data-src="holder.js/150x150" class="rounded">
-        <img data-src="holder.js/150x150" class="circle">
-
-        <img src="http://placekitten.com/150/150" class="rounded">
-        <img src="http://placekitten.com/150/150" class="circle">
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
       </div>
 
 
 
 
-      <h2>Thumbnails</h2>
+      <div class="section">
+        <h2 id="icons">Icons <a href="#icons" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-      <div class="example">
-        <a href="#" class="thumbnail thumbnail-inline">
-          <img data-src="holder.js/100x100">
-        </a>
 
-        <a href="#" class="thumbnail thumbnail-inline">
-          <img data-src="holder.js/100x100">
-        </a>
+        <p>Icons provided by <a href="http://fontawesome.io/">Font Awesome</a>; see the site for the full list of icons.  Kept independent so that MinnPost Styles stays small if you don't need them.  Use the Bootstrap CDN to include the CSS</p>
 
-        <div class="thumbnail">
-          <img data-src="holder.js/100x100">
+        <pre><code>&lt;link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"&gt; </code></pre>
 
-          <div class="caption">
-            <p>This is a caption</p>
+        <div class="example">
+          <i class="fa fa-compass"></i>
+          <i class="fa fa-compass fa-lg"></i>
+          <i class="fa fa-compass fa-3x"></i>
+          <i class="fa fa-compass fa-spin"></i>
+          <i class="fa fa-compass fa-flip-horizontal"></i>
+        </div>
+        <div class="example-code">
+  <pre><code>&lt;i class="fa fa-compass"&gt;&lt;/i&gt;
+  &lt;i class="fa fa-compass fa-lg"&gt;&lt;/i&gt;
+  &lt;i class="fa fa-compass fa-3x"&gt;&lt;/i&gt;
+  &lt;i class="fa fa-compass fa-spin"&gt;&lt;/i&gt;
+  &lt;i class="fa fa-compass fa-flip-horizontal"&gt;&lt;/i&gt; </pre></code>
+        </div>
+
+        <h3>Loading</h3>
+
+        <p>Loading can be handled by adding a <code>.loading</code> class to an element.</p>
+
+        <div class="example">
+          <div class="loading"></div>
+        </div>
+        <div class="example-code">
+  <pre><code>&lt;div class="loading"&gt;&lt;/div&gt; </pre></code>
+        </div>
+
+        <h3>Preferred icons</h3>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr><th>Name</th><th>Class</th><th>Icon</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Location</td><td><code>fa-location-arrow</code></td><td><i class="fa fa-location-arrow fa-lg"></i></td></tr>
+              <tr><td>External link</td><td><code>fa-external-link</code></td><td><i class="fa fa-external-link fa-lg"></i></td></tr>
+              <tr><td>Down expand</td><td><code>fa-angle-down</code></td><td><i class="fa fa-angle-down fa-lg"></i></td></tr>
+              <tr><td>Up minimize</td><td><code>fa-angle-up</code></td><td><i class="fa fa-angle-up fa-lg"></i></td></tr>
+              <tr><td>Forward or next</td><td><code>fa-long-arrow-right</code></td><td><i class="fa fa-long-arrow-right fa-lg"></i></td></tr>
+              <tr><td>Back or previous</td><td><code>fa-long-arrow-left</code></td><td><i class="fa fa-long-arrow-left fa-lg"></i></td></tr>
+              <tr><td>Check</td><td><code>fa-check</code></td><td><i class="fa fa-check fa-lg"></i></td></tr>
+              <tr><td>Alert</td><td><code>fa-bell</code></td><td><i class="fa fa-bell fa-lg"></i></td></tr>
+              <tr><td>Permalink</td><td><code>??</code></td><td><i class="fa fa-unknown"></i></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+
+      <div class="section">
+        <h2 id="labels">Labels <a href="#labels" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <p>Labels are basic ways to make distinctions to key words.</p>
+
+        <div class="example">
+          <p>
+            <span class="label">label</span>
+          </p>
+
+          <p>
+            <span class="label large-2x">2x</span>
+          </p>
+        </div>
+        <div class="example-code">
+  <pre><code>&lt;span class="label"&gt;label&lt;/span&gt; </pre></code>
+        </div>
+      </div>
+
+
+
+
+      <div class="section">
+        <h2 id="alerts">Alerts <a href="#alerts" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <p>Messages to the users, specifically concerning actions they have taken.</p>
+
+        <div class="example">
+          <div class="alert">
+            <strong>Warning!</strong> Best check yo self, you're not looking too good.
           </div>
         </div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-
-
-
-      <h2>Icons</h2>
-
-      <p>Icons provided by <a href="http://fontawesome.io/">Font Awesome</a>; see the site for the full list of icons.  Kept independent so that MinnPost Styles stays small if you don't need them.  Use the Bootstrap CDN to include the CSS</p>
-
-      <pre><code>&lt;link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"&gt; </code></pre>
-
-      <div class="example">
-        <i class="fa fa-compass"></i>
-        <i class="fa fa-compass fa-lg"></i>
-        <i class="fa fa-compass fa-3x"></i>
-        <i class="fa fa-compass fa-spin"></i>
-        <i class="fa fa-compass fa-flip-horizontal"></i>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;i class="fa fa-compass"&gt;&lt;/i&gt;
-&lt;i class="fa fa-compass fa-lg"&gt;&lt;/i&gt;
-&lt;i class="fa fa-compass fa-3x"&gt;&lt;/i&gt;
-&lt;i class="fa fa-compass fa-spin"&gt;&lt;/i&gt;
-&lt;i class="fa fa-compass fa-flip-horizontal"&gt;&lt;/i&gt; </pre></code>
-      </div>
-
-      <h3>Loading</h3>
-
-      <p>Loading can be handled by adding a <code>.loading</code> class to an element.</p>
-
-      <div class="example">
-        <div class="loading"></div>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;div class="loading"&gt;&lt;/div&gt; </pre></code>
-      </div>
-
-      <h3>Preferred icons</h3>
-
-      <p></p>
-
-      <div class="example">
-        <ul>
-          <li>Location: <i class="fa fa-location-arrow fa-lg"></i></li>
-          <li>External link: <i class="fa fa-external-link fa-lg"></i></li>
-          <li>Down expand: <i class="fa fa-angle-down fa-lg"></i></li>
-          <li>Up minimize: <i class="fa fa-angle-up fa-lg"></i></li>
-          <li>Forward: <i class="fa fa-long-arrow-right
- fa-lg"></i></li>
-          <li>Back: <i class="fa fa-long-arrow-left
- fa-lg"></i></li>
-          <li>Check: <i class="fa fa-check
- fa-lg"></i></li>
-          <li>Alert: <i class="fa fa-bell
- fa-lg"></i></li>
-        </ul>
-      </div>
-      <div class="example-code">
-      </div>
-
-
-      <h2>Labels</h2>
-
-      <p>Labels are basic ways to make distinctions to key words.</p>
-
-      <div class="example">
-        <p>
-          <span class="label">label</span>
-        </p>
-
-        <p>
-          <span class="label large-2x">2x</span>
-        </p>
-      </div>
-      <div class="example-code">
-<pre><code>&lt;span class="label"&gt;label&lt;/span&gt; </pre></code>
-      </div>
-
-
-
-      <h2>Alerts</h2>
-
-      <p>Messages to the users, specifically concerning actions they have taken.</p>
-
-      <div class="example">
-        <div class="alert">
-          <strong>Warning!</strong> Best check yo self, you're not looking too good.
+        <div class="example-code">
+  <pre><code> </pre></code>
         </div>
       </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
 
 
 
 
-      <h2>Progress bars</h2>
+      <div class="section">
+        <h2 id="progress">Progress bars <a href="#progress" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-      <p>Either for interactive loading or a simple data visualization.</p>
+        <p>Either for interactive loading or a simple data visualization.</p>
 
-      <div class="example">
+        <div class="example">
 
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-            <span class="sr-only">60% Complete</span>
-          </div>
-        </div>
-
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-
-
-
-
-      <h2>Helper classes</h2>
-
-      <p>The following helper classes have a SASS @mixin counter part that you can use in your SASS files.</p>
-
-      <ul>
-        <li><code>.inline-block</code>: Cross-browser inline-block.</li>
-        <li><code>.clearfix</code>: Cross-browser clearfix hack.  Also available is <code>.cf</code></li>
-        <li><code>.tab-focus</code>: Provides a consistent WebKit-style focus.</li>
-        <li><code>.center-block</code>: Makes a block that is center and should be given a width.</li>
-        <li><code>.text-overflow</code>: Cuts content off and adds ellipses.  Requires inline-block or block for proper styling.</li>
-        <li><code>.text-hide</code>: Hides text, but still read by screen reader.</li>
-        <li><code>.screen-reader-only</code>: Screen reader only.</li>
-        <li><code>.screen-reader-only</code>: Screen reader only.  Also available is <code>.sr-only</code></li>
-        <li><code>.hidden</code>: Hidden from view and screen readers.  Also available is <code>.hide</code></li>
-        <li><code>.print-visible</code>: Visible on print only.</li>
-        <li><code>.print-hidden</code>: Not visible on print.</li>
-      </ul>
-
-      <p>The following are simply helpful classes (no SASS counter parts).</p>
-
-      <ul>
-        <li><code>.xsmall</code>, <code>.small</code>, <code>.large</code>, <code>.xlarge</code>, <code>.xxlarge</code>, <code>.xxlarge</code>: Ups the font size, and given that almost all measurements are in em's then it will also increase the overall spacing.</li>
-        <li><code>.float-right</code>: Float right.</li>
-        <li><code>.float-left</code>: Float left.</li>
-        <li><code>.show</code>: Does a display block.</li>
-        <li><code>.show-inline</code>: Does a display inline.</li>
-      </ul>
-
-
-
-
-
-
-      <h2>Navigation</h2>
-
-      <h3>Sticky top navigation</h2>
-
-      <div class="example">
-        <div>
-          <div class="navigation horizontal example-stick-top">
-            <ul>
-              <li><a href="#" class="active" data-spy-on="section01">Sec 1</a></li>
-              <li><a href="#" data-spy-on="section02">Sec 2</a></li>
-              <li><a href="#" data-spy-on="section03">Sec 3</a></li>
-              <li><a href="#" data-spy-on="section04">Sec 4</a></li>
-            </ul>
-          </div>
-
-          <h4 data-spy-me="section01">Section 01</h4>
-
-          <p>Kitty ipsum dolor sit amet, consectetur purr pharetra iaculis tail flick tail flick, adipiscing tortor rutrum lick suscipit catnip. Iaculis I don't like that food tortor shed everywhere tristique, hairball I don't like that food fluffy fur dolor tempus puking nunc. Accumsan stretching libero neque chase the red dot, faucibus sniff stretching libero vulputate chase the red dot. Suspendisse stuck in a tree suspendisse shed everywhere tail flick suspendisse, sollicitudin etiam rip the couch shed everywhere eat the grass orci turpis. Vestibulum tempus accumsan claw rip the couch, egestas rutrum dolor nam scratched. Give me fish bat tortor tincidunt a meow suspendisse, claw justo kittens shed everywhere. Vehicula sagittis quis nunc vel sleep in the sink, eat the grass feed me feed me toss the mousie elit orci turpis.</p>
-
-          <h4 data-spy-me="section02">Section 02</h4>
-
-          <p>Vestibulum litter box climb the curtains attack, nam suscipit enim ut jump on the table amet libero sleep on your keyboard. Climb the curtains meow quis vehicula consectetur, accumsan knock over the lamp lick etiam jump tempus. Sleep on your keyboard shed everywhere neque lay down in your way run, feed me suspendisse libero quis nunc quis attack your ankles climb the curtains. Dolor attack aliquam attack, chase the red dot catnip cras nec sunbathe sleep in the sink chase the red dot et. Tempus nullam chase the red dot pharetra aliquam, eat catnip sleep on your face amet claw. Sollicitudin nullam hairball neque sleep in the sink, pellentesque orci turpis adipiscing vel hairball. Sniff tail flick et tempus, iaculis stuck in a tree knock over the lamp rip the couch stretching dolor attack.</p>
-
-          <h4 data-spy-me="section03">Section 03</h4>
-
-          <p>Cras nec pharetra purr enim ut justo run, hairball nam elit neque. Ac sleep in the sink I don't like that food iaculis, sniff egestas sleep on your face nam sagittis biting hairball. Lick biting run iaculis et, nunc tail flick etiam vulputate tincidunt a biting. Chase the red dot non toss the mousie orci turpis, claw amet leap neque adipiscing et. Judging you catnip scratched etiam tincidunt a, fluffy fur fluffy fur vel iaculis I don't like that food ac justo. Eat the grass biting vehicula enim nam nam, kittens attack your ankles sunbathe sagittis judging you libero. Mauris a rip the couch pharetra adipiscing shed everywhere pellentesque, chuf enim ut tincidunt a vehicula nullam give me fish.</p>
-
-          <h4 data-spy-me="section04">Section 04</h4>
-
-          <p>Cras nec pharetra purr enim ut justo run, hairball nam elit neque. Ac sleep in the sink I don't like that food iaculis, sniff egestas sleep on your face nam sagittis biting hairball. Lick biting run iaculis et, nunc tail flick etiam vulputate tincidunt a biting. Chase the red dot non toss the mousie orci turpis, claw amet leap neque adipiscing et. Judging you catnip scratched etiam tincidunt a, fluffy fur fluffy fur vel iaculis I don't like that food ac justo. Eat the grass biting vehicula enim nam nam, kittens attack your ankles sunbathe sagittis judging you libero. Mauris a rip the couch pharetra adipiscing shed everywhere pellentesque, chuf enim ut tincidunt a vehicula nullam give me fish.</p>
-
-          <p>Vestibulum litter box climb the curtains attack, nam suscipit enim ut jump on the table amet libero sleep on your keyboard. Climb the curtains meow quis vehicula consectetur, accumsan knock over the lamp lick etiam jump tempus. Sleep on your keyboard shed everywhere neque lay down in your way run, feed me suspendisse libero quis nunc quis attack your ankles climb the curtains. Dolor attack aliquam attack, chase the red dot catnip cras nec sunbathe sleep in the sink chase the red dot et. Tempus nullam chase the red dot pharetra aliquam, eat catnip sleep on your face amet claw. Sollicitudin nullam hairball neque sleep in the sink, pellentesque orci turpis adipiscing vel hairball. Sniff tail flick et tempus, iaculis stuck in a tree knock over the lamp rip the couch stretching dolor attack.</p>
-        </div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-      <h3>Sticky vertical navigation</h3>
-
-      <div class="example">
-        <div class="row">
-          <div class="column-medium-33">
-            <div class="example-stick-container">
-              <div class="navigation">
-                <ul>
-                  <li><a href="#" class="active" data-spy-on="section01b">Sec 1</a></li>
-                  <li><a href="#" data-spy-on="section02b">Sec 2</a></li>
-                  <li><a href="#" data-spy-on="section03b">Sec 3</a></li>
-                  <li><a href="#" data-spy-on="section04b">Sec 4</a></li>
-                </ul>
-              </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+              <span class="sr-only">60% Complete</span>
             </div>
           </div>
 
-          <div class="column-medium-66">
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+      </div>
 
-            <h4 data-spy-me="section01b">Section 01</h4>
+
+
+
+      <div class="section">
+        <h2 id="helpers">Helpers <a href="#helpers" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <p>The following helper classes have a SASS @mixin counter part that you can use in your SASS files.</p>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr><th>Class (or mixin)</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>inline-block</code></td><td>Cross-browser inline-block.</td></tr>
+              <tr><td><code>clearfix</code> or <code>cf</code></td><td>Cross-browser clearfix hack.</td></tr>
+              <tr><td><code>tab-focus</code></td><td>Provides a consistent WebKit-style focus.</td></tr>
+              <tr><td><code>center-block</code></td><td>Makes a block that is center and should be given a width.</td></tr>
+              <tr><td><code>text-overflow</code></td><td>Cuts content off and adds ellipses.  Requires inline-block or block for proper styling.</td></tr>
+              <tr><td><code>text-hide</code></td><td>Hides text, but still read by screen reader.</td></tr>
+              <tr><td><code>screen-reader-only</code> or <code>sr-only</code></td><td>Screen reader only.</td></tr>
+              <tr><td><code>hidden</code> or <code>hide</code></td><td>Hidden from view and screen readers.</td></tr>
+              <tr><td><code>print-visible</code></td><td>Visible on print only.</td></tr>
+              <tr><td><code>print-hidden</code></td><td>Not visible on print.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The following are simply helpful classes (no SASS counter parts).</p>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr><th>Class</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>xsmall</code>, <code>small</code>, <code>large</code>, <code>xlarge</code>, <code>xxlarge</code>, or <code>xxxlarge</code></td><td>Ups the font size, and given that almost all measurements are in em's then it will also increase the overall spacing.</td></tr>
+              <tr><td><code>float-right</code></td><td>Float right.</td></tr>
+              <tr><td><code>float-left</code></td><td>Float left.</td></tr>
+              <tr><td><code>show</code></td><td>Does a display block.</td></tr>
+              <tr><td><code>show-inline</code></td><td>Does a display inline.</td></tr>
+              <tr><td><code>invisible</code></td><td>Does a visibility hidden.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+
+      <div class="section">
+        <h2 id="navigation">Navigation <a href="#navigation" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <h3>Sticky top navigation</h2>
+
+        <div class="example">
+          <div>
+            <div class="navigation horizontal example-stick-top">
+              <ul>
+                <li><a href="#" class="active" data-spy-on="section01">Sec 1</a></li>
+                <li><a href="#" data-spy-on="section02">Sec 2</a></li>
+                <li><a href="#" data-spy-on="section03">Sec 3</a></li>
+                <li><a href="#" data-spy-on="section04">Sec 4</a></li>
+              </ul>
+            </div>
+
+            <h4 data-spy-me="section01">Section 01</h4>
 
             <p>Kitty ipsum dolor sit amet, consectetur purr pharetra iaculis tail flick tail flick, adipiscing tortor rutrum lick suscipit catnip. Iaculis I don't like that food tortor shed everywhere tristique, hairball I don't like that food fluffy fur dolor tempus puking nunc. Accumsan stretching libero neque chase the red dot, faucibus sniff stretching libero vulputate chase the red dot. Suspendisse stuck in a tree suspendisse shed everywhere tail flick suspendisse, sollicitudin etiam rip the couch shed everywhere eat the grass orci turpis. Vestibulum tempus accumsan claw rip the couch, egestas rutrum dolor nam scratched. Give me fish bat tortor tincidunt a meow suspendisse, claw justo kittens shed everywhere. Vehicula sagittis quis nunc vel sleep in the sink, eat the grass feed me feed me toss the mousie elit orci turpis.</p>
 
+            <h4 data-spy-me="section02">Section 02</h4>
+
             <p>Vestibulum litter box climb the curtains attack, nam suscipit enim ut jump on the table amet libero sleep on your keyboard. Climb the curtains meow quis vehicula consectetur, accumsan knock over the lamp lick etiam jump tempus. Sleep on your keyboard shed everywhere neque lay down in your way run, feed me suspendisse libero quis nunc quis attack your ankles climb the curtains. Dolor attack aliquam attack, chase the red dot catnip cras nec sunbathe sleep in the sink chase the red dot et. Tempus nullam chase the red dot pharetra aliquam, eat catnip sleep on your face amet claw. Sollicitudin nullam hairball neque sleep in the sink, pellentesque orci turpis adipiscing vel hairball. Sniff tail flick et tempus, iaculis stuck in a tree knock over the lamp rip the couch stretching dolor attack.</p>
+
+            <h4 data-spy-me="section03">Section 03</h4>
 
             <p>Cras nec pharetra purr enim ut justo run, hairball nam elit neque. Ac sleep in the sink I don't like that food iaculis, sniff egestas sleep on your face nam sagittis biting hairball. Lick biting run iaculis et, nunc tail flick etiam vulputate tincidunt a biting. Chase the red dot non toss the mousie orci turpis, claw amet leap neque adipiscing et. Judging you catnip scratched etiam tincidunt a, fluffy fur fluffy fur vel iaculis I don't like that food ac justo. Eat the grass biting vehicula enim nam nam, kittens attack your ankles sunbathe sagittis judging you libero. Mauris a rip the couch pharetra adipiscing shed everywhere pellentesque, chuf enim ut tincidunt a vehicula nullam give me fish.</p>
 
-            <h4 data-spy-me="section02b">Section 02</h4>
+            <h4 data-spy-me="section04">Section 04</h4>
 
-            <p>Nunc hairball hairball adipiscing ac, I don't like that food rhoncus quis nunc justo I don't like that food. Tail flick biting rip the couch jump on the table, sleep in the sink libero feed me eat the grass neque chase the red dot. Rhoncus rutrum climb the curtains faucibus sleep on your keyboard, scratched orci turpis hairball sollicitudin run run non. In viverra suspendisse rip the couch sagittis, claw tincidunt a vulputate chuf judging you climb the curtains. Tristique sleep in the sink quis hiss, catnip nibh tail flick sagittis leap nam scratched. Lick tincidunt a in viverra suscipit litter box, iaculis sagittis sleep on your keyboard egestas stretching. Chuf enim ut aliquam et nunc, vehicula jump on the table eat chuf scratched. Eat leap knock over the lamp iaculis stretching sleep on your keyboard, give me fish iaculis rhoncus suspendisse sollicitudin.</p>
+            <p>Cras nec pharetra purr enim ut justo run, hairball nam elit neque. Ac sleep in the sink I don't like that food iaculis, sniff egestas sleep on your face nam sagittis biting hairball. Lick biting run iaculis et, nunc tail flick etiam vulputate tincidunt a biting. Chase the red dot non toss the mousie orci turpis, claw amet leap neque adipiscing et. Judging you catnip scratched etiam tincidunt a, fluffy fur fluffy fur vel iaculis I don't like that food ac justo. Eat the grass biting vehicula enim nam nam, kittens attack your ankles sunbathe sagittis judging you libero. Mauris a rip the couch pharetra adipiscing shed everywhere pellentesque, chuf enim ut tincidunt a vehicula nullam give me fish.</p>
 
-            <p>Tristique rutrum scratched vehicula, shed everywhere nibh tincidunt a climb the curtains orci turpis amet rutrum. Faucibus shed everywhere enim quis sleep on your face, shed everywhere sagittis lay down in your way et nibh. Accumsan biting faucibus sagittis, justo sunbathe tortor sleep in the sink bibendum stretching. Sagittis sniff meow vel amet cras nec, sollicitudin enim sleep in the sink rip the couch rhoncus suspendisse. Pellentesque bibendum iaculis feed me I don't like that food biting, scratched enim ut lay down in your way iaculis etiam. Sniff pellentesque toss the mousie scratched iaculis quis, hairball rip the couch faucibus toss the mousie nibh eat the grass. Jump on the table toss the mousie judging you feed me, climb the curtains iaculis non cras nec catnip ac chase the red dot. Fluffy fur nullam hairball sniff feed me, sagittis iaculis tail flick quis nunc elit justo sniff.</p>
-
-            <p>Zzz justo nullam jump bat adipiscing, rutrum tortor in viverra attack. Accumsan sunbathe judging you elit vehicula enim ut, eat the grass quis nunc fluffy fur sleep in the sink sagittis adipiscing. Sleep in the sink purr jump faucibus nam, et judging you shed everywhere consectetur tortor. Suscipit iaculis rutrum enim ut judging you chuf, climb the curtains I don't like that food judging you vel sleep in the sink enim ut. Non tortor sagittis rhoncus, litter box rhoncus tail flick elit nullam enim suspendisse jump on the table. Chuf attack your ankles sollicitudin sagittis, bat attack sagittis pharetra quis nunc adipiscing tristique attack. Lick fluffy fur nam nullam attack your ankles, vestibulum pharetra in viverra attack stuck in a tree. Chuf hairball dolor tristique, chuf rhoncus biting rip the couch tristique stuck in a tree.</p>
-
-            <p>Eat the grass climb the curtains rhoncus nam, amet neque tincidunt a vehicula hairball stuck in a tree. Climb the curtains lick enim ut non quis, libero jump litter box feed me jump. Chase the red dot lick sollicitudin etiam, sleep on your keyboard jump rip the couch elit vel vel. Enim etiam rutrum neque, faucibus rhoncus sniff zzz vel egestas iaculis. Attack your ankles jump on the table sleep on your keyboard knock over the lamp pellentesque, mauris a mauris a lick tortor lick jump on the table purr. Iaculis nullam stuck in a tree dolor etiam biting, aliquam amet et nam enim libero. Rhoncus leap egestas kittens ac, kittens nibh vestibulum sunbathe egestas attack.</p>
-
-            <h4 data-spy-me="section03b">Section 03</h4>
-
-            <p>Lick ac attack your ankles jump on the table rutrum nunc, pharetra zzz quis vehicula fluffy fur sniff. Leap iaculis orci turpis nullam eat the grass rip the couch, nunc neque sagittis sleep in the sink. Tail flick consectetur iaculis tempus bibendum adipiscing, etiam faucibus lick biting I don't like that food. Tail flick lick claw zzz vehicula quis, sunbathe hiss tincidunt a eat faucibus zzz. Sleep in the sink sleep in the sink sollicitudin sleep in the sink non, sleep in the sink catnip judging you vel toss the mousie. Enim orci turpis sleep in the sink biting purr neque, pellentesque rip the couch biting orci turpis kittens tempus.</p>
-
-            <p>Puking purr non rip the couch nibh, consectetur sniff suscipit chase the red dot enim ut jump. Feed me eat vehicula suspendisse nam attack your ankles, nibh attack your ankles faucibus dolor. Etiam elit suspendisse adipiscing chase the red dot tail flick, catnip elit stuck in a tree run quis nunc. Sagittis sniff sunbathe jump on the table, chuf climb the curtains ac run sniff sleep on your face iaculis. Lick enim ut tortor iaculis, nibh eat the grass puking egestas suspendisse pharetra neque nullam. Feed me jump on the table litter box puking, vel adipiscing chuf sleep on your keyboard libero sleep in the sink. Elit chuf attack scratched give me fish, tristique tristique neque hiss sniff. Judging you enim nam attack your ankles, suspendisse vestibulum sleep in the sink ac adipiscing jump biting.</p>
-
-            <h4 data-spy-me="section04b">Section 04</h4>
-
-            <p>Iaculis rhoncus puking nunc fluffy fur meow, stretching lick bat puking vestibulum vestibulum. Nunc suspendisse rip the couch bat judging you, feed me scratched climb the curtains eat sleep on your face. Libero vel vulputate aliquam, sniff bat hiss enim non suspendisse in viverra. Sagittis chase the red dot fluffy fur nullam egestas justo, suspendisse I don't like that food lick feed me give me fish etiam. Enim vestibulum jump leap orci turpis feed me, enim jump enim ut tristique puking. Attack your ankles enim ut chuf jump on the table lick tempus, eat tortor aliquam toss the mousie. Quis nunc iaculis enim ut vel, tincidunt a egestas feed me cras nec stretching faucibus.</p>
+            <p>Vestibulum litter box climb the curtains attack, nam suscipit enim ut jump on the table amet libero sleep on your keyboard. Climb the curtains meow quis vehicula consectetur, accumsan knock over the lamp lick etiam jump tempus. Sleep on your keyboard shed everywhere neque lay down in your way run, feed me suspendisse libero quis nunc quis attack your ankles climb the curtains. Dolor attack aliquam attack, chase the red dot catnip cras nec sunbathe sleep in the sink chase the red dot et. Tempus nullam chase the red dot pharetra aliquam, eat catnip sleep on your face amet claw. Sollicitudin nullam hairball neque sleep in the sink, pellentesque orci turpis adipiscing vel hairball. Sniff tail flick et tempus, iaculis stuck in a tree knock over the lamp rip the couch stretching dolor attack.</p>
           </div>
         </div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-
-
-
-
-
-      <h2>Highcharts</h2>
-
-      <p>Default styling is provided for some basic types of Highchart charts.</p>
-
-      <h3>Line chart</h3>
-
-      <div class="example">
-        <div class="chart chart-line-example"></div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-      <h3>Column chart</h3>
-
-      <div class="example">
-        <div class="chart chart-column-example"></div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-      <h3>Bar chart</h3>
-
-      <div class="example">
-        <div class="chart chart-bar-example"></div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-      <h3>Scatterplot</h3>
-
-      <div class="example">
-        <div class="chart chart-scatter-example"></div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-
-
-
-
-
-      <h2>Maps</h2>
-
-      <p>Styling for maps provided through Leaflet or Mapbox.js.  Note that Mapbox.js is a superset of Leaflet.  We use the Mapbox.js styling because it is a nice style and provides consistency across maps that may or may not use the Mapbox.js styles.  Include the CSS before MinnPost styles.</p>
-
-      <pre><code>&lt;link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css"&gt; </code></pre>
-
-      <h3>Javascript</h3>
-
-      <p>Helpful methods and values are available in the <code>minnpost-styles.maps.js</code> file under the <code>MP.maps</code> property.</p>
-
-      <h3>Attribution</h3>
-
-      <p>With most map services like OpenStreetMap and Mapbox, their terms of use require attribution of some sort.  The requirement is usually to have a link on the page, not necessarily on the map.  By default, the attribution control is added to a leaflet map, so you must remove it.</p>
-
-      <pre><code>// Remove attribute
-map.removeControl(map.attributionControl);
-// Handy attribution
-MP.maps.mapboxAttribution;
-MP.maps.openstreetmapAttribution; </code></pre>
-
-      <div class="example">
-        <div class="footnote">
-          <p>Map attribution.  <span class="map-attribution"></span></p>
-        </div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-      <h3>Basic leaflet map</h3>
-
-      <p>You can switch the different base maps that we have created through Mapbox.  If you are not making a MinnPost project, please use your own base layers as their use costs us money.</p>
-
-      <div class="example">
-        <div class="button-group map-baselayer-choices">
-          <button class="button" data-map="mapboxSatelliteStreets">Satellite</button>
-          <button class="button" data-map="mapboxStreetsDarkLabels">Streets (Dark)</button>
-          <button class="button active" data-map="mapboxStreetsLightLabels">Streets (Light)</button>
-          <button class="button" data-map="mapboxTerrainLight">Terrain (Light, No Labels)</button>
-          <button class="button" data-map="mapboxTerrainDark">Terrain (Dark, No Labels)</button>
+        <div class="example-code">
+  <pre><code> </pre></code>
         </div>
 
-        <div class="map" id="example-leaflet-map"></div>
+        <h3>Sticky vertical navigation</h3>
 
-        <div class="footnote">
-          <p>Map attribution.  <span class="map-attribution"></span></p>
+        <div class="example">
+          <div class="row">
+            <div class="column-medium-33">
+              <div class="example-stick-container">
+                <div class="navigation">
+                  <ul>
+                    <li><a href="#" class="active" data-spy-on="section01b">Sec 1</a></li>
+                    <li><a href="#" data-spy-on="section02b">Sec 2</a></li>
+                    <li><a href="#" data-spy-on="section03b">Sec 3</a></li>
+                    <li><a href="#" data-spy-on="section04b">Sec 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-medium-66">
+
+              <h4 data-spy-me="section01b">Section 01</h4>
+
+              <p>Kitty ipsum dolor sit amet, consectetur purr pharetra iaculis tail flick tail flick, adipiscing tortor rutrum lick suscipit catnip. Iaculis I don't like that food tortor shed everywhere tristique, hairball I don't like that food fluffy fur dolor tempus puking nunc. Accumsan stretching libero neque chase the red dot, faucibus sniff stretching libero vulputate chase the red dot. Suspendisse stuck in a tree suspendisse shed everywhere tail flick suspendisse, sollicitudin etiam rip the couch shed everywhere eat the grass orci turpis. Vestibulum tempus accumsan claw rip the couch, egestas rutrum dolor nam scratched. Give me fish bat tortor tincidunt a meow suspendisse, claw justo kittens shed everywhere. Vehicula sagittis quis nunc vel sleep in the sink, eat the grass feed me feed me toss the mousie elit orci turpis.</p>
+
+              <p>Vestibulum litter box climb the curtains attack, nam suscipit enim ut jump on the table amet libero sleep on your keyboard. Climb the curtains meow quis vehicula consectetur, accumsan knock over the lamp lick etiam jump tempus. Sleep on your keyboard shed everywhere neque lay down in your way run, feed me suspendisse libero quis nunc quis attack your ankles climb the curtains. Dolor attack aliquam attack, chase the red dot catnip cras nec sunbathe sleep in the sink chase the red dot et. Tempus nullam chase the red dot pharetra aliquam, eat catnip sleep on your face amet claw. Sollicitudin nullam hairball neque sleep in the sink, pellentesque orci turpis adipiscing vel hairball. Sniff tail flick et tempus, iaculis stuck in a tree knock over the lamp rip the couch stretching dolor attack.</p>
+
+              <p>Cras nec pharetra purr enim ut justo run, hairball nam elit neque. Ac sleep in the sink I don't like that food iaculis, sniff egestas sleep on your face nam sagittis biting hairball. Lick biting run iaculis et, nunc tail flick etiam vulputate tincidunt a biting. Chase the red dot non toss the mousie orci turpis, claw amet leap neque adipiscing et. Judging you catnip scratched etiam tincidunt a, fluffy fur fluffy fur vel iaculis I don't like that food ac justo. Eat the grass biting vehicula enim nam nam, kittens attack your ankles sunbathe sagittis judging you libero. Mauris a rip the couch pharetra adipiscing shed everywhere pellentesque, chuf enim ut tincidunt a vehicula nullam give me fish.</p>
+
+              <h4 data-spy-me="section02b">Section 02</h4>
+
+              <p>Nunc hairball hairball adipiscing ac, I don't like that food rhoncus quis nunc justo I don't like that food. Tail flick biting rip the couch jump on the table, sleep in the sink libero feed me eat the grass neque chase the red dot. Rhoncus rutrum climb the curtains faucibus sleep on your keyboard, scratched orci turpis hairball sollicitudin run run non. In viverra suspendisse rip the couch sagittis, claw tincidunt a vulputate chuf judging you climb the curtains. Tristique sleep in the sink quis hiss, catnip nibh tail flick sagittis leap nam scratched. Lick tincidunt a in viverra suscipit litter box, iaculis sagittis sleep on your keyboard egestas stretching. Chuf enim ut aliquam et nunc, vehicula jump on the table eat chuf scratched. Eat leap knock over the lamp iaculis stretching sleep on your keyboard, give me fish iaculis rhoncus suspendisse sollicitudin.</p>
+
+              <p>Tristique rutrum scratched vehicula, shed everywhere nibh tincidunt a climb the curtains orci turpis amet rutrum. Faucibus shed everywhere enim quis sleep on your face, shed everywhere sagittis lay down in your way et nibh. Accumsan biting faucibus sagittis, justo sunbathe tortor sleep in the sink bibendum stretching. Sagittis sniff meow vel amet cras nec, sollicitudin enim sleep in the sink rip the couch rhoncus suspendisse. Pellentesque bibendum iaculis feed me I don't like that food biting, scratched enim ut lay down in your way iaculis etiam. Sniff pellentesque toss the mousie scratched iaculis quis, hairball rip the couch faucibus toss the mousie nibh eat the grass. Jump on the table toss the mousie judging you feed me, climb the curtains iaculis non cras nec catnip ac chase the red dot. Fluffy fur nullam hairball sniff feed me, sagittis iaculis tail flick quis nunc elit justo sniff.</p>
+
+              <p>Zzz justo nullam jump bat adipiscing, rutrum tortor in viverra attack. Accumsan sunbathe judging you elit vehicula enim ut, eat the grass quis nunc fluffy fur sleep in the sink sagittis adipiscing. Sleep in the sink purr jump faucibus nam, et judging you shed everywhere consectetur tortor. Suscipit iaculis rutrum enim ut judging you chuf, climb the curtains I don't like that food judging you vel sleep in the sink enim ut. Non tortor sagittis rhoncus, litter box rhoncus tail flick elit nullam enim suspendisse jump on the table. Chuf attack your ankles sollicitudin sagittis, bat attack sagittis pharetra quis nunc adipiscing tristique attack. Lick fluffy fur nam nullam attack your ankles, vestibulum pharetra in viverra attack stuck in a tree. Chuf hairball dolor tristique, chuf rhoncus biting rip the couch tristique stuck in a tree.</p>
+
+              <p>Eat the grass climb the curtains rhoncus nam, amet neque tincidunt a vehicula hairball stuck in a tree. Climb the curtains lick enim ut non quis, libero jump litter box feed me jump. Chase the red dot lick sollicitudin etiam, sleep on your keyboard jump rip the couch elit vel vel. Enim etiam rutrum neque, faucibus rhoncus sniff zzz vel egestas iaculis. Attack your ankles jump on the table sleep on your keyboard knock over the lamp pellentesque, mauris a mauris a lick tortor lick jump on the table purr. Iaculis nullam stuck in a tree dolor etiam biting, aliquam amet et nam enim libero. Rhoncus leap egestas kittens ac, kittens nibh vestibulum sunbathe egestas attack.</p>
+
+              <h4 data-spy-me="section03b">Section 03</h4>
+
+              <p>Lick ac attack your ankles jump on the table rutrum nunc, pharetra zzz quis vehicula fluffy fur sniff. Leap iaculis orci turpis nullam eat the grass rip the couch, nunc neque sagittis sleep in the sink. Tail flick consectetur iaculis tempus bibendum adipiscing, etiam faucibus lick biting I don't like that food. Tail flick lick claw zzz vehicula quis, sunbathe hiss tincidunt a eat faucibus zzz. Sleep in the sink sleep in the sink sollicitudin sleep in the sink non, sleep in the sink catnip judging you vel toss the mousie. Enim orci turpis sleep in the sink biting purr neque, pellentesque rip the couch biting orci turpis kittens tempus.</p>
+
+              <p>Puking purr non rip the couch nibh, consectetur sniff suscipit chase the red dot enim ut jump. Feed me eat vehicula suspendisse nam attack your ankles, nibh attack your ankles faucibus dolor. Etiam elit suspendisse adipiscing chase the red dot tail flick, catnip elit stuck in a tree run quis nunc. Sagittis sniff sunbathe jump on the table, chuf climb the curtains ac run sniff sleep on your face iaculis. Lick enim ut tortor iaculis, nibh eat the grass puking egestas suspendisse pharetra neque nullam. Feed me jump on the table litter box puking, vel adipiscing chuf sleep on your keyboard libero sleep in the sink. Elit chuf attack scratched give me fish, tristique tristique neque hiss sniff. Judging you enim nam attack your ankles, suspendisse vestibulum sleep in the sink ac adipiscing jump biting.</p>
+
+              <h4 data-spy-me="section04b">Section 04</h4>
+
+              <p>Iaculis rhoncus puking nunc fluffy fur meow, stretching lick bat puking vestibulum vestibulum. Nunc suspendisse rip the couch bat judging you, feed me scratched climb the curtains eat sleep on your face. Libero vel vulputate aliquam, sniff bat hiss enim non suspendisse in viverra. Sagittis chase the red dot fluffy fur nullam egestas justo, suspendisse I don't like that food lick feed me give me fish etiam. Enim vestibulum jump leap orci turpis feed me, enim jump enim ut tristique puking. Attack your ankles enim ut chuf jump on the table lick tempus, eat tortor aliquam toss the mousie. Quis nunc iaculis enim ut vel, tincidunt a egestas feed me cras nec stretching faucibus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
         </div>
       </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
 
-      <h3>Markers and features</h3>
 
-      <p>The <a href="https://www.mapbox.com/maki/">Maki icon set</a> provided by Mapbox is a basic icon set focused on points of interests.  Mapbox provides a <a href="https://www.mapbox.com/developers/api/#Stand-alone.markers">static API for the icons</a> that can be used to make markers pretty easily.  There is a simple icon factory method in <code>MP.maps</code>.</p>
 
-      <pre><code>var icon = MP.maps.makeMakiIcon('cinema', 'm', '232323'); </pre></code>
 
-      <p>For non-marker feature, like polygons, there is a default style provided under <code>MP.maps.mapStyle</code>.  Also, for simple tooltip static hovers, there is a <code>MP.maps.TooltipControl</code> Leaflet control to easily manage tooltips.</p>
+      <div class="section">
+        <h2 id="highcharts">Highcharts <a href="#highcharts" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-      <div class="example">
-        <div class="map" id="example-markers-features-map"></div>
+        <p>Default styling is provided for some basic types of Highchart charts.</p>
 
-        <div class="footnote">
-          <p>Map attribution.  <span class="map-attribution"></span></p>
+        <h3>Line chart</h3>
+
+        <div class="example">
+          <div class="chart chart-line-example"></div>
         </div>
-      </div>
-      <div class="example-code">
-<pre><code> </pre></code>
-      </div>
-
-
-
-
-
-
-      <h2>Datatables</h2>
-
-      <p><a href="http://datatables.net/">Datatables</a> is a plugin that makes tables searchable, filterable, paged, and more.  It is useful for providing lots of tabular data.</p>
-
-      <div class="example">
-        <div class="datatable datatable-example">
-          <table></table>
+        <div class="example-code">
+  <pre><code> </pre></code>
         </div>
 
-        <div class="footnote">
-          <p>Table data attribution.</p>
+        <h3>Column chart</h3>
+
+        <div class="example">
+          <div class="chart chart-column-example"></div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+
+        <h3>Bar chart</h3>
+
+        <div class="example">
+          <div class="chart chart-bar-example"></div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+
+        <h3>Scatterplot</h3>
+
+        <div class="example">
+          <div class="chart chart-scatter-example"></div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
         </div>
       </div>
-      <div class="example-code">
-<pre><code> </pre></code>
+
+
+
+
+      <div class="section">
+        <h2 id="maps">Maps <a href="#maps" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <p>Styling for maps provided through Leaflet or Mapbox.js.  Note that Mapbox.js is a superset of Leaflet.  We use the Mapbox.js styling because it is a nice style and provides consistency across maps that may or may not use the Mapbox.js styles.  Include the CSS before MinnPost styles.</p>
+
+        <pre><code>&lt;link rel="stylesheet" href="//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css"&gt; </code></pre>
+
+        <h3>Javascript</h3>
+
+        <p>Helpful methods and values are available in the <code>minnpost-styles.maps.js</code> file under the <code>MP.maps</code> property.</p>
+
+        <h3>Attribution</h3>
+
+        <p>With most map services like OpenStreetMap and Mapbox, their terms of use require attribution of some sort.  The requirement is usually to have a link on the page, not necessarily on the map.  By default, the attribution control is added to a leaflet map, so you must remove it.</p>
+
+        <pre><code>// Remove attribute
+  map.removeControl(map.attributionControl);
+  // Handy attribution
+  MP.maps.mapboxAttribution;
+  MP.maps.openstreetmapAttribution; </code></pre>
+
+        <div class="example">
+          <div class="footnote">
+            <p>Map attribution.  <span class="map-attribution"></span></p>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+
+        <h3>Basic leaflet map</h3>
+
+        <p>You can switch the different base maps that we have created through Mapbox.  If you are not making a MinnPost project, please use your own base layers as their use costs us money.</p>
+
+        <div class="example">
+          <div class="button-group map-baselayer-choices">
+            <button class="button" data-map="mapboxSatelliteStreets">Satellite</button>
+            <button class="button" data-map="mapboxStreetsDarkLabels">Streets (Dark)</button>
+            <button class="button active" data-map="mapboxStreetsLightLabels">Streets (Light)</button>
+            <button class="button" data-map="mapboxTerrainLight">Terrain (Light, No Labels)</button>
+            <button class="button" data-map="mapboxTerrainDark">Terrain (Dark, No Labels)</button>
+          </div>
+
+          <div class="map" id="example-leaflet-map"></div>
+
+          <div class="footnote">
+            <p>Map attribution.  <span class="map-attribution"></span></p>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+
+        <h3>Markers and features</h3>
+
+        <p>The <a href="https://www.mapbox.com/maki/">Maki icon set</a> provided by Mapbox is a basic icon set focused on points of interests.  Mapbox provides a <a href="https://www.mapbox.com/developers/api/#Stand-alone.markers">static API for the icons</a> that can be used to make markers pretty easily.  There is a simple icon factory method in <code>MP.maps</code>.</p>
+
+        <pre><code>var icon = MP.maps.makeMakiIcon('cinema', 'm', '232323'); </pre></code>
+
+        <p>For non-marker feature, like polygons, there is a default style provided under <code>MP.maps.mapStyle</code>.  Also, for simple tooltip static hovers, there is a <code>MP.maps.TooltipControl</code> Leaflet control to easily manage tooltips.</p>
+
+        <div class="example">
+          <div class="map" id="example-markers-features-map"></div>
+
+          <div class="footnote">
+            <p>Map attribution.  <span class="map-attribution"></span></p>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
       </div>
 
 
 
 
+      <div class="section">
+        <h2 id="datatables">Datatables <a href="#datatables" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-      <h2>MinnPost specific</h2>
+        <p><a href="http://datatables.net/">Datatables</a> is a plugin that makes tables searchable, filterable, paged, and more.  It is useful for providing lots of tabular data.</p>
 
-      <p>There are just a few classes that are specific to MinnPost's workflow.</p>
+        <div class="example">
+          <div class="datatable datatable-example">
+            <table></table>
+          </div>
 
-      <ul>
-        <li><code>.minnpost-page-container</code>: Mimics the page container on the MinnPost site.</li>
-        <li><code>.minnpost-article-container</code>: Provides a container that is the same size as a normal article page (with a sidebar).</li>
-        <li><code>.minnpost-full-container</code>: Provides a container that is the same size as a full page article (without a sidebar).</li>
-      </ul>
+          <div class="footnote">
+            <p>Table data attribution.</p>
+          </div>
+        </div>
+        <div class="example-code">
+  <pre><code> </pre></code>
+        </div>
+      </div>
 
+
+
+
+      <div class="section">
+        <h2 id="minnpost">MinnPost specific <a href="#minnpost" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <p>There are just a few classes that are specific to MinnPost's workflow.</p>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr><th>Class</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>minnpost-page-container</code></td><td>Mimics the page container on the MinnPost site.</td></tr>
+              <tr><td><code>minnpost-article-container</code></td><td>Provides a container that is the same size as a normal article page (with a sidebar).</td></tr>
+              <tr><td><code>minnpost-full-container</code></td><td>Provides a container that is the same size as a full page article (without a sidebar).</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
     </div>
 
