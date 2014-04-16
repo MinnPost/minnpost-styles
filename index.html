@@ -36,14 +36,18 @@
         <p>MinnPost Styles is a CSS and JS framework.  The CSS source is written in <a href="http://sass-lang.com/">SASS</a> and is extendable if you want to include the framework via SASS.</p>
 
         <p>Lots of inspiration and some code was taken from such amazing projects such as <a href="http://getbootstrap.com/">Bootstrap</a>, Mapbox.js, and more.  The source code can be found on <a href="https://github.com/MinnPost/minnpost-styles">Github</a>.
+
+        <h3>Browser support</h3>
+
+        <p>MinnPost Styles aims to support all modern browsers and Internet Explorer 8.  Currently, not all components fit this.</p>
       </div>
 
 
 
       <div class="section">
-        <h2>Basic usage</h2>
+        <h2>Usage</h2>
 
-        <p>It is suggest that you install MinnPost Styles with <a href="http://bower.io/">Bower</a>.</p>
+        <p>It is suggest that you install MinnPost Styles with <a href="http://bower.io/">Bower</a>.  Otherwise, get the code from <a href="https://github.com/minnpost/minnpost-styles">Github</a>.</p>
 
         <div class="example-code">
           <pre><code>bower install minnpost-styles </code></pre>
@@ -73,10 +77,33 @@
 
         <h3>Javascript</h3>
 
-        <p>There are Javascript parts for common interactions and interactive parts.  Include the relevant JS files by adding the following near the end of your HTML document:</p>
+        <p>There are Javascript parts for common interactions and interactive parts.  See sections below that give examples of usage of the different components.  Include the relevant JS files by adding the following near the end of your HTML document:</p>
 
         <div class="example-code">
           <pre><code>&lt;script src="bower_components/minnpost-styles/dist/minnpost-styles.nav.min.js"&gt;&lt;/script&gt; </code></pre>
+        </div>
+
+        <h4>Dependencies</h4>
+
+        <p>MinnPost Styles depends on <a href="http://underscorejs.org/">underscore</a> and <a href="http://jquery.com/">jQuery</a> globally, but depending on what part you want to use, you will need to include other dependencies.</p>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Component</th><th>Dependencies</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr><td>Colors</td><td>(none)</td></tr>
+              <tr><td>Datatables</td><td><a href="http://datatables.net/">Datatables</a></td></tr>
+              <tr><td>Formatters</td><td>(none)</td></tr>
+              <tr><td>Highcharts</td><td><a href="http://www.highcharts.com/">Highcharts</a></td></tr>
+              <tr><td>Maps</td><td><a href="http://leafletjs.com/">Leaflet</a></td></tr>
+              <tr><td>Nav</td><td>(none)</td></tr>
+            </tbody>
+          </table>
         </div>
 
         <h4>Use a module loader</h4>
