@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         //maxlen: 80,
         indent: 2
       },
-      files: ['Gruntfile.js', 'js/*.js']
+      files: ['Gruntfile.js', 'demo/demo.js', 'js/*.js']
     },
 
     // Compass is an extended SASS.  Set it up so that it generates to .tmp/

@@ -14,11 +14,12 @@ require.config({
   },
   baseUrl: 'dist',
   paths: {
-    'underscore': '../bower_components/underscore/underscore-min',
+    'underscore': '../bower_components/underscore/underscore',
     'jquery': '../bower_components/jquery/dist/jquery.min',
     'highcharts': '../bower_components/highcharts/highcharts',
     'leaflet': '../bower_components/leaflet/dist/leaflet',
     'datatables': '../bower_components/datatables/media/js/jquery.dataTables',
+    'chroma': '../bower_components/chroma-js/chroma.min',
     'hcharts': 'minnpost-styles.highcharts.min',
     'maps': 'minnpost-styles.maps.min',
     'nav': 'minnpost-styles.nav.min',
@@ -29,9 +30,9 @@ require.config({
 });
 
 require([
-  'underscore', 'jquery', 'leaflet',
+  'underscore', 'jquery', 'leaflet', 'datatables', 'chroma',
   'hcharts', 'maps', 'nav', 'dtables', 'formatters', 'colors'
-], function(_, $, L, hcharts, maps, nav, dtables, formatters, colors) {
+], function(_, $, L, dt, chroma, hcharts, maps, nav, dtables, formatters, colors) {
 
   // When document is ready
   $(document).ready(function() {
@@ -238,6 +239,12 @@ require([
   // Make color swatches
   function makeColors() {
     var swatchTemplate = _.template($('#template-color-swatch').html());
+    var groupTemplate = _.template($('#template-color-group').html());
+
+    // Order by hue
+    var ordered = _.sortBy(colors.data, function(c, ci) {
+      return chroma(c).lch()[2];
+    });
 
     // Add color swatches
     $('.interface-colors-placeholder').html(swatchTemplate({
@@ -248,5 +255,39 @@ require([
       colors: colors.data,
       type: 'data'
     }));
+
+    // Color examples
+    function makeColorExamples(space) {
+      space = space || 'lab';
+
+      // Sequential examples (lch or lab)
+      $('.data-colors-groups-sequential-placeholder').html(groupTemplate({
+        colorsets: _.map(colors.data, function(c, ci) {
+          return {
+            colors: chroma.scale(['white', c]).mode(space).domain([0,1], 5).colors()
+          };
+        })
+      }));
+      // Diverging examples.  Match to oppposite order
+      $('.data-colors-groups-diverging-placeholder').html(groupTemplate({
+        colorsets: _.map(ordered, function(c, ci) {
+          var opposite = ordered.length - 1 - ci;
+          return {
+            colors: chroma.scale([c, 'white', ordered[opposite]]).mode(space).domain([0,1],7).colors()
+          };
+        })
+      }));
+    }
+
+    // Change space
+    $('.color-example-change').on('click', function(e) {
+      e.preventDefault();
+      $('.color-example-change').removeClass('active');
+      $(this).addClass('active');
+      makeColorExamples($(this).data('colorSpace'));
+    });
+
+    // Set initial
+    makeColorExamples();
   }
 });

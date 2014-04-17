@@ -92,3 +92,8 @@
 .invisible {
   visibility: hidden;
 }
+
+.space-bottom { margin-bottom: $space-vertical-margin; }
+.space-top { margin-bottom: $space-vertical-margin; }
+.space-left { margin-bottom: $space-horizontal-margin; }
+.space-right { margin-bottom: $space-horizontal-margin; }

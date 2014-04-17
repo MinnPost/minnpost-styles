@@ -608,6 +608,18 @@ html {
 .mp .invisible {
   visibility: hidden;
 }
+.mp .space-bottom {
+  margin-bottom: 1em;
+}
+.mp .space-top {
+  margin-bottom: 1em;
+}
+.mp .space-left {
+  margin-bottom: 1em;
+}
+.mp .space-right {
+  margin-bottom: 1em;
+}
 .mp .row {
   *zoom: 1;
   margin-left: -0.5em;

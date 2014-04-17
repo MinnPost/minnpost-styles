@@ -53,3 +53,17 @@
   color: #FFFFFF;
   float: left;
 }
+
+.mp .color-group .color-swatch {
+  width: 4em;
+  height: 4em;
+  line-height: 4em;
+  font-size: .5em;
+  padding: 0;
+  margin: 0 .5em .5em 0;
+  overflow: hidden;
+}
+
+.mp .color-swatch.color-ffffff {
+  border: 1px solid #DFDFDF;
+}
