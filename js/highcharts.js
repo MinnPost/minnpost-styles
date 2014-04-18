@@ -39,11 +39,11 @@
   highcharts.defaults = {
     chart: {
       style: {
-        fontFamily: '"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif',
+        fontFamily: '"Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif',
         color: highcharts.colors.interface
       }
     },
-    colors: ['#094C86', '#0D6CBF', '#098643', '#4C8609'],
+    colors: ['#0D57A0', '#0793AB', '#55CBDD'],
     credits: {
       enabled: false
     },

@@ -975,11 +975,11 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <div class="example">
           <div class="alert">
-            <strong>Warning!</strong> Best check yo self, you're not looking too good.
+            <strong>Warning!</strong> This is a warning; watch out.
           </div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code> </code></pre>
         </div>
       </div>
 
@@ -1154,7 +1154,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
       <div class="section">
         <h2 id="highcharts">Highcharts <a href="#highcharts" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-        <p>Default styling is provided for some basic types of Highchart charts.</p>
+        <p>Default styling is provided for some basic types of Highchart charts.  All charts use the class <code>chart</code> to standardize the size.  Use the <code>MP.highcharts.makeChart(selector, options)</code> function to easily make charts and get back the Highcharts object to manipulate later if needed.</p>
 
         <h3>Line chart</h3>
 
@@ -1162,7 +1162,13 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           <div class="chart chart-line-example"></div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>// Use the default options and just add some data
+MP.highcharts.makeChart('.chart-line-example', $.extend(true, {}, MP.highcharts.lineOptions, {
+  series: [{
+    name: 'Example data',
+    data: [1, 2, 3]
+  }]
+})); </code></pre>
         </div>
 
         <h3>Column chart</h3>
@@ -1171,7 +1177,13 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           <div class="chart chart-column-example"></div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>// Use the default options and just add some data
+MP.highcharts.makeChart('.chart-line-example', $.extend(true, {}, MP.highcharts.columnOptions, {
+  series: [{
+    name: 'Example data',
+    data: [1, 2, 3]
+  }]
+})); </code></pre>
         </div>
 
         <h3>Bar chart</h3>
@@ -1180,7 +1192,20 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           <div class="chart chart-bar-example"></div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>// This examples uses categorical data
+MP.highcharts.makeChart('.chart-bar-example', $.extend(true, {}, MP.highcharts.barOptions, {
+  xAxis: {
+    categories: ['A', 'B', 'C', 'D']
+  },
+  series: [{
+    name: 'Example',
+    data: [24826, 12144, 27342, 24401]
+  },
+  {
+    name: 'Example 2',
+    data: [640, 765, 999, 123]
+  }]
+}));</code></pre>
         </div>
 
         <h3>Scatterplot</h3>
@@ -1189,7 +1214,18 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           <div class="chart chart-scatter-example"></div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>
+MP.highcharts.makeChart('.chart-scatter-example', $.extend(true, {}, MP.highcharts.scatterOptions, {
+  series: [{
+    name: 'Example',
+    data: [[11, 23], [12, 22], [13, 28], [14, 30], [14.01, 30], [15, 30], [16, 33],
+      [11.2, 22], [12.7, 21], [13.2, 27], [14.1, 34], [15.8, 33], [16.3, 30]]
+  },
+  {
+    name: 'Example 2',
+    data: [[11, 13], [12, 10], [13, 9], [14, 6], [15, 8], [16, 7]]
+  }]
+}));</code></pre>
         </div>
       </div>
 
@@ -1205,17 +1241,45 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <h3>Javascript</h3>
 
-        <p>Helpful methods and values are available in the <code>minnpost-styles.maps.js</code> file under the <code>MP.maps</code> property.</p>
+        <p>The following are available in the <code>MP.maps</code> object.</p>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Property or function</th><th>Description</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr><td><code>minneapolisPoint</code></td><td>Leaflet point object for center of Minneapolis.</td></tr>
+              <tr><td><code>stPaulPoint</code></td><td>Leaflet point object for center of St. Paul.</td></tr>
+              <tr><td><code>minnesotaPoint</code></td><td>Leaflet point object for center of Minnesota.</td></tr>
+              <tr><td><code>mapboxSatelliteStreets</code></td><td>Mapbox ID for base layer of satellite with streets.</td></tr>
+              <tr><td><code>mapboxStreetsDarkLabels</code></td><td>Mapbox ID for base layer of dark themed streets with labels.</td></tr>
+              <tr><td><code>mapboxStreetsLightLabels</code></td><td>Mapbox ID for base layer of light themed streets with labels.</td></tr>
+              <tr><td><code>mapboxTerrainLight</code></td><td>Mapbox ID for base layer of dark themed terrain and streets without labels.</td></tr>
+              <tr><td><code>mapboxTerrainDark</code></td><td>Mapbox ID for base layer of light themed terrain and streets without labels.</td></tr>
+              <tr><td><code>mapOptions</code></td><td>Object of common options for a Leaflet map.</td></tr>
+              <tr><td><code>mapStyle</code></td><td>Object of default vector (i.e. GeoJSON layer) style.</td></tr>
+              <tr><td><code>mapboxAttribution</code></td><td>HTML for Mapbox attribution.</td></tr>
+              <tr><td><code>openstreetmapAttribution</code></td><td>HTML for OSM attribution.</td></tr>
+              <tr><td><code>makeLeafletMap</code></td><td>A function taking <code>(domID, mapboxBaseName, centerPoint)</code> that creates a Leaflet map.  Returns the map object.</td></tr>
+              <tr><td><code>makeMakiIcon</code></td><td>A function taking <code>(iconName, sizeName, color)</code> that generates a Leaflet marker icon that uses a <a href="https://www.mapbox.com/maki/">Maki icon</a>.</td></tr>
+              <tr><td><code>TooltipControl</code></td><td>A basic Leaflet control class for an updatable tooltip.  Use methods <code>update, show, hide</code> to control content and show or hide the tooltip.</td></tr>
+            </tbody>
+          </table>
+        </div>
 
         <h3>Attribution</h3>
 
-        <p>With most map services like OpenStreetMap and Mapbox, their terms of use require attribution of some sort.  The requirement is usually to have a link on the page, not necessarily on the map.  By default, the attribution control is added to a leaflet map, so you must remove it.</p>
+        <p>With most map services like OpenStreetMap and Mapbox, their terms of use require attribution of some sort.  The requirement is usually to have a link on the page, not necessarily on the map.  By default, the attribution control is added to a Leaflet map.  This should remove for style consistency.  Using <code>MP.maps.makeLeafletMap()</code> will automatically remove the attribution.</p>
 
-        <pre><code>// Remove attribute
-  map.removeControl(map.attributionControl);
-  // Handy attribution
-  MP.maps.mapboxAttribution;
-  MP.maps.openstreetmapAttribution; </code></pre>
+<pre><code>// Remove attribute
+map.removeControl(map.attributionControl);
+// Handy attribution to add to a footnote
+MP.maps.mapboxAttribution;
+MP.maps.openstreetmapAttribution; </code></pre>
 
         <div class="example">
           <div class="footnote">
@@ -1245,9 +1309,6 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
             <p>Map attribution.  <span class="map-attribution"></span></p>
           </div>
         </div>
-        <div class="example-code">
-  <pre><code> </code></pre>
-        </div>
 
         <h3>Markers and features</h3>
 
@@ -1265,7 +1326,42 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           </div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>
+// Marker map
+var markerMap = MP.maps.makeLeafletMap('example-markers-features-map');
+var tooltipControl = new MP.maps.TooltipControl();
+markerMap.setZoom(9);
+markerMap.addControl(tooltipControl);
+
+// Markers
+var iconCinema = MP.maps.makeMakiIcon('cinema', 'm');
+var iconBlank = MP.maps.makeMakiIcon('', 's', '222222');
+L.marker(MP.maps.minneapolisPoint, { icon: iconCinema })
+  .addTo(markerMap).bindPopup('Minneapolis', {
+    closeButton: false
+  });
+L.marker(MP.maps.stPaulPoint, { icon: iconBlank })
+  .addTo(markerMap).bindPopup('St. Paul', {
+    closeButton: false
+  });
+
+// GeoJSON example
+$.getJSON('http://boundaries.minnpost.com/1.0/boundary/27-county-2010/?callback=?', function(data) {
+  if (data.simple_shape) {
+    L.geoJson(data.simple_shape, {
+      style: MP.maps.mapStyle,
+      onEachFeature: function(feature, layer) {
+        layer.on('mouseover', function(e) {
+          tooltipControl.update('Hennepin County');
+        });
+        layer.on('mouseout', function(e) {
+          tooltipControl.hide();
+        });
+      }
+    }).addTo(markerMap);
+  }
+});
+</code></pre>
         </div>
       </div>
 
@@ -1287,7 +1383,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           </div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code></code></pre>
         </div>
       </div>
 
