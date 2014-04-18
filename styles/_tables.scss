@@ -17,6 +17,8 @@ table {
       border-bottom: 2px solid $color-lighter-gray;
       line-height: $text-line-height;
       padding: (0.5 * $space);
+      // IE 8 needs a push on this
+      text-align: left;
     }
   }
 

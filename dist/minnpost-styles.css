@@ -1192,6 +1192,7 @@ html {
   padding: 0;
 }
 .mp .fa, .mp .datatable table .sorting:after, .mp .datatable table .sorting_asc:after, .mp .datatable table .sorting_desc:after,
+.mp .loading-block,
 .mp .loading {
   display: -moz-inline-stack;
   display: inline-block;
@@ -1249,18 +1250,26 @@ html {
   border: solid 0.08em #eeeeee;
   border-radius: .1em;
 }
+.mp .loading-block,
 .mp .loading {
-  display: block;
-  text-align: center;
   font-size: 2em;
-  padding: 1em 2em;
   -webkit-animation: spin 2s infinite linear;
   -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
 }
+.mp .loading-block:before,
 .mp .loading:before {
   content: "\f110";
+}
+.mp .loading-block {
+  display: block;
+  padding: 1em 2em;
+  text-align: center;
+}
+.mp .loading-container {
+  padding: 1em 2em;
+  text-align: center;
 }
 .mp .button {
   display: inline;
@@ -2135,6 +2144,7 @@ html {
   border-bottom: 2px solid #c5c5c5;
   line-height: 1.5em;
   padding: 0.5em;
+  text-align: left;
 }
 .mp table tbody td {
   font-weight: 300;

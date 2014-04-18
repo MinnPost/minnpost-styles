@@ -39,7 +39,9 @@
 
         <h3>Browser support</h3>
 
-        <p>MinnPost Styles aims to support all modern browsers and Internet Explorer 8.  Currently, not all components fit this.</p>
+        <p>MinnPost Styles aims to support all modern browsers and Internet Explorer 8 (IE8).</p>
+
+        <p>IE8 does not support many newer CSS(3) features and so some styles will not be the exact same as other browsers, but the difference should be minor style differences.  IE8 does not support media queries in CSS, so we have to include a library to force it.  <em><strong>Need to figure out.</strong></em></p>
       </div>
 
 
@@ -814,6 +816,8 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <p>For single input forms, use an input group.</p>
 
+        <p><em><strong>Currently broke in IE8.</strong></em></p>
+
         <div class="example">
           <form role="form" class="large">
             <div class="form-input-group">
@@ -849,7 +853,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <h3>Images</h3>
 
-        <p>Make sure to use the <code>alt</code> attribute to provide a descriptive version of the image.</p>
+        <p>Make sure to use the <code>alt</code> attribute to provide a descriptive version of the image.  <em>Note that IE8 does not support rounded corners</em>.</p>
 
         <div class="example">
           <img src="" data-src="holder.js/150x150" alt="Grey placeholder" class="rounded">
@@ -892,8 +896,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
       <div class="section">
         <h2 id="icons">Icons <a href="#icons" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-
-        <p>Icons provided by <a href="http://fontawesome.io/">Font Awesome</a>; see the site for the full list of icons.  Kept independent so that MinnPost Styles stays small if you don't need them.  Use the Bootstrap CDN to include the CSS</p>
+        <p>Icons provided by <a href="http://fontawesome.io/">Font Awesome</a>; see the site for the full list of icons.  Kept independent so that MinnPost Styles stays small if you don't need them.  Use the Bootstrap CDN to include the CSS.</p>
 
         <pre><code>&lt;link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"&gt; </code></pre>
 
@@ -912,13 +915,26 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <h3>Loading</h3>
 
-        <p>Loading can be handled by adding a <code>.loading</code> class to an element.</p>
+        <p>Often, there is a need to represent that processing or data loading is happening, use the following to provide that message.  <em>Note that IE8 does not support CSS animations so the icon will not spin</em>.</p>
 
         <div class="example">
-          <div class="loading"></div>
+          <div class="loading-container">
+            <i class="loading"></i> Loading...
+          </div>
         </div>
         <div class="example-code">
-  <pre><code>&lt;div class="loading"&gt;&lt;/div&gt; </code></pre>
+<pre><code>&lt;div class="loading-container"&gt;
+  &lt;i class="loading"&gt;&lt;/i&gt; Loading...
+&lt;/div&gt; </code></pre>
+        </div>
+
+        <p>For quick loading of a specific element, you can use the <code>loading-block</code> class for a simple representation of loading.</p>
+
+        <div class="example">
+          <div class="loading-block"></div>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;div class="loading-block"&gt;&lt;/div&gt; </code></pre>
         </div>
 
         <h3>Preferred icons</h3>

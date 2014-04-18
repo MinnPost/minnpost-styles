@@ -7,6 +7,7 @@
 
 
 .fa,
+.loading-block,
 .loading {
   @include inline-block();
   font-family: FontAwesome;
@@ -62,12 +63,11 @@
   border-radius: .1em;
 }
 
-// Loading done
+
+// Loading icon and loading block
+.loading-block,
 .loading {
-  display: block;
-  text-align: center;
   font-size: 2em;
-  padding: 1em 2em;
 
   // Spinner icon
   &:before {
@@ -76,4 +76,15 @@
 
   // Spin icon, spin is provided by
   @include animation(spin 2s infinite linear);
+}
+
+.loading-block {
+  display: block;
+  padding: 1em 2em;
+  text-align: center;
+}
+
+.loading-container {
+  padding: 1em 2em;
+  text-align: center;
 }
