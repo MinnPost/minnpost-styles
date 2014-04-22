@@ -1210,7 +1210,12 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           <div class="chart chart-line-example"></div>
         </div>
         <div class="example-code">
-<pre><code>// Use the default options, turn off the legend, add some data
+<pre><code>
+&lt;div class="component-label"&gt;Example line chart&lt;/div&gt;
+&lt;div class="caption"&gt;Your awesome, concise caption goes here.  If you can adequately describe your x-axis units and labels, leave them and the legend off.&lt;/div&gt;
+&lt;div class="chart chart-line-example">&lt;/div&gt;
+
+// Use the default options, turn off the legend, add some data
 MP.highcharts.makeChart('.chart-line-example', $.extend(true, {}, MP.highcharts.lineOptions, {
   legend: { enabled: false },
   yAxis: {
