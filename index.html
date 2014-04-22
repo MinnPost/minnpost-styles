@@ -185,8 +185,8 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <div>
           <div class="button-group">
-            <button class="button button-primary active color-example-change" data-color-space="lab">Lab</button>
-            <button class="button button-primary color-example-change" data-color-space="lch">HCL</button>
+            <button class="button primary active color-example-change" data-color-space="lab">Lab</button>
+            <button class="button primary color-example-change" data-color-space="lch">HCL</button>
           </div>
         </div>
 
@@ -624,19 +624,19 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <div class="example">
           <p>
-            <button class="button button-primary">Primary</button>
-            <button class="button button-success">Success</button>
-            <button class="button button-info">Info</button>
-            <button class="button button-warning">Warning</button>
-            <button class="button button-danger">Danger</button>
+            <button class="button primary">Primary</button>
+            <button class="button success">Success</button>
+            <button class="button info">Info</button>
+            <button class="button warning">Warning</button>
+            <button class="button danger">Danger</button>
           </p>
         </div>
         <div class="example-code">
-<pre><code>&lt;button class="button button-primary"&gt;primary&lt;/button&gt;
-&lt;button class="button button-success"&gt;success&lt;/button&gt;
-&lt;button class="button button-info"&gt;info&lt;/button&gt;
-&lt;button class="button button-warning"&gt;warning&lt;/button&gt;
-&lt;button class="button button-danger"&gt;danger&lt;/button&gt;</code></pre>
+<pre><code>&lt;button class="button primary"&gt;primary&lt;/button&gt;
+&lt;button class="button success"&gt;success&lt;/button&gt;
+&lt;button class="button info"&gt;info&lt;/button&gt;
+&lt;button class="button warning"&gt;warning&lt;/button&gt;
+&lt;button class="button danger"&gt;danger&lt;/button&gt;</code></pre>
         </div>
 
         <p>You can use the helper classes to make different sized buttons as well.</p>
@@ -688,9 +688,9 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
             </div>
 
             <div class="button-group">
-              <button class="button button-primary">Primary</button>
-              <button class="button button-info">Info 1</button>
-              <button class="button button-info">Info 2</button>
+              <button class="button primary">Primary</button>
+              <button class="button info">Info 1</button>
+              <button class="button info">Info 2</button>
             </div>
           </div>
         </div>
@@ -764,7 +764,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
               </div>
             </fieldset>
 
-            <button type="submit" class="button button-primary">Submit</button>
+            <button type="submit" class="button primary">Submit</button>
           </form>
 
         </div>
@@ -783,7 +783,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
     &lt;/label&gt;
   &lt;/div&gt;
 
-  &lt;button type="submit" class="button button-primary"&gt;Submit&lt;/button&gt;
+  &lt;button type="submit" class="button primary"&gt;Submit&lt;/button&gt;
 &lt;/form&gt; </code></pre>
         </div>
 
@@ -803,7 +803,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
               <input type="password" id="example52" placeholder="Password">
             </div>
 
-            <button type="submit" class="button button-primary">Submit</button>
+            <button type="submit" class="button primary">Submit</button>
           </form>
         </div>
         <div class="example-code">
@@ -825,8 +825,8 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
               <input type="text" id="address" placeholder="Search by address">
 
               <div class="button-group">
-                <button type="submit" class="button button-primary" title="Search an address">Search</button>
-                <button type="submit" class="button button-info" title="Use your current location"><i class="fa fa-location-arrow"></i></button>
+                <button type="submit" class="button primary" title="Search an address">Search</button>
+                <button type="submit" class="button info" title="Use your current location"><i class="fa fa-location-arrow"></i></button>
               </div>
             </div>
           </form>
@@ -838,8 +838,8 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
     &lt;input type="text" id="address" placeholder="Search by address"&gt;
 
     &lt;div class="button-group"&gt;
-      &lt;button type="submit" class="button button-primary" title="Search an address"&gt;Search&lt;/button&gt;
-      &lt;button type="submit" class="button button-info" title="Use your current location"&gt;&lt;i class="fa fa-location-arrow"&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;button type="submit" class="button primary" title="Search an address"&gt;Search&lt;/button&gt;
+      &lt;button type="submit" class="button info" title="Use your current location"&gt;&lt;i class="fa fa-location-arrow"&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/form&gt; </code></pre>
@@ -990,12 +990,38 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
         <p>Messages to the users, specifically concerning actions they have taken.</p>
 
         <div class="example">
-          <div class="alert">
+          <div class="alert success">
+            <strong>Success!</strong> This is a warning; watch out.
+          </div>
+
+          <div class="alert info">
+            <strong>Info!</strong> This is a warning; watch out.
+          </div>
+
+          <div class="alert warning">
             <strong>Warning!</strong> This is a warning; watch out.
+          </div>
+
+          <div class="alert danger">
+            <strong>Danger!</strong> This is a warning; watch out.
           </div>
         </div>
         <div class="example-code">
-<pre><code> </code></pre>
+<pre><code>&lt;div class="alert success"&gt;
+  &lt;strong&gt;Success!&lt;/strong&gt; This is a warning; watch out.
+&lt;/div&gt;
+
+&lt;div class="alert info"&gt;
+  &lt;strong&gt;Info!&lt;/strong&gt; This is a warning; watch out.
+&lt;/div&gt;
+
+&lt;div class="alert warning"&gt;
+  &lt;strong&gt;Warning!&lt;/strong&gt; This is a warning; watch out.
+&lt;/div&gt;
+
+&lt;div class="alert danger"&gt;
+  &lt;strong&gt;Danger!&lt;/strong&gt; This is a warning; watch out.
+&lt;/div&gt; </code></pre>
         </div>
       </div>
 
@@ -1005,7 +1031,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
       <div class="section">
         <h2 id="progress">Progress bars <a href="#progress" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-        <p>Either for interactive loading or a simple data visualization.</p>
+        <p>Either for interactive loading or a simple data visualization.  This is a starting point for specific needs.</p>
 
         <div class="example">
 
@@ -1017,7 +1043,11 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>&lt;div class="progress"&gt;
+  &lt;div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"&gt;
+    &lt;span class="sr-only"&gt;60% Complete&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt; </code></pre>
         </div>
       </div>
 
@@ -1175,11 +1205,18 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
         <h3>Line chart</h3>
 
         <div class="example">
+          <div class="component-label">Example line chart</div>
+          <div class="caption">Your awesome, concise caption goes here.  If you can adequately describe your x-axis units and labels, leave them and the legend off.</div>
           <div class="chart chart-line-example"></div>
         </div>
         <div class="example-code">
-<pre><code>// Use the default options and just add some data
+<pre><code>// Use the default options, turn off the legend, add some data
 MP.highcharts.makeChart('.chart-line-example', $.extend(true, {}, MP.highcharts.lineOptions, {
+  legend: { enabled: false },
+  yAxis: {
+    title: { enabled: false },
+    labels: { format: '${value:,.0f}' }
+  },
   series: [{
     name: 'Example data',
     data: [1, 2, 3]
@@ -1190,11 +1227,14 @@ MP.highcharts.makeChart('.chart-line-example', $.extend(true, {}, MP.highcharts.
         <h3>Column chart</h3>
 
         <div class="example">
+          <div class="component-label">Example column chart</div>
+          <div class="caption">Your awesome, concise caption goes here.</div>
           <div class="chart chart-column-example"></div>
         </div>
         <div class="example-code">
-<pre><code>// Use the default options and just add some data
+<pre><code>// Use the default options, turn off legend, and add some data
 MP.highcharts.makeChart('.chart-line-example', $.extend(true, {}, MP.highcharts.columnOptions, {
+  legend: { enabled: false },
   series: [{
     name: 'Example data',
     data: [1, 2, 3]

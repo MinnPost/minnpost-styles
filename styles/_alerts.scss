@@ -2,6 +2,9 @@
  * Alert messages.
  */
 
+// TODO: close
+
+
 .alert {
   padding: $space-horizontal-padding;
   margin-bottom: $space-horizontal-margin;
@@ -22,5 +25,11 @@
   }
   > p + p {
     margin-top: $space-horizontal-margin / 2;
+  }
+
+  @each $b in $colors-information {
+    &.#{nth($b, 1)} {
+      background-color: #{nth($b, 2)};
+    }
   }
 }

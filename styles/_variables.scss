@@ -59,59 +59,68 @@ $font-monospace: Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $color-white: #FFFFFF !default;
 $color-black: #000000 !default;
 
-// Gray colors
-$color-gray: #787878 !default;
-$color-darker-gray: darken($color-gray, 30%) !default;
-$color-darkest-gray: darken($color-gray, 50%) !default;
-$color-light-gray: lighten($color-gray, 15%) !default;
-$color-lighter-gray: lighten($color-gray, 30%) !default;
-$color-lightest-gray: lighten($color-gray, 50%) !default;
-
-
-
 // Interface colors.  Create a variable for a color, then assign it
 // to the relevant interface parts.  The styles use the interface
 // references, not the color one. (need to maintain in JS as well)
 $color-dark-gray: #282828 !default;
-$color-medium-gray: #434343 !default;
+$color-medium-gray: #404040 !default;
+$color-gray: #7A7A7A !default;
+$color-light-gray: #ABABAB !default;
+$color-lighter-gray: #CCCCCC !default;
+$color-lightest-gray: #F8F8F8 !default;
+
 $color-minnpost-red: #801019 !default;
-$color-blue: #1D70A4 !default;
+$color-blue: #0084A8 !default;
+$color-red: #C83D2D !default;
+$color-green: #469B61 !default;
+$color-orange: #FF6633 !default;
+$color-yellow: #FBD341 !default;
 
 // Make list for easy class making.  This is just a repeat form above. :(
 $colors-interface: (
   ("dark-gray", $color-dark-gray),
   ("medium-gray", $color-medium-gray),
+  ("gray", $color-gray),
+  ("light-gray", $color-light-gray),
+  ("lighter-gray", $color-lighter-gray),
+  ("lightest-gray", $color-lightest-gray),
   ("minnpost-red", $color-minnpost-red),
-  ("blue", $color-blue)
+  ("blue", $color-blue),
+  ("red", $color-red),
+  ("green", $color-green),
+  ("orange", $color-orange),
+  ("yellow", $color-yellow)
 ) !default;
 
 // Interface designations
 $color-link: $color-blue !default;
 $color-heading: $color-dark-gray !default;
 $color-text: $color-medium-gray !default;
-// Button type list
-$colors-buttons: (
+
+// Information types (buttons, actions, messages, etc.)
+$colors-information: (
   ("primary", $color-blue),
-  ("success", $color-blue),
-  ("info", $color-blue),
-  ("warning", $color-blue),
-  ("danger", $color-blue)
+  ("success", $color-green),
+  ("info", $color-light-gray),
+  ("warning", $color-yellow),
+  ("danger", $color-red)
 ) !default;
 
-
+// bell
+// triangle
 
 // Data colors (need to maintain in JS as well)
 $colors-data: (
   ("green1", #1D8C47),
   ("green2", #32955D),
   ("green3", #36A174),
-  ("purple", #5124B2),
+  ("purple", #55307E),
   ("blue1", #0D57A0),
   ("blue2", #0793AB),
   ("blue3", #55CBDD),
-  ("red", #D13D29),
-  ("orange", #F55F29),
-  ("yellow", #FF9F29)
+  ("red", #C83D2D),
+  ("orange", #FF6633),
+  ("yellow", #FBD341)
 ) !default;
 
 

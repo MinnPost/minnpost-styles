@@ -7,9 +7,9 @@ require.config({
     'underscore': {
       exports: '_'
     },
-    'Highcharts': {
+    'highcharts': {
       exports: 'Highcharts',
-      'deps': ['jquery']
+      deps: ['jquery']
     }
   },
   baseUrl: 'dist',
@@ -54,13 +54,19 @@ require([
     // Line chart
     mpHighcharts.makeChart('.chart-line-example', $.extend(true, {}, mpHighcharts.lineOptions, {
       colors: _.sample(_.values(mpColors.data), 3),
-      series: exampleData
+      series: exampleData,
+      legend: { enabled: false },
+      yAxis: {
+        title: { enabled: false },
+        labels: { format: '${value:,.0f}' }
+      }
     }));
 
     // Column chart
     mpHighcharts.makeChart('.chart-column-example', $.extend(true, {}, mpHighcharts.columnOptions, {
       colors: _.sample(_.values(mpColors.data), 3),
-      series: exampleData
+      series: exampleData,
+      legend: { enabled: false }
     }));
 
     // Bar chart

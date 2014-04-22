@@ -75,7 +75,7 @@
 
     .sorting_asc:after {
       @extend .sorting:after;
-      color: $color-darker-gray;
+      color: $color-dark-gray;
       content: "\f0dd";
     }
 

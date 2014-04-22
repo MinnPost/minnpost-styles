@@ -94,9 +94,9 @@ a.button {
   @include button-variant($color-medium-gray, $color-white, $color-medium-gray);
 }
 // Use button lists
-@each $b in $colors-buttons {
-  .button-#{nth($b, 1)},
-  a.button-#{nth($b, 1)} {
+@each $b in $colors-information {
+  .button.#{nth($b, 1)},
+  a.button.#{nth($b, 1)} {
     @include button-variant($color-white, nth($b, 2), darken(nth($b, 2), 5%));
   }
 }

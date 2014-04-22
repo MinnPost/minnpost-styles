@@ -31,17 +31,39 @@
     return chart.highcharts();
   };
 
-  // Common colors
-  highcharts.colors = {};
-  highcharts.colors.interface = '#BCBCBC';
+  // Common styles.  It seems that Highcharts wants this all
+  // repeated
+  highcharts.colorDark = '#676767';
+  highcharts.colorLight = '#BCBCBC';
+  highcharts.colorLighter = 'DEDEDE';
+  highcharts.font = '"Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif';
+  highcharts.styleGeneral = {
+    fontFamily: highcharts.font,
+    fontSize: '12px',
+    fontWeight: 'normal',
+    color: highcharts.colorLight
+  };
+  highcharts.styleLabel = $.extend({}, highcharts.styleGeneral, {
+    fontWeight: 'bold',
+    color: highcharts.colorDark
+  });
+  highcharts.styleLabelLarge = $.extend({}, highcharts.styleGeneral, {
+    fontSize: '14px',
+    fontWeight: 'bold',
+    color: highcharts.colorDark
+  });
+  highcharts.styleTooltip = $.extend({}, highcharts.styleGeneral, {
+    color: highcharts.colorDark
+  });
+  highcharts.styleLight = $.extend({}, highcharts.styleGeneral, {
+    color: highcharts.colorLighter
+  });
 
+  // TODO: align legend left (can't find a way to do this)
   // Common defauls
   highcharts.defaults = {
     chart: {
-      style: {
-        fontFamily: '"Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif',
-        color: highcharts.colors.interface
-      }
+      style: highcharts.styleGeneral
     },
     colors: ['#0D57A0', '#0793AB', '#55CBDD'],
     credits: {
@@ -52,58 +74,52 @@
       text: null
     },
     legend: {
-      margin: 20,
+      margin: 30,
+      verticalAlign: 'top',
       borderWidth: 0,
-      itemDistance: 6,
-      style: {
-        color: 'inherit'
-      },
-      itemStyle: {
-        color: 'inherit'
-      }
+      itemDistance: 10,
+      itemStyle: highcharts.styleLabelLarge
     },
     xAxis: {
       title: {
         enabled: false,
         text: 'Units (un)',
-        margin: 15,
-        style: {
-          color: 'inherit',
-          fontWeight: 'normal'
-        }
+        margin: 20,
+        style: highcharts.styleLabel
       },
-      lineColor: highcharts.colors.interface,
-      tickColor: highcharts.colors.interface,
+      lineColor: highcharts.colorLight,
+      tickColor: highcharts.colorLight,
       labels: {
-        y: 18,
+        y: 18
+        // http://docs.highcharts.com/docs/chart-concepts/labels-and-string-formatting/
         //format: '${value}'
+        // Use this for something more complicated
+        /*
         formatter: function() {
           return this.value;
         }
+        */
       }
     },
     yAxis: {
       title: {
         enabled: true,
         text: 'Units (un)',
-        margin: 15,
-        style: {
-          color: 'inherit',
-          fontWeight: 'normal'
-        }
+        margin: 20,
+        style: highcharts.styleLabel
       },
       min: 0,
-      lineColor: highcharts.colors.interface,
-      gridLineDashStyle: 'ShortDash'
+      lineColor: highcharts.colorLighter,
+      gridLineDashStyle: 'Dot'
     },
     tooltip: {
       //shadow: false,
       //borderRadius: 0,
       //borderWidth: 0,
-      style: {},
+      style: highcharts.styleTooltip,
       useHTML: true,
       formatter: function() {
-        return '<strong>' + this.series.name + '</strong>: ' + this.y;
+        return '<strong>' + this.series.name + '</strong>: ' + Highcharts.numberFormat(this.y, 0);
       }
     }
   };

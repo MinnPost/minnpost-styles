@@ -50,7 +50,7 @@ a:visited {
 }
 a:hover,
 a:visited:hover {
-  color: $color-link;
+  color: darken($color-link, 10%);
   text-decoration: underline;
 }
 
@@ -177,6 +177,7 @@ ol {
 
 .caption {
   font-size: $text-size-small;
+  margin-bottom: $space-vertical-margin;
 }
 
 // Code styles
