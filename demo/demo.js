@@ -20,19 +20,19 @@ require.config({
     'leaflet': '../bower_components/leaflet/dist/leaflet',
     'datatables': '../bower_components/datatables/media/js/jquery.dataTables',
     'chroma': '../bower_components/chroma-js/chroma.min',
-    'hcharts': 'minnpost-styles.highcharts.min',
-    'maps': 'minnpost-styles.maps.min',
-    'nav': 'minnpost-styles.nav.min',
-    'dtables': 'minnpost-styles.datatables.min',
-    'formatters': 'minnpost-styles.formatters.min',
-    'colors': 'minnpost-styles.colors.min'
+    'mpHighcharts': 'minnpost-styles.highcharts.min',
+    'mpMaps': 'minnpost-styles.maps.min',
+    'mpNav': 'minnpost-styles.nav.min',
+    'mpDatatables': 'minnpost-styles.datatables.min',
+    'mpFormatters': 'minnpost-styles.formatters.min',
+    'mpColors': 'minnpost-styles.colors.min'
   }
 });
 
 require([
   'underscore', 'jquery', 'leaflet', 'datatables', 'chroma',
-  'hcharts', 'maps', 'nav', 'dtables', 'formatters', 'colors'
-], function(_, $, L, dt, chroma, hcharts, maps, nav, dtables, formatters, colors) {
+  'mpHighcharts', 'mpMaps', 'mpNav', 'mpDatatables', 'mpFormatters', 'mpColors'
+], function(_, $, L, dt, chroma, mpHighcharts, mpMaps, mpNav, mpDatatables, mpFormatters, mpColors) {
 
   // When document is ready
   $(document).ready(function() {
@@ -52,17 +52,20 @@ require([
     }];
 
     // Line chart
-    hcharts.makeChart('.chart-line-example', $.extend(true, {}, hcharts.lineOptions, {
+    mpHighcharts.makeChart('.chart-line-example', $.extend(true, {}, mpHighcharts.lineOptions, {
+      colors: _.sample(_.values(mpColors.data), 3),
       series: exampleData
     }));
 
     // Column chart
-    hcharts.makeChart('.chart-column-example', $.extend(true, {}, hcharts.columnOptions, {
+    mpHighcharts.makeChart('.chart-column-example', $.extend(true, {}, mpHighcharts.columnOptions, {
+      colors: _.sample(_.values(mpColors.data), 3),
       series: exampleData
     }));
 
     // Bar chart
-    hcharts.makeChart('.chart-bar-example', $.extend(true, {}, hcharts.barOptions, {
+    mpHighcharts.makeChart('.chart-bar-example', $.extend(true, {}, mpHighcharts.barOptions, {
+      colors: _.sample(_.values(mpColors.data), 3),
       xAxis: {
         categories: ['A', 'B', 'C', 'D']
       },
@@ -77,7 +80,8 @@ require([
     }));
 
     // Scatterplot
-    hcharts.makeChart('.chart-scatter-example', $.extend(true, {}, hcharts.scatterOptions, {
+    mpHighcharts.makeChart('.chart-scatter-example', $.extend(true, {}, mpHighcharts.scatterOptions, {
+      colors: _.sample(_.values(mpColors.data), 3),
       series: [{
         name: 'Example',
         data: [[11, 23], [12, 22], [13, 28], [14, 30], [14.01, 30], [15, 30], [16, 33],
@@ -95,17 +99,17 @@ require([
   // Maps
   function makeMaps() {
     // Basic maps with layer choices
-    var basicMapLayer = new L.tileLayer('//{s}.tiles.mapbox.com/v3/' + maps.mapboxStreetsLightLabels + '/{z}/{x}/{y}.png');
-    var basicMap = new L.Map('example-leaflet-map', maps.mapOptions);
+    var basicMapLayer = new L.tileLayer('//{s}.tiles.mapbox.com/v3/' + mpMaps.mapboxStreetsLightLabels + '/{z}/{x}/{y}.png');
+    var basicMap = new L.Map('example-leaflet-map', mpMaps.mapOptions);
     basicMap.addLayer(basicMapLayer);
-    basicMap.setView(maps.minneapolisPoint, 8);
+    basicMap.setView(mpMaps.minneapolisPoint, 8);
     basicMap.removeControl(basicMap.attributionControl);
 
     $('.map-baselayer-choices .button').on('click', function(e) {
       e.preventDefault();
       var $link = $(this);
       var $links = $link.parent().find('.button');
-      var layer = maps[$link.data('map')];
+      var layer = mpMaps[$link.data('map')];
 
       $links.removeClass('active');
       $link.addClass('active');
@@ -115,19 +119,19 @@ require([
     });
 
     // Marker map
-    var markerMap = maps.makeLeafletMap('example-markers-features-map');
-    var tooltipControl = new maps.TooltipControl();
+    var markerMap = mpMaps.makeLeafletMap('example-markers-features-map');
+    var tooltipControl = new mpMaps.TooltipControl();
     markerMap.setZoom(9);
     markerMap.addControl(tooltipControl);
 
     // Markers
-    var iconCinema = maps.makeMakiIcon('cinema', 'm');
-    var iconBlank = maps.makeMakiIcon('', 's', '222222');
-    L.marker(maps.minneapolisPoint, { icon: iconCinema })
+    var iconCinema = mpMaps.makeMakiIcon('cinema', 'm');
+    var iconBlank = mpMaps.makeMakiIcon('', 's', '222222');
+    L.marker(mpMaps.minneapolisPoint, { icon: iconCinema })
       .addTo(markerMap).bindPopup('Minneapolis', {
         closeButton: false
       });
-    L.marker(maps.stPaulPoint, { icon: iconBlank })
+    L.marker(mpMaps.stPaulPoint, { icon: iconBlank })
       .addTo(markerMap).bindPopup('St. Paul', {
         closeButton: false
       });
@@ -136,7 +140,7 @@ require([
     $.getJSON('http://boundaries.minnpost.com/1.0/boundary/27-county-2010/?callback=?', function(data) {
       if (data.simple_shape) {
         L.geoJson(data.simple_shape, {
-          style: maps.mapStyle,
+          style: mpMaps.mapStyle,
           onEachFeature: function(feature, layer) {
             layer.on('mouseover', function(e) {
               tooltipControl.update('Hennepin County');
@@ -150,7 +154,7 @@ require([
     });
 
     // Attribution
-    $('.map-attribution').html(maps.mapboxAttribution + ' ' + maps.openstreetmapAttribution);
+    $('.map-attribution').html(mpMaps.mapboxAttribution + ' ' + mpMaps.openstreetmapAttribution);
   }
 
 
@@ -214,7 +218,7 @@ require([
         sTitle: 'Number',
         bSearchable: false,
         mRender: function(data, type, full) {
-          return formatters.integer(parseFloat(data));
+          return mpFormatters.integer(parseFloat(data));
         }
       },
       2: {
@@ -222,7 +226,7 @@ require([
         sClass: 'money',
         bSearchable: false,
         mRender: function(data, type, full) {
-          return formatters.currency(parseFloat(data));
+          return mpFormatters.currency(parseFloat(data));
         }
       }
     });
@@ -231,7 +235,7 @@ require([
       aoColumns: _.values(tableColumns)
     }, options);
 
-    dtables.makeTable($('.datatable-example'), options);
+    mpDatatables.makeTable($('.datatable-example'), options);
   }
 
 
@@ -242,17 +246,17 @@ require([
     var groupTemplate = _.template($('#template-color-group').html());
 
     // Order by hue
-    var ordered = _.sortBy(colors.data, function(c, ci) {
+    var ordered = _.sortBy(mpColors.data, function(c, ci) {
       return chroma(c).lch()[2];
     });
 
     // Add color swatches
     $('.interface-colors-placeholder').html(swatchTemplate({
-      colors: colors.interface,
+      colors: mpColors.interface,
       type: ''
     }));
     $('.data-colors-placeholder').html(swatchTemplate({
-      colors: colors.data,
+      colors: mpColors.data,
       type: 'data'
     }));
 
@@ -262,7 +266,7 @@ require([
 
       // Sequential examples (lch or lab)
       $('.data-colors-groups-sequential-placeholder').html(groupTemplate({
-        colorsets: _.map(colors.data, function(c, ci) {
+        colorsets: _.map(mpColors.data, function(c, ci) {
           return {
             colors: chroma.scale(['white', c]).mode(space).domain([0,1], 5).colors()
           };
