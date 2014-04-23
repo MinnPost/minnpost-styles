@@ -1,4 +1,4 @@
-/*! minnpost-styles - v0.0.1 - 2014-04-22
+/*! minnpost-styles - v0.0.1 - 2014-04-23
 * https://github.com/MinnPost/minnpost-styles
 * Copyright (c) 2014 ; Licensed MIT */
 

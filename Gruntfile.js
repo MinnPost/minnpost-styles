@@ -39,6 +39,14 @@ module.exports = function(grunt) {
       files: ['Gruntfile.js', 'demo/demo.js', 'js/*.js']
     },
 
+    // Export SASS vars as JSON
+    sassyVars: {
+      mp: {
+        src: ['styles/_variables.scss'],
+        dest: 'dist/<%= pkg.name %>.config.json'
+      }
+    },
+
     // Compass is an extended SASS.  Set it up so that it generates to .tmp/
     compass: {
       options: {
@@ -104,9 +112,15 @@ module.exports = function(grunt) {
         src: ['js/formatters.js'],
         dest: 'dist/<%= pkg.name %>.formatters.js'
       },
-      colors: {
-        src: ['js/colors.js'],
-        dest: 'dist/<%= pkg.name %>.colors.js'
+      config: {
+        src: ['js/config.js'],
+        dest: 'dist/<%= pkg.name %>.config.js',
+        options: {
+          process: function(src, filepath) {
+            // This is pretty hacky
+            return src.replace("'REPLACE-CONFIG'", grunt.file.read('dist/minnpost-styles.config.json'));
+          }
+        }
       },
       // CSS
       css: {
@@ -142,9 +156,9 @@ module.exports = function(grunt) {
         src: ['dist/<%= pkg.name %>.formatters.js'],
         dest: 'dist/<%= pkg.name %>.formatters.min.js'
       },
-      colors: {
-        src: ['dist/<%= pkg.name %>.colors.js'],
-        dest: 'dist/<%= pkg.name %>.colors.min.js'
+      config: {
+        src: ['dist/<%= pkg.name %>.config.js'],
+        dest: 'dist/<%= pkg.name %>.config.min.js'
       }
     },
 
@@ -187,8 +201,57 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
+  // Create custom task to read SASS vars and output JSON.  This is so
+  // we don't have to maintain variables in two places.  This is pretty
+  // fragile so be gentle.
+  grunt.registerMultiTask('sassyVars', 'Sass those vars.', function() {
+    var options = this.options({
+      force: false
+    });
+    var sassVarRegexp = /\$([a-zA-Z\-_0-9]+):\s*(.*?|[\s\S]*?)\s!default;/gm;
+    var json = {};
+    var match;
+    var cleanVar = function(str) {
+      str = str.trim();
+      str = str.replace(/[\s|\n|\r]+/g, ' ');
+      str = str.replace(/^"(.*?)"$/, '$1');
+      str = str.replace(/\("(.*?)"*,\s+?"*(.*?)"*\)/g, '("$1", "$2")');
+      if (str.indexOf('(') === 0) {
+        str = str.replace(/\(/g, '[').replace(/\)/g, ']');
+        str = JSON.parse(str);
+      }
+      return str;
+    };
+
+    // Go through each set of files
+    this.files.forEach(function(f) {
+      var src = f.src.filter(function(filepath) {
+        if (!grunt.file.exists(filepath)) {
+          grunt.log.warn('Source file "' + filepath + '" not found.');
+          return false;
+        }
+        else {
+          return true;
+        }
+      }).map(function(filepath) {
+        return grunt.file.read(filepath);
+      }).join(' ');
+
+      // Extract values
+      do {
+        match = sassVarRegexp.exec(src);
+        if (match !== null) {
+          json[match[1]] = cleanVar(match[2]);
+        }
+      } while (match !== null);
+
+      grunt.file.write(f.dest, JSON.stringify(json, null, '  '));
+      grunt.log.writeln('File ' + f.dest + ' created.');
+    });
+  });
+
   // Default build task
-  grunt.registerTask('default', ['jshint', 'compass', 'clean', 'copy', 'concat', 'cssmin', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'compass', 'clean', 'sassyVars', 'copy', 'concat', 'cssmin', 'uglify']);
 
   // Server/watch
   grunt.registerTask('server', ['default', 'connect', 'watch']);

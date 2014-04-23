@@ -25,14 +25,15 @@ require.config({
     'mpNav': 'minnpost-styles.nav.min',
     'mpDatatables': 'minnpost-styles.datatables.min',
     'mpFormatters': 'minnpost-styles.formatters.min',
-    'mpColors': 'minnpost-styles.colors.min'
+    'mpConfig': 'minnpost-styles.config.min'
   }
 });
 
 require([
   'underscore', 'jquery', 'leaflet', 'datatables', 'chroma',
-  'mpHighcharts', 'mpMaps', 'mpNav', 'mpDatatables', 'mpFormatters', 'mpColors'
-], function(_, $, L, dt, chroma, mpHighcharts, mpMaps, mpNav, mpDatatables, mpFormatters, mpColors) {
+  'mpHighcharts', 'mpMaps', 'mpNav', 'mpDatatables', 'mpFormatters',
+  'mpConfig'
+], function(_, $, L, dt, chroma, mpHighcharts, mpMaps, mpNav, mpDatatables, mpFormatters, mpConfig) {
 
   // When document is ready
   $(document).ready(function() {
@@ -53,7 +54,7 @@ require([
 
     // Line chart
     mpHighcharts.makeChart('.chart-line-example', $.extend(true, {}, mpHighcharts.lineOptions, {
-      colors: _.sample(_.values(mpColors.data), 3),
+      colors: _.sample(_.values(mpConfig['colors-data']), 3),
       series: exampleData,
       legend: { enabled: false },
       yAxis: {
@@ -64,14 +65,14 @@ require([
 
     // Column chart
     mpHighcharts.makeChart('.chart-column-example', $.extend(true, {}, mpHighcharts.columnOptions, {
-      colors: _.sample(_.values(mpColors.data), 3),
+      colors: _.sample(_.values(mpConfig['colors-data']), 3),
       series: exampleData,
       legend: { enabled: false }
     }));
 
     // Bar chart
     mpHighcharts.makeChart('.chart-bar-example', $.extend(true, {}, mpHighcharts.barOptions, {
-      colors: _.sample(_.values(mpColors.data), 3),
+      colors: _.sample(_.values(mpConfig['colors-data']), 3),
       xAxis: {
         categories: ['A', 'B', 'C', 'D']
       },
@@ -87,7 +88,7 @@ require([
 
     // Scatterplot
     mpHighcharts.makeChart('.chart-scatter-example', $.extend(true, {}, mpHighcharts.scatterOptions, {
-      colors: _.sample(_.values(mpColors.data), 3),
+      colors: _.sample(_.values(mpConfig['colors-data']), 3),
       series: [{
         name: 'Example',
         data: [[11, 23], [12, 22], [13, 28], [14, 30], [14.01, 30], [15, 30], [16, 33],
@@ -252,17 +253,17 @@ require([
     var groupTemplate = _.template($('#template-color-group').html());
 
     // Order by hue
-    var ordered = _.sortBy(mpColors.data, function(c, ci) {
+    var ordered = _.sortBy(mpConfig['colors-data'], function(c, ci) {
       return chroma(c).lch()[2];
     });
 
     // Add color swatches
     $('.interface-colors-placeholder').html(swatchTemplate({
-      colors: mpColors.interface,
+      colors: mpConfig['colors-interface'],
       type: ''
     }));
     $('.data-colors-placeholder').html(swatchTemplate({
-      colors: mpColors.data,
+      colors: mpConfig['colors-data'],
       type: 'data'
     }));
 
@@ -272,7 +273,7 @@ require([
 
       // Sequential examples (lch or lab)
       $('.data-colors-groups-sequential-placeholder').html(groupTemplate({
-        colorsets: _.map(mpColors.data, function(c, ci) {
+        colorsets: _.map(mpConfig['colors-data'], function(c, ci) {
           return {
             colors: chroma.scale(['white', c]).mode(space).domain([0,1], 5).colors()
           };
