@@ -187,6 +187,36 @@ module.exports = function(grunt) {
     watch: {
       files: ['<%= jshint.files %>', 'styles/*.scss'],
       tasks: 'default'
+    },
+
+    // Deploy to S3, specific to MinnPost
+    s3: {
+      options: {
+        // These are assumed to be environment variables:
+        //
+        // AWS_ACCESS_KEY_ID
+        // AWS_SECRET_ACCESS_KEY
+        //
+        // See https://npmjs.org/package/grunt-s3
+        //key: 'YOUR KEY',
+        //secret: 'YOUR SECRET',
+        bucket: 'data.minnpost',
+        access: 'public-read',
+        gzip: true
+      },
+      mp_deploy: {
+        upload: [
+          {
+            src: 'dist/*',
+            dest: 'projects/<%= pkg.name %>/<%= pkg.version %>/'
+          },
+          {
+            src: 'dist/images/**/*',
+            dest: 'projects/<%= pkg.name %>/<%= pkg.version %>/images/',
+            rel: 'dist/images'
+          }
+        ]
+      }
     }
   });
 
@@ -200,6 +230,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-s3');
 
   // Create custom task to read SASS vars and output JSON.  This is so
   // we don't have to maintain variables in two places.  This is pretty
@@ -255,5 +286,8 @@ module.exports = function(grunt) {
 
   // Server/watch
   grunt.registerTask('server', ['default', 'connect', 'watch']);
+
+  // Server/watch
+  grunt.registerTask('deploy', ['s3']);
 
 };

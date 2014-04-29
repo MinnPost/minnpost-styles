@@ -53,6 +53,18 @@ To build or compile all the assets together and create a new version in the `dis
 1. Run: `grunt`
 1. Commit changes and push up to Github, including the `gh-pages` branch
 
+### MinnPost Deploy
+
+For our own purposes, there are some versions up on S3.  It is not suggested to use these as S3 is not a CDN.  What is in the `dist` folder will be found in the following folder:
+
+    https://s3.amazonaws.com/data.minnpost/projects/minnpost-styles/X.X.X/
+
+For instance:
+
+    https://s3.amazonaws.com/data.minnpost/projects/minnpost-styles/0.0.2/minnpost-styles.min.css
+
+The Grunt process has a method to upload this to S3: `grunt deploy`
+
 ## Inspiration and 3rd Party Code
 
 Some code and inspiration taken from other, awesome libraries.
