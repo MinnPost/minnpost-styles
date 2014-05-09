@@ -3,6 +3,10 @@
  * Much borrowed from Bootstrap.
  */
 
+form {
+  margin-bottom: $space-vertical-margin;
+}
+
 fieldset {
   padding: 0;
   margin: 0;
@@ -223,7 +227,9 @@ input[type="checkbox"],
 // Make forms appear inline(-block) by adding the `.form-inline` class.
 .form-inline {
   // Inline-block all the things for "inline"
-  .form-item {
+  .form-item,
+  .button-group,
+  select {
     @include inline-block();
     margin-bottom: 0;
     vertical-align: middle;
@@ -233,6 +239,10 @@ input[type="checkbox"],
   .form-item label {
     margin-bottom: 0;
     vertical-align: middle;
+  }
+
+  select {
+    max-width: $space-horizontal-margin * 8;
   }
 
   // Remove default margin on radios/checkboxes that were used for stacking, and

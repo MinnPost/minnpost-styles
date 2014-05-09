@@ -257,6 +257,13 @@ require([
       return chroma(c).lch()[2];
     });
 
+    // Manual color combos
+    var divergingColors = [
+      ['blue3', 'orange'],
+      ['green1', 'orange'],
+      ['blue1', 'yellow']
+    ];
+
     // Add color swatches
     $('.interface-colors-placeholder').html(swatchTemplate({
       colors: mpConfig['colors-interface'],
@@ -268,34 +275,58 @@ require([
     }));
 
     // Color examples
-    function makeColorExamples(space) {
+    function makeColorExamples() {
+      var space = $('.color-example-space.active').data('colorSpace');
+      var count = parseInt($('#color-example-count').val(), 10);
+      var base = 'white';
+      var minimum = 6;
+      var interpolate = count - minimum;
+      var sequentials, diverging;
       space = space || 'lab';
+
+      // Make sequentials
+      sequentials = _.map(ordered, function(c, ci) {
+        var segment = (count < minimum) ? count : minimum;
+        var scale = chroma.scale([base, c]).mode(space).domain([0, 1], segment).colors();
+        var interoplated;
+
+        if (interpolate > 0) {
+          interpolated = chroma.interpolate(base, c, 1 + (interpolate / minimum), space).hex();
+          scale = _.union(scale, chroma.scale([c, interpolated]).mode(space).domain([0, 1], interpolate + 1).colors());
+        }
+
+        return { colors: scale };
+      });
 
       // Sequential examples (lch or lab)
       $('.data-colors-groups-sequential-placeholder').html(groupTemplate({
-        colorsets: _.map(mpConfig['colors-data'], function(c, ci) {
-          return {
-            colors: chroma.scale(['white', c]).mode(space).domain([0,1], 5).colors()
-          };
-        })
+        colorsets: sequentials
       }));
       // Diverging examples.  Match to oppposite order
       $('.data-colors-groups-diverging-placeholder').html(groupTemplate({
         colorsets: _.map(ordered, function(c, ci) {
           var opposite = ordered.length - 1 - ci;
           return {
-            colors: chroma.scale([c, 'white', ordered[opposite]]).mode(space).domain([0,1],7).colors()
+            colors: chroma.scale([c, 'white', ordered[opposite]]).mode(space).domain([0,1], count).colors()
           };
         })
       }));
     }
 
     // Change space
-    $('.color-example-change').on('click', function(e) {
+    $('.color-example-space').on('click', function(e) {
       e.preventDefault();
-      $('.color-example-change').removeClass('active');
+      $('.color-example-space').removeClass('active');
       $(this).addClass('active');
-      makeColorExamples($(this).data('colorSpace'));
+      makeColorExamples();
+    });
+    $('#color-example-count').on('change', function(e) {
+      e.preventDefault();
+      makeColorExamples();
+    });
+    $('.color-form').on('submit', function(e) {
+      e.preventDefault();
+      makeColorExamples();
     });
 
     // Set initial

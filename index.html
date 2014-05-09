@@ -183,12 +183,25 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
 
         <p>The following are sequential examples to white and diverging examples to the opposite ordered hue.  Use the buttons below to switch the color spaces.  Also, the hexadecimal values for the colors are actually in each block and copyable.</p>
 
-        <div>
+        <form role="form" class="form-inline small color-form">
           <div class="button-group">
-            <button class="button primary active color-example-change" data-color-space="lab">Lab</button>
-            <button class="button primary color-example-change" data-color-space="lch">HCL</button>
+            <button class="button primary active color-example-space" data-color-space="lab">Lab</button>
+            <button class="button primary color-example-space" data-color-space="lch">HCL</button>
           </div>
-        </div>
+
+          <label for="color-example-count">Number of colors:</label>
+          <select id="color-example-count">
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7" selected="true">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+          </select>
+        </form>
 
         <div class="row space-bottom">
           <div class="column-medium-50">
