@@ -112,6 +112,10 @@ module.exports = function(grunt) {
         src: ['js/formatters.js'],
         dest: 'dist/<%= pkg.name %>.formatters.js'
       },
+      storymaps: {
+        src: ['js/storymaps.js'],
+        dest: 'dist/<%= pkg.name %>.storymaps.js'
+      },
       config: {
         src: ['js/config.js'],
         dest: 'dist/<%= pkg.name %>.config.js',
@@ -159,6 +163,10 @@ module.exports = function(grunt) {
       config: {
         src: ['dist/<%= pkg.name %>.config.js'],
         dest: 'dist/<%= pkg.name %>.config.min.js'
+      },
+      storymaps: {
+        src: ['dist/<%= pkg.name %>.storymaps.js'],
+        dest: 'dist/<%= pkg.name %>.storymaps.min.js'
       }
     },
 

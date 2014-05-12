@@ -20,20 +20,23 @@ require.config({
     'leaflet': '../bower_components/leaflet/dist/leaflet',
     'datatables': '../bower_components/datatables/media/js/jquery.dataTables',
     'chroma': '../bower_components/chroma-js/chroma.min',
+    'storymap-orig': '../bower_components/StoryMapJS/build/js/storymap',
+    'storymap': '../demo/storymap-shim',
     'mpHighcharts': 'minnpost-styles.highcharts.min',
     'mpMaps': 'minnpost-styles.maps.min',
     'mpNav': 'minnpost-styles.nav.min',
     'mpDatatables': 'minnpost-styles.datatables.min',
     'mpFormatters': 'minnpost-styles.formatters.min',
+    'mpStorymaps': 'minnpost-styles.storymaps.min',
     'mpConfig': 'minnpost-styles.config.min'
   }
 });
 
 require([
-  'underscore', 'jquery', 'leaflet', 'datatables', 'chroma',
+  'underscore', 'jquery', 'leaflet', 'datatables', 'chroma', 'storymap',
   'mpHighcharts', 'mpMaps', 'mpNav', 'mpDatatables', 'mpFormatters',
-  'mpConfig'
-], function(_, $, L, dt, chroma, mpHighcharts, mpMaps, mpNav, mpDatatables, mpFormatters, mpConfig) {
+  'mpStorymaps', 'mpConfig'
+], function(_, $, L, dt, chroma, storymap, mpHighcharts, mpMaps, mpNav, mpDatatables, mpFormatters, mpStorymaps, mpConfig) {
 
   // When document is ready
   $(document).ready(function() {
@@ -42,6 +45,7 @@ require([
     makeNavs();
     makeDatatables();
     makeColors();
+    makeStoryMap();
   });
 
 
@@ -347,5 +351,13 @@ require([
 
     // Set initial
     makeColorExamples();
+  }
+
+
+  // Story map example
+  function makeStoryMap() {
+    $.getJSON('demo/storymap-example.json').done(function(data) {
+      mpStorymaps.makeStorymap('storymap-example', data);
+    });
   }
 });

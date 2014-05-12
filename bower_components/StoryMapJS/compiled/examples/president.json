@@ -1,0 +1,431 @@
+{
+    "storymap": {
+        "slides": [{
+            "type": "overview",
+            "date": "2013",
+            "text": {
+                "headline": "A month in the life of President Obama",
+                "text": "September 2013: events taken from the WhiteHouse.gov site."
+            },
+            "media": {
+                    "url":              "http://en.wikipedia.org/wiki/Barack_Obama",
+                    "credit":               "wikipedia",
+                    "caption":          "President Barack Obama wikipedia"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 3",
+                "text": "The President departs Joint Base Andrews.</i></b>"
+            },
+            "location": {
+                "name": "Andrews Air Force Base",
+                "lon": "-76.866361",
+                "zoom": 10,
+                "lat": "38.815477",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://upload.wikimedia.org/wikipedia/commons/2/2e/US_Navy_050521-N-0295M-026_Air_Force_One_takes_off_from_Andrews_Air_Force_Base,_Md.,_during_the_2005_Joint_Service_Open_House.jpg",
+                    "credit":               "wikipedia",
+                    "caption":          "Air Force One"
+                }
+        },{
+            "background": {         
+                    "url":              "http://upload.wikimedia.org/wikipedia/en/4/4c/Flag_of_Sweden.svg",
+                    "color":                "#cdbfe3",
+                    "opacity":          25
+                },
+            "date": "2013",
+            "text": {
+                "headline": "Sept 4",
+                "text": "The President arrives in Stockholm, Sweden. The President holds a bilateral meeting with Prime Minister Reinfeldt of Sweden. The President and Prime Minister Reinfeldt hold a press conference. The President tours an Energy Expo event. The President attends an official dinner with Nordic Leaders."
+            },
+            "location": {
+                "name": "Stockholm, Sweden",
+                "lon": "17.933435",
+                "zoom": 10,
+                "lat": "59.642851",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.youtube.com/watch?v=Sa5pVSNoBXk",
+                    "credit":               "The White House YouTube",
+                    "caption":          "President Obama and Prime Minister Reinfeldt of Sweden hold a joint press conference. September 4, 2013."
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 5: Part 1",
+                "text": "The President meets with the King and Queen of Sweden."
+            },
+            "location": {
+                "name": "Stockholm, Sweden",
+                "lon": "18.071369",
+                "zoom": 10,
+                "lat": "59.326743",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.thetimes.co.uk/tto/multimedia/archive/00448/136109075__448536c.jpg",
+                    "credit":               "The Times UK",
+                    "caption":          "President Obama meets the King and Queen of Sweden"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 5: Part 2",
+                "text": "The President arrives Saint Petersburg, Russia. The President holds a bilateral meeting with Prime Minister Abe of Japan. The President participates in an Official G-20 Arrival and Leaders Welcome. The President participates in G-20 Working Session One."
+            },
+            "location": {
+                "name": "Pulkovo International Airport ",
+                "lon": "30.298176",
+                "zoom": 10,
+                "lat": "59.80616",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.youtube.com/watch?v=EkNzAuxhZA8",
+                    "credit":               "sealight films",
+                    "caption":          "President Obama arrives at G-20 dinner"
+                }
+        }, {
+            "background": {         
+                    "url":              "http://gorod94.com/images/st-petersburg-sightseeing-08.jpg",
+                    "color":                "#cdbfe3",
+                    "opacity":          25
+                },
+            "date": "2013",
+            "text": {
+                "headline": "Sept 6",
+                "text": "The President holds a bilateral meeting with President Xi of China. The President participates in G-20 Working Session Two. The President holds a press conference. The President departs Saint Petersburg, Russia. The President arrives at the White House."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036617",
+                "zoom": 10,
+                "lat": "38.896419",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.youtube.com/watch?v=nWPBJY8KDa8",
+                    "credit":               "The White House YouTube",
+                    "caption":          "President Obama holds a press conference at the G20 Summit in St. Petersburg, Russia. September 6, 2013."
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 9",
+                "text": "The President receives the Presidential Daily Briefing. The President and the Vice President meet with Secretary of Defense Hagel."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036456",
+                "zoom": 10,
+                "lat": "38.89783",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://farm4.static.flickr.com/3612/3684028152_69c7133162_b.jpg",
+                    "credit":               "Flickr",
+                    "caption":          "President Obama in Oval Office"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 10",
+                "text": "The President and the Vice President receive the Presidential Daily Briefing. The President meets with the Senate Democratic Caucus. The President meets with the Senate Republican Conference. The President delivers a statement on Syria."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.009184",
+                "zoom": 10,
+                "lat": "38.889905",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.youtube.com/watch?v=WbIrm42zYTU",
+                    "credit":               "martysoffice",
+                    "caption":          "President addresses the nation on Syria"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 11",
+                "text": "The President, The Vice President, The First Lady, Dr. Jill Biden and White House staff observe a moment of silence to mark the 12th anniversary of the 9/11 attacks. The President participates in a service project. The President attends September 11th Observance Ceremony."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.058978",
+                "zoom": 10,
+                "lat": "38.870387",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://a.abcnews.com/images/Politics/GTY_obama_michelle_biden_pentagon_tk_130911_16x9_992.jpg",
+                    "credit":               "John Parkinson",
+                    "caption":          "Moment of silence at the White House"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 12",
+                "text": "The President and the Vice President receive the Presidential Daily Briefing. The President holds a Cabinet meeting; the Vice President also attends. The President and the Vice President meet for lunch."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036405",
+                "zoom": 10,
+                "lat": "38.897713",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://a5.img.talkingpointsmemo.com/image/upload/c_fill,fl_keep_iptc,g_faces,h_365,w_652/wfa0yzjmz8yursllh1da.jpg",
+                    "credit":               "talkingpointsmemo.com",
+                    "caption":          "Cabinet meeting"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 13",
+                "text": "The President and the Vice President receive the Presidential Daily Briefing. The President holds a bilateral meeting with the Amir of Kuwait, His Highness Shaykh Sabah Al-Ahmad Al-Jaber Al Sabah and the Vice President attends. The President and the Vice President meet with Labor Leaders."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036405",
+                "zoom": 10,
+                "lat": "38.897713",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.youtube.com/watch?v=MVSfAWUwAzc",
+                    "credit":               "The White House YouTube",
+                    "caption":          "President Obama and the Amir of Kuwait "
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 16",
+                "text": "The President receives the Presidential Daily Briefing. The President meets with senior advisors. The President delivers remarks to mark the five-year anniversary of the financial crisis."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036405",
+                "zoom": 10,
+                "lat": "38.897713",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.youtube.com/watch?v=sP_DdESn7AQ",
+                    "credit":               "The White House YouTube",
+                    "caption":          "President Obama marks the anniversary of the financial crisis"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 17",
+                "text": "The President and the Vice President receive the Presidential Daily Briefing. The President and the Vice President meet for lunch. The President participates in an Ambassador Credentialing Ceremony. The President and the Vice President meet with Secretary of Defense."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036405",
+                "zoom": 10,
+                "lat": "38.897713",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.whitehouse.gov/sites/default/files/imagecache/gallery_img_embed_blog/image/image_file/7592298730_d82d6e750d_b.jpg?itok=Tqwv8OaX",
+                    "credit":               "The White House",
+                    "caption":          "President and Vice President having lunch"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 18",
+                "text": " The President receives the Presidential Daily Briefing. The President delivers remarks to members of the Business Roundtable and answer questions. The President and the Vice President meet with Secretary of the Treasury Lew. The President and the Vice President meet with Secretary of State Kerry."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.026019",
+                "zoom": 10,
+                "lat": "38.895442",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.youtube.com/watch?v=rkM32oQfHlk",
+                    "credit":               "The White House YouTube",
+                    "caption":          "President Obama Speaks to the Business Roundtable "
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 19",
+                "text": "The President and Vice President receive the Presidential Daily Briefing. The President delivers remarks at a meeting of his Export Council. The President meets with senior advisors. The President attends a DNC event."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036061",
+                "zoom": 10,
+                "lat": "38.903057",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://www.vanityfair.com/politics/features/2010/09/oval-office-redesigns-201009/_jcr_content/par/cn_contentwell/par-main/cn_slideshow/item0.size.0.0.oval-office-01.jpg",
+                    "credit":               "Vanity Fair",
+                    "caption":          "The Oval Office"
+                }
+        }, {
+            "background": {         
+                    "url":              "http://s.wsj.net/public/resources/images/OB-YZ561_Obama2_E_20130920154351.jpg",
+                    "color":                "#cdbfe3",
+                    "opacity":          25
+                },
+            "date": "2013",
+            "text": {
+                "headline": "Sept 20",
+                "text": " The President departs Joint Base Andrews. The President arrives Kansas City, Missouri. The President delivers remarks at the Ford Stamping Plant. The President departs Kansas City, Missouri en route Washington, DC."
+            },
+            "location": {
+                "name": "Liberty, MO",
+                "lon": "-94.480194",
+                "zoom": 10,
+                "lat": "39.204441",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "https://twitter.com/WhiteHouse/status/381114492215513088",
+                    "credit":               "Twitter",
+                    "caption":          "White House Twitter"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 23",
+                "text": " The President and First Lady depart Joint Base Andrews. The President and First Lady arrive New York City. The President holds a bilateral meeting with President Goodluck Jonathan of the Federal Republic of Nigeria. The President meets with USUN Mission employees and their families. The President and First Lady attend a reception for visiting Heads of State and Government."
+            },
+            "location": {
+                "name": "New York, NY",
+                "lon": "-73.974001",
+                "zoom": 10,
+                "lat": "40.756847",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://illinoisstatesoceity.typepad.com/photos/19411950_illinois_state_s/pearl5.jpg",
+                    "credit":               "Illinois State Society",
+                    "caption":          "Chicago Tribune front page 1941"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 24",
+                "text": "The President addresses the United Nations General Assembly; the First Lady also attends. The President participates in a conversation with former President Clinton about the future of health care reform. The President and the First Lady depart New York en route Andrews Air Force Base."
+            },
+            "location": {
+                "name": "New York, NY",
+                "lon": "-73.968337",
+                "zoom": 10,
+                "lat": "40.749305",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "https://www.youtube.com/watch?v=ElyERLwsV0c",
+                    "credit":               "WDTVLIVE42",
+                    "caption":          "Illinois RailRoads 1950s"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 25",
+                "text": "The President holds a call with mayors, county officials, and state legislators on the Affordable Care Act. The President meets with Treasury Secretary Lew."
+            },
+            "location": {
+                 "name": "Washington, DC",
+                "lon": "-77.036061",
+                "zoom": 10,
+                "lat": "38.903057",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "https://soundcloud.com/carolebphotographe/4-muddy-waters-louisiana-blues",
+                    "credit":               "Soundcloud",
+                    "caption":          "Muddy Waters - Louisiana Blues"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 26",
+                "text": "The President delivers remarks on the Affordable Care Act. The President attends a DNC event."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-76.824937",
+                "zoom": 10,
+                "lat": "38.889379",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "https://vimeo.com/62707231",
+                    "credit":               "Spacecraft Films",
+                    "caption":          "Apollo 11 in 100 seconds"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 27",
+                "text": "The President holds a bilateral meeting with Prime Minister Singh of India; the Vice President attends. The President delivers a statement "
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036061",
+                "zoom": 10,
+                "lat": "38.903057",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/U.S._Territorial_Acquisitions.png/1280px-U.S._Territorial_Acquisitions.png",
+                    "credit":               "wikimedia",
+                    "caption":          "United States Territories"
+                }
+        }, {
+            "date": "2013",
+            "text": {
+                "headline": "Sept 30",
+                "text": "The President holds a bilateral meeting with Israeli Prime Minister Netanyahu; the Vice President also attends. The President holds a working lunch with Israeli Prime Minister Netanyahu; the Vice President also attends. The President delivers a statement. The President holds a Cabinet Meeting; the Vice President also attends."
+            },
+            "location": {
+                "name": "Washington, DC",
+                "lon": "-77.036061",
+                "zoom": 10,
+                "lat": "38.903057",
+                "line": true,
+                "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+            },
+            "media": {
+                    "url":              "https://www.youtube.com/watch?v=z_ISPDTpJrk",
+                    "credit":               "Coconut Science Lab",
+                    "caption":          "Best of Hubble"
+                }
+        }]
+    }
+}

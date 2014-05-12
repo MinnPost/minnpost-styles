@@ -1,10 +1,12 @@
 node_modules/
 components/
 !dist
+!build
 .bundle
 
 # Include bower components for deployment
 # bower_components/
+!bower_components/**/build
 
 # General git ignores
 .sass-cache
@@ -27,4 +29,3 @@ pip-log.txt
 *.mode2v3
 *.perspectivev3
 *.xcuserstate
-

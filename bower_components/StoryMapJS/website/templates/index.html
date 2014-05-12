@@ -1,0 +1,165 @@
+{% extends "_base.html" %}
+{% block head %}
+  <!-- build:css http://cdn.knightlab.com/libs/storymapjs/latest/css/fonts/font.pt.css -->
+  <link rel="stylesheet" href="build/css/fonts/font.pt.css?v1">
+  <!-- endbuild -->
+{% endblock %}
+{% block content %}
+<!-- Overview-->
+<header id="overview" class="hero-unit compact">
+  <div class="row-fluid">
+    <hgroup class="span12">
+      <h1 class="logo-mark xl">StoryMap<span><em>JS</em></span></h1>
+      <h2 class="intro">Maps that tell stories.</h2>
+      <p><a href="select.html" class="btn btn-large btn-success" data-scroll="true">Make a storymap now</a></p>
+    </hgroup>
+  </div>
+</header>
+
+
+<section id="demo">
+  <div id="homepage-storymap">
+  </div>
+</section>
+<script>
+  var storymap = new VCO.StoryMap('homepage-storymap', '{{ static_url }}/demo/demo.json');
+
+  var e = $(window).height(),
+  t = $("#homepage-storymap");
+  t.height(e - 20);
+
+  $(window).resize(function() {
+     e = $(window).height();
+     t.height(e - 20);
+    storymap.updateDisplay();
+  })
+</script>
+
+
+<section id="description" class="container">
+  <h2>Introducing StoryMapJS</h2>
+  <div class="row">
+    <div class="span6">
+      <p>
+        StoryMapJS is a free tool to help you tell stories on the web that highlight the locations of a series of events. StoryMapJS is currently in a <em>beta</em> release. It is pretty stable in our development environment, and it has a <a href="select.html">friendly authoring tool.</a>
+      </p>
+      <p>
+        <strong>New!</strong> Now you can use StoryMapJS to tell a story with photographs, works of art, historic maps, and other image files. Because it works best with very large images, we call these "gigapixel" StoryMaps. <a href="gigapixel.html">Learn more.</a>
+      </p>
+      <p>
+         Bugs are mostly going to be about how it works on different web browsers, because we don't have an exhaustive testing process at this time. We welcome feedback and bug reports: you can use our <a href="https://knightlab.zendesk.com/forums/22615078-StoryMapJS">support forum</a> to post questions, or email <a href="mailto:support@knightlab.zendesk.com">support@knightlab.zendesk.com</a>.
+      </p>
+      <p>
+        StoryMapJS is <a href="https://github.com/NUKnightLab/StoryMapJS">open source</a> and offered under the MIT license. We still need to budget some time to adjust/document our process before we can really invite your code contributions, but if you're particularly interested, <a href="mailto:support@knightlab.zendesk.com">let us know.</a>
+      </p>
+    </div>
+    <div class="span6">
+      <div class="well">
+      <h4>Sign up for updates</h4>
+      <p>Get updates, tips and news by email. No Spam.</p>
+      <!-- MailChimp Signup Form-->
+      <div id="mc_embed_signup">
+        <form id="mc-embedded-subscribe-form" action="http://northwestern.us2.list-manage.com/subscribe/post?u=ccc3ef81b4c3c762eb7a7d2b4&amp;id=ff5b6c54e5" method="post" name="mc-embedded-subscribe-form" target="_blank" class="validate form-inline"><span class="mc-field-group">
+            <input id="mce-EMAIL" type="email" value="" name="EMAIL" placeholder="Email" class="input-large required email"></span><span class="mc-field-group">
+          <button id="mc-embedded-subscribe" type="submit" value="Subscribe" name="subscribe" class="btn">Subscribe</button>
+          <div id="mce-responses" class="clear">
+            <div id="mce-error-response" style="display: none;" class="response alert alert-error"></div>
+            <div id="mce-success-response" style="display: none;" class="response alert alert-success"></div>
+          </div>
+          <div class="clear"></div>
+        </form>
+      </div>
+
+      <h4>Stay connected with us on twitter</h4>
+      <p>
+        <iframe allowtransparency="true" frameborder="0" scrolling="no" src="//platform.twitter.com/widgets/follow_button.html?screen_name=knightlab&amp;show_count=true" style="width:220px; height:20px;"></iframe>
+      </p>
+    </div>
+    </div>
+  </div>  </div>
+</section>
+
+
+<section id="examples" class="container">
+  <h2>Examples</h2>
+  <p>Have you made a StoryMap? <a href="https://knightlab.zendesk.com/forums/22615078-StoryMapJS">Let us know</a> and maybe we'll feature it here.</p>
+
+  <h2>StoryMap</h2>
+  <div class="row">
+  
+<div class="span3">
+      <p><a href="http://america.aljazeera.com/multimedia/2014/3/map-timeline-malaysiaairlinesflight370.html" target="_blank"><img src="/static/img/thumbnails/ajam_flight_370.jpg" class="thumbnail"></a>
+      <h3><a href="http://america.aljazeera.com/multimedia/2014/3/map-timeline-malaysiaairlinesflight370.html" target="_blank">Al Jazeera America: Disappearance of Malaysia Airlines Flight MH370</a></h3>
+      </p>
+    </div>
+
+<div class="span3">
+      <p><a href="http://extras.thetimes.co.uk/public/2014/maps/15-02/Ivory_Storymap.html" target="_blank"><img src="/static/img/thumbnails/the_times_ivory.jpg" class="thumbnail"></a>
+      <h3><a href="http://extras.thetimes.co.uk/public/2014/maps/15-02/Ivory_Storymap.html" target="_blank">The Times: A key ivory trade hub</a></h3>
+      </p>
+    </div>
+
+
+<div class="span3">
+      <p><a href="http://www.jsonline.com/entertainment/dining/New-craft-breweries-241672361.html" target="_blank"><img src="{{ static_url }}/img/thumbnails/wisconsin-breweries.jpg" class="thumbnail"></a>
+      <h3><a href="http://www.jsonline.com/entertainment/dining/New-craft-breweries-241672361.html" target="_blank">JSOnline: Wisconsin's New Craft Breweries</a></h3>
+      </p>
+    </div>
+
+<div class="span3">
+      <p><a href="http://extras.thetimes.co.uk/public/2014/maps/21-01/stonyhurst_runaways.html" target="_blank"><img src="/static/img/thumbnails/thetimes_stonyhurst.jpg" class="thumbnail"></a>
+      <h3><a href="http://extras.thetimes.co.uk/public/2014/maps/21-01/stonyhurst_runaways.html" target="_blank">The Times: The Stonyhurst runaways</a></h3>
+      </p>
+    </div>
+ </div>
+
+<div class="row">
+
+<div class="span3">
+      <p><a href="/examples/sochi-2014-olympic-torch-relay.html" target="_blank"><img src="{{ static_url }}/img/thumbnails/sochi-torch-relay.jpg" class="thumbnail"></a>
+      <h3><a href="/examples/sochi-2014-olympic-torch-relay.html" target="_blank">Sochi 2014 Olympic Torch Relay Highlights</a></h3>
+      </p>
+    </div>
+    
+<div class="span3">
+      <p><a href="http://extras.thetimes.co.uk/public/2014/maps/25-02/Yanukovych_storymap.html" target="_blank"><img src="/static/img/thumbnails/thetimes_victor_yanukovych.jpg" class="thumbnail"></a>
+      <h3><a href="http://extras.thetimes.co.uk/public/2014/maps/25-02/Yanukovych_storymap.html" target="_blank">Yanukovych on the run</a></h3>
+      </p>
+    </div>
+
+    <div class="span3">
+      <p><a href="http://www.boston.com/yourtown/salem/salem_halloween_guide/" target="_blank"><img src="{{ static_url }}/img/thumbnails/salem-historical-sites.jpg" class="thumbnail"></a>
+      <h3><a href="http://www.boston.com/yourtown/salem/salem_halloween_guide/" target="_blank">Boston.com: Salem's historical sites</a></h3>
+      </p>
+    </div>
+
+    <div class="span3">
+      <p><a href="http://www.marketplace.org/topics/mile-marker-zero" target="_blank"><img src="{{ static_url }}/img/thumbnails/mile-marker-zero.jpg" class="thumbnail"></a>
+        <h3><a href="http://www.marketplace.org/topics/mile-marker-zero" target="_blank">Marketplace: Charting the Impact of the Debt Ceiling Debate</a></h3>
+      </p>
+    </div>
+  </div>
+    
+    <h2>Gigapixel</h2>
+    
+<div class="row">
+    <div class="span3">
+      <p><a href="http://cdn.knightlab.com/libs/storymapjs/latest/embed/?url=https://www.googledrive.com/host/0B1d8oNIpMx53Wk9CdDlVZ01qU1E/published.json" target="_blank"><img src="{{ static_url }}/img/thumbnails/knightlab_arya.png" class="thumbnail"></a>
+        <h3><a href="http://cdn.knightlab.com/libs/storymapjs/latest/embed/?url=https://www.googledrive.com/host/0B1d8oNIpMx53Wk9CdDlVZ01qU1E/published.json" target="_blank">Game of Thrones: Arya's Journey</a></h3>
+      </p>
+    </div>
+    
+    <div class="span3">
+      <p><a href="http://cdn.knightlab.com/libs/storymapjs/latest/embed/?url=https://www.googledrive.com/host/0B1d8oNIpMx53anVuVUFOTXlOVXc/published.json" target="_blank"><img src="{{ static_url }}/img/thumbnails/knightlab_bosch.png" class="thumbnail"></a>
+        <h3><a href="http://cdn.knightlab.com/libs/storymapjs/latest/embed/?url=https://www.googledrive.com/host/0B1d8oNIpMx53anVuVUFOTXlOVXc/published.json" target="_blank">Hieronymus Bosch: Garden of Earthly Delights</a></h3>
+      </p>
+    </div>
+    
+  </div>
+</div>
+</section>
+
+{% include "_help.html" %}
+
+
+{% endblock %}

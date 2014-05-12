@@ -1,0 +1,12 @@
+*.pyc
+
+# Ignore the build directory
+
+# Ignore the old source code as it is ported
+/source/CORE_OLD
+
+# Other
+.DS_Store
+codekit-config.json
+
+build/website

@@ -1,0 +1,138 @@
+//
+// storymapjs configuration 
+// 
+// All file/directory paths are relative to the project directory.
+//
+// Regular expressions are in python regular expression format, but backslashes
+// must be escaped for JSON.  When used to match files, matching will take
+// place against the the file/directory path realtive to the project directory.
+//
+{
+    //
+    // name of the project as it will appear in the cdn and css/js banners
+    //
+    "name": "storymapjs",
+    //
+    // author string to appear in css/js banners
+    //
+    "author": "Northwestern University Knight Lab",
+    //
+    // build
+    // 
+    // These commands will be run the exact order in which they appear.
+    // This order is determined in code by fabfile/__init__.py.
+    //
+    "build": {
+        // copy files
+        // input: list of objects specifying inputs and outputs
+        //      @src: source file/directory
+        //      @dst: destination file/directory
+        //      @regex: regular expression to match files (if @src is directory)
+        //
+        "copy": [
+            {
+                "src": "website",
+                "dst": "build",
+                "regex": "(css/.*|img/.*|js/.*|.*\\.(ico))$"
+            },
+            {
+                "src": "source",
+                "dst": "build",
+                "regex": "(css/.*|img/.*|.*\\.(ico|html)|gfx/.*\\.(png|jpg|gif))$"
+            }
+        ],
+        // compile less files
+        // input: list of objects specifying inputs and output
+        // input: list of objects, where
+        //      @src: source file/directory
+        //      @dst: destination file/directory
+        //      @regex: regular expression to match files (if @src is directory)
+        //
+        "lessc": [
+            {
+                "src": "source/less/VCO.StoryMap.less",
+                "dst": "build/css/storymap.css"
+            },
+            {
+                "src": "source/less/fonts",
+                "dst": "build/css/fonts",
+                "regex": ".*.less"
+            },
+            {
+                "src": "website/less/site.less",
+                "dst": "build/css/site.css"
+            }
+        ],
+        // 
+        // process codekit style imports on files
+        // input: list of objects specifying inputs and output
+        //      @src:    source file
+        //      @dst:    destination file
+        //
+        "process": [
+            {
+                "src": "source/js/VCO.StoryMap.js",
+                "dst": "build/js/storymap.js"
+            }            
+        ],
+        // concatenate files
+        // input: list of objects, where
+        //      @src: list of source files
+        //      @dst: destination file
+        "concat": [
+        ],
+        // minify files using uglifyjs
+        // input list of objects specifying inputs and output
+        //      @src:   source file/directory
+        //      @dst:   destination file/directory 
+        //      @opt:   options to pass to uglifyjs
+        //      @ext:   extension to prepend to destination file name (optional, default = none)
+        //
+        "minify": [
+            {
+                "src": "build/js/storymap.js",
+                "dst": "build/js/storymap-min.js",
+                "opt": "--no-seqs"            
+            },
+            {
+                "src": "source/js/language/locale",
+                "dst": "build/js/locale",
+                "opt": "--no-seqs"
+            }
+        ],
+        //
+        // process usermin style build blocks on html files
+        // input: list of files/directorys to process in-place
+        //
+        "usemin": [
+            "build/embed"      
+        ],
+        //
+        // banner
+        // input: list of file paths
+        "banner": [
+            {
+                "src": "build",
+                "regex": "(js|css)/storymap.*\\.(js|css)$"
+            }
+        ]
+    },
+    //
+    // stage
+    // input: regular expression to match files in the build directory
+    //  
+    "stage": [{
+        "src": "build",
+        "regex": "(css/.*|js/.*|gfx/.*|embed/.*)$"
+    }],
+    //
+    // deploy
+    // input: {
+    //   env: {bucket: name of the S3 bucket that will host the website}
+    // }
+    //
+    "deploy": {
+        "stg": {"bucket": "storymap.knilab.com", "usemin_context": {"cdn": "dev"}},
+        "prd": {"bucket": "storymap.knightlab.com", "usemin_context": {"cdn": "latest"}}
+    }
+}

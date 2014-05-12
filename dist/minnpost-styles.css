@@ -501,6 +501,9 @@ html {
    * Datatables
    */
   /**
+   * Styles for StoryMapJS
+   */
+  /**
    * Some styles for the colors.  Colors are actually
    * stored in the _variables file.
    */
@@ -2555,6 +2558,56 @@ html {
 .mp .datatable table .sorting_desc:after {
   color: #282828;
   content: "\f0de";
+}
+.mp .storymap {
+  width: 100%;
+  height: 30em;
+}
+.mp .storymap h2 {
+  line-height: 1.1em;
+  font-size: 29px;
+}
+.mp .storymap.vco-layout-landscape .vco-storyslider .vco-slider-background {
+  background-image: none;
+  background-color: white;
+  margin-left: 0;
+  border-left: 1px solid #ababab;
+  opacity: 0.85;
+  filter: "alpha(opacity=$opacity-ie)";
+}
+.mp .storymap.vco-layout-landscape .vco-map .leaflet-top {
+  top: 0px;
+}
+.mp .storymap.vco-layout-landscape .vco-map .vco-mapmarker-active {
+  color: #0D57A0;
+}
+.mp .storymap .vco-slide .vco-slide-content-container .vco-slide-content {
+  padding-top: 3em;
+  padding-bottom: 1em;
+}
+.mp .storymap .vco-media .vco-media-content-container .vco-media-content {
+  margin-bottom: 0.5em;
+}
+.mp .storymap.vco-storymap .vco-caption,
+.mp .storymap.vco-storymap .vco-credit {
+  margin-bottom: 0.5em;
+}
+.mp .storymap.vco-storymap .vco-menubar .vco-menubar-button {
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  margin-right: 0.25em;
+  padding: 0.5em 0.5em;
+  color: #0084a8;
+  margin: 0;
+  background: inherit;
+  font-weight: normal;
+}
+.mp .storymap.vco-storymap .vco-menubar .vco-menubar-button:hover {
+  background: inherit;
+  color: #005c75;
+  text-decoration: underline;
 }
 .mp .color-dark-gray {
   color: #282828;

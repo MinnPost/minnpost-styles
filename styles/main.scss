@@ -6,11 +6,15 @@
 @import "compass";
 @import "compass/css3";
 @import "compass/css3/user-interface";
+@import "compass/support";
 @import "_fonts";
 @import "_variables";
 @import "_functions";
 @import "_mixins";
 @import "_reset";
+
+// Suport down to IE8
+$legacy-support-for-ie8: true;
 
 #{$selector-wrapper} {
   @import "_helpers";
@@ -30,6 +34,7 @@
   @import "_charts";
   @import "_maps";
   @import "_datatables";
+  @import "_storymap";
   @import "_colors";
   @import "_minnpost";
 }
