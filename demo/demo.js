@@ -256,6 +256,7 @@ require([
     var ordered = _.sortBy(mpConfig['colors-data'], function(c, ci) {
       return chroma(c).lch()[2];
     });
+    var opposite = _.sample(ordered, ordered.length);
 
     // Manual color combos
     var divergingColors = [
@@ -287,12 +288,32 @@ require([
       // Make sequentials
       sequentials = _.map(ordered, function(c, ci) {
         var segment = (count < minimum) ? count : minimum;
-        var scale = chroma.scale([base, c]).mode(space).domain([0, 1], segment).colors();
+        var scale = chroma.scale([base, c]).mode(space).correctLightness(true).domain([0, 1], segment).colors();
         var interoplated;
 
+        // The data colors we use are not far enough along the scale to be
+        // good at high number of intervals, so we interpolate further out
+        // from our base color.
         if (interpolate > 0) {
           interpolated = chroma.interpolate(base, c, 1 + (interpolate / minimum), space).hex();
-          scale = _.union(scale, chroma.scale([c, interpolated]).mode(space).domain([0, 1], interpolate + 1).colors());
+          scale = _.union(scale, chroma.scale([c, interpolated]).mode(space).correctLightness(true).domain([0, 1], interpolate + 1).colors());
+        }
+
+        return { colors: scale };
+      });
+
+      // Make diverging
+      diverging = _.map(ordered, function(c, ci) {
+        var scale = chroma.scale([c, base, opposite[ci]]).mode(space).domain([0, 1], count).colors();
+        var distance = ((count - 2) / count);
+        var i1, i2;
+
+        // If the number of intervals is even, we need to interpolate to almost
+        // white, otherwise we will have an odd space in the middle.
+        if (count % 2 === 0) {
+          i1 = chroma.interpolate(c, base, distance).hex();
+          i2 = chroma.interpolate(opposite[ci], base, distance).hex();
+          scale = chroma.scale([c, i1, i2, opposite[ci]]).mode(space).domain([0, 1], count).colors();
         }
 
         return { colors: scale };
@@ -304,12 +325,7 @@ require([
       }));
       // Diverging examples.  Match to oppposite order
       $('.data-colors-groups-diverging-placeholder').html(groupTemplate({
-        colorsets: _.map(ordered, function(c, ci) {
-          var opposite = ordered.length - 1 - ci;
-          return {
-            colors: chroma.scale([c, 'white', ordered[opposite]]).mode(space).domain([0,1], count).colors()
-          };
-        })
+        colorsets: diverging
       }));
     }
 
