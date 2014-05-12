@@ -1715,6 +1715,9 @@ html {
 .mp .alert.danger {
   background-color: #c83d2d;
 }
+.mp form {
+  margin-bottom: 1em;
+}
 .mp fieldset {
   padding: 0;
   margin: 0;
@@ -2031,7 +2034,9 @@ html {
   margin-bottom: 1em;
   color: #cccccc;
 }
-.mp .form-inline .form-item {
+.mp .form-inline .form-item,
+.mp .form-inline .button-group,
+.mp .form-inline select {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
@@ -2044,6 +2049,9 @@ html {
 .mp .form-inline .form-item label {
   margin-bottom: 0;
   vertical-align: middle;
+}
+.mp .form-inline select {
+  max-width: 8em;
 }
 .mp .form-inline .radio,
 .mp .form-inline .checkbox {
