@@ -44,6 +44,9 @@
       line_dash: '5,5',
       show_lines: true,
       show_history_line: true
+      //slide_padding_lr: 20,
+      //layout: 'landscape',
+      //width: '100%'
     });
 
     // Customize map a bit
