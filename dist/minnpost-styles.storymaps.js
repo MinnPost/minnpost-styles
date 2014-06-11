@@ -23,13 +23,22 @@
 
   var s = {};
 
-
-
-
   // Wrapper around creating a map
-  s.makeStorymap = function(id, data) {
-    var sMap;
+  s.makeStorymap = function(id, data, expand) {
+    expand = expand || false;
     var $map = $('#' + id);
+    var sMap, mapOffset;
+
+    // Expand container to width of window
+    if (expand) {
+      mapOffset = $map.offset();
+      $map.parent().css('position', 'relative');
+      $map
+        .css('position', 'relative')
+        .css('left', (mapOffset.left * -1) + 'px')
+        .width($(window).width())
+        .addClass('expanded');
+    }
 
     // Make map
     sMap = new storymap.StoryMap(id, data, {
@@ -44,6 +53,9 @@
       line_dash: '5,5',
       show_lines: true,
       show_history_line: true
+      //slide_padding_lr: 20,
+      //layout: 'landscape',
+      //width: '100%'
     });
 
     // Customize map a bit
