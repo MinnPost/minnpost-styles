@@ -23,9 +23,6 @@
 
   var s = {};
 
-
-
-
   // Wrapper around creating a map
   s.makeStorymap = function(id, data, expand) {
     expand = expand || false;
