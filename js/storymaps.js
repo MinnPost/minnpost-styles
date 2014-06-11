@@ -27,9 +27,21 @@
 
 
   // Wrapper around creating a map
-  s.makeStorymap = function(id, data) {
-    var sMap;
+  s.makeStorymap = function(id, data, expand) {
+    expand = expand || false;
     var $map = $('#' + id);
+    var sMap, mapOffset;
+
+    // Expand container to width of window
+    if (expand) {
+      mapOffset = $map.offset();
+      $map.parent().css('position', 'relative');
+      $map
+        .css('position', 'relative')
+        .css('left', (mapOffset.left * -1) + 'px')
+        .width($(window).width())
+        .addClass('expanded');
+    }
 
     // Make map
     sMap = new storymap.StoryMap(id, data, {

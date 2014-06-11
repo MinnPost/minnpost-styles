@@ -6,6 +6,11 @@
   width: 100%;
   height: 30em;
 
+  &.expanded {
+    border-top: 2px solid $color-gray;
+    border-bottom: 2px solid $color-gray;
+  }
+
   h2 {
     line-height: 1.1em;
     font-size: floor($font-size-base * 1.85);

@@ -12,7 +12,6 @@ require.config({
       deps: ['jquery']
     }
   },
-  baseUrl: 'dist',
   paths: {
     'underscore': '../bower_components/underscore/underscore',
     'jquery': '../bower_components/jquery/dist/jquery.min',
@@ -22,13 +21,13 @@ require.config({
     'chroma': '../bower_components/chroma-js/chroma.min',
     'storymap-orig': '../bower_components/StoryMapJS/build/js/storymap',
     'storymap': '../demo/storymap-shim',
-    'mpHighcharts': 'minnpost-styles.highcharts.min',
-    'mpMaps': 'minnpost-styles.maps.min',
-    'mpNav': 'minnpost-styles.nav.min',
-    'mpDatatables': 'minnpost-styles.datatables.min',
-    'mpFormatters': 'minnpost-styles.formatters.min',
-    'mpStorymaps': 'minnpost-styles.storymaps.min',
-    'mpConfig': 'minnpost-styles.config.min'
+    'mpHighcharts': '../dist/minnpost-styles.highcharts.min',
+    'mpMaps': '../dist/minnpost-styles.maps.min',
+    'mpNav': '../dist/minnpost-styles.nav.min',
+    'mpDatatables': '../dist/minnpost-styles.datatables.min',
+    'mpFormatters': '../dist/minnpost-styles.formatters.min',
+    'mpStorymaps': '../dist/minnpost-styles.storymaps.min',
+    'mpConfig': '../dist/minnpost-styles.config.min'
   }
 });
 
@@ -55,6 +54,11 @@ require([
       name: 'Example',
       data: [ 6 , 11, 32, 110, 235, 369, 640, 1005, 1436, 2063, 3057, 4618, 6444, 9822, 15468, 20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233, 29224, 27342, 26662, 26956, 27912, 28999, 28965, 27826, 25579, 25722, 24826, 24605, 24304, 23464, 23708, 24099, 24357, 24237, 24401, 24344, 23586, 22380, 21004, 17287, 14747, 13076, 12555, 12144, 11009, 10950, 10871, 10824, 10577, 10527, 10475, 10421, 10358, 10295, 10104 ]
     }];
+
+    // Make sure that charts are there
+    if ($('.chart-line-example, .chart-bar-example, .chart-scatter-example').length !== 3) {
+      return;
+    }
 
     // Line chart
     mpHighcharts.makeChart('.chart-line-example', $.extend(true, {}, mpHighcharts.lineOptions, {
@@ -109,6 +113,11 @@ require([
 
   // Maps
   function makeMaps() {
+    // Make sure container is there
+    if ($('#example-leaflet-map, #example-markers-features-map').length !== 2) {
+      return;
+    }
+
     // Basic maps with layer choices
     var basicMapLayer = new L.tileLayer('//{s}.tiles.mapbox.com/v3/' + mpMaps.mapboxStreetsLightLabels + '/{z}/{x}/{y}.png');
     var basicMap = new L.Map('example-leaflet-map', mpMaps.mapOptions);
@@ -199,6 +208,11 @@ require([
     var row;
     var $dataTable;
 
+    // Make sure container is there
+    if ($('.datatable-example').length !== 1) {
+      return;
+    }
+
     // Make some data
     for (i = 0; i < 55; i++) {
       row = [];
@@ -253,6 +267,11 @@ require([
 
   // Make color swatches
   function makeColors() {
+    // Ensure container is there
+    if ($('#template-color-swatch, #template-color-group').length !== 2) {
+      return;
+    }
+
     var swatchTemplate = _.template($('#template-color-swatch').html());
     var groupTemplate = _.template($('#template-color-group').html());
 
@@ -356,8 +375,14 @@ require([
 
   // Story map example
   function makeStoryMap() {
-    $.getJSON('demo/storymap-example.json').done(function(data) {
-      mpStorymaps.makeStorymap('storymap-example', data);
+    // Make sure container is there
+    if ($('#storymap-example').length !== 1) {
+      return;
+    }
+
+    // Load JSON and make story map
+    $.getJSON('../demo/storymap-example.json').done(function(data) {
+      mpStorymaps.makeStorymap('storymap-example', data, true);
     });
   }
 });
