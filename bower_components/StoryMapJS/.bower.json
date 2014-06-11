@@ -1,13 +1,12 @@
 {
   "name": "StoryMapJS",
   "homepage": "https://github.com/NUKnightLab/StoryMapJS",
-  "_release": "a4f34041c0",
+  "_release": "ac75f4a43b",
   "_resolution": {
     "type": "commit",
-    "commit": "a4f34041c0b25cda326b0046ea3038f8fbfbe880"
+    "commit": "ac75f4a43b28c8fb7b4f4bb1eebcd6180c7384cb"
   },
   "_source": "https://github.com/NUKnightLab/StoryMapJS.git",
-  "_target": "a4f34041c0b25cda326b0046ea3038f8fbfbe880",
-  "_originalSource": "https://github.com/NUKnightLab/StoryMapJS.git",
-  "_direct": true
+  "_target": "ac75f4a43b28c8fb7b4f4bb1eebcd6180c7384cb",
+  "_originalSource": "https://github.com/NUKnightLab/StoryMapJS.git"
 }
