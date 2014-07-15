@@ -53,34 +53,34 @@
     .sorting_asc,
     .sorting_desc,
     .sorting_1 {
-      border-left: 2px solid $color-dark-gray;
-      border-right: 2px solid $color-dark-gray;
+      border-left: 2px solid $color-light-gray;
+      border-right: 2px solid $color-light-gray;
     }
 
     .sorting_asc,
     .sorting_desc {
-      border-top: 2px solid $color-dark-gray;
+      border-top: 2px solid $color-light-gray;
     }
 
     tbody tr:last-child .sorting_1 {
-      border-bottom: 2px solid $color-dark-gray;
+      border-bottom: 2px solid $color-light-gray;
     }
 
-    .sorting:after {
+    .sorting:before {
       @extend .fa;
       color: $color-light-gray;
       content: "\f0dc";
       float: right;
     }
 
-    .sorting_asc:after {
-      @extend .sorting:after;
+    .sorting_asc:before {
+      @extend .sorting:before;
       color: $color-dark-gray;
       content: "\f0dd";
     }
 
-    .sorting_desc:after {
-      @extend .sorting:after;
+    .sorting_desc:before {
+      @extend .sorting:before;
       color: $color-dark-gray;
       content: "\f0de";
     }
