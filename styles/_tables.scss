@@ -26,6 +26,7 @@ table {
 
     td {
       font-weight: 300;
+      font-size: $text-size-small;
       vertical-align: middle;
       border-bottom: 1px solid $color-lighter-gray;
       padding: (0.5 * $space);

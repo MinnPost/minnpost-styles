@@ -10,6 +10,7 @@
 
   .dataTables_filter {
     text-align: right;
+    margin-bottom: $space-vertical-margin * 0.5;
 
     label, input {
       @include inline-block();
