@@ -1121,7 +1121,36 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
       <div class="section">
         <h2 id="navigation">Navigation <a href="#navigation" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
 
-        <h3>Sticky top navigation</h3>
+        <p>Overall, data or interactive pieces should guide people through the story or visuals, but sometimes you just need some simple navigation to allow readers to explore.</p>
+
+        <h3>Horizontal navigation</h3>
+
+        <div class="example">
+          <div>
+            <div class="navigation horizontal example-nav">
+              <ul>
+                <li><a href="#" class="active">Sec 1</a></li>
+                <li><a href="#">Sec 2</a></li>
+                <li><a href="#">Sec 3</a></li>
+                <li><a href="#">Sec 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;div class="navigation horizontal"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#" class="active"&gt;Sec 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Sec 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Sec 3&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Sec 4&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+        <h3>Sticky horizontal navigation</h3>
+
+        <p>The following is an example of horizontal navigation that remains stuck at the top of the window when scrolling past it, but this only happens within a parent container.  Also, this is an example of the simple "scoll-spying" mechanism that automatically activates the navigation link if that section is in view.</p>
 
         <div class="example">
           <div>
@@ -1154,10 +1183,37 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           </div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>&lt;div&gt;
+  &lt;div class="navigation horizontal example-stick-top"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#" class="active" data-spy-on="section01"&gt;Sec 1&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" data-spy-on="section02"&gt;Sec 2&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" data-spy-on="section03"&gt;Sec 3&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#" data-spy-on="section04"&gt;Sec 4&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+
+  &lt;h4 data-spy-me="section01"&gt;Section 01&lt;/h4&gt;
+
+  &lt;p&gt;Kitty ipsum dolor s ... &lt;/p&gt;
+
+  ...
+&lt;/div&gt;
+
+&lt;script&gt;
+// Scroll spy will look for elements that have matching attibutes
+$('body').mpScrollSpy();
+
+// mpStick will use sensible defaults
+$('.example-stick-top').mpStick();
+&lt;/script&gt;</code></pre>
         </div>
 
         <h3>Sticky vertical navigation</h3>
+
+        <p>Navigation is actually vertical by default.  This examples shows the use options in <code>mpStick()</code>.</p>
+
+        <p><em><strong>Note that on screens smaller than "medium", this does not work well, but should just need some responsive styling to make work fine.</strong></em></p>
 
         <div class="example">
           <div class="row">
@@ -1207,7 +1263,44 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
           </div>
         </div>
         <div class="example-code">
-  <pre><code> </code></pre>
+<pre><code>&lt;div class="row"&gt;
+  &lt;div class="column-medium-33"&gt;
+    &lt;div class="example-stick-container"&gt;
+      &lt;div class="navigation"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#" class="active" data-spy-on="section01b"&gt;Sec 1&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#" data-spy-on="section02b"&gt;Sec 2&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#" data-spy-on="section03b"&gt;Sec 3&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#" data-spy-on="section04b"&gt;Sec 4&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="column-medium-66"&gt;
+
+    &lt;h4 data-spy-me="section01b"&gt;Section 01&lt;/h4&gt;
+
+    &lt;p&gt;Kitt .... &lt;/p&gt;
+
+    ...
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+// Scroll spy will look for elements that have matching attibutes
+$('body').mpScrollSpy();
+
+// mpStick with custom options
+$('.example-stick-container').mpStick({
+  activeClass: 'stuck container',
+  wrapperClass: '',
+  container: $('.example-stick-container').parent().parent(),
+  topPadding: 20,
+  throttle: 100
+});
+&lt;/script&gt;</code></pre>
         </div>
       </div>
 
