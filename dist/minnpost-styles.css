@@ -497,6 +497,7 @@ html {
   /**
    * Styles for Leaflet and Mapbox maps.
    */
+  /* popup */
   /**
    * Datatables
    */
@@ -1031,6 +1032,12 @@ html {
   font-family: "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif;
   color: #404040;
 }
+.mp .font-text {
+  font-family: "Open Sans", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+}
+.mp .font-heading {
+  font-family: "Montserrat", Georgia, "Times New Roman", Times, sans-serif !important;
+}
 .mp h1, .mp h2, .mp h3, .mp h4, .mp h5, .mp h6 {
   color: #282828;
   font-family: "Montserrat", Georgia, "Times New Roman", Times, sans-serif;
@@ -1195,7 +1202,7 @@ html {
   background-color: inherit;
   padding: 0;
 }
-.mp .fa, .mp .datatable table .sorting:after, .mp .datatable table .sorting_asc:after, .mp .datatable table .sorting_desc:after,
+.mp .fa, .mp .datatable table .sorting:before, .mp .datatable table .sorting_asc:before, .mp .datatable table .sorting_desc:before,
 .mp .loading-block,
 .mp .loading {
   display: -moz-inline-stack;
@@ -2175,6 +2182,7 @@ html {
 }
 .mp table tbody td {
   font-weight: 300;
+  font-size: 0.85em;
   vertical-align: middle;
   border-bottom: 1px solid #cccccc;
   padding: 0.5em;
@@ -2458,6 +2466,9 @@ html {
   margin: 0;
   line-height: inherit;
 }
+.mp .leaflet-popup-close-button + .leaflet-popup-content-wrapper .leaflet-popup-content {
+  padding-top: 15px;
+}
 .mp .leaflet-popup-tip-container {
   width: 20px;
   height: 20px;
@@ -2493,6 +2504,7 @@ html {
 }
 .mp .datatable .dataTables_filter {
   text-align: right;
+  margin-bottom: 0.5em;
 }
 .mp .datatable .dataTables_filter label, .mp .datatable .dataTables_filter input {
   display: -moz-inline-stack;
@@ -2536,26 +2548,26 @@ html {
 .mp .datatable table .sorting_asc,
 .mp .datatable table .sorting_desc,
 .mp .datatable table .sorting_1 {
-  border-left: 2px solid #282828;
-  border-right: 2px solid #282828;
+  border-left: 2px solid #ababab;
+  border-right: 2px solid #ababab;
 }
 .mp .datatable table .sorting_asc,
 .mp .datatable table .sorting_desc {
-  border-top: 2px solid #282828;
+  border-top: 2px solid #ababab;
 }
 .mp .datatable table tbody tr:last-child .sorting_1 {
-  border-bottom: 2px solid #282828;
+  border-bottom: 2px solid #ababab;
 }
-.mp .datatable table .sorting:after, .mp .datatable table .sorting_asc:after, .mp .datatable table .sorting_desc:after {
+.mp .datatable table .sorting:before, .mp .datatable table .sorting_asc:before, .mp .datatable table .sorting_desc:before {
   color: #ababab;
   content: "\f0dc";
   float: right;
 }
-.mp .datatable table .sorting_asc:after {
+.mp .datatable table .sorting_asc:before {
   color: #282828;
   content: "\f0dd";
 }
-.mp .datatable table .sorting_desc:after {
+.mp .datatable table .sorting_desc:before {
   color: #282828;
   content: "\f0de";
 }

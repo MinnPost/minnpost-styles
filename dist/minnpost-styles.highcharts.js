@@ -77,7 +77,7 @@
       margin: 30,
       verticalAlign: 'top',
       borderWidth: 0,
-      itemDistance: 10,
+      itemDistance: 20,
       itemStyle: highcharts.styleLabelLarge
     },
     xAxis: {
