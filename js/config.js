@@ -38,7 +38,7 @@
   // Process config
   if (_.isObject(config)) {
     // Process the lists that are meant to be objects
-    lists = ['responsive-points', 'colors-data', 'colors-information', 'colors-interface'];
+    lists = ['responsive-points', 'colors-data', 'colors-information', 'colors-interface', 'colors-political'];
     _.each(lists, function(l, li) {
       var converted = {};
 
@@ -51,6 +51,27 @@
       }
     });
   }
+
+  // Political party names
+  config.politicalParties = {
+    ip: 'Independence',
+    r: 'Republican',
+    dfl: 'Democratic-Farmer-Labor',
+    d: 'Democratic',
+    lib: 'Libertarian Party',
+    swp: 'Socialist Workers Party',
+    cp: 'Constitution Party',
+    cg: 'Constitutional Government',
+    gp: 'Green Party',
+    gr: 'Grassroots Party',
+    mop: 'Minnesota Open Progressives',
+    edp: 'Ecology Democracy Party',
+    ind: 'Independent',
+    sl: 'Socialism and Liberation',
+    jp: 'Justice Party',
+    np: 'Nonpartisan',
+    wi: 'Write-In'
+  };
 
   return config;
 

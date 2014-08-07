@@ -293,6 +293,11 @@ require([
       colors: mpConfig['colors-interface'],
       type: ''
     }));
+    $('.political-colors-placeholder').html(swatchTemplate({
+      colors: mpConfig['colors-political'],
+      type: 'political',
+      titles: mpConfig.politicalParties
+    }));
     $('.data-colors-placeholder').html(swatchTemplate({
       colors: mpConfig['colors-data'],
       type: 'data'

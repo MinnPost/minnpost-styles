@@ -23,3 +23,13 @@
     background-color: nth($c, 2);
   }
 }
+
+// Make helper classes for each politcal color
+@each $c in $colors-political {
+  .color-political-#{nth($c, 1)} {
+    color: nth($c, 2);
+  }
+  .bg-color-political-#{nth($c, 1)} {
+    background-color: nth($c, 2);
+  }
+}

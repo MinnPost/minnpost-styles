@@ -109,7 +109,7 @@ $colors-information: (
 // bell
 // triangle
 
-// Data colors (need to maintain in JS as well)
+// Data colors
 $colors-data: (
   ("green1", #1D8C47),
   ("green2", #32955D),
@@ -123,7 +123,24 @@ $colors-data: (
   ("yellow", #FBD341)
 ) !default;
 
-
+// Politcal party colors
+$colors-political: (
+  ("dfl", #0793AB),
+  ("d", #0793AB),
+  ("r", #E62B0A),
+  ("ip", #F75336),
+  ("lib", #7A7A7A),
+  ("swp", #7A7A7A),
+  ("cp", #7A7A7A),
+  ("cg", #7A7A7A),
+  ("gp", #07AB20),
+  ("gr", #7A7A7A),
+  ("mop", #7A7A7A),
+  ("edp", #7A7A7A),
+  ("ind", #7A7A7A),
+  ("sl", #7A7A7A),
+  ("jp", #7A7A7A)
+) !default;
 
 
 // Minnpost specific

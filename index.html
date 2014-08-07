@@ -141,7 +141,7 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
         <script id="template-color-swatch" type="text/template">
           <div class="cf">
             <% _.each(colors, function(c, ci) { %>
-              <div class="color-swatch bg-color-<%= (type) ? type + '-' : '' %><%= ci %>"><%= ci %> <br> <%= c %></div>
+              <div <% if (typeof titles != 'undefined') { %>title="<%= titles[ci] %>" <% } %>class="color-swatch bg-color-<%= (type) ? type + '-' : '' %><%= ci %>"><%= ci %> <br> <%= c %></div>
             <% }) %>
           </div>
         </script>
@@ -160,6 +160,12 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
         <p>These colors are used in the interface and already set to the appropriate components.  Though you should not need to often, you can use these as text or background colors with classes like <code>.color-{color-name}</code> or <code>.bg-color-{color-name}</code>.  After including the <code>minnpost-styles.config.js</code>, the colors are available under <code>MP.config['colors-interface']</code>.</p>
 
         <div class="interface-colors-placeholder"></div>
+
+        <h3>Political</h3>
+
+        <p>These colors are used for political parties.  You can use these as text or background colors with classes like <code>.color-political-{color-name}</code> or <code>.bg-color-political-{color-name}</code>.  After including the <code>minnpost-styles.config.js</code>, the colors are available under <code>MP.config['colors-political']</code>.  Full names of political parties can be found in <code>MP.config.politicalParties</code> and can be seen if you hover over the swatches below.</p>
+
+        <div class="political-colors-placeholder"></div>
 
         <h3>Data</h3>
 
