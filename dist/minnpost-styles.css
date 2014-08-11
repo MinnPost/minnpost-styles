@@ -2328,7 +2328,8 @@ html {
 .mp .browser-upgrade-note {
   background-color: #fbd341;
   border: 1px solid #d2a504;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
 }
 .mp .navigation {
   margin-bottom: 1em;
