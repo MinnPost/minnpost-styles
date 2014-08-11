@@ -39,7 +39,7 @@
 
         <h3>Browser support</h3>
 
-        <p>MinnPost Styles aims to support all modern browsers and Internet Explorer 8 (IE8).</p>
+        <p>MinnPost Styles aims to support all modern browsers and Internet Explorer 8 (IE8).  See the <a href="#browser" target="_self">browser note section</a> for common notes to users that do not run a supported browser.</p>
 
         <p>IE8 does not support many newer CSS(3) features and so some styles will not be the exact same as other browsers, but the difference should be minor style differences.  IE8 does not support media queries in CSS, so we have to include a library to force it.  <em><strong>Need to figure out.</strong></em></p>
       </div>
@@ -225,6 +225,50 @@ require(['underscore', 'jquery', 'nav'], function(_, $, nav) {
         <p>This is programatically achieved wtih <a href="https://github.com/gka/chroma.js/">Chroma.js</a> and code similar to:</p>
 
         <pre><code>chroma.scale(['white', '#F55F29']).mode('lab').domain([0,1], 5).colors()</code></pre>
+      </div>
+
+
+
+      <div class="section">
+        <h2 id="browser">Browser notes<a href="#browser" target="_self"><i class="fa fa-link xsmall"></i></a></h2>
+
+        <p>We aim to support down to IE8, but we still want other browsers to have some direction on how to upgrade, or that though the piece may work, some parts may be missing.</p>
+
+        <h3>Javascript is not enabled</h3>
+
+        <p>Though this is highly unlikely these days and given our audience, it's still important to note if the interface is based heavily on Javascript.</p>
+
+        <div class="example ">
+          <p class="noscript-note">This application requires Javascript which is used to make your web browser more interactive.  If this message does not go away, please consider enabling Javascript.  Here are <a href="http://www.enable-javascript.com/" target="_blank">instructions on how to enable JavaScript in your web browser</a>.</p>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;noscript&gt;
+  &lt;p class="noscript-note"&gt;This application requires Javascript which is used to make your web browser more interactive.  If this message does not go away, please consider enabling Javascript.  Here are &lt;a href="http://www.enable-javascript.com/" target="_blank"&gt;instructions on how to enable JavaScript in your web browser&lt;/a&gt;.&lt;/p&gt;
+&lt;/noscript&gt; </code></pre>
+        </div>
+
+        <h3>Browser is not fully supported</h3>
+
+        <p>Depending on what browser is supported, you should change the IE conditional.</p>
+
+        <div class="example ">
+          <div class="browser-upgrade-note">
+            <h4>Consider upgrading your browser</h4>
+            <p>Your <strong>Internet Browser</strong> is the application you use to navigate webpages on the internet.  You are currently using an older version of Internet Explorer.  This application may not be full-featured because you are using such an old browser.</p>
+
+            <p><a href="http://browsehappy.com/" target="_blank">Click here to find out about upgrading to a newer browser</a>.</p>
+          </div>
+        </div>
+        <div class="example-code">
+<pre><code>&lt;!--[if lte IE 8]&gt;
+&lt;div class="browser-upgrade-note"&gt;
+  &lt;h4&gt;Consider upgrading your browser&lt;/h4&gt;
+  &lt;p&gt;Your &lt;strong&gt;Internet Browser&lt;/strong&gt; is the application you use to navigate webpages on the internet.  You are currently using an older version of Internet Explorer.  This application may not be full-featured because you are using such an old browser.&lt;/p&gt;
+
+  &lt;p&gt;&lt;a href="http://browsehappy.com/" target="_blank"&gt;Click here to find out about upgrading to a newer browsers&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;![endif]--&gt; </code></pre>
+        </div>
       </div>
 
 

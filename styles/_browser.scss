@@ -1,0 +1,10 @@
+/**
+ * Some notes for browsers.
+ */
+
+.noscript-note,
+.browser-upgrade-note {
+  background-color: $color-yellow;
+  border: 1px solid darken($color-yellow, 20%);
+  padding: .5em 1em;
+}

@@ -489,6 +489,9 @@ html {
    * Progress bars.
    */
   /**
+   * Some notes for browsers.
+   */
+  /**
    * Navigation stuff
    */
   /**
@@ -2320,6 +2323,12 @@ html {
   -moz-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
+}
+.mp .noscript-note,
+.mp .browser-upgrade-note {
+  background-color: #fbd341;
+  border: 1px solid #d2a504;
+  padding: .5em 1em;
 }
 .mp .navigation {
   margin-bottom: 1em;
