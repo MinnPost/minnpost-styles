@@ -1158,7 +1158,7 @@ html {
 }
 .mp .text-block {
   display: block;
-  max-width: 32em;
+  max-width: 40em;
   margin: 0 auto;
 }
 .mp .text-block.left {
