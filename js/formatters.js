@@ -65,6 +65,17 @@
     return ((num > 0) ? '+' : '') + formatters.number(num);
   };
 
+  // Pad left
+  formatters.padLeft = function(num, places, padding) {
+    places = places || 2;
+    padding = padding || '0';
+    num = formatters.integer(num).toString();
+    while (num.length < places) {
+      num = padding + num;
+    }
+    return num;
+  };
+
   // Converts string into a hash (very basically).
   formatters.hash = function(str) {
     return Math.abs(_.reduce(str.split(''), function(a, b) {
