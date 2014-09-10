@@ -1,6 +1,6 @@
 {
   "name": "minnpost-styles",
-  "version": "0.0.4",
+  "version": "0.0.5-alpha",
   "description": "The MinnPost super-fly style guide, specifically focused on interactive and news applications made by the MinnData team.",
   "main": "dist/minnpost-styles.js",
   "scripts": {
