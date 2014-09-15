@@ -164,7 +164,7 @@ ol {
 // Non-heading labels
 .component-label {
   font-weight: bold;
-  font-style: $font-heading;
+  font-family: $font-heading;
   font-size: $font-size-base * 1.25;
   margin-bottom: $space-vertical-margin * 0.5;
 }
