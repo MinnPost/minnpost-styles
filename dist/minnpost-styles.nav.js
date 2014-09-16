@@ -119,7 +119,10 @@
   nav.MPScrollSpyDefaults = {
     activeClass: 'active',
     offset: 80,
-    throttle: 200
+    throttle: 200,
+    gotoEvent: 'click',
+    gotoPreventDefault: true,
+    gotoSpeed: 600
   };
   function MPScrollSpy(element, options) {
     // Set some initial values and options
@@ -143,8 +146,10 @@
       this._throttledListen();
       $(window).on(this._scrollEvent, this._throttledListen);
 
-      // Handle click
-      this.$listeners.on('click', _.bind(this.gotoClick, this));
+      // Handle click or other event
+      if (this.options.gotoEvent) {
+        this.$listeners.on(this.options.gotoEvent, _.bind(this.gotoClick, this));
+      }
     },
 
     listen: function() {
@@ -168,9 +173,10 @@
     },
 
     gotoClick: function(e) {
-      e.preventDefault();
+      if (this.options.gotoPreventDefault) {
+        e.preventDefault();
+      }
       var $listener = $(e.target);
-
       this.goto($(e.target).data('spyOn'));
     },
 
@@ -180,7 +186,7 @@
 
       $('html, body').animate({
         scrollTop: (top - this.options.offset)
-      }, 600);
+      }, this.options.gotoSpeed);
     },
 
     remove: function() {
