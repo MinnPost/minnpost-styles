@@ -1169,7 +1169,7 @@ html {
 }
 .mp .component-label {
   font-weight: bold;
-  font-style: "Montserrat", Georgia, "Times New Roman", Times, sans-serif;
+  font-family: "Montserrat", Georgia, "Times New Roman", Times, sans-serif;
   font-size: 20px;
   margin-bottom: 0.5em;
 }
