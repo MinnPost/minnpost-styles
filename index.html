@@ -1352,6 +1352,47 @@ $('.example-stick-container').mpStick({
 });
 &lt;/script&gt;</code></pre>
         </div>
+
+        <h3>Stick plugin</h3>
+
+        <p>Use the <code>$().mpStick()</code> jQuery plugin to make a navigation or other item sticky within a container.  Best use is on the navigation container.</p>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr><th>Option</th><th>Description</th><th>Default</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>container</code></td><td>The container element or selector to stick within.</td><td>The parent of the item being stuck.</td></tr>
+              <tr><td><code>activeClass</code></td><td>A class or set of classes to add when the stickiness is applied.</td><td><code>stuck top</code></td></tr>
+              <tr><td><code>wrapperClass</code></td><td>A class or set of classes to add to the wrapper element that is wrapped around the original elements when stuck.  Leave blank to not add a wrapper element.</td><td><code>minnpost-full-container</code></td></tr>
+              <tr><td><code>topPadding</code></td><td>The padding in pixels from the top of the container to where the stickiness should start.</td><td><code>0</code></td></tr>
+              <tr><td><code>throttle</code></td><td>The amount of time in milliseconds to wiat when listening to scoll events.</td><td><code>90</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Scoll-spy plugin</h3>
+
+        <p>Use the <code>$().mpScrollSpy()</code> jQuery plugin to connect elements, like navigation, to other sections of the page.  The plugin also creates go-to events, like click, for the connected elements for smooth scrolling.</p>
+
+        <p>Use the attributes <code>data-spy-on</code> and <code>data-spy-me</code> to connect elements; the values should be unique and matching.  This plugin should be used on an element that contains both connected sets of elements, for example <code>$('body').mpScrollSpy()</code>.</p>
+
+        <div class="table-responsive-small">
+          <table class="striped">
+            <thead>
+              <tr><th>Option</th><th>Description</th><th>Default</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>activeClass</code></td><td>The class to add to the element that is spying when the connected element is in view.</td><td><code>active</code></td></tr>
+              <tr><td><code>offset</code></td><td>The amount in pixels to offset when an item is in view and where to scroll to.</td><td><code>80</code></td></tr>
+              <tr><td><code>gotoEvent</code></td><td>The DOM event to use to trigger the go-to event.  Leave blank to not listen to anything.</td><td><code>click</code></td></tr>
+              <tr><td><code>gotoPreventDefault</code></td><td>Whether or not to prevent the default event action for the go-to event.</td><td><code>true</code></td></tr>
+              <tr><td><code>gotoSpeed</code></td><td>The amount in milliseconds that the scroll animation will take.</td><td><code>600</code></td></tr>
+              <tr><td><code>throttle</code></td><td>The amount of time in milliseconds to wiat when listening to scoll events.</td><td><code>200</code></td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
 
