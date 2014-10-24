@@ -64,6 +64,8 @@
     cg: 'Constitutional Government',
     gp: 'Green Party',
     gr: 'Grassroots Party',
+    glc: 'Grassroots - Legalize Cannabis',
+    lmn: 'Legal Marijuana Now',
     mop: 'Minnesota Open Progressives',
     edp: 'Ecology Democracy Party',
     ind: 'Independent',

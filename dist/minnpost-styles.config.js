@@ -205,6 +205,10 @@
       "#0793AB"
     ],
     [
+      "gop",
+      "#A1000F"
+    ],
+    [
       "r",
       "#A1000F"
     ],
@@ -234,6 +238,14 @@
     ],
     [
       "gr",
+      "#41AB07"
+    ],
+    [
+      "glc",
+      "#41AB07"
+    ],
+    [
+      "lmn",
       "#7A7A7A"
     ],
     [
@@ -296,6 +308,8 @@
     cg: 'Constitutional Government',
     gp: 'Green Party',
     gr: 'Grassroots Party',
+    glc: 'Grassroots - Legalize Cannabis',
+    lmn: 'Legal Marijuana Now',
     mop: 'Minnesota Open Progressives',
     edp: 'Ecology Democracy Party',
     ind: 'Independent',

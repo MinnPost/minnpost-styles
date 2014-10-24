@@ -2779,6 +2779,12 @@ html {
 .mp .bg-color-political-d {
   background-color: #0793ab;
 }
+.mp .color-political-gop {
+  color: #a1000f;
+}
+.mp .bg-color-political-gop {
+  background-color: #a1000f;
+}
 .mp .color-political-r {
   color: #a1000f;
 }
@@ -2822,9 +2828,21 @@ html {
   background-color: #07ab20;
 }
 .mp .color-political-gr {
-  color: #7a7a7a;
+  color: #41ab07;
 }
 .mp .bg-color-political-gr {
+  background-color: #41ab07;
+}
+.mp .color-political-glc {
+  color: #41ab07;
+}
+.mp .bg-color-political-glc {
+  background-color: #41ab07;
+}
+.mp .color-political-lmn {
+  color: #7a7a7a;
+}
+.mp .bg-color-political-lmn {
   background-color: #7a7a7a;
 }
 .mp .color-political-mop {
