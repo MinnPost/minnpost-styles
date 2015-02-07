@@ -33,6 +33,8 @@
   maps.mapboxStreetsLightLabels = 'minnpost.map-wi88b700';
   maps.mapboxTerrainLight = 'minnpost.map-vhjzpwel';
   maps.mapboxTerrainDark = 'minnpost.map-dhba3e3l';
+  maps.mapboxStreetsLightLabelsOnly = 'minnpost.map-dotjndlk';
+  maps.mapboxAccessToken = 'pk.eyJ1IjoibWlubnBvc3QiLCJhIjoicUlOUkpvWSJ9.djE93rNktev9eWRJVav6xA';
   maps.mapOptions = {
     scrollWheelZoom: false,
     trackResize: true
