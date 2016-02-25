@@ -157,7 +157,7 @@ require([
       });
 
     // GeoJSON example
-    $.getJSON('http://boundaries.minnpost.com/1.0/boundary/27-county-2010/?callback=?', function(data) {
+    $.getJSON('https://boundaries.minnpost.com/1.0/boundary/27-county-2010/?callback=?', function(data) {
       if (data.simple_shape) {
         L.geoJson(data.simple_shape, {
           style: mpMaps.mapStyle,
