@@ -299,6 +299,7 @@
   // Political party names
   config.politicalParties = {
     ip: 'Independence',
+    ia: 'Independence Alliance',
     r: 'Republican',
     dfl: 'Democratic-Farmer-Labor',
     d: 'Democratic',
